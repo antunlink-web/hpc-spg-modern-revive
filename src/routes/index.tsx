@@ -103,46 +103,65 @@ function HomePage() {
       <section className="relative isolate min-h-[100svh] flex items-end overflow-hidden">
         <img
           src={heroBuilding}
-          alt="Moderna stambena zgrada u Zagrebu"
+          alt="Stambena zgrada u centru Zagreba pod upravljanjem HPC-SPG"
           width={1920}
           height={1080}
-          className="absolute inset-0 h-full w-full object-cover"
+          fetchPriority="high"
+          className="absolute inset-0 h-full w-full object-cover scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/65 to-navy/90" />
-        <div className="relative max-w-7xl mx-auto px-5 lg:px-10 pt-32 pb-20 lg:pt-40 lg:pb-28 w-full">
+        {/* layered overlays for institutional weight */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy/70 to-navy/95" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/40 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.55),transparent_60%)]" />
+
+        <div className="relative max-w-7xl mx-auto px-5 lg:px-10 pt-32 pb-14 lg:pt-40 lg:pb-20 w-full">
           <div className="max-w-3xl reveal">
-            <span className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-white/70">
-              <span className="h-px w-8 bg-white/40" />
-              Upravljanje zgradama · Zagreb
+            <span className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-white/75">
+              <span className="h-px w-10 bg-white/50" />
+              Est. Zagreb · Upravitelj zgrada od 1996.
             </span>
-            <h1 className="mt-6 text-white font-serif text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-7xl">
-              Profesionalno upravljanje<br/>zgradama kojem suvlasnici vjeruju.
+            <h1 className="mt-7 text-white font-serif text-[2.5rem] leading-[1.04] sm:text-6xl lg:text-[4.5rem] lg:leading-[1.02]">
+              Upravljamo zgradama<br/>
+              <span className="italic text-white/90">Zagreba</span> već gotovo tri desetljeća.
             </h1>
             <p className="mt-7 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
-              Transparentno financijsko izvještavanje, brza komunikacija i digitalne usluge
-              za stambene i poslovne objekte u Zagrebu i okolici. Kvaliteta ispred kvantitete —
-              vodimo brigu o vašoj zgradi kako vi ne biste morali.
+              HPC-SPG d.o.o. — institucionalni upravitelj stambenih i poslovnih zgrada u Gradu Zagrebu
+              i Zagrebačkoj županiji. Transparentno financijsko izvještavanje, registrirana pričuva,
+              ovlašteni inženjeri i digitalni uvid 24/7 za predstavnike i suvlasnike.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a href="https://hpc-spg.hr/?page_id=12769" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white text-navy px-5 py-3.5 text-sm font-medium hover:bg-white/90 transition-colors">
-                Zatražite ponudu <ArrowRight className="h-4 w-4" />
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <a href="https://hpc-spg.hr/?page_id=12769" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-accent text-accent-foreground px-6 py-4 text-sm font-semibold shadow-lg shadow-black/30 hover:bg-accent/90 transition-colors">
+                Zatražite prijedlog za vašu zgradu <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="#kontakt" className="inline-flex items-center rounded-md border border-white/30 text-white px-5 py-3.5 text-sm font-medium hover:bg-white/10 transition-colors">
-                Kontaktirajte nas
+              <a href="https://hpc-spg.com/" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/35 bg-white/5 backdrop-blur-sm text-white px-6 py-4 text-sm font-medium hover:bg-white/10 transition-colors">
+                Prijava za suvlasnike
               </a>
+            </div>
+
+            {/* credentials line */}
+            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] uppercase tracking-wider text-white/55">
+              <span>Registrirani upravitelj · MUP RH</span>
+              <span className="hidden sm:inline text-white/25">·</span>
+              <span>Član HGK</span>
+              <span className="hidden sm:inline text-white/25">·</span>
+              <span>ISO postupci izvještavanja</span>
             </div>
           </div>
 
-          {/* Trust bar */}
-          <div className="mt-16 lg:mt-24 grid grid-cols-3 gap-px bg-white/15 rounded-lg overflow-hidden max-w-3xl">
+          {/* Trust bar — operational scale */}
+          <div className="mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-lg overflow-hidden border border-white/10">
             {[
-              { v: "100%", l: "Osiguranje zajedničkih dijelova" },
-              { v: "99%", l: "Odgovori na upite" },
-              { v: "95%", l: "Naplata pričuve" },
+              { v: "28", suf: "god.", l: "Iskustva u upravljanju zgradama u Zagrebu" },
+              { v: "1.200+", l: "Zgrada i poslovnih objekata pod upravljanjem" },
+              { v: "45.000+", l: "Suvlasnika s digitalnim pristupom" },
+              { v: "95%", l: "Naplata pričuve · revidirano godišnje" },
             ].map((s) => (
-              <div key={s.l} className="bg-navy/70 backdrop-blur-sm px-4 py-5 sm:px-6 sm:py-6">
-                <div className="font-serif text-3xl sm:text-4xl text-white">{s.v}</div>
-                <div className="mt-1 text-[11px] sm:text-xs uppercase tracking-wider text-white/70">{s.l}</div>
+              <div key={s.l} className="bg-navy/75 backdrop-blur-sm px-5 py-6 sm:px-7 sm:py-7">
+                <div className="flex items-baseline gap-1.5">
+                  <div className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">{s.v}</div>
+                  {s.suf && <div className="text-sm text-white/60 font-sans">{s.suf}</div>}
+                </div>
+                <div className="mt-2 text-[11px] uppercase tracking-wider text-white/65 leading-snug">{s.l}</div>
               </div>
             ))}
           </div>
