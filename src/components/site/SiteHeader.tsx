@@ -92,7 +92,7 @@ export function SiteHeader() {
           }`}
         >
           <div className="flex items-center justify-between px-5 h-16 border-b border-border">
-            <span className="font-serif text-xl text-navy">HPC-SPG</span>
+            <span className="font-display text-lg font-bold text-navy">HPC-SPG</span>
             <button
               onClick={() => setOpen(false)}
               aria-label="Zatvori izbornik"
