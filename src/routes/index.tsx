@@ -59,18 +59,20 @@ const services = [
 ];
 
 const whyUs = [
-  { stat: "100%", label: "Osiguranje zajedničkih dijelova" },
-  { stat: "99%", label: "Odgovori na upite suvlasnika" },
-  { stat: "99%", label: "Godišnji programi upravljanja" },
-  { stat: "98%", label: "Ugovorene zgrade" },
-  { stat: "95%", label: "Naplata pričuve" },
-  { stat: "99%", label: "Godišnji pregled zgrade" },
+  { title: "Dugogodišnje iskustvo", desc: "Godine iskustva u upravljanju stambenim i poslovnim zgradama na području Grada Zagreba i Zagrebačke županije." },
+  { title: "Transparentno poslovanje", desc: "Jasno financijsko izvještavanje i uvid u stanje pričuve u svakom trenutku." },
+  { title: "Digitalne usluge", desc: "Web i mobilna aplikacija, e-uplatnice i e-financijski izvještaji za sve suvlasnike." },
+  { title: "Organizirano održavanje", desc: "Redovito održavanje zajedničkih dijelova zgrade i godišnji tehnički pregled objekta." },
+  { title: "Podrška suvlasnicima", desc: "Brza komunikacija s predstavnikom suvlasnika i pravna podrška u svakoj fazi." },
+  { title: "Profesionalno upravljanje", desc: "Stručan tim, ugovorne obveze izvršene na vrijeme i odgovorno upravljanje pričuvom." },
 ];
 
 const digital = [
-  { icon: Smartphone, title: "Web i mobilna aplikacija", desc: "Uvid u financije zgrade, dokumente i izravna komunikacija s predstavnikom i upraviteljem." },
   { icon: Receipt, title: "E-uplatnice za pričuvu", desc: "Mjesečne uplatnice za pričuvu dostavljene izravno na vašu e-mail adresu." },
-  { icon: BarChart3, title: "E-financijski izvještaji", desc: "Pristup mjesečnom financijskom izvještaju zgrade u svakom trenutku." },
+  { icon: BarChart3, title: "Financijski izvještaji", desc: "Pristup mjesečnom financijskom izvještaju zgrade i stanju pričuve u svakom trenutku." },
+  { icon: FileText, title: "Dokumenti zgrade", desc: "Ugovori, zapisnici, godišnji programi i ostali dokumenti vaše zgrade na jednom mjestu." },
+  { icon: Wrench, title: "Prijava kvara", desc: "Brza prijava kvarova na zajedničkim dijelovima zgrade putem aplikacije." },
+
 ];
 
 const process = [
