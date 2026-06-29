@@ -59,18 +59,20 @@ const services = [
 ];
 
 const whyUs = [
-  { stat: "100%", label: "Osiguranje zajedničkih dijelova" },
-  { stat: "99%", label: "Odgovori na upite suvlasnika" },
-  { stat: "99%", label: "Godišnji programi upravljanja" },
-  { stat: "98%", label: "Ugovorene zgrade" },
-  { stat: "95%", label: "Naplata pričuve" },
-  { stat: "99%", label: "Godišnji pregled zgrade" },
+  { title: "Dugogodišnje iskustvo", desc: "Godine iskustva u upravljanju stambenim i poslovnim zgradama na području Grada Zagreba i Zagrebačke županije." },
+  { title: "Transparentno poslovanje", desc: "Jasno financijsko izvještavanje i uvid u stanje pričuve u svakom trenutku." },
+  { title: "Digitalne usluge", desc: "Web i mobilna aplikacija, e-uplatnice i e-financijski izvještaji za sve suvlasnike." },
+  { title: "Organizirano održavanje", desc: "Redovito održavanje zajedničkih dijelova zgrade i godišnji tehnički pregled objekta." },
+  { title: "Podrška suvlasnicima", desc: "Brza komunikacija s predstavnikom suvlasnika i pravna podrška u svakoj fazi." },
+  { title: "Profesionalno upravljanje", desc: "Stručan tim, ugovorne obveze izvršene na vrijeme i odgovorno upravljanje pričuvom." },
 ];
 
 const digital = [
-  { icon: Smartphone, title: "Web i mobilna aplikacija", desc: "Uvid u financije zgrade, dokumente i izravna komunikacija s predstavnikom i upraviteljem." },
   { icon: Receipt, title: "E-uplatnice za pričuvu", desc: "Mjesečne uplatnice za pričuvu dostavljene izravno na vašu e-mail adresu." },
-  { icon: BarChart3, title: "E-financijski izvještaji", desc: "Pristup mjesečnom financijskom izvještaju zgrade u svakom trenutku." },
+  { icon: BarChart3, title: "Financijski izvještaji", desc: "Pristup mjesečnom financijskom izvještaju zgrade i stanju pričuve u svakom trenutku." },
+  { icon: FileText, title: "Dokumenti zgrade", desc: "Ugovori, zapisnici, godišnji programi i ostali dokumenti vaše zgrade na jednom mjestu." },
+  { icon: Wrench, title: "Prijava kvara", desc: "Brza prijava kvarova na zajedničkim dijelovima zgrade putem aplikacije." },
+
 ];
 
 const process = [
@@ -109,9 +111,9 @@ function HomePage() {
           fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        {/* calm institutional overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/65 to-navy/85" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/35 to-transparent" />
+        {/* calmer institutional overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/85 via-navy/70 to-navy/90" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/70 via-navy/30 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-5 lg:px-10 pt-32 pb-14 lg:pt-40 lg:pb-20 w-full">
           <div className="max-w-3xl reveal">
@@ -174,15 +176,17 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
             {services.map((s) => (
-              <article key={s.title} className="group bg-background p-8 lg:p-10 transition-colors hover:bg-surface">
-                <s.icon className="h-7 w-7 text-navy" strokeWidth={1.5} />
-                <h3 className="mt-6 text-2xl text-navy">{s.title}</h3>
-                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-                <a href="https://hpc-spg.hr/?page_id=12769" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-navy">
+              <article key={s.title} className="group bg-background p-8 lg:p-10 transition-all hover:bg-surface card-lift">
+                <span className="inline-grid h-14 w-14 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors">
+                  <s.icon className="h-7 w-7 text-navy group-hover:text-emerald transition-colors" strokeWidth={1.6} />
+                </span>
+                <h3 className="mt-6 text-2xl text-navy font-semibold">{s.title}</h3>
+                <p className="mt-3 text-[15px] text-foreground/70 leading-relaxed">{s.desc}</p>
+                <a href="https://hpc-spg.hr/?page_id=12769" target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald hover:text-navy transition-colors">
                   Saznaj više
-                  <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </article>
             ))}
@@ -219,11 +223,12 @@ function HomePage() {
               </ul>
             </div>
 
-            <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden">
+            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden">
               {whyUs.map((w) => (
-                <div key={w.label} className="bg-background p-6 lg:p-8">
-                  <div className="font-serif text-4xl lg:text-5xl text-navy">{w.stat}</div>
-                  <div className="mt-2 text-xs uppercase tracking-wider text-muted-foreground leading-snug">{w.label}</div>
+                <div key={w.title} className="bg-background p-6 lg:p-8 card-lift">
+                  <CheckCircle2 className="h-6 w-6 text-emerald" strokeWidth={1.75} />
+                  <h3 className="mt-5 text-lg text-navy font-sans font-semibold leading-snug">{w.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
                 </div>
               ))}
             </div>
@@ -271,10 +276,11 @@ function HomePage() {
             </div>
 
             <div className="lg:col-span-6 order-1 lg:order-2 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-card">
+              <div className="absolute -inset-6 bg-emerald/10 blur-3xl rounded-full pointer-events-none" aria-hidden />
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/40 ring-1 ring-white/10 lg:scale-[1.06] origin-center">
                 <img
                   src={appMockup}
-                  alt="HPC-SPG mobilna aplikacija"
+                  alt="HPC-SPG mobilna aplikacija — pričuva, e-uplatnice, dokumenti i prijava kvara"
                   width={1280}
                   height={1280}
                   loading="lazy"
@@ -326,7 +332,7 @@ function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
             {news.map((n) => (
-              <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="group bg-background rounded-xl overflow-hidden border border-border hover:shadow-card transition-shadow">
+              <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={n.img} alt={n.title} width={896} height={640} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
