@@ -9,7 +9,7 @@ export function SiteFooter() {
             <span className="h-9 w-9 rounded-md bg-white/10 grid place-items-center">
               <Building2 className="h-5 w-5" strokeWidth={1.75} />
             </span>
-            <span className="font-serif text-xl">HPC-SPG</span>
+            <span className="font-display text-lg font-bold">HPC-SPG</span>
           </div>
           <p className="mt-5 text-sm text-white/70 max-w-sm leading-relaxed">
             Hrvatski poslovni centar — stambeno poslovno gospodarstvo d.o.o.
