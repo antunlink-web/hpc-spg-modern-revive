@@ -100,73 +100,62 @@ function HomePage() {
       <SiteHeader />
 
       {/* HERO */}
-      <section className="relative isolate min-h-[100svh] flex items-end overflow-hidden">
+      <section className="relative isolate min-h-[92svh] flex items-end overflow-hidden">
         <img
           src={heroBuilding}
-          alt="Stambena zgrada u centru Zagreba pod upravljanjem HPC-SPG"
+          alt="Stambena zgrada u Zagrebu pod upravljanjem HPC-SPG"
           width={1920}
           height={1080}
           fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover scale-105"
+          className="absolute inset-0 h-full w-full object-cover"
         />
-        {/* layered overlays for institutional weight */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/95 via-navy/70 to-navy/95" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/85 via-navy/40 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(0,0,0,0.55),transparent_60%)]" />
+        {/* calm institutional overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/65 to-navy/85" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/80 via-navy/35 to-transparent" />
 
         <div className="relative max-w-7xl mx-auto px-5 lg:px-10 pt-32 pb-14 lg:pt-40 lg:pb-20 w-full">
           <div className="max-w-3xl reveal">
-            <span className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.28em] text-white/75">
-              <span className="h-px w-10 bg-white/50" />
-              Est. Zagreb · Upravitelj zgrada od 1996.
+            <span className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-white/70">
+              <span className="h-px w-10 bg-emerald-soft/80" />
+              HPC-SPG d.o.o. · Zagreb
             </span>
-            <h1 className="mt-7 text-white font-serif text-[2.5rem] leading-[1.04] sm:text-6xl lg:text-[4.5rem] lg:leading-[1.02]">
-              Upravljamo zgradama<br/>
-              <span className="italic text-white/90">Zagreba</span> već gotovo tri desetljeća.
+            <h1 className="mt-7 text-white text-[2.25rem] leading-[1.08] sm:text-5xl lg:text-[3.75rem] lg:leading-[1.05] font-semibold tracking-tight">
+              Profesionalno upravljanje stambenim i poslovnim zgradama.
             </h1>
-            <p className="mt-7 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
-              HPC-SPG d.o.o. — institucionalni upravitelj stambenih i poslovnih zgrada u Gradu Zagrebu
-              i Zagrebačkoj županiji. Transparentno financijsko izvještavanje, registrirana pričuva,
-              ovlašteni inženjeri i digitalni uvid 24/7 za predstavnike i suvlasnike.
+            <p className="mt-6 text-base sm:text-lg text-white/80 max-w-2xl leading-relaxed">
+              Transparentno financijsko izvještavanje, stručno održavanje i digitalni
+              uvid za predstavnike i suvlasnike — u Gradu Zagrebu i Zagrebačkoj županiji.
             </p>
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <a href="https://hpc-spg.hr/?page_id=12769" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-accent text-accent-foreground px-6 py-4 text-sm font-semibold shadow-lg shadow-black/30 hover:bg-accent/90 transition-colors">
-                Zatražite prijedlog za vašu zgradu <ArrowRight className="h-4 w-4" />
+            <div className="mt-9 flex flex-wrap items-center gap-3">
+              <a href="https://hpc-spg.hr/?page_id=12769" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft transition-colors">
+                Zatražite ponudu <ArrowRight className="h-4 w-4" />
               </a>
-              <a href="https://hpc-spg.com/" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/35 bg-white/5 backdrop-blur-sm text-white px-6 py-4 text-sm font-medium hover:bg-white/10 transition-colors">
-                Prijava za suvlasnike
+              <a href="#kontakt" className="inline-flex items-center rounded-md bg-white text-navy px-6 py-3.5 text-sm font-medium hover:bg-white/90 transition-colors">
+                Kontaktirajte nas
               </a>
-            </div>
-
-            {/* credentials line */}
-            <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] uppercase tracking-wider text-white/55">
-              <span>Registrirani upravitelj · MUP RH</span>
-              <span className="hidden sm:inline text-white/25">·</span>
-              <span>Član HGK</span>
-              <span className="hidden sm:inline text-white/25">·</span>
-              <span>ISO postupci izvještavanja</span>
+              <a href="https://hpc-spg.com/" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/35 bg-white/5 backdrop-blur-sm text-white px-6 py-3.5 text-sm font-medium hover:bg-white/10 transition-colors">
+                Prijava korisnika
+              </a>
             </div>
           </div>
 
-          {/* Trust bar — operational scale */}
+          {/* Institutional pillars — no fabricated numbers */}
           <div className="mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-lg overflow-hidden border border-white/10">
             {[
-              { v: "28", suf: "god.", l: "Iskustva u upravljanju zgradama u Zagrebu" },
-              { v: "1.200+", l: "Zgrada i poslovnih objekata pod upravljanjem" },
-              { v: "45.000+", l: "Suvlasnika s digitalnim pristupom" },
-              { v: "95%", l: "Naplata pričuve · revidirano godišnje" },
+              { l: "Transparentno financijsko izvještavanje" },
+              { l: "Registrirana pričuva i godišnji programi" },
+              { l: "Web i mobilna aplikacija za suvlasnike" },
+              { l: "Stručna podrška obnovi i održavanju" },
             ].map((s) => (
-              <div key={s.l} className="bg-navy/75 backdrop-blur-sm px-5 py-6 sm:px-7 sm:py-7">
-                <div className="flex items-baseline gap-1.5">
-                  <div className="font-serif text-3xl sm:text-4xl lg:text-5xl text-white tracking-tight">{s.v}</div>
-                  {s.suf && <div className="text-sm text-white/60 font-sans">{s.suf}</div>}
-                </div>
-                <div className="mt-2 text-[11px] uppercase tracking-wider text-white/65 leading-snug">{s.l}</div>
+              <div key={s.l} className="bg-navy/75 backdrop-blur-sm px-5 py-6 sm:px-6 sm:py-7">
+                <CheckCircle2 className="h-5 w-5 text-emerald-soft" strokeWidth={1.75} />
+                <div className="mt-3 text-sm text-white/85 leading-snug">{s.l}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
 
       {/* SERVICES */}
       <section id="usluge" className="py-24 lg:py-32 bg-background">
