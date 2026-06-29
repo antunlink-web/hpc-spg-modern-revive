@@ -276,10 +276,11 @@ function HomePage() {
             </div>
 
             <div className="lg:col-span-6 order-1 lg:order-2 relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-card">
+              <div className="absolute -inset-6 bg-emerald/10 blur-3xl rounded-full pointer-events-none" aria-hidden />
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/40 ring-1 ring-white/10 lg:scale-[1.06] origin-center">
                 <img
                   src={appMockup}
-                  alt="HPC-SPG mobilna aplikacija"
+                  alt="HPC-SPG mobilna aplikacija — pričuva, e-uplatnice, dokumenti i prijava kvara"
                   width={1280}
                   height={1280}
                   loading="lazy"
@@ -331,7 +332,7 @@ function HomePage() {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
             {news.map((n) => (
-              <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="group bg-background rounded-xl overflow-hidden border border-border hover:shadow-card transition-shadow">
+              <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={n.img} alt={n.title} width={896} height={640} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 </div>
