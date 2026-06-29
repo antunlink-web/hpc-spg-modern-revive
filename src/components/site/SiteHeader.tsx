@@ -33,7 +33,7 @@ export function SiteHeader() {
           <span className="h-9 w-9 rounded-md bg-navy text-navy-foreground grid place-items-center">
             <Building2 className="h-5 w-5" strokeWidth={1.75} />
           </span>
-          <span className="font-serif text-xl tracking-tight">HPC-SPG</span>
+          <span className="font-display text-lg font-bold tracking-tight">HPC-SPG</span>
         </a>
 
         <nav className="hidden lg:flex items-center gap-9">
