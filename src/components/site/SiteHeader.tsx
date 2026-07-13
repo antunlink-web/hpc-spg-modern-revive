@@ -56,7 +56,7 @@ export function SiteHeader() {
           />
         </a>
 
-        <nav className="hidden xl:flex items-center gap-8">
+        <nav className="hidden xl:flex items-center gap-6">
           {nav.map((n) => (
             <a key={n.href} href={n.href} className={`${linkBase} ${linkColor}`}>
               {n.label}
