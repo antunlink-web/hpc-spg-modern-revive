@@ -80,10 +80,10 @@ const digital = [
 ];
 
 const process = [
-  { n: "01", title: "Zahtjev za ponudu", desc: "Ispunite kratki obrazac s podacima o objektu." },
-  { n: "02", title: "Prijedlog upravljanja", desc: "Pripremamo cjelovitu, prilagođenu ponudu za vašu zgradu." },
-  { n: "03", title: "Ugovor i preuzimanje", desc: "Sklapanje ugovora i tehničko-financijsko preuzimanje objekta." },
-  { n: "04", title: "Kontinuirano upravljanje", desc: "Redovito izvještavanje, održavanje i digitalna komunikacija." },
+  { n: "01", title: "Zahtjev za ponudu", desc: "Ispunite kratki obrazac s podacima o objektu.", href: "https://hpc-spg.hr/zahtjev-za-izradu-prijedloga-upravljanja-zgradom/" },
+  { n: "02", title: "Prijedlog upravljanja", desc: "Pripremamo cjelovitu, prilagođenu ponudu za vašu zgradu.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },
+  { n: "03", title: "Ugovor i preuzimanje", desc: "Sklapanje ugovora i tehničko-financijsko preuzimanje objekta.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },
+  { n: "04", title: "Kontinuirano upravljanje", desc: "Redovito izvještavanje, održavanje i digitalna komunikacija.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },
 ];
 
 const news = [
@@ -117,8 +117,9 @@ function HomePage() {
           fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/75 via-navy/55 to-navy/85" />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/65 via-navy/25 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/45 to-navy/75" />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy/55 via-navy/15 to-transparent" />
+
 
         <div className="relative max-w-7xl mx-auto px-5 lg:px-10 pt-32 pb-14 lg:pt-40 lg:pb-20 w-full">
           <div className="max-w-3xl reveal">
@@ -153,9 +154,9 @@ function HomePage() {
               { l: "Web i mobilna aplikacija za suvlasnike" },
               { l: "Stručna podrška obnovi i održavanju" },
             ].map((s) => (
-              <div key={s.l} className="bg-navy/75 backdrop-blur-sm px-5 py-6 sm:px-6 sm:py-7">
+              <div key={s.l} className="bg-navy/60 backdrop-blur-md px-5 py-6 sm:px-6 sm:py-7">
                 <CheckCircle2 className="h-5 w-5 text-emerald-soft" strokeWidth={1.75} />
-                <div className="mt-3 text-sm text-white/90 leading-snug">{s.l}</div>
+                <div className="mt-3 text-sm text-white/95 leading-snug">{s.l}</div>
               </div>
             ))}
           </div>
@@ -221,9 +222,20 @@ function HomePage() {
                 ))}
               </ul>
 
+              <div className="mt-8">
+                <a
+                  href="https://hpc-spg.hr/zasto-smo-bolji-izbor/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft transition-colors"
+                >
+                  Zašto smo bolji izbor? <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+
               {/* AAA Bonitet badge */}
               <div className="mt-10 inline-flex items-center gap-4 rounded-xl border border-border bg-background p-4 pr-6 shadow-sm">
-                <img src={bonitetAAA.url} alt="Bonitet AAA — Platinum" className="h-20 w-auto" />
+                <img src={bonitetAAA.url} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-24 w-auto" />
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Bonitetna izvrsnost</p>
                   <p className="mt-1 text-sm font-semibold text-navy">Certifikat AAA — Platinum</p>
@@ -341,13 +353,13 @@ function HomePage() {
           <div className="mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
             <div className="hidden lg:block absolute top-5 left-[12%] right-[12%] h-px bg-border" />
             {process.map((p) => (
-              <div key={p.n} className="relative">
-                <div className="h-10 w-10 rounded-full bg-navy text-navy-foreground font-serif text-sm grid place-items-center relative z-10">
+              <a key={p.n} href={p.href} target="_blank" rel="noreferrer" className="relative group">
+                <div className="h-10 w-10 rounded-full bg-navy text-navy-foreground font-serif text-sm grid place-items-center relative z-10 group-hover:bg-emerald transition-colors">
                   {p.n}
                 </div>
-                <h3 className="mt-6 text-xl text-navy font-sans font-medium">{p.title}</h3>
+                <h3 className="mt-6 text-xl text-navy font-sans font-medium group-hover:text-emerald transition-colors">{p.title}</h3>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -390,7 +402,7 @@ function HomePage() {
       {/* CTA */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <img src={sectionBuildings} alt="" width={1280} height={896} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
-        <div className="absolute inset-0 bg-navy/92" />
+        <div className="absolute inset-0 bg-navy/85" />
         <div className="relative max-w-5xl mx-auto px-5 lg:px-10 text-center">
           <span className="text-xs uppercase tracking-[0.22em] text-white/70">Kontakt</span>
           <h2 className="mt-5 text-white text-4xl lg:text-6xl">Spremni za upravitelja kojem se može vjerovati?</h2>

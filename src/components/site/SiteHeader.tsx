@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import hpcLogo from "@/assets/hpc-logo.png.asset.json";
+import logoHorizontal from "@/assets/logo-horizontal.png.asset.json";
+import logoEmblem from "@/assets/logo-emblem.png.asset.json";
 
 const nav = [
   { label: "Usluge", href: "#usluge" },
@@ -22,41 +23,40 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const linkBase = "text-[14px] font-medium tracking-tight transition-colors";
+  const linkBase = "text-[15px] font-medium tracking-tight transition-colors whitespace-nowrap";
   const linkColor = scrolled
-    ? "text-foreground/80 hover:text-navy"
-    : "text-white/90 hover:text-white";
-  const nameColor = scrolled ? "text-navy" : "text-white";
-  const subColor = scrolled ? "text-muted-foreground" : "text-white/70";
+    ? "text-foreground/85 hover:text-navy"
+    : "text-white/95 hover:text-white";
 
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-navy/40 backdrop-blur-md border-b border-white/10"
+          ? "bg-background/97 backdrop-blur-md border-b border-border shadow-sm"
+          : "bg-navy/55 backdrop-blur-md border-b border-white/10"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-5 lg:px-10 h-[76px] lg:h-[92px] flex items-center justify-between gap-6">
-        <a href="#" className="flex items-center gap-3.5 min-w-0">
+      <div className="max-w-7xl mx-auto pl-6 pr-5 lg:pl-10 lg:pr-10 h-[80px] lg:h-[100px] flex items-center justify-between gap-6">
+        {/* Desktop: horizontal logo with wordmark */}
+        <a href="#" className="hidden sm:flex items-center min-w-0" aria-label="HPC-SPG — Hrvatski poslovni centar">
           <img
-            src={hpcLogo.url}
-            alt="HPC-SPG — Hrvatski poslovni centar"
-            className={`h-12 lg:h-14 w-auto shrink-0 transition-all ${
-              scrolled ? "" : "drop-shadow-[0_1px_2px_rgba(0,0,0,0.25)]"
+            src={scrolled ? logoHorizontal.url : logoHorizontal.url}
+            alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
+            className={`h-14 lg:h-16 w-auto shrink-0 transition-all ${
+              scrolled ? "" : "brightness-0 invert"
             }`}
           />
-          <span className={`hidden sm:flex flex-col leading-tight min-w-0 ${nameColor}`}>
-            <span className="font-display text-[13px] lg:text-[14px] font-semibold tracking-tight truncate">
-              Hrvatski poslovni centar
-            </span>
-            <span className={`text-[10px] uppercase tracking-[0.18em] mt-0.5 truncate ${subColor}`}>
-              Stambeno poslovno gospodarstvo d.o.o.
-            </span>
-          </span>
+        </a>
+        {/* Mobile: emblem only */}
+        <a href="#" className="sm:hidden flex items-center" aria-label="HPC-SPG">
+          <img
+            src={logoEmblem.url}
+            alt="HPC-SPG"
+            className={`h-12 w-auto transition-all ${scrolled ? "" : "brightness-0 invert"}`}
+          />
         </a>
 
-        <nav className="hidden xl:flex items-center gap-7">
+        <nav className="hidden xl:flex items-center gap-6">
           {nav.map((n) => (
             <a key={n.href} href={n.href} className={`${linkBase} ${linkColor}`}>
               {n.label}
@@ -64,7 +64,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-3 shrink-0">
+        <div className="hidden lg:flex items-center gap-4 shrink-0">
           <a
             href="https://hpc-spg.com/"
             target="_blank"
@@ -77,7 +77,7 @@ export function SiteHeader() {
             href="https://hpc-spg.hr/zahtjev-za-izradu-prijedloga-upravljanja-zgradom/"
             target="_blank"
             rel="noreferrer"
-            className={`inline-flex items-center rounded-md px-5 py-2.5 text-sm font-semibold shadow-sm transition-all hover:-translate-y-0.5 ${
+            className={`inline-flex items-center rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition-all hover:-translate-y-0.5 ${
               scrolled
                 ? "bg-navy text-navy-foreground hover:bg-navy-soft"
                 : "bg-white text-navy hover:bg-white/95"
@@ -109,13 +109,8 @@ export function SiteHeader() {
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between px-5 h-[76px] border-b border-border">
-            <div className="flex items-center gap-2.5">
-              <img src={hpcLogo.url} alt="HPC-SPG" className="h-10 w-auto" />
-              <span className="font-display text-sm font-semibold text-navy leading-tight">
-                Hrvatski poslovni<br />centar
-              </span>
-            </div>
+          <div className="flex items-center justify-between px-5 h-[80px] border-b border-border">
+            <img src={logoHorizontal.url} alt="HPC-SPG" className="h-11 w-auto" />
             <button
               onClick={() => setOpen(false)}
               aria-label="Zatvori izbornik"

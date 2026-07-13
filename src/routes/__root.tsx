@@ -72,8 +72,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "HPC-SPG — Profesionalno upravljanje zgradama u Zagrebu" },
-      { name: "description", content: "Hrvatski poslovni centar — stambeno poslovno gospodarstvo d.o.o. Transparentno i profesionalno upravljanje zgradama u Zagrebu i okolici." },
+      { title: "Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o. | HPC-SPG" },
+      { name: "description", content: "Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o. Profesionalno i transparentno upravljanje stambenim i poslovnim zgradama u Zagrebu i Zagrebačkoj županiji." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:title", content: "HPC-SPG — Profesionalno upravljanje zgradama u Zagrebu" },
@@ -84,6 +84,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b6a92250-2493-41f0-9222-cb9369245a0f/id-preview-e5cfd266--f11c062c-14ca-46c8-aae0-c06500495484.lovable.app-1779546003234.png" },
     ],
     links: [
+      { rel: "icon", type: "image/png", href: "/favicon.png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
