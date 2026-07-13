@@ -43,10 +43,70 @@ export function SiteFooter() {
             </p>
             <p className="flex items-start gap-3">
               <Mail className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-              <a href="https://hpc-spg.hr/?page_id=12769" target="_blank" rel="noreferrer" className="hover:text-white">
+              <a href="https://hpc-spg.hr/zahtjev-za-izradu-prijedloga-upravljanja-zgradom/" target="_blank" rel="noreferrer" className="hover:text-white">
                 Zahtjev za ponudu
               </a>
             </p>
+          </div>
+        </div>
+
+        <div className="lg:col-span-2">
+          <h4 className="text-xs uppercase tracking-[0.18em] text-white/55">Usluge</h4>
+          <ul className="mt-5 space-y-3 text-sm text-white/80">
+            <li><a href="https://hpc-spg.hr/upravljanje-zgradama/" target="_blank" rel="noreferrer" className="hover:text-white">Upravljanje zgradama</a></li>
+            <li><a href="https://hpc-spg.hr/?page_id=12900" target="_blank" rel="noreferrer" className="hover:text-white">Obnova od potresa</a></li>
+            <li><a href="https://hpc-spg.hr/?page_id=13606" target="_blank" rel="noreferrer" className="hover:text-white">Energetska obnova</a></li>
+            <li><a href="https://hpc-spg.hr/?page_id=12875" target="_blank" rel="noreferrer" className="hover:text-white">Zemljišne knjige</a></li>
+            <li><a href="https://hpc-spg.hr/?page_id=12945" target="_blank" rel="noreferrer" className="hover:text-white">Financiranje uređenja</a></li>
+            <li><a href="https://hpc-spg.hr/zajmovi-i-krediti/" target="_blank" rel="noreferrer" className="hover:text-white">Zajmovi i krediti</a></li>
+          </ul>
+        </div>
+
+        <div className="lg:col-span-2">
+          <h4 className="text-xs uppercase tracking-[0.18em] text-white/55">Suvlasnici</h4>
+          <ul className="mt-5 space-y-3 text-sm text-white/80">
+            <li><a href="https://hpc-spg.com/" target="_blank" rel="noreferrer" className="hover:text-white">Prijava u aplikaciju</a></li>
+            <li><a href="https://hpc-spg.hr/zahtjev-za-pristupne-podatke/" target="_blank" rel="noreferrer" className="hover:text-white">Pristupni podaci</a></li>
+            <li><a href="https://hpc-spg.hr/zahtjev-za-dostavu-uplatnica-za-pricuvu-e-mailom/" target="_blank" rel="noreferrer" className="hover:text-white">E-uplatnice</a></li>
+            <li><a href="https://hpc-spg.hr/osnovni-pojmovi-upravljanja/" target="_blank" rel="noreferrer" className="hover:text-white">Osnovni pojmovi</a></li>
+            <li><a href="https://hpc-spg.hr/regulativa-upravljanja/" target="_blank" rel="noreferrer" className="hover:text-white">Regulativa</a></li>
+            <li><a href="https://hpc-spg.hr/obavijesti/novosti/" target="_blank" rel="noreferrer" className="hover:text-white">Novosti</a></li>
+          </ul>
+        </div>
+
+        <div className="lg:col-span-4">
+          <h4 className="text-xs uppercase tracking-[0.18em] text-white/55">Hitne intervencije</h4>
+          <div className="mt-5 rounded-lg border border-white/10 bg-white/5 p-5">
+            <p className="text-sm text-white/80 leading-relaxed">
+              U slučaju kvara na zajedničkim dijelovima zgrade, obratite se
+              predstavniku suvlasnika ili putem aplikacije prijavite kvar.
+            </p>
+            <a
+              href="https://hpc-spg.com/"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-white"
+            >
+              <Phone className="h-4 w-4" /> Prijava kvara putem aplikacije
+            </a>
+          </div>
+
+          <div className="mt-6 grid grid-cols-[1fr_auto] gap-4 items-center">
+            <div className="grid grid-cols-1 gap-3">
+              <div className="rounded-md border border-white/10 bg-white/5 p-4">
+                <ShieldCheck className="h-5 w-5 text-white/70" strokeWidth={1.6} />
+                <div className="mt-2 text-[11px] uppercase tracking-wider text-white/55">Registrirani</div>
+                <div className="text-sm text-white">Upravitelj zgrada</div>
+              </div>
+              <div className="rounded-md border border-white/10 bg-white/5 p-4">
+                <Building2 className="h-5 w-5 text-white/70" strokeWidth={1.6} />
+                <div className="mt-2 text-[11px] uppercase tracking-wider text-white/55">Sjedište</div>
+                <div className="text-sm text-white">Zagreb, Hrvatska</div>
+              </div>
+            </div>
+            <div className="rounded-md bg-white p-2 self-stretch flex items-center">
+              <img src={bonitetAAA.url} alt="Bonitet AAA — Platinum" className="h-32 w-auto" />
+            </div>
           </div>
         </div>
 
