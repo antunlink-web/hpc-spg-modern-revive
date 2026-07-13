@@ -23,7 +23,7 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const linkBase = "text-[15px] font-medium tracking-tight transition-colors";
+  const linkBase = "text-[15px] font-medium tracking-tight transition-colors whitespace-nowrap";
   const linkColor = scrolled
     ? "text-foreground/85 hover:text-navy"
     : "text-white/95 hover:text-white";
