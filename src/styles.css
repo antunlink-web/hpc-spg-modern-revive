@@ -69,12 +69,14 @@
   --input: oklch(0.915 0.006 240);
   --ring: oklch(0.48 0.055 240);
   /* "navy" token — lighter gray-blue closer to hpc-spg.hr */
-  --navy: oklch(0.4 0.055 245);
+  --navy: oklch(0.44 0.05 245);
   --navy-foreground: oklch(0.985 0.003 240);
-  --navy-soft: oklch(0.5 0.05 245);
+  --navy-soft: oklch(0.55 0.045 245);
   /* Emerald secondary accent — muted */
-  --emerald: oklch(0.46 0.07 165);
-  --emerald-soft: oklch(0.62 0.07 165);
+  --emerald: oklch(0.5 0.075 165);
+  --emerald-soft: oklch(0.66 0.075 165);
+  /* Burgundy from official logo — for subtle accents */
+  --burgundy: oklch(0.42 0.11 20);
 }
 
 @layer base {

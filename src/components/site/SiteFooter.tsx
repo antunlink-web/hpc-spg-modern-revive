@@ -1,29 +1,26 @@
 import { MapPin, Mail, Globe, Clock, Phone, ShieldCheck, Building2 } from "lucide-react";
-import hpcLogo from "@/assets/hpc-logo.png.asset.json";
+import logoHorizontal from "@/assets/logo-horizontal.png.asset.json";
 import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
 
 export function SiteFooter() {
   return (
     <footer id="kontakt" className="bg-navy text-navy-foreground">
-      <div className="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-20 grid gap-12 lg:grid-cols-12">
+      <div className="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-20 grid gap-14 lg:gap-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <div className="flex items-center gap-3">
-            <span className="h-14 w-14 rounded-md bg-white grid place-items-center p-1.5 ring-1 ring-white/15">
-              <img src={hpcLogo.url} alt="HPC-SPG" className="h-full w-auto" />
-            </span>
-            <div className="leading-tight">
-              <div className="font-display text-base font-semibold">Hrvatski poslovni centar</div>
-              <div className="text-[11px] uppercase tracking-[0.2em] text-white/60 mt-1">
-                Stambeno poslovno gospodarstvo d.o.o.
-              </div>
-            </div>
-          </div>
+          <img
+            src={logoHorizontal.url}
+            alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
+            className="h-16 w-auto brightness-0 invert"
+          />
+          <p className="mt-3 text-[13px] text-white/70 leading-relaxed">
+            Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o.
+          </p>
           <p className="mt-6 text-sm text-white/75 max-w-sm leading-relaxed">
             Profesionalno upravljanje stambenim i poslovnim zgradama u Gradu
             Zagrebu i Zagrebačkoj županiji.
           </p>
 
-          <div className="mt-7 space-y-3 text-sm text-white/85">
+          <div className="mt-7 space-y-3 text-sm text-white/90">
             <p className="flex items-start gap-3">
               <MapPin className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
               <span>
@@ -49,6 +46,7 @@ export function SiteFooter() {
             </p>
           </div>
         </div>
+
 
         <div className="lg:col-span-2">
           <h4 className="text-xs uppercase tracking-[0.18em] text-white/55">Usluge</h4>
@@ -91,23 +89,28 @@ export function SiteFooter() {
             </a>
           </div>
 
-          <div className="mt-6 grid grid-cols-[1fr_auto] gap-4 items-center">
-            <div className="grid grid-cols-1 gap-3">
-              <div className="rounded-md border border-white/10 bg-white/5 p-4">
-                <ShieldCheck className="h-5 w-5 text-white/70" strokeWidth={1.6} />
-                <div className="mt-2 text-[11px] uppercase tracking-wider text-white/55">Registrirani</div>
-                <div className="text-sm text-white">Upravitelj zgrada</div>
-              </div>
-              <div className="rounded-md border border-white/10 bg-white/5 p-4">
-                <Building2 className="h-5 w-5 text-white/70" strokeWidth={1.6} />
-                <div className="mt-2 text-[11px] uppercase tracking-wider text-white/55">Sjedište</div>
-                <div className="text-sm text-white">Zagreb, Hrvatska</div>
-              </div>
-            </div>
-            <div className="rounded-md bg-white p-2 self-stretch flex items-center">
-              <img src={bonitetAAA.url} alt="Bonitet AAA — Platinum" className="h-32 w-auto" />
+          <div className="mt-6 rounded-lg bg-white/95 p-5 flex items-center gap-5">
+            <img src={bonitetAAA.url} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-28 w-auto" />
+            <div className="text-navy">
+              <div className="text-[11px] uppercase tracking-[0.18em] text-navy/60">Bonitetna izvrsnost</div>
+              <div className="mt-1 text-sm font-semibold">Certifikat AAA — Platinum</div>
+              <div className="mt-1 text-xs text-navy/70">Priznanje financijske stabilnosti i pouzdanosti društva.</div>
             </div>
           </div>
+
+          <div className="mt-4 grid grid-cols-2 gap-3">
+            <div className="rounded-md border border-white/10 bg-white/5 p-4">
+              <ShieldCheck className="h-5 w-5 text-white/70" strokeWidth={1.6} />
+              <div className="mt-2 text-[11px] uppercase tracking-wider text-white/55">Registrirani</div>
+              <div className="text-sm text-white">Upravitelj zgrada</div>
+            </div>
+            <div className="rounded-md border border-white/10 bg-white/5 p-4">
+              <Building2 className="h-5 w-5 text-white/70" strokeWidth={1.6} />
+              <div className="mt-2 text-[11px] uppercase tracking-wider text-white/55">Sjedište</div>
+              <div className="text-sm text-white">Zagreb, Hrvatska</div>
+            </div>
+          </div>
+
         </div>
       </div>
 
