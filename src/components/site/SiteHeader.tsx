@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import logoHorizontal from "@/assets/logo-horizontal.png.asset.json";
 import logoEmblem from "@/assets/logo-emblem.png.asset.json";
@@ -14,37 +14,19 @@ const nav = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const linkBase = "text-[15px] font-medium tracking-tight transition-colors whitespace-nowrap";
-  const linkColor = scrolled
-    ? "text-foreground/85 hover:text-navy"
-    : "text-white/95 hover:text-white";
+  const linkColor = "text-foreground/85 hover:text-navy";
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-background/97 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-navy/55 backdrop-blur-md border-b border-white/10"
-      }`}
-    >
+    <header className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background/97 backdrop-blur-md border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto pl-6 pr-5 lg:pl-10 lg:pr-10 h-[80px] lg:h-[100px] flex items-center justify-between gap-6">
         {/* Desktop: horizontal logo with wordmark */}
         <a href="#" className="hidden sm:flex items-center min-w-0" aria-label="HPC-SPG — Hrvatski poslovni centar">
           <img
-            src={scrolled ? logoHorizontal.url : logoHorizontal.url}
+            src={logoHorizontal.url}
             alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
-            className={`h-14 lg:h-16 w-auto shrink-0 transition-all ${
-              scrolled ? "" : "brightness-0 invert"
-            }`}
+            className="h-14 lg:h-16 w-auto shrink-0 transition-all"
           />
         </a>
         {/* Mobile: emblem only */}
@@ -52,7 +34,7 @@ export function SiteHeader() {
           <img
             src={logoEmblem.url}
             alt="HPC-SPG"
-            className={`h-12 w-auto transition-all ${scrolled ? "" : "brightness-0 invert"}`}
+            className="h-12 w-auto transition-all"
           />
         </a>
 
@@ -77,11 +59,7 @@ export function SiteHeader() {
             href="https://hpc-spg.hr/zahtjev-za-izradu-prijedloga-upravljanja-zgradom/"
             target="_blank"
             rel="noreferrer"
-            className={`inline-flex items-center rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition-all hover:-translate-y-0.5 ${
-              scrolled
-                ? "bg-navy text-navy-foreground hover:bg-navy-soft"
-                : "bg-white text-navy hover:bg-white/95"
-            }`}
+            className="inline-flex items-center rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition-all hover:-translate-y-0.5 bg-navy text-navy-foreground hover:bg-navy-soft"
           >
             Zatražite ponudu
           </a>
@@ -90,9 +68,7 @@ export function SiteHeader() {
         <button
           onClick={() => setOpen(true)}
           aria-label="Otvori izbornik"
-          className={`lg:hidden h-11 w-11 grid place-items-center rounded-md transition-colors ${
-            scrolled ? "text-navy hover:bg-muted" : "text-white bg-white/10 hover:bg-white/20"
-          }`}
+          className="lg:hidden h-11 w-11 grid place-items-center rounded-md transition-colors text-navy hover:bg-muted"
         >
           <Menu className="h-6 w-6" />
         </button>
