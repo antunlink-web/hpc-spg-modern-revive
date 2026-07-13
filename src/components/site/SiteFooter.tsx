@@ -1,23 +1,24 @@
-import { Building2, MapPin, Mail, Globe, Clock, Phone, ShieldCheck } from "lucide-react";
+import { MapPin, Mail, Globe, Clock, Phone, ShieldCheck, Building2 } from "lucide-react";
+import hpcLogo from "@/assets/hpc-logo.png.asset.json";
+import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-navy text-navy-foreground">
+    <footer id="kontakt" className="bg-navy text-navy-foreground">
       <div className="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-20 grid gap-12 lg:grid-cols-12">
         <div className="lg:col-span-4">
           <div className="flex items-center gap-3">
-            <span className="h-11 w-11 rounded-md bg-white/10 ring-1 ring-white/15 grid place-items-center">
-              <Building2 className="h-6 w-6" strokeWidth={1.75} />
+            <span className="h-14 w-14 rounded-md bg-white grid place-items-center p-1.5 ring-1 ring-white/15">
+              <img src={hpcLogo.url} alt="HPC-SPG" className="h-full w-auto" />
             </span>
             <div className="leading-tight">
-              <div className="font-display text-xl font-bold">HPC-SPG d.o.o.</div>
-              <div className="text-[11px] uppercase tracking-[0.22em] text-white/55 mt-1">
-                Upravljanje zgradama · Zagreb
+              <div className="font-display text-base font-semibold">Hrvatski poslovni centar</div>
+              <div className="text-[11px] uppercase tracking-[0.2em] text-white/60 mt-1">
+                Stambeno poslovno gospodarstvo d.o.o.
               </div>
             </div>
           </div>
           <p className="mt-6 text-sm text-white/75 max-w-sm leading-relaxed">
-            Hrvatski poslovni centar — stambeno poslovno gospodarstvo d.o.o.
             Profesionalno upravljanje stambenim i poslovnim zgradama u Gradu
             Zagrebu i Zagrebačkoj županiji.
           </p>
