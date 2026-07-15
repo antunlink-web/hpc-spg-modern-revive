@@ -15,7 +15,7 @@ const nav = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
-  const linkBase = "text-[15px] font-medium tracking-tight transition-colors whitespace-nowrap";
+  const linkBase = "text-[15px] font-medium tracking-tight transition-colors whitespace-nowrap nav-underline";
   const linkColor = "text-foreground/85 hover:text-navy";
 
   return (
