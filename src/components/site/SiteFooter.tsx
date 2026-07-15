@@ -7,11 +7,13 @@ export function SiteFooter() {
     <footer id="kontakt" className="bg-navy text-navy-foreground">
       <div className="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-20 grid gap-14 lg:gap-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <img
-            src={logoHorizontal.url}
-            alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
-            className="h-16 w-auto brightness-0 invert"
-          />
+          <div className="inline-block rounded-md bg-white p-3">
+            <img
+              src={logoHorizontal.url}
+              alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
+              className="h-16 w-auto"
+            />
+          </div>
           <p className="mt-3 text-[13px] text-white/70 leading-relaxed">
             Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o.
           </p>
