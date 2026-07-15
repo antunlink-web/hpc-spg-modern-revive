@@ -355,11 +355,11 @@ function HomePage() {
             <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Jednostavan put do novog upravitelja.</h2>
           </div>
 
-          <div className="fade-up mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
+          <div className="stagger mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
             <div className="hidden lg:block absolute top-5 left-[12%] right-[12%] h-px bg-border" />
             {process.map((p) => (
-              <a key={p.n} href={p.href} target="_blank" rel="noreferrer" className="relative group">
-                <div className="h-10 w-10 rounded-full bg-navy text-navy-foreground font-serif text-sm grid place-items-center relative z-10 group-hover:bg-emerald transition-colors">
+              <a key={p.n} href={p.href} target="_blank" rel="noreferrer" className="stagger-item relative group">
+                <div className="h-10 w-10 rounded-full bg-navy text-navy-foreground font-serif text-sm grid place-items-center relative z-10 group-hover:bg-emerald group-hover:scale-110 transition-all duration-300">
                   {p.n}
                 </div>
                 <h3 className="mt-6 text-xl text-navy font-sans font-medium group-hover:text-emerald transition-colors">{p.title}</h3>
