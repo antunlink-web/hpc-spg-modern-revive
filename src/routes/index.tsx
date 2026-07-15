@@ -117,7 +117,7 @@ function HomePage() {
           width={1920}
           height={1080}
           fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover hero-kenburns"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/45 to-navy/75" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/55 via-navy/15 to-transparent" />
