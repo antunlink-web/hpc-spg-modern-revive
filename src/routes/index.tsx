@@ -262,7 +262,7 @@ function HomePage() {
       {/* DIGITAL */}
       <section id="digitalno" className="py-24 lg:py-32 bg-navy text-navy-foreground overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 order-2 lg:order-1">
               <span className="text-xs uppercase tracking-[0.22em] text-white/60">Digitalne usluge</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-white">Vaša zgrada — u vašem džepu.</h2>
