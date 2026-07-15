@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { useReveal } from "@/hooks/use-reveal";
 import heroBuilding from "@/assets/hero-building-new.jpg.asset.json";
 import sectionBuildings from "@/assets/section-buildings.jpg";
 import appMockup from "@/assets/app-mockup.jpg";
@@ -103,6 +104,7 @@ const upravljanje = [
 ];
 
 function HomePage() {
+  useReveal();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
@@ -115,7 +117,7 @@ function HomePage() {
           width={1920}
           height={1080}
           fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover hero-kenburns"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/45 to-navy/75" />
         <div className="absolute inset-0 bg-gradient-to-r from-navy/55 via-navy/15 to-transparent" />
@@ -132,7 +134,7 @@ function HomePage() {
             </h1>
             <p className="mt-6 text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
               Transparentno financijsko izvještavanje, stručno održavanje i digitalni
-              uvid za predstavnike i suvlasnike — u Gradu Zagrebu i Zagrebačkoj županiji.
+              uvid za predstavnike i suvlasnike.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a href={OFFER_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft transition-colors">
@@ -147,7 +149,7 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-lg overflow-hidden border border-white/10">
+          <div className="fade-up mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-lg overflow-hidden border border-white/10">
             {[
               { l: "Transparentno financijsko izvještavanje" },
               { l: "Obračun pričuve i izrada godišnjih programa" },
@@ -166,7 +168,7 @@ function HomePage() {
       {/* SERVICES */}
       <section id="usluge" className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-14 lg:mb-20">
+          <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-14 lg:mb-20">
             <div className="lg:col-span-7">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Naše usluge</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Cjelovita podrška za vašu zgradu.</h2>
@@ -178,7 +180,7 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
+          <div className="fade-up grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
             {services.map((s) => (
               <article key={s.title} className="group bg-background p-8 lg:p-10 transition-all hover:bg-surface card-lift">
                 <span className="inline-grid h-14 w-14 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors">
@@ -199,7 +201,7 @@ function HomePage() {
       {/* WHY US */}
       <section id="zasto" className="py-24 lg:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Zašto HPC-SPG</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Kvaliteta ispred kvantitete.</h2>
@@ -260,7 +262,7 @@ function HomePage() {
       {/* DIGITAL */}
       <section id="digitalno" className="py-24 lg:py-32 bg-navy text-navy-foreground overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+          <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             <div className="lg:col-span-6 order-2 lg:order-1">
               <span className="text-xs uppercase tracking-[0.22em] text-white/60">Digitalne usluge</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-white">Vaša zgrada — u vašem džepu.</h2>
@@ -325,7 +327,7 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
+          <div className="fade-up grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
             {upravljanje.map((r) => (
               <a key={r.title} href={r.href} target="_blank" rel="noreferrer" className="bg-background p-7 lg:p-8 hover:bg-surface transition-colors group card-lift">
                 <span className="inline-grid h-12 w-12 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors">
@@ -350,7 +352,7 @@ function HomePage() {
             <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Jednostavan put do novog upravitelja.</h2>
           </div>
 
-          <div className="mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
+          <div className="fade-up mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
             <div className="hidden lg:block absolute top-5 left-[12%] right-[12%] h-px bg-border" />
             {process.map((p) => (
               <a key={p.n} href={p.href} target="_blank" rel="noreferrer" className="relative group">
@@ -378,7 +380,7 @@ function HomePage() {
             </a>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+          <div className="fade-up grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
             {news.map((n) => (
               <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
                 <div className="aspect-[4/3] overflow-hidden">
