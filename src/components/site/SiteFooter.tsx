@@ -10,8 +10,7 @@ export function SiteFooter() {
             Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o.
           </h3>
           <p className="mt-5 text-sm text-white/75 max-w-sm leading-relaxed">
-            Profesionalno upravljanje stambenim i poslovnim zgradama u Gradu
-            Zagrebu i Zagrebačkoj županiji.
+            Transparentno financijsko izvještavanje, stručno održavanje i digitalni uvid za predstavnike i suvlasnike.
           </p>
 
           <div className="mt-7 space-y-3 text-sm text-white/90">
