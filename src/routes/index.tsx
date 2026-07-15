@@ -264,8 +264,8 @@ function HomePage() {
       {/* DIGITAL */}
       <section id="digitalno" className="py-24 lg:py-32 bg-navy text-navy-foreground overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6 order-2 lg:order-1">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="reveal-left lg:col-span-6 order-2 lg:order-1">
               <span className="text-xs uppercase tracking-[0.22em] text-white/60">Digitalne usluge</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-white">Vaša zgrada — u vašem džepu.</h2>
               <p className="mt-6 text-white/80 leading-relaxed max-w-xl">
@@ -274,9 +274,9 @@ function HomePage() {
                 suvlasnika i upraviteljem — bilo kada, s bilo kojeg uređaja.
               </p>
 
-              <div className="mt-10 space-y-px bg-white/10 rounded-xl overflow-hidden">
+              <div className="stagger mt-10 space-y-px bg-white/10 rounded-xl overflow-hidden">
                 {digital.map((d) => (
-                  <div key={d.title} className="bg-navy p-6 lg:p-7 flex gap-5">
+                  <div key={d.title} className="stagger-item bg-navy p-6 lg:p-7 flex gap-5">
                     <span className="h-11 w-11 shrink-0 rounded-md bg-white/10 grid place-items-center">
                       <d.icon className="h-5 w-5 text-white" strokeWidth={1.6} />
                     </span>
@@ -289,18 +289,18 @@ function HomePage() {
               </div>
 
               <div className="mt-9 flex flex-wrap gap-3">
-                <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white text-navy px-5 py-3.5 text-sm font-medium hover:bg-white/90 transition-colors">
+                <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white text-navy px-5 py-3.5 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300">
                   Prijava u aplikaciju <ArrowRight className="h-4 w-4" />
                 </a>
-                <a href="https://hpc-spg.hr/zahtjev-za-pristupne-podatke/" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-5 py-3.5 text-sm font-medium hover:bg-white/10 transition-colors">
+                <a href="https://hpc-spg.hr/zahtjev-za-pristupne-podatke/" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-5 py-3.5 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
                   Zatraži pristupne podatke
                 </a>
               </div>
             </div>
 
-            <div className="lg:col-span-6 order-1 lg:order-2 relative">
+            <div className="reveal-right lg:col-span-6 order-1 lg:order-2 relative">
               <div className="absolute -inset-6 bg-emerald/10 blur-3xl rounded-full pointer-events-none" aria-hidden />
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/40 ring-1 ring-white/10 lg:scale-[1.06] origin-center">
+              <div className="float-y relative rounded-3xl overflow-hidden shadow-2xl shadow-black/40 ring-1 ring-white/10 lg:scale-[1.06] origin-center">
                 <img
                   src={appMockup}
                   alt="HPC-SPG mobilna aplikacija — pričuva, e-uplatnice, dokumenti i prijava kvara"
@@ -311,6 +311,7 @@ function HomePage() {
                 />
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
