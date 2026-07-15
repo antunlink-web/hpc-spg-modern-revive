@@ -350,7 +350,7 @@ function HomePage() {
       {/* PROCESS */}
       <section className="py-24 lg:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="max-w-2xl">
+          <div className="reveal-up max-w-2xl">
             <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Kako surađujemo</span>
             <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Jednostavan put do novog upravitelja.</h2>
           </div>
