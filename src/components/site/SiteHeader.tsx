@@ -56,9 +56,7 @@ export function SiteHeader() {
             Prijava
           </a>
           <a
-            href="https://hpc-spg.hr/zahtjev-za-izradu-prijedloga-upravljanja-zgradom/"
-            target="_blank"
-            rel="noreferrer"
+            href="/zahtjev-za-izradu-prijedloga-upravljanja-zgradom"
             className="inline-flex items-center rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition-all hover:-translate-y-0.5 bg-navy text-navy-foreground hover:bg-navy-soft"
           >
             Zatražite ponudu
