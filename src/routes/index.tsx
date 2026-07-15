@@ -31,7 +31,7 @@ import newsGraffiti from "@/assets/news-graffiti.jpg";
 import newsLaw from "@/assets/news-law.jpg";
 import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
 
-const OFFER_URL = "https://hpc-spg.hr/zahtjev-za-izradu-prijedloga-upravljanja-zgradom/";
+const OFFER_URL = "/zahtjev-za-izradu-prijedloga-upravljanja-zgradom";
 const CONTACT_URL = "https://hpc-spg.hr/kontakt/";
 const APP_URL = "https://hpc-spg.com/";
 
@@ -81,7 +81,7 @@ const digital = [
 ];
 
 const process = [
-  { n: "01", title: "Zahtjev za ponudu", desc: "Ispunite kratki obrazac s podacima o objektu.", href: "https://hpc-spg.hr/zahtjev-za-izradu-prijedloga-upravljanja-zgradom/" },
+  { n: "01", title: "Zahtjev za ponudu", desc: "Ispunite kratki obrazac s podacima o objektu.", href: "/zahtjev-za-izradu-prijedloga-upravljanja-zgradom" },
   { n: "02", title: "Prijedlog upravljanja", desc: "Pripremamo cjelovitu, prilagođenu ponudu za vašu zgradu.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },
   { n: "03", title: "Ugovor i preuzimanje", desc: "Sklapanje ugovora i tehničko-financijsko preuzimanje objekta.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },
   { n: "04", title: "Kontinuirano upravljanje", desc: "Redovito izvještavanje, održavanje i digitalna komunikacija.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },

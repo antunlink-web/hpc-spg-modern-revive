@@ -9,8 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRouteImport } from './routes/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute =
+  ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRouteImport.update({
+    id: '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom',
+    path: '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +26,39 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom': typeof ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom': typeof ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom': typeof ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
+  id: '__root__' | '/' | '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute: typeof ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom': {
+      id: '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
+      path: '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
+      fullPath: '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
+      preLoaderRoute: typeof ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +71,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute:
+    ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
