@@ -132,7 +132,7 @@ function HomePage() {
             </h1>
             <p className="mt-6 text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
               Transparentno financijsko izvještavanje, stručno održavanje i digitalni
-              uvid za predstavnike i suvlasnike — u Gradu Zagrebu i Zagrebačkoj županiji.
+              uvid za predstavnike i suvlasnike.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a href={OFFER_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft transition-colors">
