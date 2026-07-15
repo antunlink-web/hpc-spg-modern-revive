@@ -115,7 +115,7 @@ export function SiteHeader() {
               Prijava u aplikaciju
             </a>
             <a
-              href="https://hpc-spg.hr/zahtjev-za-izradu-prijedloga-upravljanja-zgradom/"
+              href="/zahtjev-za-izradu-prijedloga-upravljanja-zgradom"
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
