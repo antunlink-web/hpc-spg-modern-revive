@@ -149,7 +149,7 @@ function HomePage() {
             </div>
           </div>
 
-          <div className="mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-lg overflow-hidden border border-white/10">
+          <div className="fade-up mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-lg overflow-hidden border border-white/10">
             {[
               { l: "Transparentno financijsko izvještavanje" },
               { l: "Obračun pričuve i izrada godišnjih programa" },
