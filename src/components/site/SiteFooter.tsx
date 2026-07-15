@@ -1,5 +1,4 @@
 import { MapPin, Mail, Globe, Clock, Phone, ShieldCheck, Building2 } from "lucide-react";
-import logoHorizontal from "@/assets/logo-horizontal.png.asset.json";
 import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
 
 export function SiteFooter() {
@@ -7,17 +6,10 @@ export function SiteFooter() {
     <footer id="kontakt" className="bg-navy text-navy-foreground">
       <div className="max-w-7xl mx-auto px-5 lg:px-10 py-16 lg:py-20 grid gap-14 lg:gap-16 lg:grid-cols-12">
         <div className="lg:col-span-4">
-          <div className="inline-block rounded-md bg-white p-3">
-            <img
-              src={logoHorizontal.url}
-              alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
-              className="h-16 w-auto"
-            />
-          </div>
-          <p className="mt-3 text-[13px] text-white/70 leading-relaxed">
+          <h3 className="text-lg font-semibold text-white/95 leading-tight max-w-xs">
             Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o.
-          </p>
-          <p className="mt-6 text-sm text-white/75 max-w-sm leading-relaxed">
+          </h3>
+          <p className="mt-5 text-sm text-white/75 max-w-sm leading-relaxed">
             Profesionalno upravljanje stambenim i poslovnim zgradama u Gradu
             Zagrebu i Zagrebačkoj županiji.
           </p>
