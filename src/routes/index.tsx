@@ -298,7 +298,7 @@ function HomePage() {
               </div>
             </div>
 
-            <div className="reveal-right lg:col-span-6 order-1 lg:order-2 relative">
+            <div className="phone-reveal lg:col-span-6 order-1 lg:order-2 relative">
               <div className="absolute -inset-6 bg-emerald/10 blur-3xl rounded-full pointer-events-none" aria-hidden />
               <div className="float-y relative rounded-3xl overflow-hidden shadow-2xl shadow-black/40 ring-1 ring-white/10 lg:scale-[1.06] origin-center">
                 <img

@@ -2,12 +2,13 @@ import { useEffect } from "react";
 
 /**
  * Adds `.is-visible` to any reveal-class element when it scrolls into view.
+ * Uses a later trigger so sections animate clearly while scrolling, not on load.
  * Runs once per element. Safe for SSR.
  */
 export function useReveal() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const selector = ".fade-up, .reveal-up, .reveal-left, .reveal-right, .reveal-fade, .stagger";
+    const selector = ".fade-up, .reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale, .phone-reveal, .stagger";
     const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
     if (els.length === 0) return;
 
@@ -25,7 +26,7 @@ export function useReveal() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
+      { threshold: 0.08, rootMargin: "0px 0px -120px 0px" },
     );
 
     els.forEach((el) => io.observe(el));
