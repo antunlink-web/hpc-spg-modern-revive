@@ -405,40 +405,40 @@ function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 lg:py-32 overflow-hidden">
-        <img src={sectionBuildings} alt="" width={1280} height={896} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+      <section id="kontakt" className="relative py-24 lg:py-32 overflow-hidden">
+        <img src={sectionBuildings} alt="" width={1280} height={896} loading="lazy" className="absolute inset-0 h-[115%] w-full object-cover hero-kenburns" />
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative max-w-5xl mx-auto px-5 lg:px-10 text-center">
-          <span className="text-xs uppercase tracking-[0.22em] text-white/70">Kontakt</span>
-          <h2 className="mt-5 text-white text-4xl lg:text-6xl">Spremni za upravitelja kojem se može vjerovati?</h2>
-          <p className="mt-6 text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <span className="reveal-up inline-block text-xs uppercase tracking-[0.22em] text-white/70">Kontakt</span>
+          <h2 className="reveal-up mt-5 text-white text-4xl lg:text-6xl" style={{ transitionDelay: "120ms" }}>Spremni za upravitelja kojem se može vjerovati?</h2>
+          <p className="reveal-up mt-6 text-white/80 max-w-2xl mx-auto leading-relaxed" style={{ transitionDelay: "240ms" }}>
             Ispunite Zahtjev za izradu prijedloga za upravljanje zgradom — pripremamo
             cjelovitu ponudu prilagođenu vašem objektu.
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <a href={OFFER_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft transition-colors">
+          <div className="reveal-up mt-10 flex flex-wrap items-center justify-center gap-3" style={{ transitionDelay: "360ms" }}>
+            <a href={OFFER_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
               Zatražite ponudu <ArrowRight className="h-4 w-4" />
             </a>
-            <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md bg-white text-navy px-6 py-4 text-sm font-medium hover:bg-white/90 transition-colors">
+            <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md bg-white text-navy px-6 py-4 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300">
               Kontaktirajte nas
             </a>
-            <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-6 py-4 text-sm font-medium hover:bg-white/10 transition-colors">
+            <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-6 py-4 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
               Prijava korisnika
             </a>
           </div>
 
-          <div className="mt-16 grid sm:grid-cols-3 gap-px bg-white/15 rounded-xl overflow-hidden text-left">
-            <div className="bg-navy/70 backdrop-blur-sm p-6">
+          <div className="stagger mt-16 grid sm:grid-cols-3 gap-px bg-white/15 rounded-xl overflow-hidden text-left">
+            <div className="stagger-item bg-navy/70 backdrop-blur-sm p-6">
               <MapPin className="h-5 w-5 text-white/70" strokeWidth={1.5} />
               <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Ured</p>
               <p className="mt-1 text-white text-sm">Ulica Adama Mandrovića 3<br/>10000 Zagreb</p>
             </div>
-            <div className="bg-navy/70 backdrop-blur-sm p-6">
+            <div className="stagger-item bg-navy/70 backdrop-blur-sm p-6">
               <Mail className="h-5 w-5 text-white/70" strokeWidth={1.5} />
               <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Web</p>
               <a href="https://hpc-spg.hr" className="mt-1 block text-white text-sm hover:underline">hpc-spg.hr</a>
             </div>
-            <div className="bg-navy/70 backdrop-blur-sm p-6">
+            <div className="stagger-item bg-navy/70 backdrop-blur-sm p-6">
               <Phone className="h-5 w-5 text-white/70" strokeWidth={1.5} />
               <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Prijava</p>
               <a href={APP_URL} target="_blank" rel="noreferrer" className="mt-1 block text-white text-sm hover:underline">hpc-spg.com</a>
