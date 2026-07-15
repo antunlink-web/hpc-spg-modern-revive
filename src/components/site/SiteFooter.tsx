@@ -1,5 +1,4 @@
 import { MapPin, Mail, Globe, Clock, Phone, ShieldCheck, Building2 } from "lucide-react";
-import logoHorizontal from "@/assets/logo-horizontal.png.asset.json";
 import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
 
 export function SiteFooter() {
