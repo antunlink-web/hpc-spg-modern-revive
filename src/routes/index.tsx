@@ -182,10 +182,10 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="fade-up grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
+          <div className="stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
             {services.map((s) => (
-              <article key={s.title} className="group bg-background p-8 lg:p-10 transition-all hover:bg-surface card-lift">
-                <span className="inline-grid h-14 w-14 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors">
+              <article key={s.title} className="stagger-item group bg-background p-8 lg:p-10 transition-all hover:bg-surface card-lift">
+                <span className="inline-grid h-14 w-14 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors icon-hover">
                   <s.icon className="h-7 w-7 text-navy group-hover:text-emerald transition-colors" strokeWidth={1.6} />
                 </span>
                 <h3 className="mt-6 text-2xl text-navy font-semibold">{s.title}</h3>
