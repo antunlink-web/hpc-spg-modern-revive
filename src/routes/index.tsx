@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { useReveal } from "@/hooks/use-reveal";
 import heroBuilding from "@/assets/hero-building-new.jpg.asset.json";
 import sectionBuildings from "@/assets/section-buildings.jpg";
 import appMockup from "@/assets/app-mockup.jpg";
