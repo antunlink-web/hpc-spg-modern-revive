@@ -320,11 +320,11 @@ function HomePage() {
       <section id="upravljanje" className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-12 items-end mb-14">
-            <div className="lg:col-span-7">
+            <div className="reveal-up lg:col-span-7">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Upravljanje</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Sve o upravljanju zgradom.</h2>
             </div>
-            <p className="lg:col-span-5 text-muted-foreground leading-relaxed">
+            <p className="reveal-up lg:col-span-5 text-muted-foreground leading-relaxed" style={{ transitionDelay: "150ms" }}>
               Vodiči, pojmovnik, regulativa i informacije o financiranju — sve
               što suvlasnik treba znati o upravljanju vlastitom zgradom.
             </p>
