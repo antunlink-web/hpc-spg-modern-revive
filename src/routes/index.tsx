@@ -373,12 +373,12 @@ function HomePage() {
       {/* NEWS */}
       <section id="vijesti" className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
+          <div className="reveal-up flex flex-wrap items-end justify-between gap-6 mb-14">
             <div>
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Aktualno</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Vijesti i javni pozivi.</h2>
             </div>
-            <a href="https://hpc-spg.hr/obavijesti/novosti/" target="_blank" rel="noreferrer" className="text-sm font-medium text-navy inline-flex items-center gap-1.5">
+            <a href="https://hpc-spg.hr/obavijesti/novosti/" target="_blank" rel="noreferrer" className="text-sm font-medium text-navy inline-flex items-center gap-1.5 nav-underline">
               Sve novosti <ArrowRight className="h-4 w-4" />
             </a>
           </div>
