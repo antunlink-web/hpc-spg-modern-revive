@@ -201,7 +201,7 @@ function HomePage() {
       {/* WHY US */}
       <section id="zasto" className="py-24 lg:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+          <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-5">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Zašto HPC-SPG</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Kvaliteta ispred kvantitete.</h2>
