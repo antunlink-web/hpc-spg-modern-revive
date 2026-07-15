@@ -352,7 +352,7 @@ function HomePage() {
             <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Jednostavan put do novog upravitelja.</h2>
           </div>
 
-          <div className="mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
+          <div className="fade-up mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
             <div className="hidden lg:block absolute top-5 left-[12%] right-[12%] h-px bg-border" />
             {process.map((p) => (
               <a key={p.n} href={p.href} target="_blank" rel="noreferrer" className="relative group">
