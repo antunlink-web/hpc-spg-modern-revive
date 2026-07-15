@@ -9,15 +9,14 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRouteImport } from './routes/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
+import { Route as ZahtjevRouteImport } from './routes/zahtjev'
 import { Route as IndexRouteImport } from './routes/index'
 
-const ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute =
-  ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRouteImport.update({
-    id: '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom',
-    path: '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom',
-    getParentRoute: () => rootRouteImport,
-  } as any)
+const ZahtjevRoute = ZahtjevRouteImport.update({
+  id: '/zahtjev',
+  path: '/zahtjev',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -26,37 +25,37 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom': typeof ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute
+  '/zahtjev': typeof ZahtjevRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom': typeof ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute
+  '/zahtjev': typeof ZahtjevRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom': typeof ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute
+  '/zahtjev': typeof ZahtjevRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
+  fullPaths: '/' | '/zahtjev'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
-  id: '__root__' | '/' | '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
+  to: '/' | '/zahtjev'
+  id: '__root__' | '/' | '/zahtjev'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute: typeof ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute
+  ZahtjevRoute: typeof ZahtjevRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom': {
-      id: '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
-      path: '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
-      fullPath: '/zahtjev-za-izradu-prijedloga-upravljanja-zgradom'
-      preLoaderRoute: typeof ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRouteImport
+    '/zahtjev': {
+      id: '/zahtjev'
+      path: '/zahtjev'
+      fullPath: '/zahtjev'
+      preLoaderRoute: typeof ZahtjevRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -71,8 +70,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute:
-    ZahtjevZaIzraduPrijedlogaUpravljanjaZgradomRoute,
+  ZahtjevRoute: ZahtjevRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

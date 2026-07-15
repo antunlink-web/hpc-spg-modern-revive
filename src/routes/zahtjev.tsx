@@ -16,7 +16,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { useReveal } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute(
-  "/zahtjev-za-izradu-prijedloga-upravljanja-zgradom",
+  "/zahtjev",
 )({
   head: () => ({
     meta: [
