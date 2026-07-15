@@ -33,7 +33,7 @@ export function SiteFooter() {
             </p>
             <p className="flex items-start gap-3">
               <Mail className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-              <a href="/zahtjev-za-izradu-prijedloga-upravljanja-zgradom" target="_blank" rel="noreferrer" className="hover:text-white">
+              <a href="/zahtjev" target="_blank" rel="noreferrer" className="hover:text-white">
                 Zahtjev za ponudu
               </a>
             </p>

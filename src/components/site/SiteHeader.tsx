@@ -56,7 +56,7 @@ export function SiteHeader() {
             Prijava
           </a>
           <a
-            href="/zahtjev-za-izradu-prijedloga-upravljanja-zgradom"
+            href="/zahtjev"
             className="inline-flex items-center rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition-all hover:-translate-y-0.5 bg-navy text-navy-foreground hover:bg-navy-soft"
           >
             Zatražite ponudu
@@ -115,7 +115,7 @@ export function SiteHeader() {
               Prijava u aplikaciju
             </a>
             <a
-              href="/zahtjev-za-izradu-prijedloga-upravljanja-zgradom"
+              href="/zahtjev"
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
