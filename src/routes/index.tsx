@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Transparentno financijsko izvještavanje, stručno održavanje i digitalne usluge za suvlasnike — u Gradu Zagrebu i Zagrebačkoj županiji.",
+          "Transparentno financijsko izvještavanje, stručno održavanje i digitalni uvid za predstavnike i suvlasnike.",
       },
     ],
   }),
