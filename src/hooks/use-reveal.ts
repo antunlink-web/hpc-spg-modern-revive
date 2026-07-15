@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 
 /**
- * Adds `.is-visible` to any `.fade-up` element when it scrolls into view.
- * Runs once per element. Safe for SSR (guarded by typeof window).
+ * Adds `.is-visible` to any reveal-class element when it scrolls into view.
+ * Runs once per element. Safe for SSR.
  */
 export function useReveal() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const els = Array.from(document.querySelectorAll<HTMLElement>(".fade-up"));
+    const selector = ".fade-up, .reveal-up, .reveal-left, .reveal-right, .reveal-fade, .stagger";
+    const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
     if (els.length === 0) return;
 
     if (!("IntersectionObserver" in window)) {
@@ -24,7 +25,7 @@ export function useReveal() {
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+      { threshold: 0.12, rootMargin: "0px 0px -60px 0px" },
     );
 
     els.forEach((el) => io.observe(el));
