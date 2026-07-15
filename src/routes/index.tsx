@@ -312,9 +312,9 @@ function HomePage() {
               </div>
             </div>
           </div>
-          </div>
         </div>
       </section>
+
 
       {/* UPRAVLJANJE — resources on managing a building */}
       <section id="upravljanje" className="py-24 lg:py-32 bg-background">
