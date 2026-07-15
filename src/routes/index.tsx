@@ -168,7 +168,7 @@ function HomePage() {
       {/* SERVICES */}
       <section id="usluge" className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-14 lg:mb-20">
+          <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-14 lg:mb-20">
             <div className="lg:col-span-7">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Naše usluge</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Cjelovita podrška za vašu zgradu.</h2>
