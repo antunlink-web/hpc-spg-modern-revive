@@ -191,7 +191,7 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .fade-up, .reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale,
+    .fade-up, .reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale, .phone-reveal,
     .stagger .stagger-item, .hero-anim {
       opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important;
     }
