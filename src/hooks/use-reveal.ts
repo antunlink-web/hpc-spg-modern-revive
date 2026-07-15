@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export function useReveal() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const selector = ".fade-up, .reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale, .stagger";
+    const selector = ".fade-up, .reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale, .phone-reveal, .stagger";
     const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
     if (els.length === 0) return;
 
