@@ -327,7 +327,7 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
+          <div className="fade-up grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
             {upravljanje.map((r) => (
               <a key={r.title} href={r.href} target="_blank" rel="noreferrer" className="bg-background p-7 lg:p-8 hover:bg-surface transition-colors group card-lift">
                 <span className="inline-grid h-12 w-12 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors">
