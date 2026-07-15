@@ -203,8 +203,8 @@ function HomePage() {
       {/* WHY US */}
       <section id="zasto" className="py-24 lg:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-16">
-            <div className="lg:col-span-5">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+            <div className="reveal-left lg:col-span-5">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Zašto HPC-SPG</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Kvaliteta ispred kvantitete.</h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
@@ -231,14 +231,14 @@ function HomePage() {
                   href="https://hpc-spg.hr/zasto-smo-bolji-izbor/"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft transition-colors"
+                  className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Zašto smo bolji izbor? <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
 
               {/* AAA Bonitet badge */}
-              <div className="mt-10 inline-flex items-center gap-4 rounded-xl border border-border bg-background p-4 pr-6 shadow-sm">
+              <div className="reveal-fade mt-10 inline-flex items-center gap-4 rounded-xl border border-border bg-background p-4 pr-6 shadow-sm" style={{ transitionDelay: "200ms" }}>
                 <img src={bonitetAAA.url} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-24 w-auto" />
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Bonitetna izvrsnost</p>
@@ -248,10 +248,10 @@ function HomePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden">
+            <div className="stagger lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden">
               {whyUs.map((w) => (
-                <div key={w.title} className="bg-background p-6 lg:p-8 card-lift">
-                  <CheckCircle2 className="h-6 w-6 text-emerald" strokeWidth={1.75} />
+                <div key={w.title} className="stagger-item bg-background p-6 lg:p-8 card-lift">
+                  <CheckCircle2 className="h-6 w-6 text-emerald icon-hover" strokeWidth={1.75} />
                   <h3 className="mt-5 text-lg text-navy font-sans font-semibold leading-snug">{w.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
                 </div>
