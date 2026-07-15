@@ -380,7 +380,7 @@ function HomePage() {
             </a>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+          <div className="fade-up grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
             {news.map((n) => (
               <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
                 <div className="aspect-[4/3] overflow-hidden">
