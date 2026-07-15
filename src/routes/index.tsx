@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Transparentno financijsko izvještavanje, stručno održavanje i digitalne usluge za suvlasnike — u Gradu Zagrebu i Zagrebačkoj županiji.",
+          "Transparentno financijsko izvještavanje, stručno održavanje i digitalni uvid za predstavnike i suvlasnike.",
       },
     ],
   }),
@@ -124,39 +124,40 @@ function HomePage() {
 
 
         <div className="relative max-w-7xl mx-auto px-5 lg:px-10 pt-32 pb-14 lg:pt-40 lg:pb-20 w-full">
-          <div className="max-w-3xl reveal">
-            <span className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-white/75">
+          <div className="max-w-3xl">
+            <span className="hero-anim hero-delay-1 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-white/75">
               <span className="h-px w-10 bg-emerald-soft/80" />
               Hrvatski poslovni centar — SPG d.o.o. · Zagreb
             </span>
             <h1 className="mt-7 text-white text-[2.25rem] leading-[1.08] sm:text-5xl lg:text-[3.75rem] lg:leading-[1.05] font-semibold tracking-tight">
-              Profesionalno upravljanje stambenim i poslovnim zgradama.
+              <span className="block hero-anim hero-delay-2">Profesionalno upravljanje</span>
+              <span className="block hero-anim hero-delay-3">stambenim i poslovnim zgradama.</span>
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
+            <p className="hero-anim hero-delay-4 mt-6 text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
               Transparentno financijsko izvještavanje, stručno održavanje i digitalni
               uvid za predstavnike i suvlasnike.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a href={OFFER_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft transition-colors">
+              <a href={OFFER_URL} target="_blank" rel="noreferrer" className="hero-anim hero-delay-5 inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
                 Zatražite ponudu <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md bg-white text-navy px-6 py-3.5 text-sm font-medium hover:bg-white/90 transition-colors">
+              <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="hero-anim hero-delay-5 inline-flex items-center rounded-md bg-white text-navy px-6 py-3.5 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "780ms" }}>
                 Kontaktirajte nas
               </a>
-              <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/35 bg-white/5 backdrop-blur-sm text-white px-6 py-3.5 text-sm font-medium hover:bg-white/10 transition-colors">
+              <a href={APP_URL} target="_blank" rel="noreferrer" className="hero-anim inline-flex items-center rounded-md border border-white/35 bg-white/5 backdrop-blur-sm text-white px-6 py-3.5 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "860ms" }}>
                 Prijava korisnika
               </a>
             </div>
           </div>
 
-          <div className="fade-up mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-lg overflow-hidden border border-white/10">
+          <div className="stagger mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-lg overflow-hidden border border-white/10">
             {[
               { l: "Transparentno financijsko izvještavanje" },
               { l: "Obračun pričuve i izrada godišnjih programa" },
               { l: "Web i mobilna aplikacija za suvlasnike" },
               { l: "Stručna podrška obnovi i održavanju" },
             ].map((s) => (
-              <div key={s.l} className="bg-navy/60 backdrop-blur-md px-5 py-6 sm:px-6 sm:py-7">
+              <div key={s.l} className="stagger-item bg-navy/60 backdrop-blur-md px-5 py-6 sm:px-6 sm:py-7">
                 <CheckCircle2 className="h-5 w-5 text-emerald-soft" strokeWidth={1.75} />
                 <div className="mt-3 text-sm text-white/95 leading-snug">{s.l}</div>
               </div>
@@ -164,6 +165,7 @@ function HomePage() {
           </div>
         </div>
       </section>
+
 
       {/* SERVICES */}
       <section id="usluge" className="py-24 lg:py-32 bg-background">
@@ -180,10 +182,10 @@ function HomePage() {
             </p>
           </div>
 
-          <div className="fade-up grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
+          <div className="stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
             {services.map((s) => (
-              <article key={s.title} className="group bg-background p-8 lg:p-10 transition-all hover:bg-surface card-lift">
-                <span className="inline-grid h-14 w-14 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors">
+              <article key={s.title} className="stagger-item group bg-background p-8 lg:p-10 transition-all hover:bg-surface card-lift">
+                <span className="inline-grid h-14 w-14 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors icon-hover">
                   <s.icon className="h-7 w-7 text-navy group-hover:text-emerald transition-colors" strokeWidth={1.6} />
                 </span>
                 <h3 className="mt-6 text-2xl text-navy font-semibold">{s.title}</h3>
@@ -201,8 +203,8 @@ function HomePage() {
       {/* WHY US */}
       <section id="zasto" className="py-24 lg:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-16">
-            <div className="lg:col-span-5">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+            <div className="reveal-left lg:col-span-5">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Zašto HPC-SPG</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Kvaliteta ispred kvantitete.</h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
@@ -229,14 +231,14 @@ function HomePage() {
                   href="https://hpc-spg.hr/zasto-smo-bolji-izbor/"
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft transition-colors"
+                  className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Zašto smo bolji izbor? <ArrowRight className="h-4 w-4" />
                 </a>
               </div>
 
               {/* AAA Bonitet badge */}
-              <div className="mt-10 inline-flex items-center gap-4 rounded-xl border border-border bg-background p-4 pr-6 shadow-sm">
+              <div className="reveal-fade mt-10 inline-flex items-center gap-4 rounded-xl border border-border bg-background p-4 pr-6 shadow-sm" style={{ transitionDelay: "200ms" }}>
                 <img src={bonitetAAA.url} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-24 w-auto" />
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Bonitetna izvrsnost</p>
@@ -246,10 +248,10 @@ function HomePage() {
               </div>
             </div>
 
-            <div className="lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden">
+            <div className="stagger lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden">
               {whyUs.map((w) => (
-                <div key={w.title} className="bg-background p-6 lg:p-8 card-lift">
-                  <CheckCircle2 className="h-6 w-6 text-emerald" strokeWidth={1.75} />
+                <div key={w.title} className="stagger-item bg-background p-6 lg:p-8 card-lift">
+                  <CheckCircle2 className="h-6 w-6 text-emerald icon-hover" strokeWidth={1.75} />
                   <h3 className="mt-5 text-lg text-navy font-sans font-semibold leading-snug">{w.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
                 </div>
@@ -262,8 +264,8 @@ function HomePage() {
       {/* DIGITAL */}
       <section id="digitalno" className="py-24 lg:py-32 bg-navy text-navy-foreground overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="lg:col-span-6 order-2 lg:order-1">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            <div className="reveal-left lg:col-span-6 order-2 lg:order-1">
               <span className="text-xs uppercase tracking-[0.22em] text-white/60">Digitalne usluge</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-white">Vaša zgrada — u vašem džepu.</h2>
               <p className="mt-6 text-white/80 leading-relaxed max-w-xl">
@@ -272,9 +274,9 @@ function HomePage() {
                 suvlasnika i upraviteljem — bilo kada, s bilo kojeg uređaja.
               </p>
 
-              <div className="mt-10 space-y-px bg-white/10 rounded-xl overflow-hidden">
+              <div className="stagger mt-10 space-y-px bg-white/10 rounded-xl overflow-hidden">
                 {digital.map((d) => (
-                  <div key={d.title} className="bg-navy p-6 lg:p-7 flex gap-5">
+                  <div key={d.title} className="stagger-item bg-navy p-6 lg:p-7 flex gap-5">
                     <span className="h-11 w-11 shrink-0 rounded-md bg-white/10 grid place-items-center">
                       <d.icon className="h-5 w-5 text-white" strokeWidth={1.6} />
                     </span>
@@ -287,18 +289,18 @@ function HomePage() {
               </div>
 
               <div className="mt-9 flex flex-wrap gap-3">
-                <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white text-navy px-5 py-3.5 text-sm font-medium hover:bg-white/90 transition-colors">
+                <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white text-navy px-5 py-3.5 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300">
                   Prijava u aplikaciju <ArrowRight className="h-4 w-4" />
                 </a>
-                <a href="https://hpc-spg.hr/zahtjev-za-pristupne-podatke/" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-5 py-3.5 text-sm font-medium hover:bg-white/10 transition-colors">
+                <a href="https://hpc-spg.hr/zahtjev-za-pristupne-podatke/" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-5 py-3.5 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
                   Zatraži pristupne podatke
                 </a>
               </div>
             </div>
 
-            <div className="lg:col-span-6 order-1 lg:order-2 relative">
+            <div className="reveal-right lg:col-span-6 order-1 lg:order-2 relative">
               <div className="absolute -inset-6 bg-emerald/10 blur-3xl rounded-full pointer-events-none" aria-hidden />
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-black/40 ring-1 ring-white/10 lg:scale-[1.06] origin-center">
+              <div className="float-y relative rounded-3xl overflow-hidden shadow-2xl shadow-black/40 ring-1 ring-white/10 lg:scale-[1.06] origin-center">
                 <img
                   src={appMockup}
                   alt="HPC-SPG mobilna aplikacija — pričuva, e-uplatnice, dokumenti i prijava kvara"
@@ -313,24 +315,25 @@ function HomePage() {
         </div>
       </section>
 
+
       {/* UPRAVLJANJE — resources on managing a building */}
       <section id="upravljanje" className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-12 items-end mb-14">
-            <div className="lg:col-span-7">
+            <div className="reveal-up lg:col-span-7">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Upravljanje</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Sve o upravljanju zgradom.</h2>
             </div>
-            <p className="lg:col-span-5 text-muted-foreground leading-relaxed">
+            <p className="reveal-up lg:col-span-5 text-muted-foreground leading-relaxed" style={{ transitionDelay: "150ms" }}>
               Vodiči, pojmovnik, regulativa i informacije o financiranju — sve
               što suvlasnik treba znati o upravljanju vlastitom zgradom.
             </p>
           </div>
 
-          <div className="fade-up grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
+          <div className="stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
             {upravljanje.map((r) => (
-              <a key={r.title} href={r.href} target="_blank" rel="noreferrer" className="bg-background p-7 lg:p-8 hover:bg-surface transition-colors group card-lift">
-                <span className="inline-grid h-12 w-12 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors">
+              <a key={r.title} href={r.href} target="_blank" rel="noreferrer" className="stagger-item bg-background p-7 lg:p-8 hover:bg-surface transition-colors group card-lift">
+                <span className="inline-grid h-12 w-12 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors icon-hover">
                   <r.icon className="h-6 w-6 text-navy group-hover:text-emerald transition-colors" strokeWidth={1.6} />
                 </span>
                 <h3 className="mt-5 text-lg text-navy font-sans font-semibold">{r.title}</h3>
@@ -347,16 +350,16 @@ function HomePage() {
       {/* PROCESS */}
       <section className="py-24 lg:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="max-w-2xl">
+          <div className="reveal-up max-w-2xl">
             <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Kako surađujemo</span>
             <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Jednostavan put do novog upravitelja.</h2>
           </div>
 
-          <div className="fade-up mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
+          <div className="stagger mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
             <div className="hidden lg:block absolute top-5 left-[12%] right-[12%] h-px bg-border" />
             {process.map((p) => (
-              <a key={p.n} href={p.href} target="_blank" rel="noreferrer" className="relative group">
-                <div className="h-10 w-10 rounded-full bg-navy text-navy-foreground font-serif text-sm grid place-items-center relative z-10 group-hover:bg-emerald transition-colors">
+              <a key={p.n} href={p.href} target="_blank" rel="noreferrer" className="stagger-item relative group">
+                <div className="h-10 w-10 rounded-full bg-navy text-navy-foreground font-serif text-sm grid place-items-center relative z-10 group-hover:bg-emerald group-hover:scale-110 transition-all duration-300">
                   {p.n}
                 </div>
                 <h3 className="mt-6 text-xl text-navy font-sans font-medium group-hover:text-emerald transition-colors">{p.title}</h3>
@@ -370,21 +373,21 @@ function HomePage() {
       {/* NEWS */}
       <section id="vijesti" className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="flex flex-wrap items-end justify-between gap-6 mb-14">
+          <div className="reveal-up flex flex-wrap items-end justify-between gap-6 mb-14">
             <div>
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Aktualno</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Vijesti i javni pozivi.</h2>
             </div>
-            <a href="https://hpc-spg.hr/obavijesti/novosti/" target="_blank" rel="noreferrer" className="text-sm font-medium text-navy inline-flex items-center gap-1.5">
+            <a href="https://hpc-spg.hr/obavijesti/novosti/" target="_blank" rel="noreferrer" className="text-sm font-medium text-navy inline-flex items-center gap-1.5 nav-underline">
               Sve novosti <ArrowRight className="h-4 w-4" />
             </a>
           </div>
 
-          <div className="fade-up grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+          <div className="stagger grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
             {news.map((n) => (
-              <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
+              <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="stagger-item group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={n.img} alt={n.title} width={896} height={640} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={n.img} alt={n.title} width={896} height={640} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 <div className="p-5 lg:p-6">
                   <div className="flex items-center gap-2.5 text-[11px] uppercase tracking-wider text-muted-foreground">
@@ -402,40 +405,40 @@ function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 lg:py-32 overflow-hidden">
-        <img src={sectionBuildings} alt="" width={1280} height={896} loading="lazy" className="absolute inset-0 h-full w-full object-cover" />
+      <section id="kontakt" className="relative py-24 lg:py-32 overflow-hidden">
+        <img src={sectionBuildings} alt="" width={1280} height={896} loading="lazy" className="absolute inset-0 h-[115%] w-full object-cover hero-kenburns" />
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative max-w-5xl mx-auto px-5 lg:px-10 text-center">
-          <span className="text-xs uppercase tracking-[0.22em] text-white/70">Kontakt</span>
-          <h2 className="mt-5 text-white text-4xl lg:text-6xl">Spremni za upravitelja kojem se može vjerovati?</h2>
-          <p className="mt-6 text-white/80 max-w-2xl mx-auto leading-relaxed">
+          <span className="reveal-up inline-block text-xs uppercase tracking-[0.22em] text-white/70">Kontakt</span>
+          <h2 className="reveal-up mt-5 text-white text-4xl lg:text-6xl" style={{ transitionDelay: "120ms" }}>Spremni za upravitelja kojem se može vjerovati?</h2>
+          <p className="reveal-up mt-6 text-white/80 max-w-2xl mx-auto leading-relaxed" style={{ transitionDelay: "240ms" }}>
             Ispunite Zahtjev za izradu prijedloga za upravljanje zgradom — pripremamo
             cjelovitu ponudu prilagođenu vašem objektu.
           </p>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            <a href={OFFER_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft transition-colors">
+          <div className="reveal-up mt-10 flex flex-wrap items-center justify-center gap-3" style={{ transitionDelay: "360ms" }}>
+            <a href={OFFER_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
               Zatražite ponudu <ArrowRight className="h-4 w-4" />
             </a>
-            <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md bg-white text-navy px-6 py-4 text-sm font-medium hover:bg-white/90 transition-colors">
+            <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md bg-white text-navy px-6 py-4 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300">
               Kontaktirajte nas
             </a>
-            <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-6 py-4 text-sm font-medium hover:bg-white/10 transition-colors">
+            <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-6 py-4 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
               Prijava korisnika
             </a>
           </div>
 
-          <div className="mt-16 grid sm:grid-cols-3 gap-px bg-white/15 rounded-xl overflow-hidden text-left">
-            <div className="bg-navy/70 backdrop-blur-sm p-6">
+          <div className="stagger mt-16 grid sm:grid-cols-3 gap-px bg-white/15 rounded-xl overflow-hidden text-left">
+            <div className="stagger-item bg-navy/70 backdrop-blur-sm p-6">
               <MapPin className="h-5 w-5 text-white/70" strokeWidth={1.5} />
               <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Ured</p>
               <p className="mt-1 text-white text-sm">Ulica Adama Mandrovića 3<br/>10000 Zagreb</p>
             </div>
-            <div className="bg-navy/70 backdrop-blur-sm p-6">
+            <div className="stagger-item bg-navy/70 backdrop-blur-sm p-6">
               <Mail className="h-5 w-5 text-white/70" strokeWidth={1.5} />
               <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Web</p>
               <a href="https://hpc-spg.hr" className="mt-1 block text-white text-sm hover:underline">hpc-spg.hr</a>
             </div>
-            <div className="bg-navy/70 backdrop-blur-sm p-6">
+            <div className="stagger-item bg-navy/70 backdrop-blur-sm p-6">
               <Phone className="h-5 w-5 text-white/70" strokeWidth={1.5} />
               <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Prijava</p>
               <a href={APP_URL} target="_blank" rel="noreferrer" className="mt-1 block text-white text-sm hover:underline">hpc-spg.com</a>
