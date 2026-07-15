@@ -383,11 +383,11 @@ function HomePage() {
             </a>
           </div>
 
-          <div className="fade-up grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
+          <div className="stagger grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
             {news.map((n) => (
-              <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
+              <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="stagger-item group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img src={n.img} alt={n.title} width={896} height={640} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                  <img src={n.img} alt={n.title} width={896} height={640} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 <div className="p-5 lg:p-6">
                   <div className="flex items-center gap-2.5 text-[11px] uppercase tracking-wider text-muted-foreground">
