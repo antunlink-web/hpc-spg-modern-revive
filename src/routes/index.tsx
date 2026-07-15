@@ -124,39 +124,40 @@ function HomePage() {
 
 
         <div className="relative max-w-7xl mx-auto px-5 lg:px-10 pt-32 pb-14 lg:pt-40 lg:pb-20 w-full">
-          <div className="max-w-3xl reveal">
-            <span className="inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-white/75">
+          <div className="max-w-3xl">
+            <span className="hero-anim hero-delay-1 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-white/75">
               <span className="h-px w-10 bg-emerald-soft/80" />
               Hrvatski poslovni centar — SPG d.o.o. · Zagreb
             </span>
             <h1 className="mt-7 text-white text-[2.25rem] leading-[1.08] sm:text-5xl lg:text-[3.75rem] lg:leading-[1.05] font-semibold tracking-tight">
-              Profesionalno upravljanje stambenim i poslovnim zgradama.
+              <span className="block hero-anim hero-delay-2">Profesionalno upravljanje</span>
+              <span className="block hero-anim hero-delay-3">stambenim i poslovnim zgradama.</span>
             </h1>
-            <p className="mt-6 text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
+            <p className="hero-anim hero-delay-4 mt-6 text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
               Transparentno financijsko izvještavanje, stručno održavanje i digitalni
               uvid za predstavnike i suvlasnike.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a href={OFFER_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft transition-colors">
+              <a href={OFFER_URL} target="_blank" rel="noreferrer" className="hero-anim hero-delay-5 inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
                 Zatražite ponudu <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md bg-white text-navy px-6 py-3.5 text-sm font-medium hover:bg-white/90 transition-colors">
+              <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="hero-anim hero-delay-5 inline-flex items-center rounded-md bg-white text-navy px-6 py-3.5 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "780ms" }}>
                 Kontaktirajte nas
               </a>
-              <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/35 bg-white/5 backdrop-blur-sm text-white px-6 py-3.5 text-sm font-medium hover:bg-white/10 transition-colors">
+              <a href={APP_URL} target="_blank" rel="noreferrer" className="hero-anim inline-flex items-center rounded-md border border-white/35 bg-white/5 backdrop-blur-sm text-white px-6 py-3.5 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "860ms" }}>
                 Prijava korisnika
               </a>
             </div>
           </div>
 
-          <div className="fade-up mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-lg overflow-hidden border border-white/10">
+          <div className="stagger mt-14 lg:mt-20 grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/15 rounded-lg overflow-hidden border border-white/10">
             {[
               { l: "Transparentno financijsko izvještavanje" },
               { l: "Obračun pričuve i izrada godišnjih programa" },
               { l: "Web i mobilna aplikacija za suvlasnike" },
               { l: "Stručna podrška obnovi i održavanju" },
             ].map((s) => (
-              <div key={s.l} className="bg-navy/60 backdrop-blur-md px-5 py-6 sm:px-6 sm:py-7">
+              <div key={s.l} className="stagger-item bg-navy/60 backdrop-blur-md px-5 py-6 sm:px-6 sm:py-7">
                 <CheckCircle2 className="h-5 w-5 text-emerald-soft" strokeWidth={1.75} />
                 <div className="mt-3 text-sm text-white/95 leading-snug">{s.l}</div>
               </div>
@@ -164,6 +165,7 @@ function HomePage() {
           </div>
         </div>
       </section>
+
 
       {/* SERVICES */}
       <section id="usluge" className="py-24 lg:py-32 bg-background">
