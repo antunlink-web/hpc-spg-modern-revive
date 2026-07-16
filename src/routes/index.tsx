@@ -191,7 +191,7 @@ function HomePage() {
                 </span>
                 <h3 className="mt-6 text-2xl text-navy font-semibold">{s.title}</h3>
                 <p className="mt-3 text-[15px] text-foreground/70 leading-relaxed">{s.desc}</p>
-                <a href={s.href} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald hover:text-navy transition-colors">
+                <a href={s.href} className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald hover:text-navy transition-colors">
                   Saznaj više
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
