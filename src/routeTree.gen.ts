@@ -32,6 +32,7 @@ import { Route as DokumentiZgradeRouteImport } from './routes/dokumenti-zgrade'
 import { Route as CertifikatBonitetneIzvrsnostiRouteImport } from './routes/certifikat-bonitetne-izvrsnosti'
 import { Route as AnketaRouteImport } from './routes/anketa'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as UslugeIndexRouteImport } from './routes/usluge.index'
 import { Route as UpravljanjeIndexRouteImport } from './routes/upravljanje.index'
 import { Route as NovostiIndexRouteImport } from './routes/novosti.index'
 import { Route as UslugeUpravljanjeZgradamaRouteImport } from './routes/usluge.upravljanje-zgradama'
@@ -162,6 +163,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UslugeIndexRoute = UslugeIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => UslugeRoute,
+} as any)
 const UpravljanjeIndexRoute = UpravljanjeIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -272,6 +278,7 @@ export interface FileRoutesByFullPath {
   '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
   '/novosti/': typeof NovostiIndexRoute
   '/upravljanje/': typeof UpravljanjeIndexRoute
+  '/usluge/': typeof UslugeIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -291,7 +298,6 @@ export interface FileRoutesByTo {
   '/ponuda': typeof PonudaRoute
   '/seminari': typeof SeminariRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/usluge': typeof UslugeRouteWithChildren
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
@@ -309,6 +315,7 @@ export interface FileRoutesByTo {
   '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
   '/novosti': typeof NovostiIndexRoute
   '/upravljanje': typeof UpravljanjeIndexRoute
+  '/usluge': typeof UslugeIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -348,6 +355,7 @@ export interface FileRoutesById {
   '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
   '/novosti/': typeof NovostiIndexRoute
   '/upravljanje/': typeof UpravljanjeIndexRoute
+  '/usluge/': typeof UslugeIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -388,6 +396,7 @@ export interface FileRouteTypes {
     | '/usluge/upravljanje-zgradama'
     | '/novosti/'
     | '/upravljanje/'
+    | '/usluge/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -407,7 +416,6 @@ export interface FileRouteTypes {
     | '/ponuda'
     | '/seminari'
     | '/sitemap.xml'
-    | '/usluge'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
     | '/zastita-osobnih-podataka'
@@ -425,6 +433,7 @@ export interface FileRouteTypes {
     | '/usluge/upravljanje-zgradama'
     | '/novosti'
     | '/upravljanje'
+    | '/usluge'
   id:
     | '__root__'
     | '/'
@@ -463,6 +472,7 @@ export interface FileRouteTypes {
     | '/usluge/upravljanje-zgradama'
     | '/novosti/'
     | '/upravljanje/'
+    | '/usluge/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -656,6 +666,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/usluge/': {
+      id: '/usluge/'
+      path: '/'
+      fullPath: '/usluge/'
+      preLoaderRoute: typeof UslugeIndexRouteImport
+      parentRoute: typeof UslugeRoute
+    }
     '/upravljanje/': {
       id: '/upravljanje/'
       path: '/'
@@ -780,6 +797,7 @@ interface UslugeRouteChildren {
   UslugeObnovaOdPotresaRoute: typeof UslugeObnovaOdPotresaRoute
   UslugeUpisUZemljisneKnjigeRoute: typeof UslugeUpisUZemljisneKnjigeRoute
   UslugeUpravljanjeZgradamaRoute: typeof UslugeUpravljanjeZgradamaRoute
+  UslugeIndexRoute: typeof UslugeIndexRoute
 }
 
 const UslugeRouteChildren: UslugeRouteChildren = {
@@ -788,6 +806,7 @@ const UslugeRouteChildren: UslugeRouteChildren = {
   UslugeObnovaOdPotresaRoute: UslugeObnovaOdPotresaRoute,
   UslugeUpisUZemljisneKnjigeRoute: UslugeUpisUZemljisneKnjigeRoute,
   UslugeUpravljanjeZgradamaRoute: UslugeUpravljanjeZgradamaRoute,
+  UslugeIndexRoute: UslugeIndexRoute,
 }
 
 const UslugeRouteWithChildren =

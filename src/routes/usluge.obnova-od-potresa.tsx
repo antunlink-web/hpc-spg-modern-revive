@@ -22,7 +22,6 @@ export const Route = createFileRoute("/usluge/obnova-od-potresa")({
           <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Dokumenti</p>
           <ul className="mt-3 space-y-2 text-sm">
             <li><a href="/documents/obnova-zgrada-i-uloga-upravitelja.pdf" target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2"><FileText className="h-4 w-4" /> Obnova i uloga upravitelja</a></li>
-            <li><a href="/documents/vodic-za-aktivnosti-nakon-potresa.pdf" target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2"><FileText className="h-4 w-4" /> Vodič za aktivnosti nakon potresa</a></li>
           </ul>
         </div>
       }
