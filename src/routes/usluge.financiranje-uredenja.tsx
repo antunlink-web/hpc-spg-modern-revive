@@ -33,7 +33,7 @@ export const Route = createFileRoute("/usluge/financiranje-uredenja")({
 
       <div className="not-prose mt-8 rounded-xl border border-border bg-surface p-6">
         <p className="text-sm text-foreground/85">Za cjelovit pregled modela, iznosa i uvjeta — od kratkoročnih pozajmica do kredita za obnovu nakon potresa — pogledajte:</p>
-        <Link to="/newsite/upravljanje/zajmovi-i-krediti" className="mt-4 inline-flex items-center gap-2 rounded-md bg-emerald text-white px-5 py-3 text-sm font-semibold hover:bg-emerald-soft transition-all">
+        <Link to="/upravljanje/zajmovi-i-krediti" className="mt-4 inline-flex items-center gap-2 rounded-md bg-emerald text-white px-5 py-3 text-sm font-semibold hover:bg-emerald-soft transition-all">
           Zajmovi i krediti — cjeloviti pregled <ArrowRight className="h-4 w-4" />
         </Link>
       </div>

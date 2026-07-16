@@ -98,7 +98,7 @@ function RequestPage() {
             aria-label="Breadcrumbs"
             className="reveal-up flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground"
           >
-            <Link to="/newsite/" className="hover:text-navy transition-colors">
+            <Link to="/" className="hover:text-navy transition-colors">
               Početna
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
@@ -161,7 +161,7 @@ function RequestPage() {
                     </p>
                     <div className="mt-6 flex flex-wrap gap-3">
                       <Link
-                        to="/newsite/"
+                        to="/"
                         className="inline-flex items-center rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft transition-all hover:-translate-y-0.5"
                       >
                         Natrag na početnu

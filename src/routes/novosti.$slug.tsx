@@ -36,7 +36,7 @@ function NewsNotFound() {
       crumbs={[{ label: "Novosti", href: "/novosti" }, { label: "Nije pronađeno" }]}
     >
       <p>
-        <Link to="/newsite/novosti" className="text-emerald hover:underline">
+        <Link to="/novosti" className="text-emerald hover:underline">
           ← Sve novosti
         </Link>
       </p>
@@ -93,7 +93,7 @@ function NewsPost() {
       <div dangerouslySetInnerHTML={{ __html: post.bodyHtml }} />
 
       <div className="mt-12 pt-8 border-t border-border not-prose">
-        <Link to="/newsite/novosti" className="inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-emerald">
+        <Link to="/novosti" className="inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-emerald">
           <ArrowLeft className="h-4 w-4" /> Sve novosti
         </Link>
       </div>
