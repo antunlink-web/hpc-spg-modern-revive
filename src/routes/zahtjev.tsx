@@ -168,8 +168,6 @@ function RequestPage() {
                       </Link>
                       <a
                         href="/kontakt"
-                        target="_blank"
-                        rel="noreferrer"
                         className="inline-flex items-center rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground hover:bg-surface transition-all"
                       >
                         Kontaktirajte nas

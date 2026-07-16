@@ -191,7 +191,7 @@ function HomePage() {
                 </span>
                 <h3 className="mt-6 text-2xl text-navy font-semibold">{s.title}</h3>
                 <p className="mt-3 text-[15px] text-foreground/70 leading-relaxed">{s.desc}</p>
-                <a href={s.href} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald hover:text-navy transition-colors">
+                <a href={s.href} className="mt-7 inline-flex items-center gap-1.5 text-sm font-semibold text-emerald hover:text-navy transition-colors">
                   Saznaj više
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
@@ -331,7 +331,7 @@ function HomePage() {
 
           <div className="stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
             {upravljanje.map((r) => (
-              <a key={r.title} href={r.href} target="_blank" rel="noreferrer" className="stagger-item bg-background p-7 lg:p-8 hover:bg-surface transition-colors group card-lift">
+              <a key={r.title} href={r.href} className="stagger-item bg-background p-7 lg:p-8 hover:bg-surface transition-colors group card-lift">
                 <span className="inline-grid h-12 w-12 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors icon-hover">
                   <r.icon className="h-6 w-6 text-navy group-hover:text-emerald transition-colors" strokeWidth={1.6} />
                 </span>
@@ -357,7 +357,7 @@ function HomePage() {
           <div className="stagger mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
             <div className="hidden lg:block absolute top-5 left-[12%] right-[12%] h-px bg-border" />
             {process.map((p) => (
-              <a key={p.n} href={p.href} target="_blank" rel="noreferrer" className="stagger-item relative group">
+              <a key={p.n} href={p.href} className="stagger-item relative group">
                 <div className="h-10 w-10 rounded-full bg-navy text-navy-foreground font-serif text-sm grid place-items-center relative z-10 group-hover:bg-emerald group-hover:scale-110 transition-all duration-300">
                   {p.n}
                 </div>
@@ -384,7 +384,7 @@ function HomePage() {
 
           <div className="stagger grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
             {news.map((n) => (
-              <a key={n.title} href={n.href} target="_blank" rel="noreferrer" className="stagger-item group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
+              <a key={n.title} href={n.href} className="stagger-item group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={n.img} alt={n.title} width={896} height={640} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
                 </div>
