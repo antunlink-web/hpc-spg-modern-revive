@@ -6,13 +6,11 @@ export type Web3FormType = "offer" | "user_access" | "contact" | "survey";
 const ENDPOINT = "https://api.web3forms.com/submit";
 
 const KEY_MAP: Record<Web3FormType, string | undefined> = {
-  offer: import.meta.env.VITE_WEB3FORMS_OFFER_KEY as string | undefined,
-  user_access: import.meta.env.VITE_WEB3FORMS_USER_ACCESS_KEY as
-    | string
-    | undefined,
-  contact: import.meta.env.VITE_WEB3FORMS_CONTACT_KEY as string | undefined,
+  offer: import.meta.env.WEB3FORMS_OFFER_KEY as string | undefined,
+  user_access: import.meta.env.WEB3FORMS_USER_ACCESS_KEY as string | undefined,
+  contact: import.meta.env.WEB3FORMS_CONTACT_KEY as string | undefined,
   // survey shares the contact inbox (info@hpc-spg.hr) but uses a distinct subject
-  survey: import.meta.env.VITE_WEB3FORMS_CONTACT_KEY as string | undefined,
+  survey: import.meta.env.WEB3FORMS_CONTACT_KEY as string | undefined,
 };
 
 const SUBJECT_MAP: Record<Web3FormType, string> = {
