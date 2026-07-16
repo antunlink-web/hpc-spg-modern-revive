@@ -32,7 +32,8 @@ import newsLaw from "@/assets/news-law.jpg";
 import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
 
 const OFFER_URL = "/zahtjev";
-const CONTACT_URL = "https://hpc-spg.hr/kontakt/";
+const CONTACT_URL = "/kontakt";
+const USER_ACCESS_URL = "/korisnicki-podaci";
 const APP_URL = "https://hpc-spg.com/";
 
 export const Route = createFileRoute("/")({
