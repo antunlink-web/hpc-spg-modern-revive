@@ -33,11 +33,12 @@ export function SiteFooter() {
             </p>
             <p className="flex items-start gap-3">
               <Mail className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-              <a href="/zahtjev" target="_blank" rel="noreferrer" className="hover:text-white">
+              <a href="/zahtjev" className="hover:text-white">
                 Zahtjev za ponudu
               </a>
             </p>
           </div>
+
         </div>
 
 
@@ -57,8 +58,8 @@ export function SiteFooter() {
           <h4 className="text-xs uppercase tracking-[0.18em] text-white/55">Suvlasnici</h4>
           <ul className="mt-5 space-y-3 text-sm text-white/80">
             <li><a href="https://hpc-spg.com/" target="_blank" rel="noreferrer" className="hover:text-white">Prijava u aplikaciju</a></li>
-            <li><a href="https://hpc-spg.hr/zahtjev-za-pristupne-podatke/" target="_blank" rel="noreferrer" className="hover:text-white">Pristupni podaci</a></li>
-            <li><a href="https://hpc-spg.hr/zahtjev-za-dostavu-uplatnica-za-pricuvu-e-mailom/" target="_blank" rel="noreferrer" className="hover:text-white">E-uplatnice</a></li>
+            <li><a href="/korisnicki-podaci" className="hover:text-white">Pristupni podaci</a></li>
+            <li><a href="/anketa" className="hover:text-white">Anketa za suvlasnike</a></li>
             <li><a href="https://hpc-spg.hr/osnovni-pojmovi-upravljanja/" target="_blank" rel="noreferrer" className="hover:text-white">Osnovni pojmovi</a></li>
             <li><a href="https://hpc-spg.hr/regulativa-upravljanja/" target="_blank" rel="noreferrer" className="hover:text-white">Regulativa</a></li>
             <li><a href="https://hpc-spg.hr/obavijesti/novosti/" target="_blank" rel="noreferrer" className="hover:text-white">Novosti</a></li>
