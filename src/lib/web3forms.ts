@@ -42,7 +42,7 @@ export async function submitWeb3Form({ type, data, source }: SubmitOptions) {
     // eslint-disable-next-line no-console
     console.warn(
       `[web3forms] Missing access key for "${type}". ` +
-        `Set the corresponding VITE_WEB3FORMS_*_KEY env variable.`,
+        `Set the corresponding WEB3FORMS_*_KEY env variable.`,
     );
     throw new Error("MISSING_ACCESS_KEY");
   }
