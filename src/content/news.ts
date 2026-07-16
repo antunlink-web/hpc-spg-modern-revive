@@ -351,7 +351,6 @@ export const news: NewsPost[] = [
 <p>Detaljne informacije o postupku obnove potražite na stranici <a href="/usluge/obnova-od-potresa">Obnova od potresa</a>.</p>`,
     documents: [
       { label: "Obnova zgrada oštećenih u potresu i uloga upravitelja (PDF)", href: "/documents/obnova-zgrada-i-uloga-upravitelja.pdf" },
-      { label: "Vodič za aktivnosti nakon potresa 2020. (PDF)", href: "/documents/vodic-za-aktivnosti-nakon-potresa.pdf" },
     ],
     seoTitle: "Obnova od potresa — HPC-SPG podrška suvlasnicima",
     metaDescription: "Podrška HPC-SPG-a suvlasnicima zgrada oštećenih u potresu u Gradu Zagrebu 22. ožujka 2020.",
