@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
 import { FileText } from "lucide-react";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/upravljanje/osnovni-pojmovi")({
   head: () => ({
@@ -21,9 +22,9 @@ export const Route = createFileRoute("/upravljanje/osnovni-pojmovi")({
         <div className="rounded-xl border border-border bg-background p-6">
           <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Dokumenti</p>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href="/documents/prava-i-obveze-suvlasnika.pdf" target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2"><FileText className="h-4 w-4" /> Prava i obveze suvlasnika</a></li>
-            <li><a href="/documents/popis-zajednickih-dijelova-i-uredaja.pdf" target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2"><FileText className="h-4 w-4" /> Popis zajedničkih dijelova zgrade</a></li>
-            <li><a href="/documents/dopis-predstavnicima-novi-zakon.pdf" target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2"><FileText className="h-4 w-4" /> Dopis predstavnicima o novom Zakonu</a></li>
+            <li><a href={withBase("/documents/prava-i-obveze-suvlasnika.pdf")} target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2"><FileText className="h-4 w-4" /> Prava i obveze suvlasnika</a></li>
+            <li><a href={withBase("/documents/popis-zajednickih-dijelova-i-uredaja.pdf")} target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2"><FileText className="h-4 w-4" /> Popis zajedničkih dijelova zgrade</a></li>
+            <li><a href={withBase("/documents/dopis-predstavnicima-novi-zakon.pdf")} target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2"><FileText className="h-4 w-4" /> Dopis predstavnicima o novom Zakonu</a></li>
           </ul>
         </div>
       }
@@ -89,7 +90,7 @@ export const Route = createFileRoute("/upravljanje/osnovni-pojmovi")({
       <p className="text-sm text-muted-foreground">
         Za cjelovit tekst i objašnjenje svih pojmova konzultirajte Zakon o upravljanju i održavanju
         zgrada (NN 152/2024) i pripadajuće podzakonske akte — vidi{" "}
-        <a href="/upravljanje/regulativa">Regulativa</a>.
+        <a href={withBase("/upravljanje/regulativa")}>Regulativa</a>.
       </p>
     </ArticlePageShell>
   ),

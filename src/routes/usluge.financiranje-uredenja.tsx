@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
 import { ArrowRight } from "lucide-react";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/usluge/financiranje-uredenja")({
   head: () => ({
@@ -39,7 +40,7 @@ export const Route = createFileRoute("/usluge/financiranje-uredenja")({
       </div>
 
       <p className="mt-6">
-        Za konkretnu simulaciju za vašu zgradu obratite se putem <a href="/kontakt">kontakt obrasca</a>.
+        Za konkretnu simulaciju za vašu zgradu obratite se putem <a href={withBase("/kontakt")}>kontakt obrasca</a>.
       </p>
     </ArticlePageShell>
   ),

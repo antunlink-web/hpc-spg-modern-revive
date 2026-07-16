@@ -1,3 +1,4 @@
+import { withBase } from "@/lib/paths";
 export interface NewsPost {
   slug: string;
   title: string;
@@ -31,7 +32,7 @@ export const news: NewsPost[] = [
 <p>U zgradama s centralnim grijanjem obavezna je ugradnja uređaja za mjerenje i razdiobu troškova toplinske energije po posebnim dijelovima zgrade (stanovima i poslovnim prostorima).</p>
 <h2>Rokovi</h2>
 <p>Za više informacija o rokovima i obveznicima ugradnje obratite se svom upravitelju.</p>
-<p>Detaljne informacije potražite na stranici <a href="/upravljanje/toplinski-sustav-nove-obveze">Toplinski sustav — nove obveze</a>.</p>`,
+<p>Detaljne informacije potražite na stranici <a href={withBase("/upravljanje/toplinski-sustav-nove-obveze")}>Toplinski sustav — nove obveze</a>.</p>`,
     seoTitle: "Nove zakonske obveze — uređaji za razdiobu topline | HPC-SPG",
     metaDescription: "Obavijest o novim obvezama za ugradnju uređaja za razdiobu toplinske energije po Zakonu o upravljanju i održavanju zgrada.",
   },
@@ -48,7 +49,7 @@ export const news: NewsPost[] = [
 <h2>Prijava</h2>
 <p>Prijave podnose predstavnici suvlasnika ili upravitelj zgrade u ime suvlasnika, sukladno uvjetima Javnog poziva. HPC-SPG kao ovlašteni upravitelj priprema svu potrebnu dokumentaciju za suvlasnike zgrada kojima upravljamo.</p>
 <h2>Kontakt</h2>
-<p>Za pripremu prijave obratite se svom voditelju zgrade ili putem <a href="/kontakt">kontakt obrasca</a>.</p>`,
+<p>Za pripremu prijave obratite se svom voditelju zgrade ili putem <a href={withBase("/kontakt")}>kontakt obrasca</a>.</p>`,
     seoTitle: "Javni poziv 2026. — sufinanciranje ugradnje dizala | HPC-SPG",
     metaDescription: "Grad Zagreb sufinancira ugradnju dizala u postojeće višestambene zgrade u 2026. godini. HPC-SPG priprema prijave za suvlasnike.",
   },
@@ -64,7 +65,7 @@ export const news: NewsPost[] = [
 <p>Sufinancira se sanacija i uređenje uličnih pročelja zgrada, uključujući fasadu, zabate, sokle, ograde balkona i pripadajuće limarske radove.</p>
 <h2>Postupak prijave</h2>
 <p>Prijave se podnose putem obrazaca Grada Zagreba. Za suvlasnike zgrada kojima upravljamo pripremamo tehničku, financijsku i pravnu dokumentaciju.</p>
-<p>Za više informacija obratite se svom voditelju zgrade ili putem <a href="/kontakt">kontakt obrasca</a>.</p>`,
+<p>Za više informacija obratite se svom voditelju zgrade ili putem <a href={withBase("/kontakt")}>kontakt obrasca</a>.</p>`,
     seoTitle: "Javni poziv 2026. — sufinanciranje uređenja pročelja | HPC-SPG",
     metaDescription: "Grad Zagreb sufinancira uređenje pročelja postojećih višestambenih zgrada u 2026. HPC-SPG priprema prijave za suvlasnike.",
   },
@@ -145,9 +146,9 @@ export const news: NewsPost[] = [
 <h2>Naši resursi</h2>
 <p>Sve o novim pravilima pročitajte na:</p>
 <ul>
-<li><a href="/upravljanje/osnovni-pojmovi">Osnovni pojmovi upravljanja</a></li>
-<li><a href="/upravljanje/regulativa">Regulativa upravljanja</a></li>
-<li><a href="/upravljanje/minimalna-visina-pricuve">Minimalna visina pričuve</a></li>
+<li><a href={withBase("/upravljanje/osnovni-pojmovi")}>Osnovni pojmovi upravljanja</a></li>
+<li><a href={withBase("/upravljanje/regulativa")}>Regulativa upravljanja</a></li>
+<li><a href={withBase("/upravljanje/minimalna-visina-pricuve")}>Minimalna visina pričuve</a></li>
 </ul>`,
     documents: [
       { label: "Dopis predstavnicima — novi Zakon (PDF)", href: "/documents/dopis-predstavnicima-novi-zakon.pdf" },
@@ -197,7 +198,7 @@ export const news: NewsPost[] = [
 <li>Prijavu kvara i komunikaciju s upraviteljem</li>
 </ul>
 <h2>Kako do pristupa</h2>
-<p>Pristupne podatke zatražite putem obrasca <a href="/korisnicki-podaci">Zahtjev za pristupne podatke</a>.</p>`,
+<p>Pristupne podatke zatražite putem obrasca <a href={withBase("/korisnicki-podaci")}>Zahtjev za pristupne podatke</a>.</p>`,
     externalLinks: [
       { label: "Prijava u aplikaciju", href: "https://hpc-spg.com/" },
     ],
@@ -216,7 +217,7 @@ export const news: NewsPost[] = [
 <p>Sufinanciraju se mjere povećanja energetske učinkovitosti — toplinska izolacija ovojnice, zamjena stolarije, ugradnja obnovljivih izvora energije i drugo.</p>
 <h2>Postupak</h2>
 <p>Za suvlasnike zgrada kojima upravljamo pripremamo cjelokupnu dokumentaciju za prijavu — od energetskog pregleda do projektne dokumentacije.</p>
-<p>Detalji o postupku na stranici <a href="/usluge/energetska-obnova">Projekti energetske obnove</a>.</p>`,
+<p>Detalji o postupku na stranici <a href={withBase("/usluge/energetska-obnova")}>Projekti energetske obnove</a>.</p>`,
     seoTitle: "Poziv za energetsku obnovu višestambenih zgrada | HPC-SPG",
     metaDescription: "Novi Poziv za energetsku obnovu višestambenih zgrada — sufinanciranje iz EU fondova i Fonda za zaštitu okoliša.",
   },
@@ -261,7 +262,7 @@ export const news: NewsPost[] = [
 <li>Elektronički zapis za osobnu evidenciju</li>
 </ul>
 <h2>Kako se prijaviti</h2>
-<p>Prijavu za e-uplatnice podnesite putem stranice <a href="/e-uplatnice">E-uplatnice</a>.</p>`,
+<p>Prijavu za e-uplatnice podnesite putem stranice <a href={withBase("/e-uplatnice")}>E-uplatnice</a>.</p>`,
     seoTitle: "E-uplatnice — pričuva na e-mail | HPC-SPG",
     metaDescription: "Zaprimajte mjesečne uplatnice za pričuvu izravno na e-mail. Prijava putem obrasca E-uplatnice.",
   },
@@ -302,7 +303,7 @@ export const news: NewsPost[] = [
     category: "Financiranje",
     excerpt: "Pregled dostupnih zajmova i kredita za obnovu i uređenje stambenih zgrada.",
     bodyHtml: `<p>Za obnovu i uređenje stambenih zgrada dostupni su različiti izvori financiranja — zajmovi banaka, krediti Fonda za zaštitu okoliša i sredstva EU fondova.</p>
-<p>Detaljne informacije o dostupnim programima financiranja pročitajte na stranici <a href="/upravljanje/zajmovi-i-krediti">Zajmovi i krediti</a> ili u okviru naše usluge <a href="/usluge/financiranje-uredenja">Financiranje uređenja</a>.</p>`,
+<p>Detaljne informacije o dostupnim programima financiranja pročitajte na stranici <a href={withBase("/upravljanje/zajmovi-i-krediti")}>Zajmovi i krediti</a> ili u okviru naše usluge <a href={withBase("/usluge/financiranje-uredenja")}>Financiranje uređenja</a>.</p>`,
     seoTitle: "Zajmovi i krediti za obnovu zgrada | HPC-SPG",
     metaDescription: "Pregled dostupnih zajmova i kredita za obnovu i uređenje stambenih zgrada.",
   },
@@ -314,7 +315,7 @@ export const news: NewsPost[] = [
     category: "Energetska obnova",
     excerpt: "Objavljen Javni poziv za sufinanciranje energetske obnove višestambenih zgrada.",
     bodyHtml: `<p>Objavljen je Javni poziv za sufinanciranje energetske obnove višestambenih zgrada iz sredstava Fonda za zaštitu okoliša i EU fondova.</p>
-<p>Za suvlasnike zgrada kojima upravljamo pripremamo cjelokupnu dokumentaciju. Više o postupku na <a href="/usluge/energetska-obnova">stranici usluge</a>.</p>`,
+<p>Za suvlasnike zgrada kojima upravljamo pripremamo cjelokupnu dokumentaciju. Više o postupku na <a href={withBase("/usluge/energetska-obnova")}>stranici usluge</a>.</p>`,
     seoTitle: "Javni poziv — energetska obnova zgrada | HPC-SPG",
     metaDescription: "Javni poziv za sufinanciranje energetske obnove višestambenih zgrada iz Fonda za zaštitu okoliša.",
   },
@@ -348,7 +349,7 @@ export const news: NewsPost[] = [
 <li>Nadzor nad provedbom radova</li>
 <li>Financijsko i tehničko izvještavanje suvlasnika</li>
 </ul>
-<p>Detaljne informacije o postupku obnove potražite na stranici <a href="/usluge/obnova-od-potresa">Obnova od potresa</a>.</p>`,
+<p>Detaljne informacije o postupku obnove potražite na stranici <a href={withBase("/usluge/obnova-od-potresa")}>Obnova od potresa</a>.</p>`,
     documents: [
       { label: "Obnova zgrada oštećenih u potresu i uloga upravitelja (PDF)", href: "/documents/obnova-zgrada-i-uloga-upravitelja.pdf" },
     ],
@@ -393,7 +394,7 @@ export const news: NewsPost[] = [
     category: "Obavijest",
     excerpt: "Informacije o postupku izrade i postavljanja novih kućnih brojeva na stambenim zgradama.",
     bodyHtml: `<p>Kućni brojevi trajno postavljeni na pročelju zgrade obveza su svakog vlasnika, odnosno u višestambenim zgradama zajednička obveza suvlasnika koju provodi upravitelj.</p>
-<p>Za izradu novih ili zamjenu oštećenih kućnih brojeva obratite se svom voditelju zgrade ili putem <a href="/kontakt">kontakt obrasca</a>.</p>`,
+<p>Za izradu novih ili zamjenu oštećenih kućnih brojeva obratite se svom voditelju zgrade ili putem <a href={withBase("/kontakt")}>kontakt obrasca</a>.</p>`,
     seoTitle: "Izrada novih kućnih brojeva | HPC-SPG",
     metaDescription: "Postupak izrade i postavljanja novih kućnih brojeva na stambenim zgradama.",
   },
@@ -412,7 +413,7 @@ export const news: NewsPost[] = [
 <li>Odgovori na pitanja o pričuvi, održavanju i aktualnim javnim pozivima</li>
 </ul>
 <h2>Prijava</h2>
-<p>O terminima i mjestu održavanja suvlasnici su obaviješteni putem oglasne ploče zgrade i e-maila. Za dodatne informacije obratite se putem <a href="/kontakt">kontakt obrasca</a>.</p>`,
+<p>O terminima i mjestu održavanja suvlasnici su obaviješteni putem oglasne ploče zgrade i e-maila. Za dodatne informacije obratite se putem <a href={withBase("/kontakt")}>kontakt obrasca</a>.</p>`,
     seoTitle: "Dani otvorenih vrata HPC-SPG",
     metaDescription: "Dani otvorenih vrata za suvlasnike zgrada kojima upravlja HPC-SPG.",
   },

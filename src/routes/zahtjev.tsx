@@ -57,6 +57,7 @@ type StatusOption =
   | "bez_upravitelja";
 
 import { submitWeb3Form, ERROR_MESSAGE } from "@/lib/web3forms";
+import { withBase } from "@/lib/paths";
 
 function RequestPage() {
   useReveal();
@@ -167,7 +168,7 @@ function RequestPage() {
                         Natrag na početnu
                       </Link>
                       <a
-                        href="/kontakt"
+                        href={withBase("/kontakt")}
                         className="inline-flex items-center rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground hover:bg-surface transition-all"
                       >
                         Kontaktirajte nas
@@ -463,7 +464,7 @@ function RequestPage() {
                       Suglasan/na sam s obradom osobnih podataka u svrhu
                       izrade prijedloga upravljanja zgradom, u skladu s{" "}
                       <a
-                        href="/documents/zastita-osobnih-podataka.pdf"
+                        href={withBase("/documents/zastita-osobnih-podataka.pdf")}
                         target="_blank"
                         rel="noreferrer"
                         className="text-navy underline underline-offset-2 hover:text-emerald"

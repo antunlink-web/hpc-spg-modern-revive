@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/zasto-smo-bolji-izbor")({
   head: () => ({
@@ -39,7 +40,7 @@ export const Route = createFileRoute("/zasto-smo-bolji-izbor")({
 
       <h2>Bonitet</h2>
       <p>
-        Kontinuirano smo nositelj <a href="/certifikat-bonitetne-izvrsnosti">AAA certifikata bonitetne
+        Kontinuirano smo nositelj <a href={withBase("/certifikat-bonitetne-izvrsnosti")}>AAA certifikata bonitetne
         izvrsnosti</a> koji je potvrda dugogodišnjeg sustavnog i kvalitetnog rada. Certifikat je jedan od
         najvažnijih europskih standarda kojima se definira kvaliteta poslovanja.
       </p>
@@ -62,7 +63,7 @@ export const Route = createFileRoute("/zasto-smo-bolji-izbor")({
       <h2>Sigurnost</h2>
       <p>
         Vodimo računa o zaštiti osobnih podataka — cjelokupno poslovanje usklađeno je s GDPR regulativom o{" "}
-        <a href="/zastita-osobnih-podataka">zaštiti osobnih podataka</a>.
+        <a href={withBase("/zastita-osobnih-podataka")}>zaštiti osobnih podataka</a>.
       </p>
 
       <h2>Pristupačnost</h2>

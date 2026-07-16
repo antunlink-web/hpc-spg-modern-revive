@@ -30,6 +30,7 @@ import newsElevator from "@/assets/news-elevator.jpg";
 import newsGraffiti from "@/assets/news-graffiti.jpg";
 import newsLaw from "@/assets/news-law.jpg";
 import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
+import { withBase } from "@/lib/paths";
 
 const OFFER_URL = "/zahtjev";
 const CONTACT_URL = "/kontakt";
@@ -229,7 +230,7 @@ function HomePage() {
 
               <div className="mt-8">
                 <a
-                  href="/zasto-smo-bolji-izbor"
+                  href={withBase("/zasto-smo-bolji-izbor")}
                   className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Zašto smo bolji izbor? <ArrowRight className="h-4 w-4" />
@@ -377,7 +378,7 @@ function HomePage() {
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Aktualno</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Vijesti i javni pozivi.</h2>
             </div>
-            <a href="/novosti" className="text-sm font-medium text-navy inline-flex items-center gap-1.5 nav-underline">
+            <a href={withBase("/novosti")} className="text-sm font-medium text-navy inline-flex items-center gap-1.5 nav-underline">
               Sve novosti <ArrowRight className="h-4 w-4" />
             </a>
           </div>

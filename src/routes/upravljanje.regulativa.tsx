@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/upravljanje/regulativa")({
   head: () => ({
@@ -41,7 +42,7 @@ export const Route = createFileRoute("/upravljanje/regulativa")({
       <h2>Uredba o visini zajedničke pričuve</h2>
       <p>
         Propisuje minimalnu visinu zajedničke pričuve po četvornom metru korisne površine posebnog dijela.
-        Više na stranici <a href="/upravljanje/minimalna-visina-pricuve">Minimalna visina pričuve</a>.
+        Više na stranici <a href={withBase("/upravljanje/minimalna-visina-pricuve")}>Minimalna visina pričuve</a>.
       </p>
 
       <h2>Zakon o gradnji i Zakon o prostornom uređenju</h2>
@@ -53,14 +54,14 @@ export const Route = createFileRoute("/upravljanje/regulativa")({
       <h2>Zakon o obnovi zgrada oštećenih potresom na području Grada Zagreba, Krapinsko-zagorske i Zagrebačke županije</h2>
       <p>
         Poseban zakon koji uređuje postupak, uvjete i način obnove zgrada oštećenih u potresima 2020.
-        godine. Vidi <a href="/usluge/obnova-od-potresa">Obnova od potresa</a>.
+        godine. Vidi <a href={withBase("/usluge/obnova-od-potresa")}>Obnova od potresa</a>.
       </p>
 
       <h2>Zakon o zaštiti osobnih podataka i GDPR</h2>
       <p>
         Upravitelj obrađuje osobne podatke suvlasnika (ime, prezime, OIB, adresa, kontakt) isključivo u
         svrhu obavljanja poslova upravljanja i sukladno GDPR-u. Vidi{" "}
-        <a href="/zastita-osobnih-podataka">Zaštita osobnih podataka</a>.
+        <a href={withBase("/zastita-osobnih-podataka")}>Zaštita osobnih podataka</a>.
       </p>
 
       <p className="text-sm text-muted-foreground">

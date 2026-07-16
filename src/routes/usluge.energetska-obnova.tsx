@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/usluge/energetska-obnova")({
   head: () => ({
@@ -39,13 +40,13 @@ export const Route = createFileRoute("/usluge/energetska-obnova")({
         <li>Priprema odluka suvlasnika i prikupljanje ponuda</li>
         <li>Prijava na natječaje Fonda za zaštitu okoliša i energetsku učinkovitost / EU fondova</li>
         <li>Sklapanje ugovora s izvođačem i nadzor izvođenja radova</li>
-        <li>Osiguranje dodatnog financiranja (<a href="/upravljanje/zajmovi-i-krediti">zajmovi i krediti</a>)</li>
+        <li>Osiguranje dodatnog financiranja (<a href={withBase("/upravljanje/zajmovi-i-krediti")}>zajmovi i krediti</a>)</li>
         <li>Primopredaja radova i izdavanje novog energetskog certifikata</li>
       </ol>
 
       <p>
         Za pokretanje projekta energetske obnove vaše zgrade obratite se putem{" "}
-        <a href="/kontakt">kontakt obrasca</a>.
+        <a href={withBase("/kontakt")}>kontakt obrasca</a>.
       </p>
     </ArticlePageShell>
   ),

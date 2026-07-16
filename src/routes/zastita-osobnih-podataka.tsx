@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
 import { FileText } from "lucide-react";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/zastita-osobnih-podataka")({
   head: () => ({
@@ -20,7 +21,7 @@ export const Route = createFileRoute("/zastita-osobnih-podataka")({
       aside={
         <div className="rounded-xl border border-border bg-background p-6">
           <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Dokument</p>
-          <a href="/documents/zastita-osobnih-podataka.pdf" target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 text-emerald hover:underline text-sm">
+          <a href={withBase("/documents/zastita-osobnih-podataka.pdf")} target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 text-emerald hover:underline text-sm">
             <FileText className="h-4 w-4" /> Izjava o zaštiti osobnih podataka (PDF)
           </a>
         </div>
