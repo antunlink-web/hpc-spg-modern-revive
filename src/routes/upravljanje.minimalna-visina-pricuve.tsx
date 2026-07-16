@@ -51,7 +51,7 @@ export const Route = createFileRoute("/upravljanje/minimalna-visina-pricuve")({
 
       <p>
         Za točan iznos pričuve na vašoj zgradi obratite se svom voditelju u HPC-SPG-u ili putem{" "}
-        <a href="/kontakt">kontakt obrasca</a>.
+        <a href="/newsite/kontakt">kontakt obrasca</a>.
       </p>
     </ArticlePageShell>
   ),

@@ -35,7 +35,7 @@ export const Route = createFileRoute("/o-nama")({
 
       <h3>1998. – 2005. — Organizator pet seminara o upravljanju zgradama</h3>
       <p>
-        Organizirali smo <a href="/seminari">pet seminara – savjetovanja</a> o upravljanju i održavanju
+        Organizirali smo <a href="/newsite/seminari">pet seminara – savjetovanja</a> o upravljanju i održavanju
         zgrada kako bismo sve sudionike u procesu — suvlasnike, predstavnike, tijela državne uprave i
         lokalne samouprave te upravitelje — educirali o njihovim pravima i obvezama.
       </p>
@@ -46,7 +46,7 @@ export const Route = createFileRoute("/o-nama")({
       <h3>2004. — Izdanje Vodiča za suvlasnike zgrada</h3>
       <p>
         Izdali smo prvu specijaliziranu knjigu o upravljanju i održavanju zgrada i kulturi stanovanja —{" "}
-        <a href="/vodic-za-suvlasnike">Vodič za suvlasnike zgrada — Priručnik o stanovanju</a>.
+        <a href="/newsite/vodic-za-suvlasnike">Vodič za suvlasnike zgrada — Priručnik o stanovanju</a>.
       </p>
 
       <h3>2004. — ISO 9001 sustav upravljanja kvalitetom</h3>
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/o-nama")({
 
       <h3>2017. – danas — AAA certifikat bonitetne izvrsnosti</h3>
       <p>
-        Kontinuirano smo nositelj <a href="/certifikat-bonitetne-izvrsnosti">AAA certifikata bonitetne
+        Kontinuirano smo nositelj <a href="/newsite/certifikat-bonitetne-izvrsnosti">AAA certifikata bonitetne
         izvrsnosti</a>, jednog od najvažnijih europskih standarda kojima se definira kvaliteta poslovanja.
         Certificiranjem smo se svrstali uz sam bok najboljim europskim poduzećima.
       </p>

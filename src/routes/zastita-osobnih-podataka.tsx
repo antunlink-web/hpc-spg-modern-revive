@@ -20,7 +20,7 @@ export const Route = createFileRoute("/zastita-osobnih-podataka")({
       aside={
         <div className="rounded-xl border border-border bg-background p-6">
           <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Dokument</p>
-          <a href="/documents/zastita-osobnih-podataka.pdf" target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 text-emerald hover:underline text-sm">
+          <a href="/newsite/documents/zastita-osobnih-podataka.pdf" target="_blank" rel="noreferrer" className="mt-3 inline-flex items-center gap-2 text-emerald hover:underline text-sm">
             <FileText className="h-4 w-4" /> Izjava o zaštiti osobnih podataka (PDF)
           </a>
         </div>

@@ -22,7 +22,7 @@ export function SiteHeader() {
     <header className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background/97 backdrop-blur-md border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto pl-6 pr-5 lg:pl-10 lg:pr-10 h-[80px] lg:h-[100px] flex items-center justify-between gap-6">
         {/* Desktop: horizontal logo with wordmark */}
-        <a href="/" className="hidden sm:flex items-center min-w-0" aria-label="HPC-SPG — Hrvatski poslovni centar">
+        <a href="/newsite/" className="hidden sm:flex items-center min-w-0" aria-label="HPC-SPG — Hrvatski poslovni centar">
           <img
             src={logoHorizontal.url}
             alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
@@ -30,7 +30,7 @@ export function SiteHeader() {
           />
         </a>
         {/* Mobile: emblem only */}
-        <a href="/" className="sm:hidden flex items-center" aria-label="HPC-SPG">
+        <a href="/newsite/" className="sm:hidden flex items-center" aria-label="HPC-SPG">
           <img
             src={logoEmblem.url}
             alt="HPC-SPG"
@@ -56,7 +56,7 @@ export function SiteHeader() {
             Prijava
           </a>
           <a
-            href="/zahtjev"
+            href="/newsite/zahtjev"
             className="inline-flex items-center rounded-md px-5 py-3 text-sm font-semibold shadow-sm transition-all hover:-translate-y-0.5 bg-navy text-navy-foreground hover:bg-navy-soft"
           >
             Zatražite ponudu
@@ -115,14 +115,14 @@ export function SiteHeader() {
               Prijava u aplikaciju
             </a>
             <a
-              href="/zahtjev"
+              href="/newsite/zahtjev"
               onClick={() => setOpen(false)}
               className="block w-full text-center rounded-md bg-navy text-navy-foreground px-4 py-3 text-sm font-semibold"
             >
               Zatražite ponudu
             </a>
             <a
-              href="/kontakt"
+              href="/newsite/kontakt"
               onClick={() => setOpen(false)}
               className="flex items-center justify-center gap-2 text-sm text-muted-foreground pt-2"
             >

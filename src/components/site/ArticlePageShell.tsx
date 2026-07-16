@@ -43,7 +43,7 @@ export function ArticlePageShell({
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           {crumbs.length > 0 && (
             <nav aria-label="Breadcrumb" className="reveal-up mb-6 text-xs text-muted-foreground flex flex-wrap items-center gap-1.5">
-              <Link to="/" className="hover:text-navy">Naslovna</Link>
+              <Link to="/newsite/" className="hover:text-navy">Naslovna</Link>
               {crumbs.map((c, i) => (
                 <span key={i} className="flex items-center gap-1.5">
                   <ChevronRight className="h-3 w-3 opacity-60" />
@@ -92,8 +92,8 @@ export function ArticlePageShell({
               <p className="mt-3 text-sm font-medium text-navy">HPC-SPG d.o.o.</p>
               <p className="mt-1 text-sm text-muted-foreground">Ulica Adama Mandrovića 3<br />10000 Zagreb</p>
               <div className="mt-4 space-y-1.5 text-sm">
-                <Link to="/kontakt" className="text-emerald hover:underline block">Kontakt obrazac →</Link>
-                <Link to="/korisnicki-podaci" className="text-emerald hover:underline block">Pristupni podaci →</Link>
+                <Link to="/newsite/kontakt" className="text-emerald hover:underline block">Kontakt obrazac →</Link>
+                <Link to="/newsite/korisnicki-podaci" className="text-emerald hover:underline block">Pristupni podaci →</Link>
               </div>
             </div>
           </aside>

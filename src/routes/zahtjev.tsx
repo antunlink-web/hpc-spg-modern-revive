@@ -98,7 +98,7 @@ function RequestPage() {
             aria-label="Breadcrumbs"
             className="reveal-up flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-muted-foreground"
           >
-            <Link to="/" className="hover:text-navy transition-colors">
+            <Link to="/newsite/" className="hover:text-navy transition-colors">
               Početna
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
@@ -161,13 +161,13 @@ function RequestPage() {
                     </p>
                     <div className="mt-6 flex flex-wrap gap-3">
                       <Link
-                        to="/"
+                        to="/newsite/"
                         className="inline-flex items-center rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft transition-all hover:-translate-y-0.5"
                       >
                         Natrag na početnu
                       </Link>
                       <a
-                        href="/kontakt"
+                        href="/newsite/kontakt"
                         className="inline-flex items-center rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground hover:bg-surface transition-all"
                       >
                         Kontaktirajte nas
@@ -463,7 +463,7 @@ function RequestPage() {
                       Suglasan/na sam s obradom osobnih podataka u svrhu
                       izrade prijedloga upravljanja zgradom, u skladu s{" "}
                       <a
-                        href="/documents/zastita-osobnih-podataka.pdf"
+                        href="/newsite/documents/zastita-osobnih-podataka.pdf"
                         target="_blank"
                         rel="noreferrer"
                         className="text-navy underline underline-offset-2 hover:text-emerald"
