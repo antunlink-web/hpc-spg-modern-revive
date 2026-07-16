@@ -40,13 +40,13 @@ export const Route = createFileRoute("/dokumenti-zgrade")({
       <p>
         Pristup dokumentima moguć je isključivo za suvlasnike konkretne zgrade i uz jedinstvene
         pristupne podatke. Cjelokupni sustav usklađen je s GDPR-om — vidi{" "}
-        <a href="/newsite/zastita-osobnih-podataka">Zaštita osobnih podataka</a>.
+        <a href="/zastita-osobnih-podataka">Zaštita osobnih podataka</a>.
       </p>
 
       <p>
         Prijava u aplikaciju:{" "}
         <a href="https://hpc-spg.com/" target="_blank" rel="noreferrer">hpc-spg.com</a>. Ako Vam trebaju
-        pristupni podaci, ispunite obrazac <a href="/newsite/korisnicki-podaci">Pristupni podaci</a>.
+        pristupni podaci, ispunite obrazac <a href="/korisnicki-podaci">Pristupni podaci</a>.
       </p>
     </ArticlePageShell>
   ),

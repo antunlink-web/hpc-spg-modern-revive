@@ -43,7 +43,7 @@ export const Route = createFileRoute("/usluge/upis-u-zemljisne-knjige")({
 
       <p>
         Za pokretanje postupka upisa u zemljišne knjige vaše zgrade obratite se putem{" "}
-        <a href="/newsite/kontakt">kontakt obrasca</a>.
+        <a href="/kontakt">kontakt obrasca</a>.
       </p>
     </ArticlePageShell>
   ),

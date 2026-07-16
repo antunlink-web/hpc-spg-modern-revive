@@ -43,8 +43,8 @@ export const Route = createFileRoute("/seminari")({
       </p>
 
       <p>
-        Za informacije o budućim edukativnim aktivnostima pratite <a href="/newsite/novosti">Novosti</a> ili nas
-        kontaktirajte putem <a href="/newsite/kontakt">kontakt obrasca</a>.
+        Za informacije o budućim edukativnim aktivnostima pratite <a href="/novosti">Novosti</a> ili nas
+        kontaktirajte putem <a href="/kontakt">kontakt obrasca</a>.
       </p>
     </ArticlePageShell>
   ),

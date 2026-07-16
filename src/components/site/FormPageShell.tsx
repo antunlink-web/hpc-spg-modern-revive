@@ -152,7 +152,7 @@ export function ConsentCheckbox() {
       <span>
         Slažem se da se uneseni podaci koriste isključivo radi odgovora na moj upit, u skladu s{" "}
         <a
-          href="/newsite/documents/zastita-osobnih-podataka.pdf"
+          href="/documents/zastita-osobnih-podataka.pdf"
           target="_blank"
           rel="noreferrer"
           className="text-navy underline underline-offset-2 hover:text-emerald"
