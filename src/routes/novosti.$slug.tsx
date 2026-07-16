@@ -2,6 +2,7 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, FileText, ExternalLink, ArrowLeft } from "lucide-react";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
 import { findNewsBySlug, news } from "@/content/news";
+import { rewriteHtmlBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/novosti/$slug")({
   loader: ({ params }) => {
