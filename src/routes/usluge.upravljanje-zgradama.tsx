@@ -39,26 +39,26 @@ export const Route = createFileRoute("/usluge/upravljanje-zgradama")({
         <li>Redoviti i izvanredni pregledi stanja objekta</li>
         <li>Godišnji i višegodišnji program upravljanja (GPU/VGPU)</li>
         <li>Organizacija manjih, većih i hitnih radova</li>
-        <li><a href="/newsite/hitne-intervencije">24-satno dežurstvo za hitne intervencije</a></li>
+        <li><a href="/hitne-intervencije">24-satno dežurstvo za hitne intervencije</a></li>
       </ul>
 
       <h2>Pravni poslovi</h2>
       <ul>
         <li>Priprema Međuvlasničkog i Ugovora o upravljanju</li>
         <li>Vođenje evidencije suvlasnika i usklađivanje sa zemljišnim knjigama</li>
-        <li>Pomoć u <a href="/newsite/usluge/upis-u-zemljisne-knjige">upisu zgrade i posebnih dijelova u zemljišne knjige</a></li>
+        <li>Pomoć u <a href="/usluge/upis-u-zemljisne-knjige">upisu zgrade i posebnih dijelova u zemljišne knjige</a></li>
         <li>Zastupanje suvlasnika u sudskim postupcima naplate</li>
       </ul>
 
       <h2>Digitalne usluge</h2>
       <p>
         Web i mobilna aplikacija omogućava pregled uplatnica, financijskih izvještaja i dokumenata zgrade
-        te online prijavu kvara. Vidi <a href="/newsite/e-financijski-izvjestaji">e-financijski izvještaji</a> i{" "}
-        <a href="/newsite/dokumenti-zgrade">dokumenti zgrade</a>.
+        te online prijavu kvara. Vidi <a href="/e-financijski-izvjestaji">e-financijski izvještaji</a> i{" "}
+        <a href="/dokumenti-zgrade">dokumenti zgrade</a>.
       </p>
 
       <p>
-        Za cjelovitu ponudu prilagođenu vašoj zgradi <a href="/newsite/zahtjev">zatražite prijedlog upravljanja</a> —
+        Za cjelovitu ponudu prilagođenu vašoj zgradi <a href="/zahtjev">zatražite prijedlog upravljanja</a> —
         u pravilu odgovaramo u roku od nekoliko radnih dana.
       </p>
     </ArticlePageShell>
