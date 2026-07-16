@@ -357,7 +357,7 @@ function HomePage() {
           <div className="stagger mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
             <div className="hidden lg:block absolute top-5 left-[12%] right-[12%] h-px bg-border" />
             {process.map((p) => (
-              <a key={p.n} href={p.href} target="_blank" rel="noreferrer" className="stagger-item relative group">
+              <a key={p.n} href={p.href} className="stagger-item relative group">
                 <div className="h-10 w-10 rounded-full bg-navy text-navy-foreground font-serif text-sm grid place-items-center relative z-10 group-hover:bg-emerald group-hover:scale-110 transition-all duration-300">
                   {p.n}
                 </div>
