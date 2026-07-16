@@ -4,12 +4,12 @@ import logoHorizontal from "@/assets/logo-horizontal.png.asset.json";
 import logoEmblem from "@/assets/logo-emblem.png.asset.json";
 
 const nav = [
-  { label: "Usluge", href: "#usluge" },
-  { label: "Zašto HPC-SPG", href: "#zasto" },
-  { label: "Digitalne usluge", href: "#digitalno" },
-  { label: "Upravljanje", href: "#upravljanje" },
-  { label: "Novosti", href: "#vijesti" },
-  { label: "Kontakt", href: "#kontakt" },
+  { label: "Usluge", href: "/#usluge" },
+  { label: "Zašto HPC-SPG", href: "/#zasto" },
+  { label: "Digitalne usluge", href: "/#digitalno" },
+  { label: "Upravljanje", href: "/#upravljanje" },
+  { label: "Novosti", href: "/#vijesti" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 export function SiteHeader() {
@@ -116,17 +116,14 @@ export function SiteHeader() {
             </a>
             <a
               href="/zahtjev"
-              target="_blank"
-              rel="noreferrer"
               onClick={() => setOpen(false)}
               className="block w-full text-center rounded-md bg-navy text-navy-foreground px-4 py-3 text-sm font-semibold"
             >
               Zatražite ponudu
             </a>
             <a
-              href="https://hpc-spg.hr/kontakt/"
-              target="_blank"
-              rel="noreferrer"
+              href="/kontakt"
+              onClick={() => setOpen(false)}
               className="flex items-center justify-center gap-2 text-sm text-muted-foreground pt-2"
             >
               <Phone className="h-4 w-4" /> Kontaktirajte nas

@@ -10,11 +10,29 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ZahtjevRouteImport } from './routes/zahtjev'
+import { Route as KorisnickiPodaciRouteImport } from './routes/korisnicki-podaci'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as AnketaRouteImport } from './routes/anketa'
 import { Route as IndexRouteImport } from './routes/index'
 
 const ZahtjevRoute = ZahtjevRouteImport.update({
   id: '/zahtjev',
   path: '/zahtjev',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KorisnickiPodaciRoute = KorisnickiPodaciRouteImport.update({
+  id: '/korisnicki-podaci',
+  path: '/korisnicki-podaci',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnketaRoute = AnketaRouteImport.update({
+  id: '/anketa',
+  path: '/anketa',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,27 +43,45 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/anketa': typeof AnketaRoute
+  '/kontakt': typeof KontaktRoute
+  '/korisnicki-podaci': typeof KorisnickiPodaciRoute
   '/zahtjev': typeof ZahtjevRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/anketa': typeof AnketaRoute
+  '/kontakt': typeof KontaktRoute
+  '/korisnicki-podaci': typeof KorisnickiPodaciRoute
   '/zahtjev': typeof ZahtjevRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/anketa': typeof AnketaRoute
+  '/kontakt': typeof KontaktRoute
+  '/korisnicki-podaci': typeof KorisnickiPodaciRoute
   '/zahtjev': typeof ZahtjevRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/zahtjev'
+  fullPaths: '/' | '/anketa' | '/kontakt' | '/korisnicki-podaci' | '/zahtjev'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/zahtjev'
-  id: '__root__' | '/' | '/zahtjev'
+  to: '/' | '/anketa' | '/kontakt' | '/korisnicki-podaci' | '/zahtjev'
+  id:
+    | '__root__'
+    | '/'
+    | '/anketa'
+    | '/kontakt'
+    | '/korisnicki-podaci'
+    | '/zahtjev'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnketaRoute: typeof AnketaRoute
+  KontaktRoute: typeof KontaktRoute
+  KorisnickiPodaciRoute: typeof KorisnickiPodaciRoute
   ZahtjevRoute: typeof ZahtjevRoute
 }
 
@@ -56,6 +92,27 @@ declare module '@tanstack/react-router' {
       path: '/zahtjev'
       fullPath: '/zahtjev'
       preLoaderRoute: typeof ZahtjevRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/korisnicki-podaci': {
+      id: '/korisnicki-podaci'
+      path: '/korisnicki-podaci'
+      fullPath: '/korisnicki-podaci'
+      preLoaderRoute: typeof KorisnickiPodaciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/anketa': {
+      id: '/anketa'
+      path: '/anketa'
+      fullPath: '/anketa'
+      preLoaderRoute: typeof AnketaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,6 +127,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnketaRoute: AnketaRoute,
+  KontaktRoute: KontaktRoute,
+  KorisnickiPodaciRoute: KorisnickiPodaciRoute,
   ZahtjevRoute: ZahtjevRoute,
 }
 export const routeTree = rootRouteImport

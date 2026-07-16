@@ -32,7 +32,8 @@ import newsLaw from "@/assets/news-law.jpg";
 import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
 
 const OFFER_URL = "/zahtjev";
-const CONTACT_URL = "https://hpc-spg.hr/kontakt/";
+const CONTACT_URL = "/kontakt";
+const USER_ACCESS_URL = "/korisnicki-podaci";
 const APP_URL = "https://hpc-spg.com/";
 
 export const Route = createFileRoute("/")({
@@ -138,10 +139,10 @@ function HomePage() {
               uvid za predstavnike i suvlasnike.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a href={OFFER_URL} target="_blank" rel="noreferrer" className="hero-anim hero-delay-5 inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
+              <a href={OFFER_URL} className="hero-anim hero-delay-5 inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
                 Zatražite ponudu <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="hero-anim hero-delay-5 inline-flex items-center rounded-md bg-white text-navy px-6 py-3.5 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "780ms" }}>
+              <a href={CONTACT_URL} className="hero-anim hero-delay-5 inline-flex items-center rounded-md bg-white text-navy px-6 py-3.5 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "780ms" }}>
                 Kontaktirajte nas
               </a>
               <a href={APP_URL} target="_blank" rel="noreferrer" className="hero-anim inline-flex items-center rounded-md border border-white/35 bg-white/5 backdrop-blur-sm text-white px-6 py-3.5 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "860ms" }}>
@@ -292,7 +293,7 @@ function HomePage() {
                 <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white text-navy px-5 py-3.5 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300">
                   Prijava u aplikaciju <ArrowRight className="h-4 w-4" />
                 </a>
-                <a href="https://hpc-spg.hr/zahtjev-za-pristupne-podatke/" target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-5 py-3.5 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
+                <a href={USER_ACCESS_URL} className="inline-flex items-center rounded-md border border-white/25 text-white px-5 py-3.5 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
                   Zatraži pristupne podatke
                 </a>
               </div>
@@ -416,10 +417,10 @@ function HomePage() {
             cjelovitu ponudu prilagođenu vašem objektu.
           </p>
           <div className="reveal-up mt-10 flex flex-wrap items-center justify-center gap-3" style={{ transitionDelay: "360ms" }}>
-            <a href={OFFER_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
+            <a href={OFFER_URL} className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
               Zatražite ponudu <ArrowRight className="h-4 w-4" />
             </a>
-            <a href={CONTACT_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md bg-white text-navy px-6 py-4 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300">
+            <a href={CONTACT_URL} className="inline-flex items-center rounded-md bg-white text-navy px-6 py-4 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300">
               Kontaktirajte nas
             </a>
             <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-6 py-4 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
