@@ -15,7 +15,6 @@ import { Route as ZahtjevRouteImport } from './routes/zahtjev'
 import { Route as VodicZaSuvlasnikeRouteImport } from './routes/vodic-za-suvlasnike'
 import { Route as UslugeRouteImport } from './routes/usluge'
 import { Route as UpravljanjeRouteImport } from './routes/upravljanje'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SeminariRouteImport } from './routes/seminari'
 import { Route as PonudaRouteImport } from './routes/ponuda'
 import { Route as ONamaRouteImport } from './routes/o-nama'
@@ -75,11 +74,6 @@ const UslugeRoute = UslugeRouteImport.update({
 const UpravljanjeRoute = UpravljanjeRouteImport.update({
   id: '/upravljanje',
   path: '/upravljanje',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
-  id: '/sitemap.xml',
-  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SeminariRoute = SeminariRouteImport.update({
@@ -258,7 +252,6 @@ export interface FileRoutesByFullPath {
   '/o-nama': typeof ONamaRoute
   '/ponuda': typeof PonudaRoute
   '/seminari': typeof SeminariRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/upravljanje': typeof UpravljanjeRouteWithChildren
   '/usluge': typeof UslugeRouteWithChildren
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
@@ -297,7 +290,6 @@ export interface FileRoutesByTo {
   '/o-nama': typeof ONamaRoute
   '/ponuda': typeof PonudaRoute
   '/seminari': typeof SeminariRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
@@ -335,7 +327,6 @@ export interface FileRoutesById {
   '/o-nama': typeof ONamaRoute
   '/ponuda': typeof PonudaRoute
   '/seminari': typeof SeminariRoute
-  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/upravljanje': typeof UpravljanjeRouteWithChildren
   '/usluge': typeof UslugeRouteWithChildren
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
@@ -376,7 +367,6 @@ export interface FileRouteTypes {
     | '/o-nama'
     | '/ponuda'
     | '/seminari'
-    | '/sitemap.xml'
     | '/upravljanje'
     | '/usluge'
     | '/vodic-za-suvlasnike'
@@ -415,7 +405,6 @@ export interface FileRouteTypes {
     | '/o-nama'
     | '/ponuda'
     | '/seminari'
-    | '/sitemap.xml'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
     | '/zastita-osobnih-podataka'
@@ -452,7 +441,6 @@ export interface FileRouteTypes {
     | '/o-nama'
     | '/ponuda'
     | '/seminari'
-    | '/sitemap.xml'
     | '/upravljanje'
     | '/usluge'
     | '/vodic-za-suvlasnike'
@@ -492,7 +480,6 @@ export interface RootRouteChildren {
   ONamaRoute: typeof ONamaRoute
   PonudaRoute: typeof PonudaRoute
   SeminariRoute: typeof SeminariRoute
-  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   UpravljanjeRoute: typeof UpravljanjeRouteWithChildren
   UslugeRoute: typeof UslugeRouteWithChildren
   VodicZaSuvlasnikeRoute: typeof VodicZaSuvlasnikeRoute
@@ -545,13 +532,6 @@ declare module '@tanstack/react-router' {
       path: '/upravljanje'
       fullPath: '/upravljanje'
       preLoaderRoute: typeof UpravljanjeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/sitemap.xml': {
-      id: '/sitemap.xml'
-      path: '/sitemap.xml'
-      fullPath: '/sitemap.xml'
-      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/seminari': {
@@ -829,7 +809,6 @@ const rootRouteChildren: RootRouteChildren = {
   ONamaRoute: ONamaRoute,
   PonudaRoute: PonudaRoute,
   SeminariRoute: SeminariRoute,
-  SitemapDotxmlRoute: SitemapDotxmlRoute,
   UpravljanjeRoute: UpravljanjeRouteWithChildren,
   UslugeRoute: UslugeRouteWithChildren,
   VodicZaSuvlasnikeRoute: VodicZaSuvlasnikeRoute,
