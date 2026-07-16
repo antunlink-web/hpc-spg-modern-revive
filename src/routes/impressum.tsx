@@ -45,8 +45,8 @@ export const Route = createFileRoute("/impressum")({
 
       <p className="text-sm text-muted-foreground">
         Za detaljne podatke o zaštiti osobnih podataka pogledajte{" "}
-        <a href="/zastita-osobnih-podataka">Izjavu o zaštiti osobnih podataka</a>, a o korištenju kolačića{" "}
-        <a href="/kolacici">Politiku kolačića</a>.
+        <a href="/newsite/zastita-osobnih-podataka">Izjavu o zaštiti osobnih podataka</a>, a o korištenju kolačića{" "}
+        <a href="/newsite/kolacici">Politiku kolačića</a>.
       </p>
     </ArticlePageShell>
   ),

@@ -41,7 +41,7 @@ export const Route = createFileRoute("/kolacici")({
       <h2>Više informacija</h2>
       <p>
         Za pitanja u vezi s obradom osobnih podataka pogledajte{" "}
-        <a href="/zastita-osobnih-podataka">Izjavu o zaštiti osobnih podataka</a> ili nas kontaktirajte
+        <a href="/newsite/zastita-osobnih-podataka">Izjavu o zaštiti osobnih podataka</a> ili nas kontaktirajte
         na <a href="mailto:info@hpc-spg.hr">info@hpc-spg.hr</a>.
       </p>
     </ArticlePageShell>

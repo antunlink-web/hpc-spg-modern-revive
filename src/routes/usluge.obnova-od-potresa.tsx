@@ -21,7 +21,7 @@ export const Route = createFileRoute("/usluge/obnova-od-potresa")({
         <div className="rounded-xl border border-border bg-background p-6">
           <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">Dokumenti</p>
           <ul className="mt-3 space-y-2 text-sm">
-            <li><a href="/documents/obnova-zgrada-i-uloga-upravitelja.pdf" target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2"><FileText className="h-4 w-4" /> Obnova i uloga upravitelja</a></li>
+            <li><a href="/newsite/documents/obnova-zgrada-i-uloga-upravitelja.pdf" target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2"><FileText className="h-4 w-4" /> Obnova i uloga upravitelja</a></li>
           </ul>
         </div>
       }
@@ -39,7 +39,7 @@ export const Route = createFileRoute("/usluge/obnova-od-potresa")({
         <li>Prikupljanje ponuda za projektanta, revidenta i izvođača radova</li>
         <li>Priprema odluka suvlasnika i sklapanje ugovora u ime suvlasnika</li>
         <li>Praćenje izvođenja radova i koordinacija s nadzornim inženjerom</li>
-        <li>Financijsko izvještavanje i osiguranje dodatnih izvora financiranja (<a href="/upravljanje/zajmovi-i-krediti">zajmovi i krediti</a>)</li>
+        <li>Financijsko izvještavanje i osiguranje dodatnih izvora financiranja (<a href="/newsite/upravljanje/zajmovi-i-krediti">zajmovi i krediti</a>)</li>
       </ul>
 
       <h2>Vrste obnove</h2>
@@ -50,8 +50,8 @@ export const Route = createFileRoute("/usluge/obnova-od-potresa")({
       </ul>
 
       <p>
-        Za pomoć u pokretanju postupka obnove obratite se putem <a href="/kontakt">kontakt obrasca</a> ili
-        zatražite <a href="/zahtjev">prijedlog upravljanja</a> ako Vam još upravitelj nije određen.
+        Za pomoć u pokretanju postupka obnove obratite se putem <a href="/newsite/kontakt">kontakt obrasca</a> ili
+        zatražite <a href="/newsite/zahtjev">prijedlog upravljanja</a> ako Vam još upravitelj nije određen.
       </p>
     </ArticlePageShell>
   ),

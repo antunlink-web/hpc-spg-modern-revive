@@ -1,4 +1,3 @@
+## TEMPORARY staging deployment under /newsite/ — do not index.
 User-agent: *
-Allow: /
-
-Sitemap: https://hpc-spg.primelink.com.hr/sitemap.xml
+Disallow: /newsite/

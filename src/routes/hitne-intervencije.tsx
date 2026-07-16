@@ -46,8 +46,8 @@ export const Route = createFileRoute("/hitne-intervencije")({
       </p>
 
       <p>
-        Kontakti su dostupni na stranici <a href="/kontakt">Kontakt</a> — za pristupne podatke aplikacije
-        pogledajte <a href="/korisnicki-podaci">Pristupni podaci</a>.
+        Kontakti su dostupni na stranici <a href="/newsite/kontakt">Kontakt</a> — za pristupne podatke aplikacije
+        pogledajte <a href="/newsite/korisnicki-podaci">Pristupni podaci</a>.
       </p>
     </ArticlePageShell>
   ),

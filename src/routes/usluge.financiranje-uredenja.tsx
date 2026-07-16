@@ -39,7 +39,7 @@ export const Route = createFileRoute("/usluge/financiranje-uredenja")({
       </div>
 
       <p className="mt-6">
-        Za konkretnu simulaciju za vašu zgradu obratite se putem <a href="/kontakt">kontakt obrasca</a>.
+        Za konkretnu simulaciju za vašu zgradu obratite se putem <a href="/newsite/kontakt">kontakt obrasca</a>.
       </p>
     </ArticlePageShell>
   ),

@@ -1,0 +1,25 @@
+# TEMPORARY: SPA fallback for the HPC-SPG /newsite/ preview build.
+# Upload this file to public_html/newsite/.htaccess on the host.
+# It only affects requests under /newsite/ and does not interfere with the
+# WordPress installation living in public_html/.
+
+Options -MultiViews
+DirectoryIndex index.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /newsite/
+
+  # Serve existing files and directories directly (assets, PDFs, images, …)
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # All other requests fall back to the SPA shell.
+  RewriteRule ^ /newsite/index.html [L]
+</IfModule>
+
+# Discourage indexing of the temporary preview.
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow"
+</IfModule>

@@ -167,7 +167,7 @@ function RequestPage() {
                         Natrag na početnu
                       </Link>
                       <a
-                        href="/kontakt"
+                        href="/newsite/kontakt"
                         className="inline-flex items-center rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-foreground hover:bg-surface transition-all"
                       >
                         Kontaktirajte nas
@@ -463,7 +463,7 @@ function RequestPage() {
                       Suglasan/na sam s obradom osobnih podataka u svrhu
                       izrade prijedloga upravljanja zgradom, u skladu s{" "}
                       <a
-                        href="/documents/zastita-osobnih-podataka.pdf"
+                        href="/newsite/documents/zastita-osobnih-podataka.pdf"
                         target="_blank"
                         rel="noreferrer"
                         className="text-navy underline underline-offset-2 hover:text-emerald"

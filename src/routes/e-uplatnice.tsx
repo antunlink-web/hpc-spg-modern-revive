@@ -44,8 +44,8 @@ export const Route = createFileRoute("/e-uplatnice")({
 
       <p>
         Uz e-uplatnice, kroz web i mobilnu aplikaciju možete pratiti i{" "}
-        <a href="/e-financijski-izvjestaji">financijske izvještaje zgrade</a> te{" "}
-        <a href="/dokumenti-zgrade">dokumente zgrade</a>.
+        <a href="/newsite/e-financijski-izvjestaji">financijske izvještaje zgrade</a> te{" "}
+        <a href="/newsite/dokumenti-zgrade">dokumente zgrade</a>.
       </p>
     </ArticlePageShell>
   ),
