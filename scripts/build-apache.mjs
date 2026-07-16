@@ -13,7 +13,7 @@
  *   7. Fail hard if index.html is missing
  */
 import { execSync } from "node:child_process";
-import { existsSync, rmSync, cpSync, writeFileSync, readFileSync, readdirSync } from "node:fs";
+import { existsSync, rmSync, cpSync, writeFileSync, readFileSync, readdirSync, renameSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
