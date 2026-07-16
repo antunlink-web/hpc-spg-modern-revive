@@ -56,20 +56,35 @@ type StatusOption =
   | "novosagradjeni"
   | "bez_upravitelja";
 
+import { submitWeb3Form, ERROR_MESSAGE } from "@/lib/web3forms";
+
 function RequestPage() {
   useReveal();
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [status, setStatus] = useState<StatusOption | "">("");
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (submitting) return;
+    const form = e.currentTarget;
+    setError(null);
     setSubmitting(true);
-    // No backend wired; simulate delivery. Client can connect to email later.
-    await new Promise((r) => setTimeout(r, 600));
-    setSubmitting(false);
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    try {
+      const fd = new FormData(form);
+      const data: Record<string, string> = {};
+      fd.forEach((v, k) => { data[k] = typeof v === "string" ? v : ""; });
+      await submitWeb3Form({ type: "offer", data, source: "zahtjev-za-ponudu" });
+      setSubmitted(true);
+      form.reset();
+      setStatus("");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch {
+      setError(ERROR_MESSAGE);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
