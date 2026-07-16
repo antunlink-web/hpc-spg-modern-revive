@@ -1,5 +1,6 @@
 import { withBase } from "@/lib/paths";
 export function renderErrorPage(): string {
+  const home = withBase("/");
   return `<!doctype html>
 <html lang="en">
   <head>
