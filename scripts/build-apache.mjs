@@ -41,7 +41,21 @@ execSync("vite build --config vite.apache.config.ts", {
   env: { ...process.env, NODE_ENV: "production" },
 });
 
-// 3. Ensure index.html — TanStack SPA may emit _shell.html instead.
+// 2b. TanStack SPA emits into dist/apache/client/ (client bundle) and
+//     dist/apache/server/ (prerender helper). Flatten client/ up to the
+//     root and discard server/ — the static host only serves client assets.
+const clientDir = resolve(OUT, "client");
+const serverDir = resolve(OUT, "server");
+if (existsSync(clientDir)) {
+  log("flattening dist/apache/client/ → dist/apache/");
+  for (const entry of readdirSync(clientDir)) {
+    renameSync(resolve(clientDir, entry), resolve(OUT, entry));
+  }
+  rmSync(clientDir, { recursive: true, force: true });
+}
+if (existsSync(serverDir)) rmSync(serverDir, { recursive: true, force: true });
+
+// 3. Ensure index.html — TanStack SPA emits _shell.html.
 const indexHtml = resolve(OUT, "index.html");
 const shellHtml = resolve(OUT, "_shell.html");
 if (!existsSync(indexHtml)) {
