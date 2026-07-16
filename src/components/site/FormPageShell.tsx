@@ -152,7 +152,7 @@ export function ConsentCheckbox() {
       <span>
         Slažem se da se uneseni podaci koriste isključivo radi odgovora na moj upit, u skladu s{" "}
         <a
-          href="https://hpc-spg.hr/wp-content/uploads/2019/04/web1-Izjava-o-za%C5%A1titi-osobnih-podataka-internet-stranica-klijenti-i-dobavlja%C4%8Di-HPC-SPG-1.pdf"
+          href="/documents/zastita-osobnih-podataka.pdf"
           target="_blank"
           rel="noreferrer"
           className="text-navy underline underline-offset-2 hover:text-emerald"

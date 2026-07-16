@@ -88,7 +88,7 @@ export async function submitWeb3Form({ type, data, source }: SubmitOptions) {
 export const CONSENT_LABEL =
   "Slažem se da se uneseni podaci koriste isključivo radi odgovora na moj upit.";
 export const PRIVACY_URL =
-  "https://hpc-spg.hr/wp-content/uploads/2019/04/web1-Izjava-o-za%C5%A1titi-osobnih-podataka-internet-stranica-klijenti-i-dobavlja%C4%8Di-HPC-SPG-1.pdf";
+  "/documents/zastita-osobnih-podataka.pdf";
 
 export const SUCCESS_MESSAGES: Record<Web3FormType, string> = {
   offer: "Hvala! Vaš je zahtjev uspješno poslan.",

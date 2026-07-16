@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hpc-spg.primelink.com.hr/sitemap.xml

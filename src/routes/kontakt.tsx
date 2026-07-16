@@ -16,18 +16,10 @@ import { submitWeb3Form, ERROR_MESSAGE, SUCCESS_MESSAGES } from "@/lib/web3forms
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: [
-      { title: "Kontaktirajte nas | HPC-SPG" },
-      {
-        name: "description",
-        content:
-          "Pošaljite nam upit — HPC-SPG, Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o. Odgovaramo u najkraćem roku.",
-      },
-      { property: "og:title", content: "Kontaktirajte nas | HPC-SPG" },
-      {
-        property: "og:description",
-        content: "Kontaktirajte HPC-SPG za sva pitanja o upravljanju zgradama.",
-      },
-      { name: "robots", content: "index,follow" },
+      { title: "Kontakt — HPC-SPG" },
+      { name: "description", content: "Kontaktirajte HPC-SPG — Ulica Adama Mandrovića 3, Zagreb. Telefoni, e-mail i obrazac za upit." },
+      { property: "og:title", content: "Kontakt — HPC-SPG" },
+      { property: "og:description", content: "Kontaktirajte HPC-SPG — telefoni, e-mail, adresa i online obrazac." },
     ],
   }),
   component: ContactPage,
@@ -64,15 +56,12 @@ function ContactPage() {
     <FormPageShell
       breadcrumb="Kontakt"
       title="Kontaktirajte nas"
-      intro="Pošaljite nam poruku — odgovaramo u najkraćem roku putem e-pošte ili telefona."
-      sidebarNote="Za hitne intervencije obratite se predstavniku suvlasnika ili prijavite kvar putem aplikacije."
-      nextSteps={["Zaprimanje vašeg upita", "Priprema odgovora ili poziv", "Nastavak komunikacije"]}
+      intro="Za informacije o upravljanju zgradom, ponudama i suradnji stojimo Vam na raspolaganju. Adresa: Ulica Adama Mandrovića 3, Zagreb. Radno vrijeme: pon – pet 08:00 – 16:00."
+      sidebarNote="Za hitne intervencije radnim danom obratite se predstavniku suvlasnika koji intervenciju prijavljuje na naše dežurne telefone."
+      nextSteps={["Zaprimanje upita", "Kontakt u najkraćem roku", "Priprema odgovora ili ponude"]}
     >
       {submitted ? (
-        <SuccessBlock
-          message={SUCCESS_MESSAGES.contact}
-          onReset={() => setSubmitted(false)}
-        />
+        <SuccessBlock message={SUCCESS_MESSAGES.contact} onReset={() => setSubmitted(false)} />
       ) : (
         <form onSubmit={onSubmit} className="reveal-up space-y-6" noValidate>
           <div className="grid sm:grid-cols-2 gap-5">
@@ -85,19 +74,25 @@ function ContactPage() {
               <input id="k-email" name="email" type="email" required autoComplete="email" className={inputBase} placeholder="ime@primjer.hr" />
             </div>
             <div>
-              <label htmlFor="k-tel" className={labelBase}>Telefon</label>
-              <input id="k-tel" name="telefon" type="tel" autoComplete="tel" className={inputBase} placeholder="+385 ..." />
+              <label htmlFor="k-telefon" className={labelBase}>Telefon</label>
+              <input id="k-telefon" name="telefon" autoComplete="tel" className={inputBase} placeholder="+385 ..." />
             </div>
             <div>
-              <label htmlFor="k-predmet" className={labelBase}>Predmet</label>
-              <input id="k-predmet" name="predmet" className={inputBase} placeholder="Kratki naslov upita" />
-            </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="k-poruka" className={labelBase}>Poruka <span className="text-emerald">*</span></label>
-              <textarea id="k-poruka" name="poruka" rows={6} required minLength={10} className={`${inputBase} resize-y`} placeholder="Opišite vaš upit..." />
+              <label htmlFor="k-tema" className={labelBase}>Tema upita</label>
+              <select id="k-tema" name="tema" className={inputBase}>
+                <option value="">Odaberite...</option>
+                <option>Ponuda za upravljanje zgradom</option>
+                <option>Pristupni podaci za aplikaciju</option>
+                <option>Financijski izvještaji / uplatnice</option>
+                <option>Hitne intervencije</option>
+                <option>Drugo</option>
+              </select>
             </div>
           </div>
-
+          <div>
+            <label htmlFor="k-poruka" className={labelBase}>Poruka <span className="text-emerald">*</span></label>
+            <textarea id="k-poruka" name="poruka" required rows={6} className={`${inputBase} resize-y`} placeholder="Opišite svoj upit..." />
+          </div>
           <div className="space-y-6 pt-2 border-t border-border">
             <Botcheck />
             <ConsentCheckbox />
@@ -105,9 +100,9 @@ function ContactPage() {
             <button
               type="submit"
               disabled={submitting}
-              className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-6 py-3.5 text-sm font-semibold hover:bg-navy-soft transition-all hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-6 py-3.5 text-sm font-semibold hover:bg-navy-soft transition-all hover:-translate-y-0.5 disabled:opacity-70"
             >
-              {submitting ? "Slanje..." : "Pošalji poruku"}
+              {submitting ? "Slanje..." : "Pošalji upit"}
               <Send className="h-4 w-4" />
             </button>
           </div>
