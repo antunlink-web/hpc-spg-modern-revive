@@ -116,8 +116,6 @@ export function SiteHeader() {
             </a>
             <a
               href="/zahtjev"
-              target="_blank"
-              rel="noreferrer"
               onClick={() => setOpen(false)}
               className="block w-full text-center rounded-md bg-navy text-navy-foreground px-4 py-3 text-sm font-semibold"
             >
