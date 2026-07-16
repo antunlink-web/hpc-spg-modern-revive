@@ -1,5 +1,6 @@
 import { MapPin, Mail, Globe, Clock, Phone, ShieldCheck, Building2 } from "lucide-react";
 import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
+import { withBase } from "@/lib/paths";
 
 export function SiteFooter() {
   return (
@@ -29,11 +30,11 @@ export function SiteFooter() {
             </p>
             <p className="flex items-start gap-3">
               <Globe className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-              <a href="/" className="hover:text-white">hpc-spg.primelink.com.hr</a>
+              <a href={withBase("/")} className="hover:text-white">hpc-spg.primelink.com.hr</a>
             </p>
             <p className="flex items-start gap-3">
               <Mail className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-              <a href="/zahtjev" className="hover:text-white">
+              <a href={withBase("/zahtjev")} className="hover:text-white">
                 Zahtjev za ponudu
               </a>
             </p>
@@ -45,12 +46,12 @@ export function SiteFooter() {
         <div className="lg:col-span-2">
           <h4 className="text-xs uppercase tracking-[0.18em] text-white/55">Usluge</h4>
           <ul className="mt-5 space-y-3 text-sm text-white/80">
-            <li><a href="/usluge/upravljanje-zgradama" className="hover:text-white">Upravljanje zgradama</a></li>
-            <li><a href="/usluge/obnova-od-potresa" className="hover:text-white">Obnova od potresa</a></li>
-            <li><a href="/usluge/energetska-obnova" className="hover:text-white">Energetska obnova</a></li>
-            <li><a href="/usluge/upis-u-zemljisne-knjige" className="hover:text-white">Zemljišne knjige</a></li>
-            <li><a href="/usluge/financiranje-uredenja" className="hover:text-white">Financiranje uređenja</a></li>
-            <li><a href="/upravljanje/zajmovi-i-krediti" className="hover:text-white">Zajmovi i krediti</a></li>
+            <li><a href={withBase("/usluge/upravljanje-zgradama")} className="hover:text-white">Upravljanje zgradama</a></li>
+            <li><a href={withBase("/usluge/obnova-od-potresa")} className="hover:text-white">Obnova od potresa</a></li>
+            <li><a href={withBase("/usluge/energetska-obnova")} className="hover:text-white">Energetska obnova</a></li>
+            <li><a href={withBase("/usluge/upis-u-zemljisne-knjige")} className="hover:text-white">Zemljišne knjige</a></li>
+            <li><a href={withBase("/usluge/financiranje-uredenja")} className="hover:text-white">Financiranje uređenja</a></li>
+            <li><a href={withBase("/upravljanje/zajmovi-i-krediti")} className="hover:text-white">Zajmovi i krediti</a></li>
           </ul>
         </div>
 
@@ -58,11 +59,11 @@ export function SiteFooter() {
           <h4 className="text-xs uppercase tracking-[0.18em] text-white/55">Suvlasnici</h4>
           <ul className="mt-5 space-y-3 text-sm text-white/80">
             <li><a href="https://hpc-spg.com/" target="_blank" rel="noreferrer" className="hover:text-white">Prijava u aplikaciju</a></li>
-            <li><a href="/korisnicki-podaci" className="hover:text-white">Pristupni podaci</a></li>
-            <li><a href="/anketa" className="hover:text-white">Anketa za suvlasnike</a></li>
-            <li><a href="/upravljanje/osnovni-pojmovi" className="hover:text-white">Osnovni pojmovi</a></li>
-            <li><a href="/upravljanje/regulativa" className="hover:text-white">Regulativa</a></li>
-            <li><a href="/novosti" className="hover:text-white">Novosti</a></li>
+            <li><a href={withBase("/korisnicki-podaci")} className="hover:text-white">Pristupni podaci</a></li>
+            <li><a href={withBase("/anketa")} className="hover:text-white">Anketa za suvlasnike</a></li>
+            <li><a href={withBase("/upravljanje/osnovni-pojmovi")} className="hover:text-white">Osnovni pojmovi</a></li>
+            <li><a href={withBase("/upravljanje/regulativa")} className="hover:text-white">Regulativa</a></li>
+            <li><a href={withBase("/novosti")} className="hover:text-white">Novosti</a></li>
           </ul>
         </div>
 
@@ -113,13 +114,13 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o. Sva prava pridržana.</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             <a
-              href="/zastita-osobnih-podataka"
+              href={withBase("/zastita-osobnih-podataka")}
               className="hover:text-white"
             >
               Zaštita osobnih podataka
             </a>
-            <a href="/kolacici" className="hover:text-white">Kolačići</a>
-            <a href="/impressum" className="hover:text-white">Impressum</a>
+            <a href={withBase("/kolacici")} className="hover:text-white">Kolačići</a>
+            <a href={withBase("/impressum")} className="hover:text-white">Impressum</a>
           </div>
         </div>
       </div>

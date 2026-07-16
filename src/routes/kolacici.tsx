@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/kolacici")({
   head: () => ({
@@ -41,7 +42,7 @@ export const Route = createFileRoute("/kolacici")({
       <h2>Više informacija</h2>
       <p>
         Za pitanja u vezi s obradom osobnih podataka pogledajte{" "}
-        <a href="/zastita-osobnih-podataka">Izjavu o zaštiti osobnih podataka</a> ili nas kontaktirajte
+        <a href={withBase("/zastita-osobnih-podataka")}>Izjavu o zaštiti osobnih podataka</a> ili nas kontaktirajte
         na <a href="mailto:info@hpc-spg.hr">info@hpc-spg.hr</a>.
       </p>
     </ArticlePageShell>

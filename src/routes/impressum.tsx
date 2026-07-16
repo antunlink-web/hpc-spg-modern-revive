@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/impressum")({
   head: () => ({
@@ -45,8 +46,8 @@ export const Route = createFileRoute("/impressum")({
 
       <p className="text-sm text-muted-foreground">
         Za detaljne podatke o zaštiti osobnih podataka pogledajte{" "}
-        <a href="/zastita-osobnih-podataka">Izjavu o zaštiti osobnih podataka</a>, a o korištenju kolačića{" "}
-        <a href="/kolacici">Politiku kolačića</a>.
+        <a href={withBase("/zastita-osobnih-podataka")}>Izjavu o zaštiti osobnih podataka</a>, a o korištenju kolačića{" "}
+        <a href={withBase("/kolacici")}>Politiku kolačića</a>.
       </p>
     </ArticlePageShell>
   ),

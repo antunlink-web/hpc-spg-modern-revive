@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/upravljanje/zajmovi-i-krediti")({
   head: () => ({
@@ -41,7 +42,7 @@ export const Route = createFileRoute("/upravljanje/zajmovi-i-krediti")({
       <p>
         Uz sufinanciranje iz državnih programa, suvlasnicima omogućavamo dodatno financiranje
         konstruktivne i cjelovite obnove nakon potresa 2020. — s najpovoljnijim uvjetima na tržištu.
-        Više na stranici <a href="/usluge/obnova-od-potresa">Obnova od potresa</a>.
+        Više na stranici <a href={withBase("/usluge/obnova-od-potresa")}>Obnova od potresa</a>.
       </p>
 
       <h2>Kako pokrenuti postupak</h2>
@@ -53,8 +54,8 @@ export const Route = createFileRoute("/upravljanje/zajmovi-i-krediti")({
       </ol>
 
       <p>
-        Za konkretnu ponudu obratite se putem <a href="/kontakt">kontakt obrasca</a> ili zatražite{" "}
-        <a href="/zahtjev">prijedlog upravljanja</a>.
+        Za konkretnu ponudu obratite se putem <a href={withBase("/kontakt")}>kontakt obrasca</a> ili zatražite{" "}
+        <a href={withBase("/zahtjev")}>prijedlog upravljanja</a>.
       </p>
     </ArticlePageShell>
   ),

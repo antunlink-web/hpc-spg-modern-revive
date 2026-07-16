@@ -1,3 +1,2 @@
-## TEMPORARY staging deployment under /newsite/ — do not index.
 User-agent: *
-Disallow: /newsite/
+Allow: /

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/hitne-intervencije")({
   head: () => ({
@@ -46,8 +47,8 @@ export const Route = createFileRoute("/hitne-intervencije")({
       </p>
 
       <p>
-        Kontakti su dostupni na stranici <a href="/kontakt">Kontakt</a> — za pristupne podatke aplikacije
-        pogledajte <a href="/korisnicki-podaci">Pristupni podaci</a>.
+        Kontakti su dostupni na stranici <a href={withBase("/kontakt")}>Kontakt</a> — za pristupne podatke aplikacije
+        pogledajte <a href={withBase("/korisnicki-podaci")}>Pristupni podaci</a>.
       </p>
     </ArticlePageShell>
   ),

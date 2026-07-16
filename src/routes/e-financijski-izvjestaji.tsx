@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/e-financijski-izvjestaji")({
   head: () => ({
@@ -40,13 +41,13 @@ export const Route = createFileRoute("/e-financijski-izvjestaji")({
         Pristup se ostvaruje putem web i mobilne aplikacije na adresi{" "}
         <a href="https://hpc-spg.com/" target="_blank" rel="noreferrer">hpc-spg.com</a>. Ako još nemate
         pristupne podatke, ispunite obrazac na stranici{" "}
-        <a href="/korisnicki-podaci">Pristupni podaci</a> — aktivacija je besplatna.
+        <a href={withBase("/korisnicki-podaci")}>Pristupni podaci</a> — aktivacija je besplatna.
       </p>
 
       <p>
         Aplikacija je dostupna 24/7 i uz e-financijske izvještaje omogućava pregled uplatnica
-        (<a href="/e-uplatnice">E-uplatnice</a>) i dokumenata zgrade
-        (<a href="/dokumenti-zgrade">Dokumenti zgrade</a>).
+        (<a href={withBase("/e-uplatnice")}>E-uplatnice</a>) i dokumenata zgrade
+        (<a href={withBase("/dokumenti-zgrade")}>Dokumenti zgrade</a>).
       </p>
     </ArticlePageShell>
   ),

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/vodic-za-suvlasnike")({
   head: () => ({
@@ -64,8 +65,8 @@ export const Route = createFileRoute("/vodic-za-suvlasnike")({
 
       <p>
         Za sva pitanja obratite se voditelju vaše zgrade u HPC-SPG-u ili putem{" "}
-        <a href="/kontakt">kontakt obrasca</a>. Pojmovnik pojmova iz Zakona pogledajte na{" "}
-        <a href="/upravljanje/osnovni-pojmovi">Osnovni pojmovi upravljanja</a>.
+        <a href={withBase("/kontakt")}>kontakt obrasca</a>. Pojmovnik pojmova iz Zakona pogledajte na{" "}
+        <a href={withBase("/upravljanje/osnovni-pojmovi")}>Osnovni pojmovi upravljanja</a>.
       </p>
     </ArticlePageShell>
   ),

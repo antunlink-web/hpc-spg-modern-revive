@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/usluge/upis-u-zemljisne-knjige")({
   head: () => ({
@@ -43,7 +44,7 @@ export const Route = createFileRoute("/usluge/upis-u-zemljisne-knjige")({
 
       <p>
         Za pokretanje postupka upisa u zemljišne knjige vaše zgrade obratite se putem{" "}
-        <a href="/kontakt">kontakt obrasca</a>.
+        <a href={withBase("/kontakt")}>kontakt obrasca</a>.
       </p>
     </ArticlePageShell>
   ),

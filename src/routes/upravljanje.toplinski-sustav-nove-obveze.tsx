@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/upravljanje/toplinski-sustav-nove-obveze")({
   head: () => ({
@@ -49,7 +50,7 @@ export const Route = createFileRoute("/upravljanje/toplinski-sustav-nove-obveze"
 
       <p>
         Za detaljne informacije o vašoj zgradi obratite se voditelju u HPC-SPG-u ili putem{" "}
-        <a href="/kontakt">kontakt obrasca</a>.
+        <a href={withBase("/kontakt")}>kontakt obrasca</a>.
       </p>
     </ArticlePageShell>
   ),

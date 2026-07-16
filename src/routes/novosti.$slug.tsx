@@ -2,6 +2,7 @@ import { createFileRoute, notFound, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, FileText, ExternalLink, ArrowLeft } from "lucide-react";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
 import { findNewsBySlug, news } from "@/content/news";
+import { rewriteHtmlBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/novosti/$slug")({
   loader: ({ params }) => {
@@ -90,7 +91,7 @@ function NewsPost() {
         </>
       }
     >
-      <div dangerouslySetInnerHTML={{ __html: post.bodyHtml }} />
+      <div dangerouslySetInnerHTML={{ __html: rewriteHtmlBase(post.bodyHtml) }} />
 
       <div className="mt-12 pt-8 border-t border-border not-prose">
         <Link to="/novosti" className="inline-flex items-center gap-2 text-sm font-medium text-navy hover:text-emerald">
