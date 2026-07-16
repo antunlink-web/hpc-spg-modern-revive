@@ -443,9 +443,21 @@ function RequestPage() {
 
                 {/* Consent + submit */}
                 <div className="space-y-6 pt-2 border-t border-border">
+                  {/* Honeypot — hidden from real visitors */}
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    style={{ display: "none" }}
+                    aria-hidden="true"
+                  />
+
                   <label className="flex items-start gap-3 text-sm text-muted-foreground leading-relaxed">
                     <input
                       type="checkbox"
+                      name="consent"
+                      value="da"
                       required
                       className="mt-1 h-4 w-4 accent-[oklch(0.44_0.05_245)]"
                     />
@@ -453,7 +465,7 @@ function RequestPage() {
                       Suglasan/na sam s obradom osobnih podataka u svrhu
                       izrade prijedloga upravljanja zgradom, u skladu s{" "}
                       <a
-                        href="https://hpc-spg.hr/"
+                        href="https://hpc-spg.hr/wp-content/uploads/2019/04/web1-Izjava-o-za%C5%A1titi-osobnih-podataka-internet-stranica-klijenti-i-dobavlja%C4%8Di-HPC-SPG-1.pdf"
                         target="_blank"
                         rel="noreferrer"
                         className="text-navy underline underline-offset-2 hover:text-emerald"
@@ -464,13 +476,22 @@ function RequestPage() {
                     </span>
                   </label>
 
+                  {error && (
+                    <div
+                      role="alert"
+                      className="rounded-md border border-red-300 bg-red-50 px-4 py-3 text-sm text-red-800"
+                    >
+                      {error}
+                    </div>
+                  )}
+
                   <div className="flex flex-wrap items-center gap-4">
                     <button
                       type="submit"
                       disabled={submitting}
                       className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-6 py-3.5 text-sm font-semibold hover:bg-navy-soft transition-all hover:-translate-y-0.5 disabled:opacity-70 disabled:cursor-not-allowed"
                     >
-                      {submitting ? "Šaljem…" : "Pošalji zahtjev"}
+                      {submitting ? "Slanje..." : "Pošalji zahtjev"}
                       <Send className="h-4 w-4" />
                     </button>
                     <p className="text-xs text-muted-foreground">
@@ -483,6 +504,7 @@ function RequestPage() {
               </form>
             )}
           </div>
+
 
           {/* Sidebar */}
           <aside className="lg:col-span-4 space-y-6">
