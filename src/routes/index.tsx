@@ -57,12 +57,12 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { icon: Building2, title: "Upravljanje zgradama", desc: "Cjelovito upravljanje stambenim i poslovnim objektima uz transparentno financijsko izvještavanje.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },
-  { icon: Wrench, title: "Obračun pričuve i izrada godišnjih programa", desc: "Redovan obračun pričuve, izrada godišnjih programa održavanja i praćenje njihove provedbe.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },
-  { icon: ShieldCheck, title: "Obnova od potresa", desc: "Stručna podrška u postupku obnove zgrada oštećenih u potresu.", href: "https://hpc-spg.hr/?page_id=12900" },
-  { icon: Zap, title: "Energetska obnova", desc: "Pomoć u pripremi i provedbi projekata energetske obnove zgrada.", href: "https://hpc-spg.hr/?page_id=13606" },
-  { icon: FileText, title: "Upis u zemljišne knjige", desc: "Vođenje postupka upisa zgrade i posebnih dijelova u zemljišne knjige.", href: "https://hpc-spg.hr/?page_id=12875" },
-  { icon: Banknote, title: "Financiranje uređenja", desc: "Zajmovi za cjelovito uređenje stambenih i poslovnih objekata te obnovu.", href: "https://hpc-spg.hr/?page_id=12945" },
+  { icon: Building2, title: "Upravljanje zgradama", desc: "Cjelovito upravljanje stambenim i poslovnim objektima uz transparentno financijsko izvještavanje.", href: "/usluge/upravljanje-zgradama" },
+  { icon: Wrench, title: "Obračun pričuve i izrada godišnjih programa", desc: "Redovan obračun pričuve, izrada godišnjih programa održavanja i praćenje njihove provedbe.", href: "/usluge/upravljanje-zgradama" },
+  { icon: ShieldCheck, title: "Obnova od potresa", desc: "Stručna podrška u postupku obnove zgrada oštećenih u potresu.", href: "/usluge/obnova-od-potresa" },
+  { icon: Zap, title: "Energetska obnova", desc: "Pomoć u pripremi i provedbi projekata energetske obnove zgrada.", href: "/usluge/energetska-obnova" },
+  { icon: FileText, title: "Upis u zemljišne knjige", desc: "Vođenje postupka upisa zgrade i posebnih dijelova u zemljišne knjige.", href: "/usluge/upis-u-zemljisne-knjige" },
+  { icon: Banknote, title: "Financiranje uređenja", desc: "Zajmovi za cjelovito uređenje stambenih i poslovnih objekata te obnovu.", href: "/usluge/financiranje-uredenja" },
 ];
 
 const whyUs = [
@@ -83,25 +83,25 @@ const digital = [
 
 const process = [
   { n: "01", title: "Zahtjev za ponudu", desc: "Ispunite kratki obrazac s podacima o objektu.", href: "/zahtjev" },
-  { n: "02", title: "Prijedlog upravljanja", desc: "Pripremamo cjelovitu, prilagođenu ponudu za vašu zgradu.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },
-  { n: "03", title: "Ugovor i preuzimanje", desc: "Sklapanje ugovora i tehničko-financijsko preuzimanje objekta.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },
-  { n: "04", title: "Kontinuirano upravljanje", desc: "Redovito izvještavanje, održavanje i digitalna komunikacija.", href: "https://hpc-spg.hr/upravljanje-zgradama/" },
+  { n: "02", title: "Prijedlog upravljanja", desc: "Pripremamo cjelovitu, prilagođenu ponudu za vašu zgradu.", href: "/usluge/upravljanje-zgradama" },
+  { n: "03", title: "Ugovor i preuzimanje", desc: "Sklapanje ugovora i tehničko-financijsko preuzimanje objekta.", href: "/usluge/upravljanje-zgradama" },
+  { n: "04", title: "Kontinuirano upravljanje", desc: "Redovito izvještavanje, održavanje i digitalna komunikacija.", href: "/usluge/upravljanje-zgradama" },
 ];
 
 const news = [
-  { img: newsLaw, tag: "Zakon", date: "01.01.2025.", title: "Novi Zakon o upravljanju i održavanju zgrada", excerpt: "U primjeni je novi zakonski okvir koji uređuje prava i obveze suvlasnika te postupke upravljanja.", href: "https://hpc-spg.hr/novi-zakon-o-upravljanju-i-odrzavanju-zgrada/" },
-  { img: newsFacade, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje uređenja pročelja", excerpt: "Otvoren je javni poziv za podnošenje prijava za sufinanciranje uređenja pročelja višestambenih zgrada.", href: "https://hpc-spg.hr/javni-poziv-za-podnosenje-prijava-za-sufinanciranje-uredenja-procelja-za-postojece-visestambene-i-stambeno-poslovne-zgrade-u-2026-godini/" },
-  { img: newsElevator, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje ugradnje dizala", excerpt: "Javni poziv za sufinanciranje ugradnje dizala u postojeće višestambene i stambeno-poslovne zgrade.", href: "https://hpc-spg.hr/javni-poziv-ugradnja-dizala-u-postojece-visestambene-i-stambeno-poslovne-zgrade-u-2026-g/" },
-  { img: newsGraffiti, tag: "Sufinanciranje", date: "Aktualno", title: "Zaštita građevina od grafita", excerpt: "Poziv za podnošenje zahtjeva za sufinanciranje zaštite vanjskih dijelova građevina od grafita.", href: "https://hpc-spg.hr/poziv-za-podnosenje-zahtjeva-za-financiranje-sufinanciranje-zastite-vanjskih-dijelova-gradevina-od-grafita/" },
+  { img: newsLaw, tag: "Zakon", date: "01.01.2025.", title: "Novi Zakon o upravljanju i održavanju zgrada", excerpt: "U primjeni je novi zakonski okvir koji uređuje prava i obveze suvlasnika te postupke upravljanja.", href: "/novosti/novi-zakon-o-upravljanju-i-odrzavanju-zgrada" },
+  { img: newsFacade, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje uređenja pročelja", excerpt: "Otvoren je javni poziv za podnošenje prijava za sufinanciranje uređenja pročelja višestambenih zgrada.", href: "/novosti/javni-poziv-za-podnosenje-prijava-za-sufinanciranje-uredenja-procelja-za-postoje" },
+  { img: newsElevator, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje ugradnje dizala", excerpt: "Javni poziv za sufinanciranje ugradnje dizala u postojeće višestambene i stambeno-poslovne zgrade.", href: "/novosti/javni-poziv-ugradnja-dizala-u-postojece-visestambene-i-stambeno-poslovne-zgrade-" },
+  { img: newsGraffiti, tag: "Sufinanciranje", date: "Aktualno", title: "Zaštita građevina od grafita", excerpt: "Poziv za podnošenje zahtjeva za sufinanciranje zaštite vanjskih dijelova građevina od grafita.", href: "/novosti/poziv-za-podnosenje-zahtjeva-za-financiranje-sufinanciranje-zastite-vanjskih-dij" },
 ];
 
 const upravljanje = [
-  { icon: BookOpen, title: "Osnovni pojmovi upravljanja", desc: "Pojmovnik i objašnjenja ključnih izraza vezanih uz upravljanje zgradom.", href: "https://hpc-spg.hr/osnovni-pojmovi-upravljanja/" },
-  { icon: Award, title: "Zašto smo bolji izbor", desc: "Razlozi zbog kojih suvlasnici biraju HPC-SPG kao svog upravitelja.", href: "https://hpc-spg.hr/zasto-smo-bolji-izbor/" },
-  { icon: Coins, title: "Zajmovi i krediti", desc: "Mogućnosti financiranja obnove i uređenja stambenih objekata.", href: "https://hpc-spg.hr/zajmovi-i-krediti/" },
-  { icon: Gauge, title: "Minimalna visina pričuve", desc: "Informacije o zakonski propisanoj minimalnoj visini pričuve.", href: "https://hpc-spg.hr/minimalna-visina-pricuve/" },
-  { icon: Scale, title: "Regulativa upravljanja", desc: "Pregled propisa i zakonskog okvira upravljanja zgradama u RH.", href: "https://hpc-spg.hr/regulativa-upravljanja/" },
-  { icon: FileText, title: "Vodič za suvlasnike", desc: "Priručnik o pravima i obvezama suvlasnika stambenih zgrada.", href: "https://hpc-spg.hr/?page_id=12961" },
+  { icon: BookOpen, title: "Osnovni pojmovi upravljanja", desc: "Pojmovnik i objašnjenja ključnih izraza vezanih uz upravljanje zgradom.", href: "/upravljanje/osnovni-pojmovi" },
+  { icon: Award, title: "Zašto smo bolji izbor", desc: "Razlozi zbog kojih suvlasnici biraju HPC-SPG kao svog upravitelja.", href: "/zasto-smo-bolji-izbor" },
+  { icon: Coins, title: "Zajmovi i krediti", desc: "Mogućnosti financiranja obnove i uređenja stambenih objekata.", href: "/upravljanje/zajmovi-i-krediti" },
+  { icon: Gauge, title: "Minimalna visina pričuve", desc: "Informacije o zakonski propisanoj minimalnoj visini pričuve.", href: "/upravljanje/minimalna-visina-pricuve" },
+  { icon: Scale, title: "Regulativa upravljanja", desc: "Pregled propisa i zakonskog okvira upravljanja zgradama u RH.", href: "/upravljanje/regulativa" },
+  { icon: FileText, title: "Vodič za suvlasnike", desc: "Priručnik o pravima i obvezama suvlasnika stambenih zgrada.", href: "/vodic-za-suvlasnike" },
 ];
 
 function HomePage() {
@@ -229,9 +229,7 @@ function HomePage() {
 
               <div className="mt-8">
                 <a
-                  href="https://hpc-spg.hr/zasto-smo-bolji-izbor/"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="/zasto-smo-bolji-izbor"
                   className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft hover:-translate-y-0.5 transition-all duration-300"
                 >
                   Zašto smo bolji izbor? <ArrowRight className="h-4 w-4" />
@@ -379,7 +377,7 @@ function HomePage() {
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Aktualno</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Vijesti i javni pozivi.</h2>
             </div>
-            <a href="https://hpc-spg.hr/obavijesti/novosti/" target="_blank" rel="noreferrer" className="text-sm font-medium text-navy inline-flex items-center gap-1.5 nav-underline">
+            <a href="/novosti" className="text-sm font-medium text-navy inline-flex items-center gap-1.5 nav-underline">
               Sve novosti <ArrowRight className="h-4 w-4" />
             </a>
           </div>

@@ -29,7 +29,7 @@ export function SiteFooter() {
             </p>
             <p className="flex items-start gap-3">
               <Globe className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-              <a href="https://hpc-spg.hr/" className="hover:text-white">hpc-spg.hr</a>
+              <a href="/" className="hover:text-white">hpc-spg.primelink.com.hr</a>
             </p>
             <p className="flex items-start gap-3">
               <Mail className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
@@ -45,12 +45,12 @@ export function SiteFooter() {
         <div className="lg:col-span-2">
           <h4 className="text-xs uppercase tracking-[0.18em] text-white/55">Usluge</h4>
           <ul className="mt-5 space-y-3 text-sm text-white/80">
-            <li><a href="https://hpc-spg.hr/upravljanje-zgradama/" target="_blank" rel="noreferrer" className="hover:text-white">Upravljanje zgradama</a></li>
-            <li><a href="https://hpc-spg.hr/?page_id=12900" target="_blank" rel="noreferrer" className="hover:text-white">Obnova od potresa</a></li>
-            <li><a href="https://hpc-spg.hr/?page_id=13606" target="_blank" rel="noreferrer" className="hover:text-white">Energetska obnova</a></li>
-            <li><a href="https://hpc-spg.hr/?page_id=12875" target="_blank" rel="noreferrer" className="hover:text-white">Zemljišne knjige</a></li>
-            <li><a href="https://hpc-spg.hr/?page_id=12945" target="_blank" rel="noreferrer" className="hover:text-white">Financiranje uređenja</a></li>
-            <li><a href="https://hpc-spg.hr/zajmovi-i-krediti/" target="_blank" rel="noreferrer" className="hover:text-white">Zajmovi i krediti</a></li>
+            <li><a href="/usluge/upravljanje-zgradama" className="hover:text-white">Upravljanje zgradama</a></li>
+            <li><a href="/usluge/obnova-od-potresa" className="hover:text-white">Obnova od potresa</a></li>
+            <li><a href="/usluge/energetska-obnova" className="hover:text-white">Energetska obnova</a></li>
+            <li><a href="/usluge/upis-u-zemljisne-knjige" className="hover:text-white">Zemljišne knjige</a></li>
+            <li><a href="/usluge/financiranje-uredenja" className="hover:text-white">Financiranje uređenja</a></li>
+            <li><a href="/upravljanje/zajmovi-i-krediti" className="hover:text-white">Zajmovi i krediti</a></li>
           </ul>
         </div>
 
@@ -60,9 +60,9 @@ export function SiteFooter() {
             <li><a href="https://hpc-spg.com/" target="_blank" rel="noreferrer" className="hover:text-white">Prijava u aplikaciju</a></li>
             <li><a href="/korisnicki-podaci" className="hover:text-white">Pristupni podaci</a></li>
             <li><a href="/anketa" className="hover:text-white">Anketa za suvlasnike</a></li>
-            <li><a href="https://hpc-spg.hr/osnovni-pojmovi-upravljanja/" target="_blank" rel="noreferrer" className="hover:text-white">Osnovni pojmovi</a></li>
-            <li><a href="https://hpc-spg.hr/regulativa-upravljanja/" target="_blank" rel="noreferrer" className="hover:text-white">Regulativa</a></li>
-            <li><a href="https://hpc-spg.hr/obavijesti/novosti/" target="_blank" rel="noreferrer" className="hover:text-white">Novosti</a></li>
+            <li><a href="/upravljanje/osnovni-pojmovi" className="hover:text-white">Osnovni pojmovi</a></li>
+            <li><a href="/upravljanje/regulativa" className="hover:text-white">Regulativa</a></li>
+            <li><a href="/novosti" className="hover:text-white">Novosti</a></li>
           </ul>
         </div>
 
@@ -113,14 +113,13 @@ export function SiteFooter() {
           <p>© {new Date().getFullYear()} Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o. Sva prava pridržana.</p>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             <a
-              href="https://hpc-spg.hr/wp-content/uploads/2019/04/web1-Izjava-o-za%C5%A1titi-osobnih-podataka-internet-stranica-klijenti-i-dobavlja%C4%8Di-HPC-SPG-1.pdf"
-              target="_blank" rel="noreferrer"
+              href="/zastita-osobnih-podataka"
               className="hover:text-white"
             >
               Zaštita osobnih podataka
             </a>
-            <a href="#" className="hover:text-white">Kolačići</a>
-            <a href="https://hpc-spg.hr/" target="_blank" rel="noreferrer" className="hover:text-white">Impressum</a>
+            <a href="/kolacici" className="hover:text-white">Kolačići</a>
+            <a href="/impressum" className="hover:text-white">Impressum</a>
           </div>
         </div>
       </div>

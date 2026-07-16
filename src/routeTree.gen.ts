@@ -9,15 +9,91 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ZastoSmoBoljiIzborRouteImport } from './routes/zasto-smo-bolji-izbor'
+import { Route as ZastitaOsobnihPodatakaRouteImport } from './routes/zastita-osobnih-podataka'
 import { Route as ZahtjevRouteImport } from './routes/zahtjev'
+import { Route as VodicZaSuvlasnikeRouteImport } from './routes/vodic-za-suvlasnike'
+import { Route as UslugeRouteImport } from './routes/usluge'
+import { Route as UpravljanjeRouteImport } from './routes/upravljanje'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SeminariRouteImport } from './routes/seminari'
+import { Route as PonudaRouteImport } from './routes/ponuda'
+import { Route as ONamaRouteImport } from './routes/o-nama'
 import { Route as KorisnickiPodaciRouteImport } from './routes/korisnicki-podaci'
+import { Route as KorisniLinkoviIKontaktiRouteImport } from './routes/korisni-linkovi-i-kontakti'
 import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as KolaciciRouteImport } from './routes/kolacici'
+import { Route as ImpressumRouteImport } from './routes/impressum'
+import { Route as HitneIntervencijeRouteImport } from './routes/hitne-intervencije'
+import { Route as GalerijaRouteImport } from './routes/galerija'
+import { Route as EUplatniceRouteImport } from './routes/e-uplatnice'
+import { Route as EFinancijskiIzvjestajiRouteImport } from './routes/e-financijski-izvjestaji'
+import { Route as DokumentiZgradeRouteImport } from './routes/dokumenti-zgrade'
+import { Route as CertifikatBonitetneIzvrsnostiRouteImport } from './routes/certifikat-bonitetne-izvrsnosti'
 import { Route as AnketaRouteImport } from './routes/anketa'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as UpravljanjeIndexRouteImport } from './routes/upravljanje.index'
+import { Route as NovostiIndexRouteImport } from './routes/novosti.index'
+import { Route as UslugeUpravljanjeZgradamaRouteImport } from './routes/usluge.upravljanje-zgradama'
+import { Route as UslugeUpisUZemljisneKnjigeRouteImport } from './routes/usluge.upis-u-zemljisne-knjige'
+import { Route as UslugeObnovaOdPotresaRouteImport } from './routes/usluge.obnova-od-potresa'
+import { Route as UslugeFinanciranjeUredenjaRouteImport } from './routes/usluge.financiranje-uredenja'
+import { Route as UslugeEnergetskaObnovaRouteImport } from './routes/usluge.energetska-obnova'
+import { Route as UpravljanjeZajmoviIKreditiRouteImport } from './routes/upravljanje.zajmovi-i-krediti'
+import { Route as UpravljanjeToplinskiSustavNoveObvezeRouteImport } from './routes/upravljanje.toplinski-sustav-nove-obveze'
+import { Route as UpravljanjeRegulativaRouteImport } from './routes/upravljanje.regulativa'
+import { Route as UpravljanjeOsnovniPojmoviRouteImport } from './routes/upravljanje.osnovni-pojmovi'
+import { Route as UpravljanjeMinimalnaVisinaPricuveRouteImport } from './routes/upravljanje.minimalna-visina-pricuve'
+import { Route as NovostiSlugRouteImport } from './routes/novosti.$slug'
 
+const ZastoSmoBoljiIzborRoute = ZastoSmoBoljiIzborRouteImport.update({
+  id: '/zasto-smo-bolji-izbor',
+  path: '/zasto-smo-bolji-izbor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZastitaOsobnihPodatakaRoute = ZastitaOsobnihPodatakaRouteImport.update({
+  id: '/zastita-osobnih-podataka',
+  path: '/zastita-osobnih-podataka',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ZahtjevRoute = ZahtjevRouteImport.update({
   id: '/zahtjev',
   path: '/zahtjev',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VodicZaSuvlasnikeRoute = VodicZaSuvlasnikeRouteImport.update({
+  id: '/vodic-za-suvlasnike',
+  path: '/vodic-za-suvlasnike',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UslugeRoute = UslugeRouteImport.update({
+  id: '/usluge',
+  path: '/usluge',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UpravljanjeRoute = UpravljanjeRouteImport.update({
+  id: '/upravljanje',
+  path: '/upravljanje',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeminariRoute = SeminariRouteImport.update({
+  id: '/seminari',
+  path: '/seminari',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PonudaRoute = PonudaRouteImport.update({
+  id: '/ponuda',
+  path: '/ponuda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ONamaRoute = ONamaRouteImport.update({
+  id: '/o-nama',
+  path: '/o-nama',
   getParentRoute: () => rootRouteImport,
 } as any)
 const KorisnickiPodaciRoute = KorisnickiPodaciRouteImport.update({
@@ -25,11 +101,57 @@ const KorisnickiPodaciRoute = KorisnickiPodaciRouteImport.update({
   path: '/korisnicki-podaci',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KorisniLinkoviIKontaktiRoute = KorisniLinkoviIKontaktiRouteImport.update({
+  id: '/korisni-linkovi-i-kontakti',
+  path: '/korisni-linkovi-i-kontakti',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const KontaktRoute = KontaktRouteImport.update({
   id: '/kontakt',
   path: '/kontakt',
   getParentRoute: () => rootRouteImport,
 } as any)
+const KolaciciRoute = KolaciciRouteImport.update({
+  id: '/kolacici',
+  path: '/kolacici',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpressumRoute = ImpressumRouteImport.update({
+  id: '/impressum',
+  path: '/impressum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HitneIntervencijeRoute = HitneIntervencijeRouteImport.update({
+  id: '/hitne-intervencije',
+  path: '/hitne-intervencije',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalerijaRoute = GalerijaRouteImport.update({
+  id: '/galerija',
+  path: '/galerija',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EUplatniceRoute = EUplatniceRouteImport.update({
+  id: '/e-uplatnice',
+  path: '/e-uplatnice',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EFinancijskiIzvjestajiRoute = EFinancijskiIzvjestajiRouteImport.update({
+  id: '/e-financijski-izvjestaji',
+  path: '/e-financijski-izvjestaji',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DokumentiZgradeRoute = DokumentiZgradeRouteImport.update({
+  id: '/dokumenti-zgrade',
+  path: '/dokumenti-zgrade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertifikatBonitetneIzvrsnostiRoute =
+  CertifikatBonitetneIzvrsnostiRouteImport.update({
+    id: '/certifikat-bonitetne-izvrsnosti',
+    path: '/certifikat-bonitetne-izvrsnosti',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AnketaRoute = AnketaRouteImport.update({
   id: '/anketa',
   path: '/anketa',
@@ -40,58 +162,407 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UpravljanjeIndexRoute = UpravljanjeIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => UpravljanjeRoute,
+} as any)
+const NovostiIndexRoute = NovostiIndexRouteImport.update({
+  id: '/novosti/',
+  path: '/novosti/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UslugeUpravljanjeZgradamaRoute =
+  UslugeUpravljanjeZgradamaRouteImport.update({
+    id: '/upravljanje-zgradama',
+    path: '/upravljanje-zgradama',
+    getParentRoute: () => UslugeRoute,
+  } as any)
+const UslugeUpisUZemljisneKnjigeRoute =
+  UslugeUpisUZemljisneKnjigeRouteImport.update({
+    id: '/upis-u-zemljisne-knjige',
+    path: '/upis-u-zemljisne-knjige',
+    getParentRoute: () => UslugeRoute,
+  } as any)
+const UslugeObnovaOdPotresaRoute = UslugeObnovaOdPotresaRouteImport.update({
+  id: '/obnova-od-potresa',
+  path: '/obnova-od-potresa',
+  getParentRoute: () => UslugeRoute,
+} as any)
+const UslugeFinanciranjeUredenjaRoute =
+  UslugeFinanciranjeUredenjaRouteImport.update({
+    id: '/financiranje-uredenja',
+    path: '/financiranje-uredenja',
+    getParentRoute: () => UslugeRoute,
+  } as any)
+const UslugeEnergetskaObnovaRoute = UslugeEnergetskaObnovaRouteImport.update({
+  id: '/energetska-obnova',
+  path: '/energetska-obnova',
+  getParentRoute: () => UslugeRoute,
+} as any)
+const UpravljanjeZajmoviIKreditiRoute =
+  UpravljanjeZajmoviIKreditiRouteImport.update({
+    id: '/zajmovi-i-krediti',
+    path: '/zajmovi-i-krediti',
+    getParentRoute: () => UpravljanjeRoute,
+  } as any)
+const UpravljanjeToplinskiSustavNoveObvezeRoute =
+  UpravljanjeToplinskiSustavNoveObvezeRouteImport.update({
+    id: '/toplinski-sustav-nove-obveze',
+    path: '/toplinski-sustav-nove-obveze',
+    getParentRoute: () => UpravljanjeRoute,
+  } as any)
+const UpravljanjeRegulativaRoute = UpravljanjeRegulativaRouteImport.update({
+  id: '/regulativa',
+  path: '/regulativa',
+  getParentRoute: () => UpravljanjeRoute,
+} as any)
+const UpravljanjeOsnovniPojmoviRoute =
+  UpravljanjeOsnovniPojmoviRouteImport.update({
+    id: '/osnovni-pojmovi',
+    path: '/osnovni-pojmovi',
+    getParentRoute: () => UpravljanjeRoute,
+  } as any)
+const UpravljanjeMinimalnaVisinaPricuveRoute =
+  UpravljanjeMinimalnaVisinaPricuveRouteImport.update({
+    id: '/minimalna-visina-pricuve',
+    path: '/minimalna-visina-pricuve',
+    getParentRoute: () => UpravljanjeRoute,
+  } as any)
+const NovostiSlugRoute = NovostiSlugRouteImport.update({
+  id: '/novosti/$slug',
+  path: '/novosti/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/anketa': typeof AnketaRoute
+  '/certifikat-bonitetne-izvrsnosti': typeof CertifikatBonitetneIzvrsnostiRoute
+  '/dokumenti-zgrade': typeof DokumentiZgradeRoute
+  '/e-financijski-izvjestaji': typeof EFinancijskiIzvjestajiRoute
+  '/e-uplatnice': typeof EUplatniceRoute
+  '/galerija': typeof GalerijaRoute
+  '/hitne-intervencije': typeof HitneIntervencijeRoute
+  '/impressum': typeof ImpressumRoute
+  '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
+  '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
   '/korisnicki-podaci': typeof KorisnickiPodaciRoute
+  '/o-nama': typeof ONamaRoute
+  '/ponuda': typeof PonudaRoute
+  '/seminari': typeof SeminariRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/upravljanje': typeof UpravljanjeRouteWithChildren
+  '/usluge': typeof UslugeRouteWithChildren
+  '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
+  '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
+  '/novosti/$slug': typeof NovostiSlugRoute
+  '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
+  '/upravljanje/osnovni-pojmovi': typeof UpravljanjeOsnovniPojmoviRoute
+  '/upravljanje/regulativa': typeof UpravljanjeRegulativaRoute
+  '/upravljanje/toplinski-sustav-nove-obveze': typeof UpravljanjeToplinskiSustavNoveObvezeRoute
+  '/upravljanje/zajmovi-i-krediti': typeof UpravljanjeZajmoviIKreditiRoute
+  '/usluge/energetska-obnova': typeof UslugeEnergetskaObnovaRoute
+  '/usluge/financiranje-uredenja': typeof UslugeFinanciranjeUredenjaRoute
+  '/usluge/obnova-od-potresa': typeof UslugeObnovaOdPotresaRoute
+  '/usluge/upis-u-zemljisne-knjige': typeof UslugeUpisUZemljisneKnjigeRoute
+  '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
+  '/novosti/': typeof NovostiIndexRoute
+  '/upravljanje/': typeof UpravljanjeIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/anketa': typeof AnketaRoute
+  '/certifikat-bonitetne-izvrsnosti': typeof CertifikatBonitetneIzvrsnostiRoute
+  '/dokumenti-zgrade': typeof DokumentiZgradeRoute
+  '/e-financijski-izvjestaji': typeof EFinancijskiIzvjestajiRoute
+  '/e-uplatnice': typeof EUplatniceRoute
+  '/galerija': typeof GalerijaRoute
+  '/hitne-intervencije': typeof HitneIntervencijeRoute
+  '/impressum': typeof ImpressumRoute
+  '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
+  '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
   '/korisnicki-podaci': typeof KorisnickiPodaciRoute
+  '/o-nama': typeof ONamaRoute
+  '/ponuda': typeof PonudaRoute
+  '/seminari': typeof SeminariRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/usluge': typeof UslugeRouteWithChildren
+  '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
+  '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
+  '/novosti/$slug': typeof NovostiSlugRoute
+  '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
+  '/upravljanje/osnovni-pojmovi': typeof UpravljanjeOsnovniPojmoviRoute
+  '/upravljanje/regulativa': typeof UpravljanjeRegulativaRoute
+  '/upravljanje/toplinski-sustav-nove-obveze': typeof UpravljanjeToplinskiSustavNoveObvezeRoute
+  '/upravljanje/zajmovi-i-krediti': typeof UpravljanjeZajmoviIKreditiRoute
+  '/usluge/energetska-obnova': typeof UslugeEnergetskaObnovaRoute
+  '/usluge/financiranje-uredenja': typeof UslugeFinanciranjeUredenjaRoute
+  '/usluge/obnova-od-potresa': typeof UslugeObnovaOdPotresaRoute
+  '/usluge/upis-u-zemljisne-knjige': typeof UslugeUpisUZemljisneKnjigeRoute
+  '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
+  '/novosti': typeof NovostiIndexRoute
+  '/upravljanje': typeof UpravljanjeIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/anketa': typeof AnketaRoute
+  '/certifikat-bonitetne-izvrsnosti': typeof CertifikatBonitetneIzvrsnostiRoute
+  '/dokumenti-zgrade': typeof DokumentiZgradeRoute
+  '/e-financijski-izvjestaji': typeof EFinancijskiIzvjestajiRoute
+  '/e-uplatnice': typeof EUplatniceRoute
+  '/galerija': typeof GalerijaRoute
+  '/hitne-intervencije': typeof HitneIntervencijeRoute
+  '/impressum': typeof ImpressumRoute
+  '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
+  '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
   '/korisnicki-podaci': typeof KorisnickiPodaciRoute
+  '/o-nama': typeof ONamaRoute
+  '/ponuda': typeof PonudaRoute
+  '/seminari': typeof SeminariRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/upravljanje': typeof UpravljanjeRouteWithChildren
+  '/usluge': typeof UslugeRouteWithChildren
+  '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
+  '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
+  '/novosti/$slug': typeof NovostiSlugRoute
+  '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
+  '/upravljanje/osnovni-pojmovi': typeof UpravljanjeOsnovniPojmoviRoute
+  '/upravljanje/regulativa': typeof UpravljanjeRegulativaRoute
+  '/upravljanje/toplinski-sustav-nove-obveze': typeof UpravljanjeToplinskiSustavNoveObvezeRoute
+  '/upravljanje/zajmovi-i-krediti': typeof UpravljanjeZajmoviIKreditiRoute
+  '/usluge/energetska-obnova': typeof UslugeEnergetskaObnovaRoute
+  '/usluge/financiranje-uredenja': typeof UslugeFinanciranjeUredenjaRoute
+  '/usluge/obnova-od-potresa': typeof UslugeObnovaOdPotresaRoute
+  '/usluge/upis-u-zemljisne-knjige': typeof UslugeUpisUZemljisneKnjigeRoute
+  '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
+  '/novosti/': typeof NovostiIndexRoute
+  '/upravljanje/': typeof UpravljanjeIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/anketa' | '/kontakt' | '/korisnicki-podaci' | '/zahtjev'
+  fullPaths:
+    | '/'
+    | '/anketa'
+    | '/certifikat-bonitetne-izvrsnosti'
+    | '/dokumenti-zgrade'
+    | '/e-financijski-izvjestaji'
+    | '/e-uplatnice'
+    | '/galerija'
+    | '/hitne-intervencije'
+    | '/impressum'
+    | '/kolacici'
+    | '/kontakt'
+    | '/korisni-linkovi-i-kontakti'
+    | '/korisnicki-podaci'
+    | '/o-nama'
+    | '/ponuda'
+    | '/seminari'
+    | '/sitemap.xml'
+    | '/upravljanje'
+    | '/usluge'
+    | '/vodic-za-suvlasnike'
+    | '/zahtjev'
+    | '/zastita-osobnih-podataka'
+    | '/zasto-smo-bolji-izbor'
+    | '/novosti/$slug'
+    | '/upravljanje/minimalna-visina-pricuve'
+    | '/upravljanje/osnovni-pojmovi'
+    | '/upravljanje/regulativa'
+    | '/upravljanje/toplinski-sustav-nove-obveze'
+    | '/upravljanje/zajmovi-i-krediti'
+    | '/usluge/energetska-obnova'
+    | '/usluge/financiranje-uredenja'
+    | '/usluge/obnova-od-potresa'
+    | '/usluge/upis-u-zemljisne-knjige'
+    | '/usluge/upravljanje-zgradama'
+    | '/novosti/'
+    | '/upravljanje/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/anketa' | '/kontakt' | '/korisnicki-podaci' | '/zahtjev'
+  to:
+    | '/'
+    | '/anketa'
+    | '/certifikat-bonitetne-izvrsnosti'
+    | '/dokumenti-zgrade'
+    | '/e-financijski-izvjestaji'
+    | '/e-uplatnice'
+    | '/galerija'
+    | '/hitne-intervencije'
+    | '/impressum'
+    | '/kolacici'
+    | '/kontakt'
+    | '/korisni-linkovi-i-kontakti'
+    | '/korisnicki-podaci'
+    | '/o-nama'
+    | '/ponuda'
+    | '/seminari'
+    | '/sitemap.xml'
+    | '/usluge'
+    | '/vodic-za-suvlasnike'
+    | '/zahtjev'
+    | '/zastita-osobnih-podataka'
+    | '/zasto-smo-bolji-izbor'
+    | '/novosti/$slug'
+    | '/upravljanje/minimalna-visina-pricuve'
+    | '/upravljanje/osnovni-pojmovi'
+    | '/upravljanje/regulativa'
+    | '/upravljanje/toplinski-sustav-nove-obveze'
+    | '/upravljanje/zajmovi-i-krediti'
+    | '/usluge/energetska-obnova'
+    | '/usluge/financiranje-uredenja'
+    | '/usluge/obnova-od-potresa'
+    | '/usluge/upis-u-zemljisne-knjige'
+    | '/usluge/upravljanje-zgradama'
+    | '/novosti'
+    | '/upravljanje'
   id:
     | '__root__'
     | '/'
     | '/anketa'
+    | '/certifikat-bonitetne-izvrsnosti'
+    | '/dokumenti-zgrade'
+    | '/e-financijski-izvjestaji'
+    | '/e-uplatnice'
+    | '/galerija'
+    | '/hitne-intervencije'
+    | '/impressum'
+    | '/kolacici'
     | '/kontakt'
+    | '/korisni-linkovi-i-kontakti'
     | '/korisnicki-podaci'
+    | '/o-nama'
+    | '/ponuda'
+    | '/seminari'
+    | '/sitemap.xml'
+    | '/upravljanje'
+    | '/usluge'
+    | '/vodic-za-suvlasnike'
     | '/zahtjev'
+    | '/zastita-osobnih-podataka'
+    | '/zasto-smo-bolji-izbor'
+    | '/novosti/$slug'
+    | '/upravljanje/minimalna-visina-pricuve'
+    | '/upravljanje/osnovni-pojmovi'
+    | '/upravljanje/regulativa'
+    | '/upravljanje/toplinski-sustav-nove-obveze'
+    | '/upravljanje/zajmovi-i-krediti'
+    | '/usluge/energetska-obnova'
+    | '/usluge/financiranje-uredenja'
+    | '/usluge/obnova-od-potresa'
+    | '/usluge/upis-u-zemljisne-knjige'
+    | '/usluge/upravljanje-zgradama'
+    | '/novosti/'
+    | '/upravljanje/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnketaRoute: typeof AnketaRoute
+  CertifikatBonitetneIzvrsnostiRoute: typeof CertifikatBonitetneIzvrsnostiRoute
+  DokumentiZgradeRoute: typeof DokumentiZgradeRoute
+  EFinancijskiIzvjestajiRoute: typeof EFinancijskiIzvjestajiRoute
+  EUplatniceRoute: typeof EUplatniceRoute
+  GalerijaRoute: typeof GalerijaRoute
+  HitneIntervencijeRoute: typeof HitneIntervencijeRoute
+  ImpressumRoute: typeof ImpressumRoute
+  KolaciciRoute: typeof KolaciciRoute
   KontaktRoute: typeof KontaktRoute
+  KorisniLinkoviIKontaktiRoute: typeof KorisniLinkoviIKontaktiRoute
   KorisnickiPodaciRoute: typeof KorisnickiPodaciRoute
+  ONamaRoute: typeof ONamaRoute
+  PonudaRoute: typeof PonudaRoute
+  SeminariRoute: typeof SeminariRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  UpravljanjeRoute: typeof UpravljanjeRouteWithChildren
+  UslugeRoute: typeof UslugeRouteWithChildren
+  VodicZaSuvlasnikeRoute: typeof VodicZaSuvlasnikeRoute
   ZahtjevRoute: typeof ZahtjevRoute
+  ZastitaOsobnihPodatakaRoute: typeof ZastitaOsobnihPodatakaRoute
+  ZastoSmoBoljiIzborRoute: typeof ZastoSmoBoljiIzborRoute
+  NovostiSlugRoute: typeof NovostiSlugRoute
+  NovostiIndexRoute: typeof NovostiIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/zasto-smo-bolji-izbor': {
+      id: '/zasto-smo-bolji-izbor'
+      path: '/zasto-smo-bolji-izbor'
+      fullPath: '/zasto-smo-bolji-izbor'
+      preLoaderRoute: typeof ZastoSmoBoljiIzborRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zastita-osobnih-podataka': {
+      id: '/zastita-osobnih-podataka'
+      path: '/zastita-osobnih-podataka'
+      fullPath: '/zastita-osobnih-podataka'
+      preLoaderRoute: typeof ZastitaOsobnihPodatakaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/zahtjev': {
       id: '/zahtjev'
       path: '/zahtjev'
       fullPath: '/zahtjev'
       preLoaderRoute: typeof ZahtjevRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vodic-za-suvlasnike': {
+      id: '/vodic-za-suvlasnike'
+      path: '/vodic-za-suvlasnike'
+      fullPath: '/vodic-za-suvlasnike'
+      preLoaderRoute: typeof VodicZaSuvlasnikeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/usluge': {
+      id: '/usluge'
+      path: '/usluge'
+      fullPath: '/usluge'
+      preLoaderRoute: typeof UslugeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/upravljanje': {
+      id: '/upravljanje'
+      path: '/upravljanje'
+      fullPath: '/upravljanje'
+      preLoaderRoute: typeof UpravljanjeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seminari': {
+      id: '/seminari'
+      path: '/seminari'
+      fullPath: '/seminari'
+      preLoaderRoute: typeof SeminariRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ponuda': {
+      id: '/ponuda'
+      path: '/ponuda'
+      fullPath: '/ponuda'
+      preLoaderRoute: typeof PonudaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/o-nama': {
+      id: '/o-nama'
+      path: '/o-nama'
+      fullPath: '/o-nama'
+      preLoaderRoute: typeof ONamaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/korisnicki-podaci': {
@@ -101,11 +572,74 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KorisnickiPodaciRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/korisni-linkovi-i-kontakti': {
+      id: '/korisni-linkovi-i-kontakti'
+      path: '/korisni-linkovi-i-kontakti'
+      fullPath: '/korisni-linkovi-i-kontakti'
+      preLoaderRoute: typeof KorisniLinkoviIKontaktiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/kontakt': {
       id: '/kontakt'
       path: '/kontakt'
       fullPath: '/kontakt'
       preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kolacici': {
+      id: '/kolacici'
+      path: '/kolacici'
+      fullPath: '/kolacici'
+      preLoaderRoute: typeof KolaciciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impressum': {
+      id: '/impressum'
+      path: '/impressum'
+      fullPath: '/impressum'
+      preLoaderRoute: typeof ImpressumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hitne-intervencije': {
+      id: '/hitne-intervencije'
+      path: '/hitne-intervencije'
+      fullPath: '/hitne-intervencije'
+      preLoaderRoute: typeof HitneIntervencijeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/galerija': {
+      id: '/galerija'
+      path: '/galerija'
+      fullPath: '/galerija'
+      preLoaderRoute: typeof GalerijaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/e-uplatnice': {
+      id: '/e-uplatnice'
+      path: '/e-uplatnice'
+      fullPath: '/e-uplatnice'
+      preLoaderRoute: typeof EUplatniceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/e-financijski-izvjestaji': {
+      id: '/e-financijski-izvjestaji'
+      path: '/e-financijski-izvjestaji'
+      fullPath: '/e-financijski-izvjestaji'
+      preLoaderRoute: typeof EFinancijskiIzvjestajiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dokumenti-zgrade': {
+      id: '/dokumenti-zgrade'
+      path: '/dokumenti-zgrade'
+      fullPath: '/dokumenti-zgrade'
+      preLoaderRoute: typeof DokumentiZgradeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certifikat-bonitetne-izvrsnosti': {
+      id: '/certifikat-bonitetne-izvrsnosti'
+      path: '/certifikat-bonitetne-izvrsnosti'
+      fullPath: '/certifikat-bonitetne-izvrsnosti'
+      preLoaderRoute: typeof CertifikatBonitetneIzvrsnostiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/anketa': {
@@ -122,15 +656,169 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/upravljanje/': {
+      id: '/upravljanje/'
+      path: '/'
+      fullPath: '/upravljanje/'
+      preLoaderRoute: typeof UpravljanjeIndexRouteImport
+      parentRoute: typeof UpravljanjeRoute
+    }
+    '/novosti/': {
+      id: '/novosti/'
+      path: '/novosti'
+      fullPath: '/novosti/'
+      preLoaderRoute: typeof NovostiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/usluge/upravljanje-zgradama': {
+      id: '/usluge/upravljanje-zgradama'
+      path: '/upravljanje-zgradama'
+      fullPath: '/usluge/upravljanje-zgradama'
+      preLoaderRoute: typeof UslugeUpravljanjeZgradamaRouteImport
+      parentRoute: typeof UslugeRoute
+    }
+    '/usluge/upis-u-zemljisne-knjige': {
+      id: '/usluge/upis-u-zemljisne-knjige'
+      path: '/upis-u-zemljisne-knjige'
+      fullPath: '/usluge/upis-u-zemljisne-knjige'
+      preLoaderRoute: typeof UslugeUpisUZemljisneKnjigeRouteImport
+      parentRoute: typeof UslugeRoute
+    }
+    '/usluge/obnova-od-potresa': {
+      id: '/usluge/obnova-od-potresa'
+      path: '/obnova-od-potresa'
+      fullPath: '/usluge/obnova-od-potresa'
+      preLoaderRoute: typeof UslugeObnovaOdPotresaRouteImport
+      parentRoute: typeof UslugeRoute
+    }
+    '/usluge/financiranje-uredenja': {
+      id: '/usluge/financiranje-uredenja'
+      path: '/financiranje-uredenja'
+      fullPath: '/usluge/financiranje-uredenja'
+      preLoaderRoute: typeof UslugeFinanciranjeUredenjaRouteImport
+      parentRoute: typeof UslugeRoute
+    }
+    '/usluge/energetska-obnova': {
+      id: '/usluge/energetska-obnova'
+      path: '/energetska-obnova'
+      fullPath: '/usluge/energetska-obnova'
+      preLoaderRoute: typeof UslugeEnergetskaObnovaRouteImport
+      parentRoute: typeof UslugeRoute
+    }
+    '/upravljanje/zajmovi-i-krediti': {
+      id: '/upravljanje/zajmovi-i-krediti'
+      path: '/zajmovi-i-krediti'
+      fullPath: '/upravljanje/zajmovi-i-krediti'
+      preLoaderRoute: typeof UpravljanjeZajmoviIKreditiRouteImport
+      parentRoute: typeof UpravljanjeRoute
+    }
+    '/upravljanje/toplinski-sustav-nove-obveze': {
+      id: '/upravljanje/toplinski-sustav-nove-obveze'
+      path: '/toplinski-sustav-nove-obveze'
+      fullPath: '/upravljanje/toplinski-sustav-nove-obveze'
+      preLoaderRoute: typeof UpravljanjeToplinskiSustavNoveObvezeRouteImport
+      parentRoute: typeof UpravljanjeRoute
+    }
+    '/upravljanje/regulativa': {
+      id: '/upravljanje/regulativa'
+      path: '/regulativa'
+      fullPath: '/upravljanje/regulativa'
+      preLoaderRoute: typeof UpravljanjeRegulativaRouteImport
+      parentRoute: typeof UpravljanjeRoute
+    }
+    '/upravljanje/osnovni-pojmovi': {
+      id: '/upravljanje/osnovni-pojmovi'
+      path: '/osnovni-pojmovi'
+      fullPath: '/upravljanje/osnovni-pojmovi'
+      preLoaderRoute: typeof UpravljanjeOsnovniPojmoviRouteImport
+      parentRoute: typeof UpravljanjeRoute
+    }
+    '/upravljanje/minimalna-visina-pricuve': {
+      id: '/upravljanje/minimalna-visina-pricuve'
+      path: '/minimalna-visina-pricuve'
+      fullPath: '/upravljanje/minimalna-visina-pricuve'
+      preLoaderRoute: typeof UpravljanjeMinimalnaVisinaPricuveRouteImport
+      parentRoute: typeof UpravljanjeRoute
+    }
+    '/novosti/$slug': {
+      id: '/novosti/$slug'
+      path: '/novosti/$slug'
+      fullPath: '/novosti/$slug'
+      preLoaderRoute: typeof NovostiSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
+
+interface UpravljanjeRouteChildren {
+  UpravljanjeMinimalnaVisinaPricuveRoute: typeof UpravljanjeMinimalnaVisinaPricuveRoute
+  UpravljanjeOsnovniPojmoviRoute: typeof UpravljanjeOsnovniPojmoviRoute
+  UpravljanjeRegulativaRoute: typeof UpravljanjeRegulativaRoute
+  UpravljanjeToplinskiSustavNoveObvezeRoute: typeof UpravljanjeToplinskiSustavNoveObvezeRoute
+  UpravljanjeZajmoviIKreditiRoute: typeof UpravljanjeZajmoviIKreditiRoute
+  UpravljanjeIndexRoute: typeof UpravljanjeIndexRoute
+}
+
+const UpravljanjeRouteChildren: UpravljanjeRouteChildren = {
+  UpravljanjeMinimalnaVisinaPricuveRoute:
+    UpravljanjeMinimalnaVisinaPricuveRoute,
+  UpravljanjeOsnovniPojmoviRoute: UpravljanjeOsnovniPojmoviRoute,
+  UpravljanjeRegulativaRoute: UpravljanjeRegulativaRoute,
+  UpravljanjeToplinskiSustavNoveObvezeRoute:
+    UpravljanjeToplinskiSustavNoveObvezeRoute,
+  UpravljanjeZajmoviIKreditiRoute: UpravljanjeZajmoviIKreditiRoute,
+  UpravljanjeIndexRoute: UpravljanjeIndexRoute,
+}
+
+const UpravljanjeRouteWithChildren = UpravljanjeRoute._addFileChildren(
+  UpravljanjeRouteChildren,
+)
+
+interface UslugeRouteChildren {
+  UslugeEnergetskaObnovaRoute: typeof UslugeEnergetskaObnovaRoute
+  UslugeFinanciranjeUredenjaRoute: typeof UslugeFinanciranjeUredenjaRoute
+  UslugeObnovaOdPotresaRoute: typeof UslugeObnovaOdPotresaRoute
+  UslugeUpisUZemljisneKnjigeRoute: typeof UslugeUpisUZemljisneKnjigeRoute
+  UslugeUpravljanjeZgradamaRoute: typeof UslugeUpravljanjeZgradamaRoute
+}
+
+const UslugeRouteChildren: UslugeRouteChildren = {
+  UslugeEnergetskaObnovaRoute: UslugeEnergetskaObnovaRoute,
+  UslugeFinanciranjeUredenjaRoute: UslugeFinanciranjeUredenjaRoute,
+  UslugeObnovaOdPotresaRoute: UslugeObnovaOdPotresaRoute,
+  UslugeUpisUZemljisneKnjigeRoute: UslugeUpisUZemljisneKnjigeRoute,
+  UslugeUpravljanjeZgradamaRoute: UslugeUpravljanjeZgradamaRoute,
+}
+
+const UslugeRouteWithChildren =
+  UslugeRoute._addFileChildren(UslugeRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnketaRoute: AnketaRoute,
+  CertifikatBonitetneIzvrsnostiRoute: CertifikatBonitetneIzvrsnostiRoute,
+  DokumentiZgradeRoute: DokumentiZgradeRoute,
+  EFinancijskiIzvjestajiRoute: EFinancijskiIzvjestajiRoute,
+  EUplatniceRoute: EUplatniceRoute,
+  GalerijaRoute: GalerijaRoute,
+  HitneIntervencijeRoute: HitneIntervencijeRoute,
+  ImpressumRoute: ImpressumRoute,
+  KolaciciRoute: KolaciciRoute,
   KontaktRoute: KontaktRoute,
+  KorisniLinkoviIKontaktiRoute: KorisniLinkoviIKontaktiRoute,
   KorisnickiPodaciRoute: KorisnickiPodaciRoute,
+  ONamaRoute: ONamaRoute,
+  PonudaRoute: PonudaRoute,
+  SeminariRoute: SeminariRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  UpravljanjeRoute: UpravljanjeRouteWithChildren,
+  UslugeRoute: UslugeRouteWithChildren,
+  VodicZaSuvlasnikeRoute: VodicZaSuvlasnikeRoute,
   ZahtjevRoute: ZahtjevRoute,
+  ZastitaOsobnihPodatakaRoute: ZastitaOsobnihPodatakaRoute,
+  ZastoSmoBoljiIzborRoute: ZastoSmoBoljiIzborRoute,
+  NovostiSlugRoute: NovostiSlugRoute,
+  NovostiIndexRoute: NovostiIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
