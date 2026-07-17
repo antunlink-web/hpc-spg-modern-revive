@@ -92,7 +92,7 @@ const process = [
 const news = [
   { img: newsLaw, tag: "Zakon", date: "01.01.2025.", title: "Novi Zakon o upravljanju i održavanju zgrada", excerpt: "U primjeni je novi zakonski okvir koji uređuje prava i obveze suvlasnika te postupke upravljanja.", href: "/novosti/novi-zakon-o-upravljanju-i-odrzavanju-zgrada" },
   { img: newsFacade, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje uređenja pročelja", excerpt: "Otvoren je javni poziv za podnošenje prijava za sufinanciranje uređenja pročelja višestambenih zgrada.", href: "/novosti/javni-poziv-za-podnosenje-prijava-za-sufinanciranje-uredenja-procelja-za-postoje" },
-  { img: newsElevator, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje ugradnje dizala", excerpt: "Javni poziv za sufinanciranje ugradnje dizala u postojeće višestambene i stambeno-poslovne zgrade.", href: "/novosti/javni-poziv-ugradnja-dizala-u-postojece-visestambene-i-stambeno-poslovne-zgrade-" },
+  { img: newsElevator, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje ugradnje dizala", excerpt: "Javni poziv za sufinanciranje ugradnje dizala u postojeće višestambene i stambeno-poslovne zgrade.", href: "/novosti/javni-poziv-ugradnja-dizala-u-postojece-visestambene-i-stambeno-poslovne-zgrade" },
   { img: newsGraffiti, tag: "Sufinanciranje", date: "Aktualno", title: "Zaštita građevina od grafita", excerpt: "Poziv za podnošenje zahtjeva za sufinanciranje zaštite vanjskih dijelova građevina od grafita.", href: "/novosti/poziv-za-podnosenje-zahtjeva-za-financiranje-sufinanciranje-zastite-vanjskih-dij" },
 ];
 
