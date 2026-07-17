@@ -96,6 +96,7 @@ export const SUCCESS_MESSAGES: Record<Web3FormType, string> = {
   contact: "Hvala! Vaš je zahtjev uspješno poslan.",
   user_access: "Hvala! Vaš zahtjev za korisničke podatke uspješno je poslan.",
   survey: "Hvala! Vaša anketa uspješno je poslana.",
+  e_uplatnice: "Hvala! Vaš zahtjev za dostavu uplatnica e-mailom uspješno je poslan.",
 };
 
 export const ERROR_MESSAGE =
