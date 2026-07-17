@@ -92,7 +92,7 @@ const process = [
 const news = [
   { img: newsLaw, tag: "Zakon", date: "01.01.2025.", title: "Novi Zakon o upravljanju i održavanju zgrada", excerpt: "U primjeni je novi zakonski okvir koji uređuje prava i obveze suvlasnika te postupke upravljanja.", href: "/novosti/novi-zakon-o-upravljanju-i-odrzavanju-zgrada" },
   { img: newsFacade, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje uređenja pročelja", excerpt: "Otvoren je javni poziv za podnošenje prijava za sufinanciranje uređenja pročelja višestambenih zgrada.", href: "/novosti/javni-poziv-za-podnosenje-prijava-za-sufinanciranje-uredenja-procelja-za-postoje" },
-  { img: newsElevator, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje ugradnje dizala", excerpt: "Javni poziv za sufinanciranje ugradnje dizala u postojeće višestambene i stambeno-poslovne zgrade.", href: "/novosti/javni-poziv-ugradnja-dizala-u-postojece-visestambene-i-stambeno-poslovne-zgrade-" },
+  { img: newsElevator, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje ugradnje dizala", excerpt: "Javni poziv za sufinanciranje ugradnje dizala u postojeće višestambene i stambeno-poslovne zgrade.", href: "/novosti/javni-poziv-ugradnja-dizala-u-postojece-visestambene-i-stambeno-poslovne-zgrade" },
   { img: newsGraffiti, tag: "Sufinanciranje", date: "Aktualno", title: "Zaštita građevina od grafita", excerpt: "Poziv za podnošenje zahtjeva za sufinanciranje zaštite vanjskih dijelova građevina od grafita.", href: "/novosti/poziv-za-podnosenje-zahtjeva-za-financiranje-sufinanciranje-zastite-vanjskih-dij" },
 ];
 
@@ -434,14 +434,15 @@ function HomePage() {
               <p className="mt-1 text-white text-sm">Ulica Adama Mandrovića 3<br/>10000 Zagreb</p>
             </div>
             <div className="stagger-item bg-navy/70 backdrop-blur-sm p-6">
-              <Mail className="h-5 w-5 text-white/70" strokeWidth={1.5} />
-              <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Web</p>
-              <a href="https://hpc-spg.hr" className="mt-1 block text-white text-sm hover:underline">hpc-spg.hr</a>
+              <Phone className="h-5 w-5 text-white/70" strokeWidth={1.5} />
+              <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Telefon</p>
+              <a href="tel:+38512430303" className="mt-1 block text-white text-sm hover:underline">01/24 30 303</a>
+              <a href="tel:+38512430306" className="block text-white text-sm hover:underline">01/24 30 306</a>
             </div>
             <div className="stagger-item bg-navy/70 backdrop-blur-sm p-6">
-              <Phone className="h-5 w-5 text-white/70" strokeWidth={1.5} />
-              <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Prijava</p>
-              <a href={APP_URL} target="_blank" rel="noreferrer" className="mt-1 block text-white text-sm hover:underline">hpc-spg.com</a>
+              <Mail className="h-5 w-5 text-white/70" strokeWidth={1.5} />
+              <p className="mt-3 text-xs uppercase tracking-wider text-white/60">E-pošta</p>
+              <a href="mailto:info@hpc-spg.hr" className="mt-1 block text-white text-sm hover:underline">info@hpc-spg.hr</a>
             </div>
           </div>
         </div>

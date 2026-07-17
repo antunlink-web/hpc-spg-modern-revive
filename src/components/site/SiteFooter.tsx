@@ -33,10 +33,16 @@ export function SiteFooter() {
               <a href={withBase("/")} className="hover:text-white">hpc-spg.primelink.com.hr</a>
             </p>
             <p className="flex items-start gap-3">
+              <Phone className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
+              <span>
+                <a href="tel:+38512430303" className="hover:text-white">01/24 30 303</a>
+                {" · "}
+                <a href="tel:+38512430306" className="hover:text-white">01/24 30 306</a>
+              </span>
+            </p>
+            <p className="flex items-start gap-3">
               <Mail className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-              <a href={withBase("/zahtjev")} className="hover:text-white">
-                Zahtjev za ponudu
-              </a>
+              <a href="mailto:info@hpc-spg.hr" className="hover:text-white">info@hpc-spg.hr</a>
             </p>
           </div>
 

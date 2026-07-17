@@ -517,10 +517,16 @@ function RequestPage() {
               </p>
               <div className="mt-6 space-y-3 text-sm">
                 <a
-                  href="tel:+38516184111"
+                  href="tel:+38512430303"
                   className="flex items-center gap-3 text-foreground hover:text-navy transition-colors"
                 >
-                  <Phone className="h-4 w-4 text-emerald" /> 01 / 6184-111
+                  <Phone className="h-4 w-4 text-emerald" /> 01/24 30 303
+                </a>
+                <a
+                  href="tel:+38512430306"
+                  className="flex items-center gap-3 text-foreground hover:text-navy transition-colors"
+                >
+                  <Phone className="h-4 w-4 text-emerald" /> 01/24 30 306
                 </a>
                 <a
                   href="mailto:info@hpc-spg.hr"
