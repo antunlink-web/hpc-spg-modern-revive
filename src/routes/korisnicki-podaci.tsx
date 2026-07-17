@@ -64,8 +64,8 @@ function UserAccessPage() {
     <FormPageShell
       breadcrumb="Korisnički podaci"
       title="Zahtjev za korisničke podatke"
-      intro="Ispunite obrazac za pristupne podatke web i mobilnoj aplikaciji HPC-SPG. Podaci se dostavljaju samo evidentiranim suvlasnicima."
-      sidebarNote="Aplikacija omogućuje uvid u pričuvu, e-uplatnice, dokumente i prijavu kvarova."
+      intro="Za dodjelu korisničkog imena i lozinke za pristup web i mobilnoj aplikaciji HPC-SPG ispunite obrazac u nastavku. Pristupni podaci dostavljaju se isključivo evidentiranim suvlasnicima, a služe za uvid u stanje pričuve, e-uplatnice, financijske izvještaje, dokumente zgrade i prijavu kvara."
+      sidebarNote="Aplikacija omogućuje uvid u pričuvu, e-uplatnice, financijske izvještaje, dokumente zgrade i prijavu kvarova. Za dodatna pitanja obratite se na korisnici@hpc-spg.hr."
       nextSteps={["Provjera podataka o suvlasništvu", "Izrada korisničkih pristupnih podataka", "Dostava podataka na vašu e-poštu"]}
     >
       {submitted ? (
@@ -95,6 +95,17 @@ function UserAccessPage() {
             <div className="sm:col-span-2">
               <label htmlFor="u-adresa" className={labelBase}>Adresa zgrade <span className="text-emerald">*</span></label>
               <input id="u-adresa" name="adresa_zgrade" required autoComplete="street-address" className={inputBase} placeholder="Ulica, kućni broj, mjesto" />
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="u-poziv" className={labelBase}>Poziv na broj s posljednje uplatnice</label>
+              <input id="u-poziv" name="poziv_na_broj" className={inputBase} placeholder="Npr. HR00 12345-678-90" />
+              <p className="mt-1.5 text-xs text-muted-foreground">Za bržu identifikaciju suvlasništva unesite poziv na broj s posljednje primljene uplatnice pričuve.</p>
+            </div>
+            <div className="sm:col-span-2 flex items-start gap-3">
+              <input id="u-predstavnik" name="predstavnik_suvlasnika" type="checkbox" value="da" className="mt-1 h-4 w-4 accent-[oklch(0.44_0.05_245)]" />
+              <label htmlFor="u-predstavnik" className="text-sm text-foreground/85 leading-relaxed">
+                Predstavnik sam suvlasnika ove zgrade
+              </label>
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="u-poruka" className={labelBase}>Napomena</label>
