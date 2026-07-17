@@ -434,14 +434,15 @@ function HomePage() {
               <p className="mt-1 text-white text-sm">Ulica Adama Mandrovića 3<br/>10000 Zagreb</p>
             </div>
             <div className="stagger-item bg-navy/70 backdrop-blur-sm p-6">
-              <Mail className="h-5 w-5 text-white/70" strokeWidth={1.5} />
-              <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Web</p>
-              <a href="https://hpc-spg.hr" className="mt-1 block text-white text-sm hover:underline">hpc-spg.hr</a>
+              <Phone className="h-5 w-5 text-white/70" strokeWidth={1.5} />
+              <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Telefon</p>
+              <a href="tel:+38512430303" className="mt-1 block text-white text-sm hover:underline">01/24 30 303</a>
+              <a href="tel:+38512430306" className="block text-white text-sm hover:underline">01/24 30 306</a>
             </div>
             <div className="stagger-item bg-navy/70 backdrop-blur-sm p-6">
-              <Phone className="h-5 w-5 text-white/70" strokeWidth={1.5} />
-              <p className="mt-3 text-xs uppercase tracking-wider text-white/60">Prijava</p>
-              <a href={APP_URL} target="_blank" rel="noreferrer" className="mt-1 block text-white text-sm hover:underline">hpc-spg.com</a>
+              <Mail className="h-5 w-5 text-white/70" strokeWidth={1.5} />
+              <p className="mt-3 text-xs uppercase tracking-wider text-white/60">E-pošta</p>
+              <a href="mailto:info@hpc-spg.hr" className="mt-1 block text-white text-sm hover:underline">info@hpc-spg.hr</a>
             </div>
           </div>
         </div>
