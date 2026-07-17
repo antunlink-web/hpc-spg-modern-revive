@@ -9,6 +9,8 @@
     "build:dev": "vite build --mode development",
     "build:apache": "node scripts/build-apache.mjs",
     "verify:apache": "node scripts/verify-apache.mjs",
+    "build:apache:root": "node scripts/build-apache-root.mjs",
+    "verify:apache:root": "node scripts/verify-apache-root.mjs",
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write ."
