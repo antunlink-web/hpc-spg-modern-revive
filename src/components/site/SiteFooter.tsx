@@ -44,6 +44,7 @@ export function SiteFooter() {
               <Mail className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
               <a href="mailto:info@hpc-spg.hr" className="hover:text-white">info@hpc-spg.hr</a>
             </p>
+          </div>
 
         </div>
 
