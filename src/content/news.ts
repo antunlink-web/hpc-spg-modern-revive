@@ -248,7 +248,7 @@ Zagreb, Ulica Adama Mandrovića 3</p>
     excerpt: "Poštovani, obavještavamo Vas da će se u 2025. godini zamjena plinomjera i ispitivanje plinskih instalacija u višestambenim objektima na distribucijskom području Gradske plinare Zagreb d.o.o. izvršavati sukladno planu iz privitka.…",
     bodyHtml: `<p>Poštovani,</p>
 <p>obavještavamo Vas da će se u 2025. godini zamjena plinomjera i ispitivanje plinskih instalacija u višestambenim objektima na distribucijskom području Gradske plinare Zagreb d.o.o. izvršavati sukladno planu iz privitka.</p>
-<p><a href="/wp-media/Plan-zgrade-2025.xls">Plan &#8211; zgrade 2025</a></p>
+<p><a href="/documents/plan-zgrade-2025.xls">Plan &#8211; zgrade 2025</a></p>
 <p>Plan je temeljen na zakonskim obvezama koje je svaki operator distribucijskog sustava plina u Republici Hrvatskoj dužan izvršavati prema Zakonu o zapaljivim tekućinama i plinovima (NN 108/95, 56/10 i 114/22) i Zakonu o mjeriteljstvu s pripadajućim podzakonskim aktima (NN 74/14, 111/18 i 114/22).</p>
 <p>Molimo Vas da nam u suradnji s predstavnicima suvlasnika i samih suvlasnika objekata omogućite nesmetani pristup plinomjerima i plinskim instalacijama u svrhu provjere ispravnosti sukladno obvezama iz članka 41. stavak 1. točka 10. Zakona o upravljanju i održavanju zgrada (NN 152/2024).</p>
 <p>Također, molimo Vas da na primjereni način obavijestite suvlasnike zgrada da su obvezni posjedovati nalaze o ispravnosti koji se odnosi na plinska trošila i zrako-dimovodni sustav nužnih za nastavak isporuke plina nakon zamjene plinomjera, a što je opisano u članku 9. Zakona o zapaljivim tekućinama i plinovima.</p>
@@ -665,7 +665,7 @@ ukoliko se nešto treba preuzeti osobno, preuzimati na vratima bez nepotrebnih u
 <a href="https://www.hzjz.hr/wp-content/uploads/2020/03/Upute-stambene-zgrade-25-11-2020.pdf" target="_blank" rel="noreferrer"><strong>Preporuke za stambene zgrade s više stambenih jedinica tijekom epidemije koronavirusa</strong></a>
 </p></blockquote>
 <blockquote><p>
-<a href="/wp-content/uploads/2020/03/2020-04-Tko-i-kada-provodi-dezinfekciju-kao-mjeru-zaštite-pučanstva-od-zaraznih-bolesti.pdf"><strong>Tko i kada provodi dezinfekciju kao mjeru zaštite pučanstva od zaraznih bolesti</strong></a>
+<a href="/documents/dezinfekcija-mjere-zastite.pdf"><strong>Tko i kada provodi dezinfekciju kao mjeru zaštite pučanstva od zaraznih bolesti</strong></a>
 </p></blockquote>
 <blockquote><p>
 <a href="https://www.hzjz.hr/wp-content/uploads/2020/03/Upute-za-predstavnike-stanara1.pdf" target="_blank" rel="noreferrer"><strong>Upute HZJZ za predstavnike suvlasnika &#8211; dezinfekcija zgrada</strong></a>
