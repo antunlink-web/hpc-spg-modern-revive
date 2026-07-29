@@ -20,7 +20,7 @@ export function SiteHeader() {
   const linkColor = "text-foreground/85 hover:text-navy";
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background/97 backdrop-blur-md border-b border-border shadow-sm">
+    <header className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm">
       <div className="max-w-7xl mx-auto pl-6 pr-5 lg:pl-10 lg:pr-10 h-[80px] lg:h-[100px] flex items-center justify-between gap-6">
         {/* Desktop: horizontal logo with wordmark */}
         <a href={withBase("/")} className="hidden sm:flex items-center min-w-0" aria-label="HPC-SPG — Hrvatski poslovni centar">
