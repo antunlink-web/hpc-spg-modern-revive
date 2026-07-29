@@ -154,7 +154,8 @@ export function SiteHeader() {
           onClick={() => setOpen(false)}
         />
         <aside
-          className={`absolute right-0 top-0 h-full w-[88%] max-w-sm bg-background shadow-card flex flex-col transition-transform duration-300 ${
+          style={{ backgroundColor: "var(--background)" }}
+          className={`absolute right-0 top-0 h-full w-[88%] max-w-sm bg-background shadow-card flex flex-col isolate transition-transform duration-300 ${
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
