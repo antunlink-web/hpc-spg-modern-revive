@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
-import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
+import bonitetAAA from "@/assets/bonitet-aaa.png";
 
 export const Route = createFileRoute("/certifikat-bonitetne-izvrsnosti")({
   head: () => ({
@@ -19,7 +19,7 @@ export const Route = createFileRoute("/certifikat-bonitetne-izvrsnosti")({
       crumbs={[{ label: "Certifikat AAA" }]}
       aside={
         <div className="rounded-xl border border-border bg-background p-6 text-center">
-          <img src={bonitetAAA.url} alt="Bonitet AAA — Platinum certifikat" className="mx-auto h-40 w-auto" />
+          <img src={bonitetAAA} alt="Bonitet AAA — Platinum certifikat" className="mx-auto h-40 w-auto" />
           <p className="mt-4 text-xs uppercase tracking-[0.18em] text-muted-foreground">Bonitetna izvrsnost</p>
           <p className="mt-1 text-sm font-semibold text-navy">AAA — Platinum</p>
         </div>

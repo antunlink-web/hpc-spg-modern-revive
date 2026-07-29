@@ -5,13 +5,18 @@ export type Web3FormType = "offer" | "user_access" | "contact" | "survey" | "e_u
 
 const ENDPOINT = "https://api.web3forms.com/submit";
 
+const env = import.meta.env as Record<string, string | undefined>;
+const OFFER_KEY = env.WEB3FORMS_OFFER_KEY ?? env.VITE_WEB3FORMS_OFFER_KEY;
+const USER_ACCESS_KEY = env.WEB3FORMS_USER_ACCESS_KEY ?? env.VITE_WEB3FORMS_USER_ACCESS_KEY;
+const CONTACT_KEY = env.WEB3FORMS_CONTACT_KEY ?? env.VITE_WEB3FORMS_CONTACT_KEY;
+
 const KEY_MAP: Record<Web3FormType, string | undefined> = {
-  offer: import.meta.env.WEB3FORMS_OFFER_KEY as string | undefined,
-  user_access: import.meta.env.WEB3FORMS_USER_ACCESS_KEY as string | undefined,
-  contact: import.meta.env.WEB3FORMS_CONTACT_KEY as string | undefined,
-  survey: import.meta.env.WEB3FORMS_CONTACT_KEY as string | undefined,
-  e_uplatnice: import.meta.env.WEB3FORMS_USER_ACCESS_KEY as string | undefined,
-  web_stranica: import.meta.env.WEB3FORMS_OFFER_KEY as string | undefined,
+  offer: OFFER_KEY,
+  user_access: USER_ACCESS_KEY,
+  contact: CONTACT_KEY,
+  survey: CONTACT_KEY,
+  e_uplatnice: USER_ACCESS_KEY,
+  web_stranica: OFFER_KEY,
 };
 
 const SUBJECT_MAP: Record<Web3FormType, string> = {
