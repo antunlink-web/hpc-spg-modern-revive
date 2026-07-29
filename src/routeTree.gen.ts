@@ -44,6 +44,7 @@ import { Route as UpravljanjeToplinskiSustavNoveObvezeRouteImport } from './rout
 import { Route as UpravljanjeRegulativaRouteImport } from './routes/upravljanje.regulativa'
 import { Route as UpravljanjeOsnovniPojmoviRouteImport } from './routes/upravljanje.osnovni-pojmovi'
 import { Route as UpravljanjeMinimalnaVisinaPricuveRouteImport } from './routes/upravljanje.minimalna-visina-pricuve'
+import { Route as NovostiArhivaRouteImport } from './routes/novosti.arhiva'
 import { Route as NovostiSlugRouteImport } from './routes/novosti.$slug'
 
 const ZastoSmoBoljiIzborRoute = ZastoSmoBoljiIzborRouteImport.update({
@@ -229,6 +230,11 @@ const UpravljanjeMinimalnaVisinaPricuveRoute =
     path: '/minimalna-visina-pricuve',
     getParentRoute: () => UpravljanjeRoute,
   } as any)
+const NovostiArhivaRoute = NovostiArhivaRouteImport.update({
+  id: '/novosti/arhiva',
+  path: '/novosti/arhiva',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NovostiSlugRoute = NovostiSlugRouteImport.update({
   id: '/novosti/$slug',
   path: '/novosti/$slug',
@@ -259,6 +265,7 @@ export interface FileRoutesByFullPath {
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
+  '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
   '/upravljanje/osnovni-pojmovi': typeof UpravljanjeOsnovniPojmoviRoute
   '/upravljanje/regulativa': typeof UpravljanjeRegulativaRoute
@@ -295,6 +302,7 @@ export interface FileRoutesByTo {
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
+  '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
   '/upravljanje/osnovni-pojmovi': typeof UpravljanjeOsnovniPojmoviRoute
   '/upravljanje/regulativa': typeof UpravljanjeRegulativaRoute
@@ -334,6 +342,7 @@ export interface FileRoutesById {
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
+  '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
   '/upravljanje/osnovni-pojmovi': typeof UpravljanjeOsnovniPojmoviRoute
   '/upravljanje/regulativa': typeof UpravljanjeRegulativaRoute
@@ -374,6 +383,7 @@ export interface FileRouteTypes {
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
+    | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
     | '/upravljanje/osnovni-pojmovi'
     | '/upravljanje/regulativa'
@@ -410,6 +420,7 @@ export interface FileRouteTypes {
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
+    | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
     | '/upravljanje/osnovni-pojmovi'
     | '/upravljanje/regulativa'
@@ -448,6 +459,7 @@ export interface FileRouteTypes {
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
+    | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
     | '/upravljanje/osnovni-pojmovi'
     | '/upravljanje/regulativa'
@@ -487,6 +499,7 @@ export interface RootRouteChildren {
   ZastitaOsobnihPodatakaRoute: typeof ZastitaOsobnihPodatakaRoute
   ZastoSmoBoljiIzborRoute: typeof ZastoSmoBoljiIzborRoute
   NovostiSlugRoute: typeof NovostiSlugRoute
+  NovostiArhivaRoute: typeof NovostiArhivaRoute
   NovostiIndexRoute: typeof NovostiIndexRoute
 }
 
@@ -737,6 +750,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UpravljanjeMinimalnaVisinaPricuveRouteImport
       parentRoute: typeof UpravljanjeRoute
     }
+    '/novosti/arhiva': {
+      id: '/novosti/arhiva'
+      path: '/novosti/arhiva'
+      fullPath: '/novosti/arhiva'
+      preLoaderRoute: typeof NovostiArhivaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/novosti/$slug': {
       id: '/novosti/$slug'
       path: '/novosti/$slug'
@@ -816,6 +836,7 @@ const rootRouteChildren: RootRouteChildren = {
   ZastitaOsobnihPodatakaRoute: ZastitaOsobnihPodatakaRoute,
   ZastoSmoBoljiIzborRoute: ZastoSmoBoljiIzborRoute,
   NovostiSlugRoute: NovostiSlugRoute,
+  NovostiArhivaRoute: NovostiArhivaRoute,
   NovostiIndexRoute: NovostiIndexRoute,
 }
 export const routeTree = rootRouteImport
