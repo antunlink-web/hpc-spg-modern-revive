@@ -47,7 +47,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden lg:flex items-center gap-4 shrink-0">
+        <div className="hidden xl:flex items-center gap-4 shrink-0">
           <a
             href="https://hpc-spg.com/"
             target="_blank"
@@ -67,14 +67,14 @@ export function SiteHeader() {
         <button
           onClick={() => setOpen(true)}
           aria-label="Otvori izbornik"
-          className="lg:hidden h-11 w-11 grid place-items-center rounded-md transition-colors text-navy hover:bg-muted"
+          className="xl:hidden h-11 w-11 grid place-items-center rounded-md transition-colors text-navy hover:bg-muted"
         >
           <Menu className="h-6 w-6" />
         </button>
       </div>
 
       {/* Mobile drawer */}
-      <div className={`fixed inset-0 z-50 lg:hidden transition ${open ? "visible" : "invisible"}`}>
+      <div className={`fixed inset-0 z-50 xl:hidden transition ${open ? "visible" : "invisible"}`}>
         <div
           className={`absolute inset-0 bg-navy/60 backdrop-blur-sm transition-opacity ${open ? "opacity-100" : "opacity-0"}`}
           onClick={() => setOpen(false)}
