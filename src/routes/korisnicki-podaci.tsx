@@ -77,35 +77,29 @@ function UserAccessPage() {
         <form onSubmit={onSubmit} className="reveal-up space-y-6" noValidate>
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="u-ime" className={labelBase}>Ime i prezime <span className="text-emerald">*</span></label>
-              <input id="u-ime" name="ime_prezime" required autoComplete="name" className={inputBase} placeholder="Ime i prezime" />
+              <label htmlFor="u-ime" className={labelBase}>Ime i prezime vlasnika prostora <span className="text-emerald">*</span></label>
+              <input id="u-ime" name="ime_prezime_vlasnika" required autoComplete="name" className={inputBase} placeholder="Ime i prezime" />
             </div>
             <div>
-              <label htmlFor="u-email" className={labelBase}>E-pošta <span className="text-emerald">*</span></label>
+              <label htmlFor="u-email" className={labelBase}>Vaša adresa e-pošte <span className="text-emerald">*</span></label>
               <input id="u-email" name="email" type="email" required autoComplete="email" className={inputBase} placeholder="ime@primjer.hr" />
             </div>
-            <div>
-              <label htmlFor="u-tel" className={labelBase}>Telefon <span className="text-emerald">*</span></label>
-              <input id="u-tel" name="telefon" type="tel" required autoComplete="tel" className={inputBase} placeholder="+385 ..." />
-            </div>
-            <div>
-              <label htmlFor="u-oznaka" className={labelBase}>Oznaka posebnog dijela / stan</label>
-              <input id="u-oznaka" name="oznaka_stana" className={inputBase} placeholder="Npr. Stan 4, kat 2" />
-            </div>
             <div className="sm:col-span-2">
-              <label htmlFor="u-adresa" className={labelBase}>Adresa zgrade <span className="text-emerald">*</span></label>
+              <label htmlFor="u-adresa" className={labelBase}>Adresa zgrade u kojoj se prostor nalazi <span className="text-emerald">*</span></label>
               <input id="u-adresa" name="adresa_zgrade" required autoComplete="street-address" className={inputBase} placeholder="Ulica, kućni broj, mjesto" />
             </div>
             <div className="sm:col-span-2">
-              <label htmlFor="u-poziv" className={labelBase}>Poziv na broj s posljednje uplatnice</label>
-              <input id="u-poziv" name="poziv_na_broj" className={inputBase} placeholder="Npr. HR00 12345-678-90" />
+              <label htmlFor="u-poziv" className={labelBase}>Točan poziv na broj s posljednje uplatnice <span className="text-emerald">*</span></label>
+              <input id="u-poziv" name="poziv_na_broj" required className={inputBase} placeholder="Npr. HR00 12345-678-90" />
               <p className="mt-1.5 text-xs text-muted-foreground">Za bržu identifikaciju suvlasništva unesite poziv na broj s posljednje primljene uplatnice pričuve.</p>
             </div>
-            <div className="sm:col-span-2 flex items-start gap-3">
-              <input id="u-predstavnik" name="predstavnik_suvlasnika" type="checkbox" value="da" className="mt-1 h-4 w-4 accent-[oklch(0.44_0.05_245)]" />
-              <label htmlFor="u-predstavnik" className="text-sm text-foreground/85 leading-relaxed">
-                Predstavnik sam suvlasnika ove zgrade
-              </label>
+            <div className="sm:col-span-2">
+              <label htmlFor="u-predstavnik" className={labelBase}>Ime i prezime predstavnika suvlasnika</label>
+              <input id="u-predstavnik" name="predstavnik_suvlasnika" className={inputBase} placeholder="Ime i prezime predstavnika suvlasnika" />
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="u-tel" className={labelBase}>Telefon</label>
+              <input id="u-tel" name="telefon" type="tel" autoComplete="tel" className={inputBase} placeholder="+385 ..." />
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="u-poruka" className={labelBase}>Napomena</label>
