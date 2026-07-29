@@ -432,8 +432,7 @@ Zahtjev sadrži:<br />
     category: "Digitalne usluge",
     section: "novosti",
     excerpt: "Uplatnice za pričuvu odnosno 2D barkod za cjelokupno dugovanje kao i za buduća plaćanja od sada se mogu skinuti u web i mobilnoj aplikaciji ZATRAŽI PRISTUP APLIKACIJI Uplatnice za pričuvu možete primati i e-mailom. U svrhu točne…",
-    bodyHtml: `<a href="/e-uplatnice"><img src="/wp-media/100x62.jpg" alt="" loading="lazy" /></a>
-<h3>Uplatnice za pričuvu odnosno 2D barkod za cjelokupno dugovanje kao i za buduća plaćanja od sada se mogu skinuti u web i mobilnoj aplikaciji</h3>
+    bodyHtml: `<h3>Uplatnice za pričuvu odnosno 2D barkod za cjelokupno dugovanje kao i za buduća plaćanja od sada se mogu skinuti u web i mobilnoj aplikaciji</h3>
 <p><a href="/novosti/zahtjev-za-pristupne-podatke"><strong>ZATRAŽI PRISTUP APLIKACIJI</strong></a></p>
 <p>Uplatnice za pričuvu možete primati i e-mailom. U svrhu točne identifikacije i zaštite podataka potrebno je ispuniti <a href="/e-uplatnice">Zahtjev za slanje uplatnica za pričuvu e-mailom</a>.</p>
 <p>Uplatnica se dostavlja putem e-maila u pdf formatu i identična je onoj na papiru, te sadrži 2D barkod za lakše plaćanje putem mobilnog bankarstva. S obzirom da većina aplikacija mobilnih bankarstava podržava i učitavanje 2D barkoda iz galerije Vašeg uređaja, kod se može spremiti u galeriju tzv. <em>screenshotom</em> odnosno slikanjem ekrana uređaja, te na jednostavan način učitati prilikom plaćanja. Stoga uplatnicu nije potrebno printati.</p>
@@ -476,7 +475,7 @@ Zahtjev sadrži:<br />
     bodyHtml: `<h2><a href="https://www.zgradonacelnik.hr/komentari-i-misljenja/uspjesna-zgrada-suvlasnici-se-o-zgradi-i-okolisu-trebaju-brinuti-kao-da-je-privatno-vlasnistvo/1379/" target="_blank" rel="noreferrer">Komentari i mišljenja &#8211; USPJEŠNA ZGRADA &#8211; &#8216;Suvlasnici se o zgradi i okolišu trebaju brinuti kao da je privatno vlasništvo&#8217; &#8211; Zgradonačelnik.hr (zgradonacelnik.hr)</a></h2>
 <h3><strong>izvor: zgradonacelnik.hr</strong></h3>
 <h4>Zajednički prostori u zgradi Zvonimira Rogoza 3</h4>
-<a href="/wp-media/1699536584204-scaled.jpg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20113'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x75.jpg" alt="" loading="lazy" /></a><a href="/wp-media/1699536584192-scaled.jpg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20113'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x75.jpg" alt="" loading="lazy" /></a><a href="/wp-media/1699536584182-scaled.jpg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20113'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x75.jpg" alt="" loading="lazy" /></a><a href="/wp-media/1699536584171-scaled.jpg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20113'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x75.jpg" alt="" loading="lazy" /></a><a href="/wp-media/1699536584160-scaled.jpg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20113'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x75.jpg" alt="" loading="lazy" /></a>`,
+<a href="/wp-media/1699536584204-scaled.jpg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20113'%3E%3C/svg%3E" alt="" loading="lazy" /></a><a href="/wp-media/1699536584192-scaled.jpg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20113'%3E%3C/svg%3E" alt="" loading="lazy" /></a><a href="/wp-media/1699536584182-scaled.jpg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20113'%3E%3C/svg%3E" alt="" loading="lazy" /></a><a href="/wp-media/1699536584171-scaled.jpg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20113'%3E%3C/svg%3E" alt="" loading="lazy" /></a><a href="/wp-media/1699536584160-scaled.jpg"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20150%20113'%3E%3C/svg%3E" alt="" loading="lazy" /></a>`,
     metaDescription: "Komentari i mišljenja – USPJEŠNA ZGRADA – ‘Suvlasnici se o zgradi i okolišu trebaju brinuti kao da je privatno vlasništvo’ – Zgradonačelnik.hr (zgradonacelnik.hr) izvor: zgradonace",
     legacySlugs: ["pozitivni-primjeri-uspjesnih-predstavnika-suvlasnika"],
   },
@@ -500,8 +499,7 @@ Zahtjev sadrži:<br />
 <li>Sve uplatnice koje su građani dobili unaprijed i na kojima je iznos plaćanja u kunama, a plaćate ih nakon uvođenja eura, banka je dužna izvršiti plaćanje u euru u iznosu koji odgovara iznosu kuna navedenom na nalogu za plaćanje. Banka će postupati na ovaj način do 1.7.2023. godine</li>
 <li>Financijska agencija će nakon 1. siječnja pa do 30. lipnja 2023. godine zaprimati naloge ispostavljene u valuti kuna te će ih provoditi u eurima, uz primjenu konverzijskog tečaja. Također, za vrijeme dvojnog optjecaja, odnosno u prva dva tjedna siječnja 2023. godine, građani svoje naloge mogu plaćati u kunama, bez obzira na to jesu li isti ispostavljeni u kunama ili eurima.</li>
 </ul>
-<p><strong>Zbog prilagodbe cjelokupnog poslovanja na novu valutu koja će biti implementirana tijekom prvog tjedna siječnja, moguća su mala kašnjenja u plaćanjima prvenstveno zbog prilagodbe bankarskog sektora, te dostavi uplatnica za pričuvu za prvi kvartal, no isto se nikako neće smatrati dugovanjem, te u tom smislu molimo za Vaše strpljenje i razumijevanje.</strong></p>
-<img src="/wp-media/100x56.jpg" alt="" loading="lazy" />`,
+<p><strong>Zbog prilagodbe cjelokupnog poslovanja na novu valutu koja će biti implementirana tijekom prvog tjedna siječnja, moguća su mala kašnjenja u plaćanjima prvenstveno zbog prilagodbe bankarskog sektora, te dostavi uplatnica za pričuvu za prvi kvartal, no isto se nikako neće smatrati dugovanjem, te u tom smislu molimo za Vaše strpljenje i razumijevanje.</strong></p>`,
     metaDescription: "Poštovani korisnici, Želimo Vam skrenuti pozornost na sve ključne promjene koje će se, sukladno zakonodavnom okviru – Zakon o uvođenju eura kao službene valute u Republici Hrvatsko",
     legacySlugs: ["prilagodba-poslovanja-na-novu-eur-valutu-obavijest"],
   },
@@ -532,8 +530,7 @@ Zahtjev sadrži:<br />
     category: "Energetska obnova",
     section: "novosti",
     excerpt: "Objavljen je Javni poziv za energetsku obnovu višestambenih zgrada . Na vrijeme saznajte sve potrebne informacije, donesite odluke i izradite dokumentaciju za prijavu!",
-    bodyHtml: `<a href="/usluge/energetska-obnova"><img src="/wp-media/100x66.jpg" alt="" loading="lazy" /></a>
-<p>Objavljen je <a href="/usluge/energetska-obnova">Javni poziv za energetsku obnovu višestambenih zgrada</a>. Na vrijeme saznajte sve potrebne informacije, donesite odluke i izradite dokumentaciju za prijavu!</p>`,
+    bodyHtml: `<p>Objavljen je <a href="/usluge/energetska-obnova">Javni poziv za energetsku obnovu višestambenih zgrada</a>. Na vrijeme saznajte sve potrebne informacije, donesite odluke i izradite dokumentaciju za prijavu!</p>`,
     metaDescription: "Objavljen je Javni poziv za energetsku obnovu višestambenih zgrada . Na vrijeme saznajte sve potrebne informacije, donesite odluke i izradite dokumentaciju za prijavu!",
     legacySlugs: ["javni-poziv-za-energetsku-obnovu-zgrada"],
   },
@@ -545,8 +542,7 @@ Zahtjev sadrži:<br />
     category: "Arhiva",
     section: "arhiva",
     excerpt: "Prenosimo preporuku Grada Zagreba o pregledu skloništa i preventivnim aktivnostima za dovođenje u funkciju. Zakonom o izmjenama i dopunama Zakona o unutarnjim poslovima (NN 161/98) bilo je regulirano tko je i iz kojih sredstava…",
-    bodyHtml: `<a href="/wp-media/sklonista-obavijest-Grad-Zagreb-03.03.2022-717x1024.png"><img src="/wp-media/100x142.jpg" alt="" loading="lazy" /></a>
-<p>Prenosimo preporuku Grada Zagreba o pregledu skloništa i preventivnim aktivnostima za dovođenje u funkciju.</p>
+    bodyHtml: `<p>Prenosimo preporuku Grada Zagreba o pregledu skloništa i preventivnim aktivnostima za dovođenje u funkciju.</p>
 <p><a href="https://narodne-novine.nn.hr/clanci/sluzbeni/1998_12_161_1984.html" target="_blank" rel="noreferrer">Zakonom o izmjenama i dopunama Zakona o unutarnjim poslovima</a> (NN 161/98) bilo je regulirano tko je i iz kojih sredstava bio obvezan održavati skloništa. Donošenjem ovoga propisa <strong>održavanje skloništa</strong> iz nadležnosti MUP-a <strong>prešlo je u nadležnost općina, gradova i Grada Zagreba, odnosno vlasnika.</strong></p>
 <p>Od 2015.g. izmjenama <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2015_07_82_1567.html" target="_blank" rel="noreferrer">Zakona o sustavu civilne zaštite </a> (NN 82/2015) ukinuti su svi pravilnici koji su regulirali upravljanje skloništima, te su prestali važiti:</p>
 <ul>
@@ -577,8 +573,8 @@ Zahtjev sadrži:<br />
 <li>Program mjera obnove zgrada oštećenih potresom na području Grada Zagreba, Krapinsko-zagorske županije, Zagrebačke županije, Sisačko-moslavačke županije i Karlovačke županije (&#8220;Narodne novine&#8221; broj <a href="https://narodne-novine.nn.hr/clanci/sluzbeni/2021_12_137_2259.html" target="_blank" rel="noreferrer">137/21</a>)</li>
 </ul>
 <p><a href="/usluge/obnova-od-potresa">VIŠE INFORMACIJA&#8230;</a></p>
-<a href="/documents/obnova-zgrada-i-uloga-upravitelja.pdf"><img src="/wp-media/100x142.jpg" alt="" loading="lazy" /></a>
-<a href="/documents/vodic-za-aktivnosti-nakon-potresa-2020.pdf"><img src="/wp-media/100x142.jpg" alt="" loading="lazy" /></a>
+
+
 <h4>Vodič za aktivnosti nakon potresa MGIPU</h4>
 <p>Ministarstvo graditeljstva i prostornoga uređenja objavilo je „<a href="/documents/vodič_za_aktivnosti_nakon_potresa_2020.pdf"><strong>Vodič za aktivnosti nakon potresa</strong></a>“ koji donosi pregled svih dosadašnjih aktivnosti Ministarstva vezanih za sanaciju oštećenih zgrada u potresu.</p>
 <p>Uz Vodič za građane Ministarstvo je pripremilo i preporuke za primjenu Pravilnika o registru šteta od prirodnih nepogoda za procjenu štete na građevinama. U preporukama je dano stručno mišljenje o načinu izvršenja postupka, propisanim procedurama i odabranoj metodologiji te tko i kako procjenjuje štetu na oštećenoj imovini koja se dogodila u potresu.</p>
@@ -609,8 +605,6 @@ Javni poziv za prijavu štete na imovini ➡️ <a href="https://www.zagreb.hr/j
 Obrazac za prijavu štete ➡️ <a href="https://survey123.arcgis.com/share/7bdaffd5c9a94e71afc59ce1e26ff78a?fbclid=IwAR2gs_P2Bf4nQuV-63jtCE7QQwP9oTWkNRehKXb3XVFnq46RK003brndMao" target="_blank" rel="noreferrer">https://survey123.arcgis.com/…/7bdaffd5c9a94e71afc59ce1e26f…</a></p>
 <p>Više na <a href="https://www.zagreb.hr/potres-u-zagrebu-2232019/156584?fbclid=IwAR25SL7FsoUz3S9xH3bjh51Y9RmO3Ct7ZnJHOqBNM7fBXgfWgtIjbAa_OOY" target="_blank" rel="noreferrer">https://www.zagreb.hr/potres-u-zagrebu-2232019/156584</a></p>`,
     documents: [
-      { label: "obnova-zgrada-i-uloga-upravitelja.pdf", href: "/documents/obnova-zgrada-i-uloga-upravitelja.pdf" },
-      { label: "vodic-za-aktivnosti-nakon-potresa-2020.pdf", href: "/documents/vodic-za-aktivnosti-nakon-potresa-2020.pdf" },
       { label: "Vodič za aktivnosti nakon potresa", href: "/documents/vodič_za_aktivnosti_nakon_potresa_2020.pdf" },
     ],
     metaDescription: "Zakon o obnovi zgrada oštećenih potresom u Zagrebu, Krapinsko-zagorskoj i Zagrebačkoj županiji Zakon o obnovi zgrada oštećenih potresom na području Grada Zagreba, Krapinsko-zagorsk",
@@ -696,8 +690,8 @@ ukoliko se nešto treba preuzeti osobno, preuzimati na vratima bez nepotrebnih u
 <p>Po prvi put suvlasnici zgrada imali su priliku saznati sve podatke o upravljanju i održavanju njihove zgrade na jednom mjestu jer su u akciji, uz upravitelja zgrada, sudjelovali i njihov glavni partner i suradnik Uniqa osiguranje d.d., te dva odvjetnička tima.</p>
 <p>Temeljni razlog organiziranja „Dana otvorenih vrata upravitelja zgrada HPC-SPG d.o.o.“ bio je prvenstveno svim korisnicima – suvlasnicima zgrada približili tu materiju i u izravnom kontaktu sa zainteresiranim suvlasnicima odgovoriti na njihova pitanja, razriješiti im probleme i nejasnoće s kojima se susreću u upravljanju i održavanju njihovih zgrada, budući da i nakon 16 godina od uvođenja sustava upravljanja i održavanja višestambenih (i poslovnih) zgrada sukladno odredbama Zakona o vlasništvu i drugim stvarnim pravima, još uvijek postoji nerazumijevanje, nesnalaženje, kao i neznanje kod suvlasnika zgrada o važnosti i potrebi održavanja i upravljanja zgradama u interesu samih korisnika – suvlasnika zgrada. Zakonom propisane odredbe o toj problematici nisu u potpunosti zaživjele i s razumijevanjem prihvaćene od samih suvlasnika višestambenih zgrada.Posjetiteljima je besplatno podijeljeno oko pet stotina „poklon paketa“ koji je između ostalog sadržavao i besplatni primjerak „Vodiča za suvlasnike zgrada – Priručnik o stanovanju“ – prvu knjigu u nas namijenjenu upravo suvlasnicima višestambenih zgrada kojom je obrađeno cjelokupno područje upravljanja i održavanja zgrada.</p>
 <p>Otvorenju prvih „Dana otvorenih vrata upravitelja zgrada HPC-SPG d.o.o.“ u petak 16. studenog 2012.g. u 16,00 sati u poslovnici upravitelja HPC-SPG d.o.o. u Vlaškoj 125, Zagreb u prizemlju nazočilo je nešto manje posjetitelja s obzirom na događanja toga dana – oslobođenje generala, no uslijedilo je i više telefonskih poziva kojima su se suvlasnici informirali je li moguće doći i slijedećih dana. „Dane otvorenih vrata upravitelja HPC-SPG d.o.o.“ otovorio je gospodin Rudolf Rom iz Hrvatske gospodarske komore. Upravo iz toga razloga upravitelj zgrada ostavlja svoja vrata i dalje „odškrinuta“ kako bi veliki broj zainteresiranih posjetitelja koji nisu bili u prilici i mogućnosti doći za vrijeme održavanja ove hvalevrijedne akcije, dobio svoj poklon paket.</p>
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20289'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x96.jpg" alt="" loading="lazy" />
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20284'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x94.jpg" alt="" loading="lazy" />
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20289'%3E%3C/svg%3E" alt="" loading="lazy" />
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20284'%3E%3C/svg%3E" alt="" loading="lazy" />
 <p>Suvlasnici će i dalje moći doći po svoj poklon paket na adresi HPC-SPG d.o.o u Vlaškoj 125 u  poslovnici na 1. katu radnim danom od 8 do 16 sati.</p>
 <p>Posljednjeg dana manifestacije, izvučeni su i dobitnici nagradne igre Uniqa osiguranja d.d. u kojoj je glavna nagrada bila jednogodišnje osiguranje kućanstva, a mogli su sudjelovati svi zainteresirani posjetitelji.</p>
 <p>Prvi dani otvorenih vrata upravitelja HPC-SPG d.o.o. velikim interesom suvlasnika pokazali su se opravdanima budući da su suvlasnici imali niz nerazriješenih dilema i pitanja vezanih za to područje, ponajviše za vrlo aktualno etažiranje i upis u zemljišnje knjige, naplatu pričuve od dužnika, smjenu predstavnika i upravitelja, međuljudske odnose, primjereno i dopunsko osiguranje zgrade i posebnih dijelova… Upravo zbog toga velikog interesa, upravitelj zgrada Hrvatski poslovni centar – stambeno poslovno gospodarstvo i dalje će provoditi akciju budući da je prema očekivanjima pobudila veliki interes suvlasnika.</p>
@@ -715,32 +709,32 @@ ukoliko se nešto treba preuzeti osobno, preuzimati na vratima bez nepotrebnih u
     category: "Arhiva",
     section: "arhiva",
     excerpt: "“Upravljanje i održavanje stambenih zgrada” Trakošćan, 22.-24. listopada 1998.g. Na prvom održanom seminaru takve vrste u Republici Hrvatskoj kojim smo pokušali upraviteljima zgrada i suvlasnicima približiti ovu problematiku i…",
-    bodyHtml: `<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x145.jpg" alt="" loading="lazy" />
+    bodyHtml: `<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" alt="" loading="lazy" />
 <p><strong>“Upravljanje i održavanje stambenih zgrada”</strong></p>
 <p>Trakošćan, 22.-24. listopada 1998.g.</p>
 <p>Na prvom održanom seminaru takve vrste u Republici Hrvatskoj kojim smo pokušali upraviteljima zgrada i suvlasnicima približiti ovu problematiku i educirati ih o svim aspektima upravljanja, obrađene su sljedeće teme: Definiranje suvlasničkih dijelova u stambenoj zgradi – posebni, sporedni i zajednički dijelovi stambene zgrade, te zajednički dijelovi dviju i više zgrada, Godišnji program održavanja i upravljanja stambenom zgradom, Određivanje vlasništva na određenim posebnim i zajedničkim dijelovima zgrade, Provedba vlasništva posebnog dijela i suvlasništva nad zajedničkim dijelovima zgrade, Kućni red, Primjena propisa i mjere zaštite od požara u stambenim i poslovnim zgradama, Stanje zaštite od požara i održavanje vatrogasnih aparata i dr.</p>
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x145.jpg" alt="" loading="lazy" />
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" alt="" loading="lazy" />
 <p><strong>“Upravljanje i održavanje stambenih zgrada II”</strong></p>
 <p>Trakošćan, 26. i 27. listopada 2000.g.</p>
 <p>Na drugom po redu seminaru organiziranom prvenstveno za upravitelje zgrada, te predstavnike suvlasnika obrađene su teme: Osobitosti upravljanja zgradama u primjeni Zakona o vlasništvu i drugim stvarnim pravima s osvrtom na prinudnu upravu i pravni položaj skloništa, Prava i obveze građevinske inspekcije u poduzimanju mjera na uklanjanju nedostataka na zgradi, Upravljanje i održavanje stambeno-poslovnih zgrada u gradu Rijeci, Održavanje i tehnička kontrola dizala, Kućni dimnjaci, Distribuiranje financijskih informacija – izvješća suvlasnicima zgrada putem interneta i automatiziranih servisa, Izvanredni poslovi – dozvole i suglasnosti za njihovo obavljanje, Obvezna pričuva, Pretvorba društvenog vlasništva i dr.</p>
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x145.jpg" alt="" loading="lazy" />
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" alt="" loading="lazy" />
 <p>“<strong>Održavanje, obnova i namjena građevina u zaštićenim povijesnim cjelinama”</strong></p>
 <p>Opatija, 15. i 16. svibnja 2003.g.</p>
 <p>Seminar je organiziran u suradnji s Ministarstvom kulture RH, Ministarstvom zaštite okoliša i prostornog uređenja RH, Hrvatskom udrugom upravitelja zgrada, te Gradskim zavodom za zaštitu spomenika kulture i prirode Grada Zagreba.</p>
 <p>Obrađene su teme zaštite i očuvanja graditeljske baštine – pravni i ekonomski aspekti, zaštita, raznovrsnost u posjedovanju i očuvanju graditeljskog nasljeđa, održavanje i rekonstrukcija građevina graditeljske baštine, stvarna prava na kulturnim dobrima, provođenje mjera zaštite i očuvanja građevina graditeljske baštine putem upravitelja nekretnina i dr.</p>
 <h2>Svi suvlasnici novougovorenih zgrada besplatno, na poklon dobivaju primjerak</h2><h4>prve knjige o upravljanju i održavanju zgrada i kulturi stanovanja koja sadrži sve najvažnije informacije o stanovanju u višestambenim zgradama</h4><p><strong>POSEBNA PROMOTIVNA AKCIJA!</strong></p>
 <a href="/novosti/vodic-za-suvlasnike-zgrada"><em></em> Naruči priručnik</a>
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x145.jpg" alt="" loading="lazy" />
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20290'%3E%3C/svg%3E" alt="" loading="lazy" />
 <p><strong>“Spomenička renta i očuvanje kulturne baštine”</strong></p>
 <p>Stubičke Toplice, 23. i 24. listopada 2003.g.</p>
 <p>Seminar je održan u suradnji s Ministarstvom kulture RH, uz suradnju stručnjaka Porezne uprave Ministarstva financija i Ministarstva pravosuđa, uprave i lokalne samouprave.</p>
 <p>Cijeneći potrebu da se na dosljedan i stručan način novodonešene zakonske odredbe provedu u praksi uz puno uvažavanje lokalnih potreba i mogućnosti, prikazane su mogućnosti i način provedbe članka 112. do 114b. Zakona o zaštiti i očuvanju kulturnih dobara.</p>
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20284'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x142.jpg" alt="" loading="lazy" />
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%20284'%3E%3C/svg%3E" alt="" loading="lazy" />
 <p><strong>“Upravljanje i održavanje stambenih zgrada V – sudska praksa 9 godina poslije”</strong></p>
 <p>Tuheljske toplice „Terme Tuhelj“,  20. i 21. listopada 2005.g.</p>
 <p>Seminar je održan uz potporu Ministarstva pravosuđa i Ministarstva kulture Republike Hrvatske.</p>
 <p>Sudska praksa u provođenju i primjeni Zakona o vlasništvu i drugim stvarnim pravima od velikog je interesa i koristi kako za upravitelje zgrada, suvlasnike i njihove predstavnike, odvjetnike, pravnike, djelatnike lokalne uprave i samouprave, tako i za djelatnike pravosuđa, u razmjeni iskustava i usklađivanju svojih stajališta u sudskoj praksi.</p>
-<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20208%20300'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x144.jpg" alt="" loading="lazy" />
+<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20208%20300'%3E%3C/svg%3E" alt="" loading="lazy" />
 <p><strong>“Vodiča za suvlasnike zgrada – Priručnik o stanovanju”</strong></p>
 <p>Sadržajno smo obuhvatili najvažnije obavijesti o upravljanju i održavanju zgrada, posebnosti zaštite, obnove, očuvanja i održavanja graditeljstke baštine; djelatnosti najvažnijih komunalnih tvrtki i javnih poduzeća (Vodoopskrba i odvodnja, HEP-Toplinarstvo i HEP Distribucija DP Elektra Zagreb); o sudskoj praksi – izvanparnični postupci (ovrha radi naplate pričuve), upisu u zemljišne knjige; praktični prilozi – izvodi iz zakona, uredbi, odluka i pravilnika, te oglasni dio u kojem smo predstavili proizvode i usluge tvrtki, obrtnika i drugih poslovnih subjekata čija je djelatnost namijenjena čovjeku – obitelji – vlasniku stana i stambeno-poslovnoj zgradi.</p>`,
     metaDescription: "“Upravljanje i održavanje stambenih zgrada” Trakošćan, 22.-24. listopada 1998.g. Na prvom održanom seminaru takve vrste u Republici Hrvatskoj kojim smo pokušali upraviteljima zgrad",
@@ -754,7 +748,7 @@ ukoliko se nešto treba preuzeti osobno, preuzimati na vratima bez nepotrebnih u
     category: "Arhiva",
     section: "arhiva",
     excerpt: "Upravljanje, održavanje i kultura stanovanja Knjiga koja je pred Vama pripremljena je i tiskana po prvi put u nas. Potreba za izdavanjem Vodiča za suvlasnike zgrada, rezultat je dugogodišnjeg iskustva u upravljanju i održavanju…",
-    bodyHtml: `<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20722'%3E%3C/svg%3E" alt="" loading="lazy" /><img src="/wp-media/100x144.jpg" alt="" loading="lazy" />
+    bodyHtml: `<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20500%20722'%3E%3C/svg%3E" alt="" loading="lazy" />
 <h2>Upravljanje, održavanje i kultura stanovanja</h2>
 <p>Knjiga koja je pred Vama pripremljena je i tiskana po prvi put u nas. Potreba za izdavanjem Vodiča za suvlasnike zgrada, rezultat je dugogodišnjeg iskustva u upravljanju i održavanju zgrada, ali i organiziranju seminara – savjetovanja iz područja koja reguliraju tu problematiku. Novi sustav upravljanja i održavanja zgrada uveden je Zakonom o vlasništvu i drugim stvarnim pravima, a primjenjuje se od 1. siječnja 1997. godine, gotovo 8 godina. Zakonom je određeno PRAVO I DUŽNOST suvlasnika nekretnine da sudjeluju u njenom upravljanju, a sva sredstva koja u tu svrhu izdvoje, koriste se za uređivanje i održavanje SVOJE ZGRADE. Od početka primjene Zakona, više ne postoji sustav solidarnosti u održavanju stambenih zgrada. Tijekom tog razdoblja došli smo do saznanja o velikom nesnalaženju, neinformiranosti, neznanju i pomanjkanju razine svijesti suvlasnika o tome što upravljanje i održavanje zgrada u njihovu vlasništvu uopće podrazumijeva. Cilj Vodiča je, uz edukaciju, i otklanjanje konfliktnih situacija i nepotrebnih komunikacija između suvlasnika i upravitelja zgrada, izvođača radova, komunalnih tvrtki, državnih institucija, kao i poticanje dobrih susjedskih odnosa u zgradi i širem susjedstvu</p>
 Urediništvo<ul>
