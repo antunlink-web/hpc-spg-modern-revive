@@ -3,7 +3,7 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { useReveal } from "@/hooks/use-reveal";
-import { news } from "@/content/news";
+import { currentNews } from "@/content/news";
 
 export const Route = createFileRoute("/novosti/")({
   head: () => ({
@@ -35,7 +35,7 @@ function NewsIndex() {
       <section className="py-16 lg:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {news.map((n) => (
+            {currentNews.map((n) => (
               <Link
                 key={n.slug}
                 to="/novosti/$slug"
@@ -56,6 +56,15 @@ function NewsIndex() {
                 </div>
               </Link>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <Link
+              to="/novosti/arhiva"
+              className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-navy hover:border-navy/30 hover:text-emerald transition-colors"
+            >
+              Arhiva starijih objava <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>

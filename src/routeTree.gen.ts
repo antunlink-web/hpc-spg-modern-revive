@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ZastoSmoBoljiIzborRouteImport } from './routes/zasto-smo-bolji-izbor'
 import { Route as ZastitaOsobnihPodatakaRouteImport } from './routes/zastita-osobnih-podataka'
+import { Route as ZahtjevZaIzraduStranicaRouteImport } from './routes/zahtjev-za-izradu-stranica'
 import { Route as ZahtjevRouteImport } from './routes/zahtjev'
 import { Route as VodicZaSuvlasnikeRouteImport } from './routes/vodic-za-suvlasnike'
 import { Route as UslugeRouteImport } from './routes/usluge'
@@ -56,6 +57,11 @@ const ZastoSmoBoljiIzborRoute = ZastoSmoBoljiIzborRouteImport.update({
 const ZastitaOsobnihPodatakaRoute = ZastitaOsobnihPodatakaRouteImport.update({
   id: '/zastita-osobnih-podataka',
   path: '/zastita-osobnih-podataka',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZahtjevZaIzraduStranicaRoute = ZahtjevZaIzraduStranicaRouteImport.update({
+  id: '/zahtjev-za-izradu-stranica',
+  path: '/zahtjev-za-izradu-stranica',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ZahtjevRoute = ZahtjevRouteImport.update({
@@ -270,6 +276,7 @@ export interface FileRoutesByFullPath {
   '/usluge': typeof UslugeRouteWithChildren
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
@@ -308,6 +315,7 @@ export interface FileRoutesByTo {
   '/seminari': typeof SeminariRoute
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
@@ -349,6 +357,7 @@ export interface FileRoutesById {
   '/usluge': typeof UslugeRouteWithChildren
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
@@ -391,6 +400,7 @@ export interface FileRouteTypes {
     | '/usluge'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
+    | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
@@ -429,6 +439,7 @@ export interface FileRouteTypes {
     | '/seminari'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
+    | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
@@ -469,6 +480,7 @@ export interface FileRouteTypes {
     | '/usluge'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
+    | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
@@ -510,6 +522,7 @@ export interface RootRouteChildren {
   UslugeRoute: typeof UslugeRouteWithChildren
   VodicZaSuvlasnikeRoute: typeof VodicZaSuvlasnikeRoute
   ZahtjevRoute: typeof ZahtjevRoute
+  ZahtjevZaIzraduStranicaRoute: typeof ZahtjevZaIzraduStranicaRoute
   ZastitaOsobnihPodatakaRoute: typeof ZastitaOsobnihPodatakaRoute
   ZastoSmoBoljiIzborRoute: typeof ZastoSmoBoljiIzborRoute
   NovostiSlugRoute: typeof NovostiSlugRoute
@@ -531,6 +544,13 @@ declare module '@tanstack/react-router' {
       path: '/zastita-osobnih-podataka'
       fullPath: '/zastita-osobnih-podataka'
       preLoaderRoute: typeof ZastitaOsobnihPodatakaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zahtjev-za-izradu-stranica': {
+      id: '/zahtjev-za-izradu-stranica'
+      path: '/zahtjev-za-izradu-stranica'
+      fullPath: '/zahtjev-za-izradu-stranica'
+      preLoaderRoute: typeof ZahtjevZaIzraduStranicaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/zahtjev': {
@@ -855,6 +875,7 @@ const rootRouteChildren: RootRouteChildren = {
   UslugeRoute: UslugeRouteWithChildren,
   VodicZaSuvlasnikeRoute: VodicZaSuvlasnikeRoute,
   ZahtjevRoute: ZahtjevRoute,
+  ZahtjevZaIzraduStranicaRoute: ZahtjevZaIzraduStranicaRoute,
   ZastitaOsobnihPodatakaRoute: ZastitaOsobnihPodatakaRoute,
   ZastoSmoBoljiIzborRoute: ZastoSmoBoljiIzborRoute,
   NovostiSlugRoute: NovostiSlugRoute,
