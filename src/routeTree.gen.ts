@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ZastoSmoBoljiIzborRouteImport } from './routes/zasto-smo-bolji-izbor'
 import { Route as ZastitaOsobnihPodatakaRouteImport } from './routes/zastita-osobnih-podataka'
+import { Route as ZahtjevZaIzraduStranicaRouteImport } from './routes/zahtjev-za-izradu-stranica'
 import { Route as ZahtjevRouteImport } from './routes/zahtjev'
 import { Route as VodicZaSuvlasnikeRouteImport } from './routes/vodic-za-suvlasnike'
 import { Route as UslugeRouteImport } from './routes/usluge'
@@ -22,6 +23,7 @@ import { Route as KorisnickiPodaciRouteImport } from './routes/korisnicki-podaci
 import { Route as KorisniLinkoviIKontaktiRouteImport } from './routes/korisni-linkovi-i-kontakti'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as KolaciciRouteImport } from './routes/kolacici'
+import { Route as IzradaDinamicneWebStraniceRouteImport } from './routes/izrada-dinamicne-web-stranice'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as HitneIntervencijeRouteImport } from './routes/hitne-intervencije'
 import { Route as GalerijaRouteImport } from './routes/galerija'
@@ -44,6 +46,7 @@ import { Route as UpravljanjeToplinskiSustavNoveObvezeRouteImport } from './rout
 import { Route as UpravljanjeRegulativaRouteImport } from './routes/upravljanje.regulativa'
 import { Route as UpravljanjeOsnovniPojmoviRouteImport } from './routes/upravljanje.osnovni-pojmovi'
 import { Route as UpravljanjeMinimalnaVisinaPricuveRouteImport } from './routes/upravljanje.minimalna-visina-pricuve'
+import { Route as NovostiArhivaRouteImport } from './routes/novosti.arhiva'
 import { Route as NovostiSlugRouteImport } from './routes/novosti.$slug'
 
 const ZastoSmoBoljiIzborRoute = ZastoSmoBoljiIzborRouteImport.update({
@@ -54,6 +57,11 @@ const ZastoSmoBoljiIzborRoute = ZastoSmoBoljiIzborRouteImport.update({
 const ZastitaOsobnihPodatakaRoute = ZastitaOsobnihPodatakaRouteImport.update({
   id: '/zastita-osobnih-podataka',
   path: '/zastita-osobnih-podataka',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZahtjevZaIzraduStranicaRoute = ZahtjevZaIzraduStranicaRouteImport.update({
+  id: '/zahtjev-za-izradu-stranica',
+  path: '/zahtjev-za-izradu-stranica',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ZahtjevRoute = ZahtjevRouteImport.update({
@@ -111,6 +119,12 @@ const KolaciciRoute = KolaciciRouteImport.update({
   path: '/kolacici',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IzradaDinamicneWebStraniceRoute =
+  IzradaDinamicneWebStraniceRouteImport.update({
+    id: '/izrada-dinamicne-web-stranice',
+    path: '/izrada-dinamicne-web-stranice',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ImpressumRoute = ImpressumRouteImport.update({
   id: '/impressum',
   path: '/impressum',
@@ -229,6 +243,11 @@ const UpravljanjeMinimalnaVisinaPricuveRoute =
     path: '/minimalna-visina-pricuve',
     getParentRoute: () => UpravljanjeRoute,
   } as any)
+const NovostiArhivaRoute = NovostiArhivaRouteImport.update({
+  id: '/novosti/arhiva',
+  path: '/novosti/arhiva',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NovostiSlugRoute = NovostiSlugRouteImport.update({
   id: '/novosti/$slug',
   path: '/novosti/$slug',
@@ -245,6 +264,7 @@ export interface FileRoutesByFullPath {
   '/galerija': typeof GalerijaRoute
   '/hitne-intervencije': typeof HitneIntervencijeRoute
   '/impressum': typeof ImpressumRoute
+  '/izrada-dinamicne-web-stranice': typeof IzradaDinamicneWebStraniceRoute
   '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
   '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
@@ -256,9 +276,11 @@ export interface FileRoutesByFullPath {
   '/usluge': typeof UslugeRouteWithChildren
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
+  '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
   '/upravljanje/osnovni-pojmovi': typeof UpravljanjeOsnovniPojmoviRoute
   '/upravljanje/regulativa': typeof UpravljanjeRegulativaRoute
@@ -283,6 +305,7 @@ export interface FileRoutesByTo {
   '/galerija': typeof GalerijaRoute
   '/hitne-intervencije': typeof HitneIntervencijeRoute
   '/impressum': typeof ImpressumRoute
+  '/izrada-dinamicne-web-stranice': typeof IzradaDinamicneWebStraniceRoute
   '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
   '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
@@ -292,9 +315,11 @@ export interface FileRoutesByTo {
   '/seminari': typeof SeminariRoute
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
+  '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
   '/upravljanje/osnovni-pojmovi': typeof UpravljanjeOsnovniPojmoviRoute
   '/upravljanje/regulativa': typeof UpravljanjeRegulativaRoute
@@ -320,6 +345,7 @@ export interface FileRoutesById {
   '/galerija': typeof GalerijaRoute
   '/hitne-intervencije': typeof HitneIntervencijeRoute
   '/impressum': typeof ImpressumRoute
+  '/izrada-dinamicne-web-stranice': typeof IzradaDinamicneWebStraniceRoute
   '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
   '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
@@ -331,9 +357,11 @@ export interface FileRoutesById {
   '/usluge': typeof UslugeRouteWithChildren
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
+  '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
   '/upravljanje/osnovni-pojmovi': typeof UpravljanjeOsnovniPojmoviRoute
   '/upravljanje/regulativa': typeof UpravljanjeRegulativaRoute
@@ -360,6 +388,7 @@ export interface FileRouteTypes {
     | '/galerija'
     | '/hitne-intervencije'
     | '/impressum'
+    | '/izrada-dinamicne-web-stranice'
     | '/kolacici'
     | '/kontakt'
     | '/korisni-linkovi-i-kontakti'
@@ -371,9 +400,11 @@ export interface FileRouteTypes {
     | '/usluge'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
+    | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
+    | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
     | '/upravljanje/osnovni-pojmovi'
     | '/upravljanje/regulativa'
@@ -398,6 +429,7 @@ export interface FileRouteTypes {
     | '/galerija'
     | '/hitne-intervencije'
     | '/impressum'
+    | '/izrada-dinamicne-web-stranice'
     | '/kolacici'
     | '/kontakt'
     | '/korisni-linkovi-i-kontakti'
@@ -407,9 +439,11 @@ export interface FileRouteTypes {
     | '/seminari'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
+    | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
+    | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
     | '/upravljanje/osnovni-pojmovi'
     | '/upravljanje/regulativa'
@@ -434,6 +468,7 @@ export interface FileRouteTypes {
     | '/galerija'
     | '/hitne-intervencije'
     | '/impressum'
+    | '/izrada-dinamicne-web-stranice'
     | '/kolacici'
     | '/kontakt'
     | '/korisni-linkovi-i-kontakti'
@@ -445,9 +480,11 @@ export interface FileRouteTypes {
     | '/usluge'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
+    | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
+    | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
     | '/upravljanje/osnovni-pojmovi'
     | '/upravljanje/regulativa'
@@ -473,6 +510,7 @@ export interface RootRouteChildren {
   GalerijaRoute: typeof GalerijaRoute
   HitneIntervencijeRoute: typeof HitneIntervencijeRoute
   ImpressumRoute: typeof ImpressumRoute
+  IzradaDinamicneWebStraniceRoute: typeof IzradaDinamicneWebStraniceRoute
   KolaciciRoute: typeof KolaciciRoute
   KontaktRoute: typeof KontaktRoute
   KorisniLinkoviIKontaktiRoute: typeof KorisniLinkoviIKontaktiRoute
@@ -484,9 +522,11 @@ export interface RootRouteChildren {
   UslugeRoute: typeof UslugeRouteWithChildren
   VodicZaSuvlasnikeRoute: typeof VodicZaSuvlasnikeRoute
   ZahtjevRoute: typeof ZahtjevRoute
+  ZahtjevZaIzraduStranicaRoute: typeof ZahtjevZaIzraduStranicaRoute
   ZastitaOsobnihPodatakaRoute: typeof ZastitaOsobnihPodatakaRoute
   ZastoSmoBoljiIzborRoute: typeof ZastoSmoBoljiIzborRoute
   NovostiSlugRoute: typeof NovostiSlugRoute
+  NovostiArhivaRoute: typeof NovostiArhivaRoute
   NovostiIndexRoute: typeof NovostiIndexRoute
 }
 
@@ -504,6 +544,13 @@ declare module '@tanstack/react-router' {
       path: '/zastita-osobnih-podataka'
       fullPath: '/zastita-osobnih-podataka'
       preLoaderRoute: typeof ZastitaOsobnihPodatakaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zahtjev-za-izradu-stranica': {
+      id: '/zahtjev-za-izradu-stranica'
+      path: '/zahtjev-za-izradu-stranica'
+      fullPath: '/zahtjev-za-izradu-stranica'
+      preLoaderRoute: typeof ZahtjevZaIzraduStranicaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/zahtjev': {
@@ -581,6 +628,13 @@ declare module '@tanstack/react-router' {
       path: '/kolacici'
       fullPath: '/kolacici'
       preLoaderRoute: typeof KolaciciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/izrada-dinamicne-web-stranice': {
+      id: '/izrada-dinamicne-web-stranice'
+      path: '/izrada-dinamicne-web-stranice'
+      fullPath: '/izrada-dinamicne-web-stranice'
+      preLoaderRoute: typeof IzradaDinamicneWebStraniceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/impressum': {
@@ -737,6 +791,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UpravljanjeMinimalnaVisinaPricuveRouteImport
       parentRoute: typeof UpravljanjeRoute
     }
+    '/novosti/arhiva': {
+      id: '/novosti/arhiva'
+      path: '/novosti/arhiva'
+      fullPath: '/novosti/arhiva'
+      preLoaderRoute: typeof NovostiArhivaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/novosti/$slug': {
       id: '/novosti/$slug'
       path: '/novosti/$slug'
@@ -802,6 +863,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalerijaRoute: GalerijaRoute,
   HitneIntervencijeRoute: HitneIntervencijeRoute,
   ImpressumRoute: ImpressumRoute,
+  IzradaDinamicneWebStraniceRoute: IzradaDinamicneWebStraniceRoute,
   KolaciciRoute: KolaciciRoute,
   KontaktRoute: KontaktRoute,
   KorisniLinkoviIKontaktiRoute: KorisniLinkoviIKontaktiRoute,
@@ -813,9 +875,11 @@ const rootRouteChildren: RootRouteChildren = {
   UslugeRoute: UslugeRouteWithChildren,
   VodicZaSuvlasnikeRoute: VodicZaSuvlasnikeRoute,
   ZahtjevRoute: ZahtjevRoute,
+  ZahtjevZaIzraduStranicaRoute: ZahtjevZaIzraduStranicaRoute,
   ZastitaOsobnihPodatakaRoute: ZastitaOsobnihPodatakaRoute,
   ZastoSmoBoljiIzborRoute: ZastoSmoBoljiIzborRoute,
   NovostiSlugRoute: NovostiSlugRoute,
+  NovostiArhivaRoute: NovostiArhivaRoute,
   NovostiIndexRoute: NovostiIndexRoute,
 }
 export const routeTree = rootRouteImport

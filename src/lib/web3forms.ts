@@ -1,7 +1,7 @@
 // Web3Forms submission helper.
 // Docs: https://docs.web3forms.com/
 
-export type Web3FormType = "offer" | "user_access" | "contact" | "survey" | "e_uplatnice";
+export type Web3FormType = "offer" | "user_access" | "contact" | "survey" | "e_uplatnice" | "web_stranica";
 
 const ENDPOINT = "https://api.web3forms.com/submit";
 
@@ -11,6 +11,7 @@ const KEY_MAP: Record<Web3FormType, string | undefined> = {
   contact: import.meta.env.WEB3FORMS_CONTACT_KEY as string | undefined,
   survey: import.meta.env.WEB3FORMS_CONTACT_KEY as string | undefined,
   e_uplatnice: import.meta.env.WEB3FORMS_USER_ACCESS_KEY as string | undefined,
+  web_stranica: import.meta.env.WEB3FORMS_OFFER_KEY as string | undefined,
 };
 
 const SUBJECT_MAP: Record<Web3FormType, string> = {
@@ -19,6 +20,7 @@ const SUBJECT_MAP: Record<Web3FormType, string> = {
   contact: "Nova poruka putem web stranice - HPC-SPG",
   survey: "Nova ispunjena anketa - HPC-SPG",
   e_uplatnice: "Novi zahtjev za e-uplatnice - HPC-SPG",
+  web_stranica: "Novi zahtjev za izradu web stranice zgrade - HPC-SPG",
 };
 
 export function getFormSubject(type: Web3FormType) {
@@ -97,6 +99,7 @@ export const SUCCESS_MESSAGES: Record<Web3FormType, string> = {
   user_access: "Hvala! Vaš zahtjev za korisničke podatke uspješno je poslan.",
   survey: "Hvala! Vaša anketa uspješno je poslana.",
   e_uplatnice: "Hvala! Vaš zahtjev za dostavu uplatnica e-mailom uspješno je poslan.",
+  web_stranica: "Hvala! Vaš zahtjev za izradu web stranice zgrade uspješno je poslan. Javit ćemo Vam se s individualnom ponudom.",
 };
 
 export const ERROR_MESSAGE =

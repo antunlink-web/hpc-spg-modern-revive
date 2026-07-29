@@ -73,35 +73,36 @@ function EUplatnicePage() {
         <form onSubmit={onSubmit} className="reveal-up space-y-6" noValidate>
           <div className="grid sm:grid-cols-2 gap-5">
             <div>
-              <label htmlFor="e-ime" className={labelBase}>Ime i prezime <span className="text-emerald">*</span></label>
-              <input id="e-ime" name="ime_prezime" required autoComplete="name" className={inputBase} placeholder="Ime i prezime" />
+              <label htmlFor="e-ime" className={labelBase}>Ime i prezime vlasnika prostora <span className="text-emerald">*</span></label>
+              <input id="e-ime" name="ime_prezime_vlasnika" required autoComplete="name" className={inputBase} placeholder="Ime i prezime" />
             </div>
             <div>
-              <label htmlFor="e-email" className={labelBase}>E-pošta za dostavu uplatnica <span className="text-emerald">*</span></label>
+              <label htmlFor="e-email" className={labelBase}>Adresa e-pošte na koju se traži dostava uplatnica <span className="text-emerald">*</span></label>
               <input id="e-email" name="email" type="email" required autoComplete="email" className={inputBase} placeholder="ime@primjer.hr" />
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="e-adresa" className={labelBase}>Adresa zgrade u kojoj se prostor nalazi <span className="text-emerald">*</span></label>
+              <input id="e-adresa" name="adresa_zgrade" required autoComplete="street-address" className={inputBase} placeholder="Ulica, kućni broj, mjesto" />
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="e-poziv" className={labelBase}>Točan poziv na broj s posljednje uplatnice <span className="text-emerald">*</span></label>
+              <input id="e-poziv" name="poziv_na_broj" required className={inputBase} placeholder="Npr. HR00 12345-678-90" />
+              <p className="mt-1.5 text-xs text-muted-foreground">Poziv na broj pomaže nam brže identificirati vaše suvlasništvo.</p>
+            </div>
+            <div className="sm:col-span-2">
+              <label htmlFor="e-razdoblje" className={labelBase}>Upišite mjesec i godinu za koji tražite dostavu uplatnice <span className="text-emerald">*</span></label>
+              <input id="e-razdoblje" name="mjesec_godina" required className={inputBase} placeholder="Npr. 01/2026" />
             </div>
             <div>
               <label htmlFor="e-tel" className={labelBase}>Telefon</label>
               <input id="e-tel" name="telefon" type="tel" autoComplete="tel" className={inputBase} placeholder="+385 ..." />
-            </div>
-            <div>
-              <label htmlFor="e-oznaka" className={labelBase}>Oznaka posebnog dijela / stan</label>
-              <input id="e-oznaka" name="oznaka_stana" className={inputBase} placeholder="Npr. Stan 4, kat 2" />
-            </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="e-adresa" className={labelBase}>Adresa zgrade <span className="text-emerald">*</span></label>
-              <input id="e-adresa" name="adresa_zgrade" required autoComplete="street-address" className={inputBase} placeholder="Ulica, kućni broj, mjesto" />
-            </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="e-poziv" className={labelBase}>Poziv na broj s posljednje uplatnice</label>
-              <input id="e-poziv" name="poziv_na_broj" className={inputBase} placeholder="Npr. HR00 12345-678-90" />
-              <p className="mt-1.5 text-xs text-muted-foreground">Poziv na broj pomaže nam brže identificirati vaše suvlasništvo.</p>
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="e-poruka" className={labelBase}>Napomena</label>
               <textarea id="e-poruka" name="poruka" rows={5} className={`${inputBase} resize-y`} placeholder="Dodatne informacije, ako su potrebne." />
             </div>
           </div>
+
 
           <div className="space-y-6 pt-2 border-t border-border">
             <Botcheck />

@@ -3,31 +3,48 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { useReveal } from "@/hooks/use-reveal";
-import { currentNews } from "@/content/news";
+import { archiveNews } from "@/content/news";
 
-export const Route = createFileRoute("/novosti/")({
+export const Route = createFileRoute("/novosti/arhiva")({
   head: () => ({
     meta: [
-      { title: "Novosti i obavijesti — HPC-SPG" },
-      { name: "description", content: "Aktualne obavijesti, javni pozivi i vijesti za suvlasnike zgrada. Zakonodavstvo, energetska obnova, obnova od potresa i sufinanciranja." },
-      { property: "og:title", content: "Novosti i obavijesti — HPC-SPG" },
-      { property: "og:description", content: "Aktualne obavijesti, javni pozivi i vijesti za suvlasnike zgrada kojima upravlja HPC-SPG." },
+      { title: "Arhiva novosti — HPC-SPG" },
+      {
+        name: "description",
+        content:
+          "Arhiva starijih obavijesti i objava HPC-SPG-a: skloništa, potres u Gradu Zagrebu, seminari, dani otvorenih vrata i vodič za suvlasnike.",
+      },
+      { property: "og:title", content: "Arhiva novosti — HPC-SPG" },
+      {
+        property: "og:description",
+        content: "Starije obavijesti i objave za suvlasnike zgrada kojima upravlja HPC-SPG.",
+      },
     ],
   }),
-  component: NewsIndex,
+  component: ArchiveIndex,
 });
 
-function NewsIndex() {
+function ArchiveIndex() {
   useReveal();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
+
       <section className="pt-[120px] lg:pt-[140px] pb-14 lg:pb-20 bg-surface border-b border-border">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <span className="reveal-up inline-block text-xs uppercase tracking-[0.22em] text-emerald font-medium">Aktualno</span>
-          <h1 className="reveal-up mt-3 text-4xl lg:text-5xl text-navy leading-tight" style={{ transitionDelay: "80ms" }}>Novosti i obavijesti</h1>
+          <nav aria-label="Breadcrumb" className="reveal-up mb-6 text-xs text-muted-foreground flex flex-wrap items-center gap-1.5">
+            <Link to="/" className="hover:text-navy">Početna</Link>
+            <span>/</span>
+            <Link to="/novosti" className="hover:text-navy">Novosti</Link>
+            <span>/</span>
+            <span className="text-navy">Arhiva</span>
+          </nav>
+          <span className="reveal-up inline-block text-xs uppercase tracking-[0.22em] text-emerald font-medium">Arhiva</span>
+          <h1 className="reveal-up mt-3 text-4xl lg:text-5xl text-navy leading-tight" style={{ transitionDelay: "80ms" }}>
+            Arhiva objava
+          </h1>
           <p className="reveal-up mt-5 text-lg text-muted-foreground max-w-3xl leading-relaxed" style={{ transitionDelay: "160ms" }}>
-            Aktualne obavijesti, javni pozivi i informacije za suvlasnike zgrada kojima upravljamo.
+            Starije obavijesti i objave koje ostaju dostupne za uvid suvlasnicima i predstavnicima suvlasnika.
           </p>
         </div>
       </section>
@@ -35,7 +52,7 @@ function NewsIndex() {
       <section className="py-16 lg:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {currentNews.map((n) => (
+            {archiveNews.map((n) => (
               <Link
                 key={n.slug}
                 to="/novosti/$slug"
@@ -59,11 +76,8 @@ function NewsIndex() {
           </div>
 
           <div className="mt-12">
-            <Link
-              to="/novosti/arhiva"
-              className="inline-flex items-center gap-2 rounded-md border border-border bg-background px-5 py-3 text-sm font-semibold text-navy hover:border-navy/30 hover:text-emerald transition-colors"
-            >
-              Arhiva starijih objava <ArrowRight className="h-4 w-4" />
+            <Link to="/novosti" className="inline-flex items-center gap-2 text-sm font-semibold text-navy hover:text-emerald">
+              ← Aktualne novosti
             </Link>
           </div>
         </div>
