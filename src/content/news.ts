@@ -576,7 +576,7 @@ Zahtjev sadrži:<br />
 
 
 <h4>Vodič za aktivnosti nakon potresa MGIPU</h4>
-<p>Ministarstvo graditeljstva i prostornoga uređenja objavilo je „<a href="/documents/vodič_za_aktivnosti_nakon_potresa_2020.pdf"><strong>Vodič za aktivnosti nakon potresa</strong></a>“ koji donosi pregled svih dosadašnjih aktivnosti Ministarstva vezanih za sanaciju oštećenih zgrada u potresu.</p>
+<p>Ministarstvo graditeljstva i prostornoga uređenja objavilo je „<a href="/documents/vodic-za-aktivnosti-nakon-potresa-2020.pdf"><strong>Vodič za aktivnosti nakon potresa</strong></a>“ koji donosi pregled svih dosadašnjih aktivnosti Ministarstva vezanih za sanaciju oštećenih zgrada u potresu.</p>
 <p>Uz Vodič za građane Ministarstvo je pripremilo i preporuke za primjenu Pravilnika o registru šteta od prirodnih nepogoda za procjenu štete na građevinama. U preporukama je dano stručno mišljenje o načinu izvršenja postupka, propisanim procedurama i odabranoj metodologiji te tko i kako procjenjuje štetu na oštećenoj imovini koja se dogodila u potresu.</p>
 <p>Donesene su i izmjene i dopune Tehničkog propisa za građevinske konstrukcije koje su stupile na snagu 2. srpnja 2020. godine. Cilj izmjene i dopune Tehničkog propisa je jasnije definirati postupak popravka i pojačanja konstrukcijskih i/ili nekonstrukcijskih elemenata s razinom obnove koja je primjerena opasnosti područja i potresnom riziku zgrade, a vezano za potresnu oštetljivost zgrade i njezinu namjenu.</p>
 <p>Za pomoć građanima Ministarstvo graditeljstva je oformilo poseban tim stručnjaka u Ministarstvu koji se bave isključivo rješavanjem problema vezanih za obnovu od potresa te je otvorena i posebna telefonska linja za građane 01/3782-117 na koju se mogu obratiti svakim radnim danom u vremenu od 9 do 14 sati.</p>
@@ -605,7 +605,7 @@ Javni poziv za prijavu štete na imovini ➡️ <a href="https://www.zagreb.hr/j
 Obrazac za prijavu štete ➡️ <a href="https://survey123.arcgis.com/share/7bdaffd5c9a94e71afc59ce1e26ff78a?fbclid=IwAR2gs_P2Bf4nQuV-63jtCE7QQwP9oTWkNRehKXb3XVFnq46RK003brndMao" target="_blank" rel="noreferrer">https://survey123.arcgis.com/…/7bdaffd5c9a94e71afc59ce1e26f…</a></p>
 <p>Više na <a href="https://www.zagreb.hr/potres-u-zagrebu-2232019/156584?fbclid=IwAR25SL7FsoUz3S9xH3bjh51Y9RmO3Ct7ZnJHOqBNM7fBXgfWgtIjbAa_OOY" target="_blank" rel="noreferrer">https://www.zagreb.hr/potres-u-zagrebu-2232019/156584</a></p>`,
     documents: [
-      { label: "Vodič za aktivnosti nakon potresa", href: "/documents/vodič_za_aktivnosti_nakon_potresa_2020.pdf" },
+      { label: "Vodič za aktivnosti nakon potresa", href: "/documents/vodic-za-aktivnosti-nakon-potresa-2020.pdf" },
     ],
     metaDescription: "Zakon o obnovi zgrada oštećenih potresom u Zagrebu, Krapinsko-zagorskoj i Zagrebačkoj županiji Zakon o obnovi zgrada oštećenih potresom na području Grada Zagreba, Krapinsko-zagorsk",
     legacySlugs: ["potres-u-gradu-zagrebu"],
