@@ -1,5 +1,5 @@
 import { MapPin, Mail, Globe, Clock, Phone, ShieldCheck, Building2 } from "lucide-react";
-import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
+import bonitetAAA from "@/assets/bonitet-aaa.png";
 import { withBase } from "@/lib/paths";
 
 export function SiteFooter() {
@@ -30,7 +30,7 @@ export function SiteFooter() {
             </p>
             <p className="flex items-start gap-3">
               <Globe className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
-              <a href={withBase("/")} className="hover:text-white">hpc-spg.primelink.com.hr</a>
+              <a href={withBase("/")} className="hover:text-white">hpc-spg.hr</a>
             </p>
             <p className="flex items-start gap-3">
               <Phone className="h-4 w-4 mt-0.5 shrink-0 text-white/60" />
@@ -91,7 +91,7 @@ export function SiteFooter() {
           </div>
 
           <div className="mt-6 rounded-lg bg-white/95 p-5 flex items-center gap-5">
-            <img src={bonitetAAA.url} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-28 w-auto" />
+            <img src={bonitetAAA} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-28 w-auto" />
             <div className="text-navy">
               <div className="text-[11px] uppercase tracking-[0.18em] text-navy/60">Bonitetna izvrsnost</div>
               <div className="mt-1 text-sm font-semibold">Certifikat AAA — Platinum</div>

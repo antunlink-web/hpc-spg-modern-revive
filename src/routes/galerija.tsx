@@ -5,38 +5,38 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { useReveal } from "@/hooks/use-reveal";
 import { X } from "lucide-react";
 
-import g1 from "@/assets/gallery/debaniceva-1.jpg.asset.json";
-import g2 from "@/assets/gallery/debaniceva-2.jpg.asset.json";
-import g3 from "@/assets/gallery/fasada-poslije.jpg.asset.json";
-import g4 from "@/assets/gallery/fasada-prije.jpg.asset.json";
-import g5 from "@/assets/gallery/nehajska-1.jpg.asset.json";
-import g6 from "@/assets/gallery/nehajska-2.jpg.asset.json";
-import g7 from "@/assets/gallery/rogoza-1.jpg.asset.json";
-import g8 from "@/assets/gallery/rogoza-2.jpg.asset.json";
-import g9 from "@/assets/gallery/rogoza-3.jpg.asset.json";
-import g10 from "@/assets/gallery/rogoza-4.jpg.asset.json";
-import g11 from "@/assets/gallery/rogoza-5.jpg.asset.json";
-import g12 from "@/assets/gallery/stoosova-1.jpg.asset.json";
-import g13 from "@/assets/gallery/stoosova-2.jpg.asset.json";
-import g14 from "@/assets/gallery/vile-velebita-1.jpg.asset.json";
-import g15 from "@/assets/gallery/vile-velebita-2.jpg.asset.json";
+import g1 from "@/assets/gallery/debaniceva-1.jpg";
+import g2 from "@/assets/gallery/debaniceva-2.jpg";
+import g3 from "@/assets/gallery/fasada-poslije.jpg";
+import g4 from "@/assets/gallery/fasada-prije.jpg";
+import g5 from "@/assets/gallery/nehajska-1.jpg";
+import g6 from "@/assets/gallery/nehajska-2.jpg";
+import g7 from "@/assets/gallery/rogoza-1.jpg";
+import g8 from "@/assets/gallery/rogoza-2.jpg";
+import g9 from "@/assets/gallery/rogoza-3.jpg";
+import g10 from "@/assets/gallery/rogoza-4.jpg";
+import g11 from "@/assets/gallery/rogoza-5.jpg";
+import g12 from "@/assets/gallery/stoosova-1.jpg";
+import g13 from "@/assets/gallery/stoosova-2.jpg";
+import g14 from "@/assets/gallery/vile-velebita-1.jpg";
+import g15 from "@/assets/gallery/vile-velebita-2.jpg";
 
 const images = [
-  { src: g3.url, alt: "Obnovljeno pročelje zgrade" },
-  { src: g4.url, alt: "Pročelje prije obnove" },
-  { src: g1.url, alt: "Zgrada u ulici Debanićeva" },
-  { src: g2.url, alt: "Zgrada u ulici Debanićeva — pogled" },
-  { src: g5.url, alt: "Zgrada u Nehajskoj ulici" },
-  { src: g6.url, alt: "Zgrada u Nehajskoj ulici — detalj" },
-  { src: g12.url, alt: "Zgrada u Stoošovoj ulici" },
-  { src: g13.url, alt: "Zgrada u Stoošovoj ulici — pogled" },
-  { src: g14.url, alt: "Vile Velebita — vanjski pogled" },
-  { src: g15.url, alt: "Vile Velebita — detalj" },
-  { src: g7.url, alt: "Zgrada Rogoza — 1" },
-  { src: g8.url, alt: "Zgrada Rogoza — 2" },
-  { src: g9.url, alt: "Zgrada Rogoza — 3" },
-  { src: g10.url, alt: "Zgrada Rogoza — 4" },
-  { src: g11.url, alt: "Zgrada Rogoza — 5" },
+  { src: g3, alt: "Obnovljeno pročelje zgrade" },
+  { src: g4, alt: "Pročelje prije obnove" },
+  { src: g1, alt: "Zgrada u ulici Debanićeva" },
+  { src: g2, alt: "Zgrada u ulici Debanićeva — pogled" },
+  { src: g5, alt: "Zgrada u Nehajskoj ulici" },
+  { src: g6, alt: "Zgrada u Nehajskoj ulici — detalj" },
+  { src: g12, alt: "Zgrada u Stoošovoj ulici" },
+  { src: g13, alt: "Zgrada u Stoošovoj ulici — pogled" },
+  { src: g14, alt: "Vile Velebita — vanjski pogled" },
+  { src: g15, alt: "Vile Velebita — detalj" },
+  { src: g7, alt: "Zgrada Rogoza — 1" },
+  { src: g8, alt: "Zgrada Rogoza — 2" },
+  { src: g9, alt: "Zgrada Rogoza — 3" },
+  { src: g10, alt: "Zgrada Rogoza — 4" },
+  { src: g11, alt: "Zgrada Rogoza — 5" },
 ];
 
 export const Route = createFileRoute("/galerija")({

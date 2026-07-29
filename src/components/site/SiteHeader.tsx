@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
-import logoHorizontal from "@/assets/logo-horizontal.png.asset.json";
-import logoEmblem from "@/assets/logo-emblem.png.asset.json";
+import logoHorizontal from "@/assets/logo-horizontal.png";
+import logoEmblem from "@/assets/logo-emblem.png";
 import { withBase } from "@/lib/paths";
 
 type NavItem = {
@@ -81,14 +81,14 @@ export function SiteHeader() {
         {/* Desktop: horizontal logo with wordmark */}
         <a href={withBase("/")} className="hidden sm:flex items-center min-w-0" aria-label="HPC-SPG — Hrvatski poslovni centar">
           <img
-            src={logoHorizontal.url}
+            src={logoHorizontal}
             alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
             className="h-14 lg:h-16 w-auto shrink-0 transition-all"
           />
         </a>
         {/* Mobile: emblem only */}
         <a href={withBase("/")} className="sm:hidden flex items-center" aria-label="HPC-SPG">
-          <img src={logoEmblem.url} alt="HPC-SPG" className="h-12 w-auto transition-all" />
+          <img src={logoEmblem} alt="HPC-SPG" className="h-12 w-auto transition-all" />
         </a>
 
         <nav className="hidden xl:flex items-center gap-5">
@@ -160,7 +160,7 @@ export function SiteHeader() {
           }`}
         >
           <div className="flex items-center justify-between px-5 h-[80px] border-b border-border shrink-0">
-            <img src={logoHorizontal.url} alt="HPC-SPG" className="h-11 w-auto" />
+            <img src={logoHorizontal} alt="HPC-SPG" className="h-11 w-auto" />
             <button
               onClick={() => setOpen(false)}
               aria-label="Zatvori izbornik"

@@ -17,6 +17,7 @@ export default defineConfig({
   },
   vite: {
     base: "/",
+    envPrefix: ["VITE_", "WEB3FORMS_"],
     build: {
       outDir: "dist/apache-root",
       emptyOutDir: true,

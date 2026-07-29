@@ -87,8 +87,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "HPC-SPG — Profesionalno upravljanje zgradama u Zagrebu" },
       { property: "og:description", content: "Hrvatski poslovni centar — stambeno poslovno gospodarstvo d.o.o. Transparentno i profesionalno upravljanje zgradama u Zagrebu i okolici." },
       { name: "twitter:description", content: "Hrvatski poslovni centar — stambeno poslovno gospodarstvo d.o.o. Transparentno i profesionalno upravljanje zgradama u Zagrebu i okolici." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b6a92250-2493-41f0-9222-cb9369245a0f/id-preview-e5cfd266--f11c062c-14ca-46c8-aae0-c06500495484.lovable.app-1779546003234.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b6a92250-2493-41f0-9222-cb9369245a0f/id-preview-e5cfd266--f11c062c-14ca-46c8-aae0-c06500495484.lovable.app-1779546003234.png" },
     ],
     links: [
       { rel: "icon", type: "image/png", href: `${import.meta.env.BASE_URL}favicon.png` },

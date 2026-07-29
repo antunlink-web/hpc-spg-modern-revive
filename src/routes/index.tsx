@@ -22,14 +22,14 @@ import {
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { useReveal } from "@/hooks/use-reveal";
-import heroBuilding from "@/assets/hero-building-new.jpg.asset.json";
+import heroBuilding from "@/assets/hero-building-new.jpg";
 import sectionBuildings from "@/assets/section-buildings.jpg";
 import appMockup from "@/assets/app-mockup.jpg";
 import newsFacade from "@/assets/news-facade.jpg";
 import newsElevator from "@/assets/news-elevator.jpg";
 import newsGraffiti from "@/assets/news-graffiti.jpg";
 import newsLaw from "@/assets/news-law.jpg";
-import bonitetAAA from "@/assets/bonitet-aaa.png.asset.json";
+import bonitetAAA from "@/assets/bonitet-aaa.png";
 import { withBase } from "@/lib/paths";
 
 const OFFER_URL = "/zahtjev";
@@ -114,7 +114,7 @@ function HomePage() {
       {/* HERO */}
       <section className="relative isolate min-h-[92svh] flex items-end overflow-hidden">
         <img
-          src={heroBuilding.url}
+          src={heroBuilding}
           alt="Moderne stambeno-poslovne zgrade — HPC-SPG upravljanje"
           width={1920}
           height={1080}
@@ -239,7 +239,7 @@ function HomePage() {
 
               {/* AAA Bonitet badge */}
               <div className="reveal-fade mt-10 inline-flex items-center gap-4 rounded-xl border border-border bg-background p-4 pr-6 shadow-sm" style={{ transitionDelay: "200ms" }}>
-                <img src={bonitetAAA.url} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-24 w-auto" />
+                <img src={bonitetAAA} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-24 w-auto" />
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Bonitetna izvrsnost</p>
                   <p className="mt-1 text-sm font-semibold text-navy">Certifikat AAA — Platinum</p>
