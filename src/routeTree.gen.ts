@@ -22,6 +22,7 @@ import { Route as KorisnickiPodaciRouteImport } from './routes/korisnicki-podaci
 import { Route as KorisniLinkoviIKontaktiRouteImport } from './routes/korisni-linkovi-i-kontakti'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as KolaciciRouteImport } from './routes/kolacici'
+import { Route as IzradaDinamicneWebStraniceRouteImport } from './routes/izrada-dinamicne-web-stranice'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as HitneIntervencijeRouteImport } from './routes/hitne-intervencije'
 import { Route as GalerijaRouteImport } from './routes/galerija'
@@ -112,6 +113,12 @@ const KolaciciRoute = KolaciciRouteImport.update({
   path: '/kolacici',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IzradaDinamicneWebStraniceRoute =
+  IzradaDinamicneWebStraniceRouteImport.update({
+    id: '/izrada-dinamicne-web-stranice',
+    path: '/izrada-dinamicne-web-stranice',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ImpressumRoute = ImpressumRouteImport.update({
   id: '/impressum',
   path: '/impressum',
@@ -251,6 +258,7 @@ export interface FileRoutesByFullPath {
   '/galerija': typeof GalerijaRoute
   '/hitne-intervencije': typeof HitneIntervencijeRoute
   '/impressum': typeof ImpressumRoute
+  '/izrada-dinamicne-web-stranice': typeof IzradaDinamicneWebStraniceRoute
   '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
   '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
@@ -290,6 +298,7 @@ export interface FileRoutesByTo {
   '/galerija': typeof GalerijaRoute
   '/hitne-intervencije': typeof HitneIntervencijeRoute
   '/impressum': typeof ImpressumRoute
+  '/izrada-dinamicne-web-stranice': typeof IzradaDinamicneWebStraniceRoute
   '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
   '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
@@ -328,6 +337,7 @@ export interface FileRoutesById {
   '/galerija': typeof GalerijaRoute
   '/hitne-intervencije': typeof HitneIntervencijeRoute
   '/impressum': typeof ImpressumRoute
+  '/izrada-dinamicne-web-stranice': typeof IzradaDinamicneWebStraniceRoute
   '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
   '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
@@ -369,6 +379,7 @@ export interface FileRouteTypes {
     | '/galerija'
     | '/hitne-intervencije'
     | '/impressum'
+    | '/izrada-dinamicne-web-stranice'
     | '/kolacici'
     | '/kontakt'
     | '/korisni-linkovi-i-kontakti'
@@ -408,6 +419,7 @@ export interface FileRouteTypes {
     | '/galerija'
     | '/hitne-intervencije'
     | '/impressum'
+    | '/izrada-dinamicne-web-stranice'
     | '/kolacici'
     | '/kontakt'
     | '/korisni-linkovi-i-kontakti'
@@ -445,6 +457,7 @@ export interface FileRouteTypes {
     | '/galerija'
     | '/hitne-intervencije'
     | '/impressum'
+    | '/izrada-dinamicne-web-stranice'
     | '/kolacici'
     | '/kontakt'
     | '/korisni-linkovi-i-kontakti'
@@ -485,6 +498,7 @@ export interface RootRouteChildren {
   GalerijaRoute: typeof GalerijaRoute
   HitneIntervencijeRoute: typeof HitneIntervencijeRoute
   ImpressumRoute: typeof ImpressumRoute
+  IzradaDinamicneWebStraniceRoute: typeof IzradaDinamicneWebStraniceRoute
   KolaciciRoute: typeof KolaciciRoute
   KontaktRoute: typeof KontaktRoute
   KorisniLinkoviIKontaktiRoute: typeof KorisniLinkoviIKontaktiRoute
@@ -594,6 +608,13 @@ declare module '@tanstack/react-router' {
       path: '/kolacici'
       fullPath: '/kolacici'
       preLoaderRoute: typeof KolaciciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/izrada-dinamicne-web-stranice': {
+      id: '/izrada-dinamicne-web-stranice'
+      path: '/izrada-dinamicne-web-stranice'
+      fullPath: '/izrada-dinamicne-web-stranice'
+      preLoaderRoute: typeof IzradaDinamicneWebStraniceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/impressum': {
@@ -822,6 +843,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalerijaRoute: GalerijaRoute,
   HitneIntervencijeRoute: HitneIntervencijeRoute,
   ImpressumRoute: ImpressumRoute,
+  IzradaDinamicneWebStraniceRoute: IzradaDinamicneWebStraniceRoute,
   KolaciciRoute: KolaciciRoute,
   KontaktRoute: KontaktRoute,
   KorisniLinkoviIKontaktiRoute: KorisniLinkoviIKontaktiRoute,
