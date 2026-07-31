@@ -37,7 +37,7 @@ export function SiteHeader() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm">
-      <div className="max-w-7xl mx-auto pl-6 pr-5 lg:pl-10 lg:pr-10 h-[92px] lg:h-[112px] flex items-center justify-between gap-6">
+      <div className="max-w-7xl mx-auto pl-6 pr-5 lg:pl-10 lg:pr-10 h-[104px] lg:h-[128px] flex items-center justify-between gap-6">
         {/* Same official logo on desktop and mobile */}
         <a
           href={withBase("/")}
@@ -47,9 +47,10 @@ export function SiteHeader() {
           <img
             src={logoOfficial}
             alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
-            className="h-16 sm:h-[72px] lg:h-[86px] w-auto shrink-0 transition-all"
+            className="h-[74px] sm:h-[83px] lg:h-[99px] w-auto shrink-0 transition-all"
           />
         </a>
+
 
         <nav className="hidden xl:flex items-center gap-6">
           {nav.map((n) => (
@@ -101,8 +102,9 @@ export function SiteHeader() {
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between px-5 h-[92px] border-b border-border shrink-0">
-            <img src={logoOfficial} alt="HPC-SPG" className="h-16 w-auto" />
+          <div className="flex items-center justify-between px-5 h-[104px] border-b border-border shrink-0">
+            <img src={logoOfficial} alt="HPC-SPG" className="h-[74px] w-auto" />
+
             <button
               onClick={() => setOpen(false)}
               aria-label="Zatvori izbornik"
