@@ -30,7 +30,7 @@ function ArchiveIndex() {
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      <section className="pt-[120px] lg:pt-[140px] pb-14 lg:pb-20 bg-surface border-b border-border">
+      <section className="pt-[132px] lg:pt-[160px] pb-14 lg:pb-20 bg-surface border-b border-border">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <nav aria-label="Breadcrumb" className="reveal-up mb-6 text-xs text-muted-foreground flex flex-wrap items-center gap-1.5">
             <Link to="/" className="hover:text-navy">Početna</Link>
