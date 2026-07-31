@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ZastoSmoBoljiIzborRouteImport } from './routes/zasto-smo-bolji-izbor'
 import { Route as ZastitaOsobnihPodatakaRouteImport } from './routes/zastita-osobnih-podataka'
+import { Route as ZahtjevZaIzraduStranicaRouteImport } from './routes/zahtjev-za-izradu-stranica'
 import { Route as ZahtjevRouteImport } from './routes/zahtjev'
 import { Route as VodicZaSuvlasnikeRouteImport } from './routes/vodic-za-suvlasnike'
 import { Route as UslugeRouteImport } from './routes/usluge'
@@ -22,10 +23,14 @@ import { Route as KorisnickiPodaciRouteImport } from './routes/korisnicki-podaci
 import { Route as KorisniLinkoviIKontaktiRouteImport } from './routes/korisni-linkovi-i-kontakti'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as KolaciciRouteImport } from './routes/kolacici'
+import { Route as IzradaDinamicneWebStraniceRouteImport } from './routes/izrada-dinamicne-web-stranice'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as HitneIntervencijeRouteImport } from './routes/hitne-intervencije'
+import { Route as GalerijaRouteImport } from './routes/galerija'
 import { Route as EUplatniceRouteImport } from './routes/e-uplatnice'
+import { Route as EFinancijskiIzvjestajiRouteImport } from './routes/e-financijski-izvjestaji'
 import { Route as DokumentiZgradeRouteImport } from './routes/dokumenti-zgrade'
+import { Route as DigitalneUslugeRouteImport } from './routes/digitalne-usluge'
 import { Route as CertifikatBonitetneIzvrsnostiRouteImport } from './routes/certifikat-bonitetne-izvrsnosti'
 import { Route as AnketaRouteImport } from './routes/anketa'
 import { Route as IndexRouteImport } from './routes/index'
@@ -53,6 +58,11 @@ const ZastoSmoBoljiIzborRoute = ZastoSmoBoljiIzborRouteImport.update({
 const ZastitaOsobnihPodatakaRoute = ZastitaOsobnihPodatakaRouteImport.update({
   id: '/zastita-osobnih-podataka',
   path: '/zastita-osobnih-podataka',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ZahtjevZaIzraduStranicaRoute = ZahtjevZaIzraduStranicaRouteImport.update({
+  id: '/zahtjev-za-izradu-stranica',
+  path: '/zahtjev-za-izradu-stranica',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ZahtjevRoute = ZahtjevRouteImport.update({
@@ -110,6 +120,12 @@ const KolaciciRoute = KolaciciRouteImport.update({
   path: '/kolacici',
   getParentRoute: () => rootRouteImport,
 } as any)
+const IzradaDinamicneWebStraniceRoute =
+  IzradaDinamicneWebStraniceRouteImport.update({
+    id: '/izrada-dinamicne-web-stranice',
+    path: '/izrada-dinamicne-web-stranice',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ImpressumRoute = ImpressumRouteImport.update({
   id: '/impressum',
   path: '/impressum',
@@ -120,14 +136,29 @@ const HitneIntervencijeRoute = HitneIntervencijeRouteImport.update({
   path: '/hitne-intervencije',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalerijaRoute = GalerijaRouteImport.update({
+  id: '/galerija',
+  path: '/galerija',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EUplatniceRoute = EUplatniceRouteImport.update({
   id: '/e-uplatnice',
   path: '/e-uplatnice',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EFinancijskiIzvjestajiRoute = EFinancijskiIzvjestajiRouteImport.update({
+  id: '/e-financijski-izvjestaji',
+  path: '/e-financijski-izvjestaji',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DokumentiZgradeRoute = DokumentiZgradeRouteImport.update({
   id: '/dokumenti-zgrade',
   path: '/dokumenti-zgrade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalneUslugeRoute = DigitalneUslugeRouteImport.update({
+  id: '/digitalne-usluge',
+  path: '/digitalne-usluge',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CertifikatBonitetneIzvrsnostiRoute =
@@ -233,10 +264,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/anketa': typeof AnketaRoute
   '/certifikat-bonitetne-izvrsnosti': typeof CertifikatBonitetneIzvrsnostiRoute
+  '/digitalne-usluge': typeof DigitalneUslugeRoute
   '/dokumenti-zgrade': typeof DokumentiZgradeRoute
+  '/e-financijski-izvjestaji': typeof EFinancijskiIzvjestajiRoute
   '/e-uplatnice': typeof EUplatniceRoute
+  '/galerija': typeof GalerijaRoute
   '/hitne-intervencije': typeof HitneIntervencijeRoute
   '/impressum': typeof ImpressumRoute
+  '/izrada-dinamicne-web-stranice': typeof IzradaDinamicneWebStraniceRoute
   '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
   '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
@@ -248,6 +283,7 @@ export interface FileRoutesByFullPath {
   '/usluge': typeof UslugeRouteWithChildren
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
@@ -270,10 +306,14 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/anketa': typeof AnketaRoute
   '/certifikat-bonitetne-izvrsnosti': typeof CertifikatBonitetneIzvrsnostiRoute
+  '/digitalne-usluge': typeof DigitalneUslugeRoute
   '/dokumenti-zgrade': typeof DokumentiZgradeRoute
+  '/e-financijski-izvjestaji': typeof EFinancijskiIzvjestajiRoute
   '/e-uplatnice': typeof EUplatniceRoute
+  '/galerija': typeof GalerijaRoute
   '/hitne-intervencije': typeof HitneIntervencijeRoute
   '/impressum': typeof ImpressumRoute
+  '/izrada-dinamicne-web-stranice': typeof IzradaDinamicneWebStraniceRoute
   '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
   '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
@@ -283,6 +323,7 @@ export interface FileRoutesByTo {
   '/seminari': typeof SeminariRoute
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
@@ -306,10 +347,14 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/anketa': typeof AnketaRoute
   '/certifikat-bonitetne-izvrsnosti': typeof CertifikatBonitetneIzvrsnostiRoute
+  '/digitalne-usluge': typeof DigitalneUslugeRoute
   '/dokumenti-zgrade': typeof DokumentiZgradeRoute
+  '/e-financijski-izvjestaji': typeof EFinancijskiIzvjestajiRoute
   '/e-uplatnice': typeof EUplatniceRoute
+  '/galerija': typeof GalerijaRoute
   '/hitne-intervencije': typeof HitneIntervencijeRoute
   '/impressum': typeof ImpressumRoute
+  '/izrada-dinamicne-web-stranice': typeof IzradaDinamicneWebStraniceRoute
   '/kolacici': typeof KolaciciRoute
   '/kontakt': typeof KontaktRoute
   '/korisni-linkovi-i-kontakti': typeof KorisniLinkoviIKontaktiRoute
@@ -321,6 +366,7 @@ export interface FileRoutesById {
   '/usluge': typeof UslugeRouteWithChildren
   '/vodic-za-suvlasnike': typeof VodicZaSuvlasnikeRoute
   '/zahtjev': typeof ZahtjevRoute
+  '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/novosti/$slug': typeof NovostiSlugRoute
@@ -345,10 +391,14 @@ export interface FileRouteTypes {
     | '/'
     | '/anketa'
     | '/certifikat-bonitetne-izvrsnosti'
+    | '/digitalne-usluge'
     | '/dokumenti-zgrade'
+    | '/e-financijski-izvjestaji'
     | '/e-uplatnice'
+    | '/galerija'
     | '/hitne-intervencije'
     | '/impressum'
+    | '/izrada-dinamicne-web-stranice'
     | '/kolacici'
     | '/kontakt'
     | '/korisni-linkovi-i-kontakti'
@@ -360,6 +410,7 @@ export interface FileRouteTypes {
     | '/usluge'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
+    | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
@@ -382,10 +433,14 @@ export interface FileRouteTypes {
     | '/'
     | '/anketa'
     | '/certifikat-bonitetne-izvrsnosti'
+    | '/digitalne-usluge'
     | '/dokumenti-zgrade'
+    | '/e-financijski-izvjestaji'
     | '/e-uplatnice'
+    | '/galerija'
     | '/hitne-intervencije'
     | '/impressum'
+    | '/izrada-dinamicne-web-stranice'
     | '/kolacici'
     | '/kontakt'
     | '/korisni-linkovi-i-kontakti'
@@ -395,6 +450,7 @@ export interface FileRouteTypes {
     | '/seminari'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
+    | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
@@ -417,10 +473,14 @@ export interface FileRouteTypes {
     | '/'
     | '/anketa'
     | '/certifikat-bonitetne-izvrsnosti'
+    | '/digitalne-usluge'
     | '/dokumenti-zgrade'
+    | '/e-financijski-izvjestaji'
     | '/e-uplatnice'
+    | '/galerija'
     | '/hitne-intervencije'
     | '/impressum'
+    | '/izrada-dinamicne-web-stranice'
     | '/kolacici'
     | '/kontakt'
     | '/korisni-linkovi-i-kontakti'
@@ -432,6 +492,7 @@ export interface FileRouteTypes {
     | '/usluge'
     | '/vodic-za-suvlasnike'
     | '/zahtjev'
+    | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
     | '/novosti/$slug'
@@ -455,10 +516,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AnketaRoute: typeof AnketaRoute
   CertifikatBonitetneIzvrsnostiRoute: typeof CertifikatBonitetneIzvrsnostiRoute
+  DigitalneUslugeRoute: typeof DigitalneUslugeRoute
   DokumentiZgradeRoute: typeof DokumentiZgradeRoute
+  EFinancijskiIzvjestajiRoute: typeof EFinancijskiIzvjestajiRoute
   EUplatniceRoute: typeof EUplatniceRoute
+  GalerijaRoute: typeof GalerijaRoute
   HitneIntervencijeRoute: typeof HitneIntervencijeRoute
   ImpressumRoute: typeof ImpressumRoute
+  IzradaDinamicneWebStraniceRoute: typeof IzradaDinamicneWebStraniceRoute
   KolaciciRoute: typeof KolaciciRoute
   KontaktRoute: typeof KontaktRoute
   KorisniLinkoviIKontaktiRoute: typeof KorisniLinkoviIKontaktiRoute
@@ -470,6 +535,7 @@ export interface RootRouteChildren {
   UslugeRoute: typeof UslugeRouteWithChildren
   VodicZaSuvlasnikeRoute: typeof VodicZaSuvlasnikeRoute
   ZahtjevRoute: typeof ZahtjevRoute
+  ZahtjevZaIzraduStranicaRoute: typeof ZahtjevZaIzraduStranicaRoute
   ZastitaOsobnihPodatakaRoute: typeof ZastitaOsobnihPodatakaRoute
   ZastoSmoBoljiIzborRoute: typeof ZastoSmoBoljiIzborRoute
   NovostiSlugRoute: typeof NovostiSlugRoute
@@ -491,6 +557,13 @@ declare module '@tanstack/react-router' {
       path: '/zastita-osobnih-podataka'
       fullPath: '/zastita-osobnih-podataka'
       preLoaderRoute: typeof ZastitaOsobnihPodatakaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/zahtjev-za-izradu-stranica': {
+      id: '/zahtjev-za-izradu-stranica'
+      path: '/zahtjev-za-izradu-stranica'
+      fullPath: '/zahtjev-za-izradu-stranica'
+      preLoaderRoute: typeof ZahtjevZaIzraduStranicaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/zahtjev': {
@@ -570,6 +643,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof KolaciciRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/izrada-dinamicne-web-stranice': {
+      id: '/izrada-dinamicne-web-stranice'
+      path: '/izrada-dinamicne-web-stranice'
+      fullPath: '/izrada-dinamicne-web-stranice'
+      preLoaderRoute: typeof IzradaDinamicneWebStraniceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/impressum': {
       id: '/impressum'
       path: '/impressum'
@@ -584,6 +664,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HitneIntervencijeRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/galerija': {
+      id: '/galerija'
+      path: '/galerija'
+      fullPath: '/galerija'
+      preLoaderRoute: typeof GalerijaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/e-uplatnice': {
       id: '/e-uplatnice'
       path: '/e-uplatnice'
@@ -591,11 +678,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EUplatniceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/e-financijski-izvjestaji': {
+      id: '/e-financijski-izvjestaji'
+      path: '/e-financijski-izvjestaji'
+      fullPath: '/e-financijski-izvjestaji'
+      preLoaderRoute: typeof EFinancijskiIzvjestajiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dokumenti-zgrade': {
       id: '/dokumenti-zgrade'
       path: '/dokumenti-zgrade'
       fullPath: '/dokumenti-zgrade'
       preLoaderRoute: typeof DokumentiZgradeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digitalne-usluge': {
+      id: '/digitalne-usluge'
+      path: '/digitalne-usluge'
+      fullPath: '/digitalne-usluge'
+      preLoaderRoute: typeof DigitalneUslugeRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/certifikat-bonitetne-izvrsnosti': {
@@ -776,10 +877,14 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnketaRoute: AnketaRoute,
   CertifikatBonitetneIzvrsnostiRoute: CertifikatBonitetneIzvrsnostiRoute,
+  DigitalneUslugeRoute: DigitalneUslugeRoute,
   DokumentiZgradeRoute: DokumentiZgradeRoute,
+  EFinancijskiIzvjestajiRoute: EFinancijskiIzvjestajiRoute,
   EUplatniceRoute: EUplatniceRoute,
+  GalerijaRoute: GalerijaRoute,
   HitneIntervencijeRoute: HitneIntervencijeRoute,
   ImpressumRoute: ImpressumRoute,
+  IzradaDinamicneWebStraniceRoute: IzradaDinamicneWebStraniceRoute,
   KolaciciRoute: KolaciciRoute,
   KontaktRoute: KontaktRoute,
   KorisniLinkoviIKontaktiRoute: KorisniLinkoviIKontaktiRoute,
@@ -791,6 +896,7 @@ const rootRouteChildren: RootRouteChildren = {
   UslugeRoute: UslugeRouteWithChildren,
   VodicZaSuvlasnikeRoute: VodicZaSuvlasnikeRoute,
   ZahtjevRoute: ZahtjevRoute,
+  ZahtjevZaIzraduStranicaRoute: ZahtjevZaIzraduStranicaRoute,
   ZastitaOsobnihPodatakaRoute: ZastitaOsobnihPodatakaRoute,
   ZastoSmoBoljiIzborRoute: ZastoSmoBoljiIzborRoute,
   NovostiSlugRoute: NovostiSlugRoute,
@@ -800,3 +906,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
