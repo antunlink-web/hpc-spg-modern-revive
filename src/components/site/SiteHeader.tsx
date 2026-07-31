@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import logoHorizontal from "@/assets/logo-horizontal.png";
+import logoOfficial from "@/assets/logo-official.jpg";
 import { withBase } from "@/lib/paths";
 
 type NavItem = {
@@ -45,9 +45,9 @@ export function SiteHeader() {
           aria-label="HPC-SPG — Hrvatski poslovni centar"
         >
           <img
-            src={logoHorizontal}
+            src={logoOfficial}
             alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
-            className="h-14 sm:h-16 lg:h-[76px] w-auto shrink-0 transition-all"
+            className="h-16 sm:h-[72px] lg:h-[84px] w-auto shrink-0 transition-all"
           />
         </a>
 
@@ -102,7 +102,7 @@ export function SiteHeader() {
           }`}
         >
           <div className="flex items-center justify-between px-5 h-[88px] border-b border-border shrink-0">
-            <img src={logoHorizontal} alt="HPC-SPG" className="h-14 w-auto" />
+            <img src={logoOfficial} alt="HPC-SPG" className="h-14 w-auto" />
             <button
               onClick={() => setOpen(false)}
               aria-label="Zatvori izbornik"
