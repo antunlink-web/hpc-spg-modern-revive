@@ -25,7 +25,7 @@ export function FormPageShell({
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
-      <section className="relative pt-[120px] lg:pt-[140px] pb-14 lg:pb-20 bg-gradient-to-b from-surface to-background border-b border-border">
+      <section className="relative pt-[132px] lg:pt-[160px] pb-14 lg:pb-20 bg-gradient-to-b from-surface to-background border-b border-border">
         <div className="max-w-5xl mx-auto px-6 lg:px-10">
           <nav
             aria-label="Breadcrumbs"

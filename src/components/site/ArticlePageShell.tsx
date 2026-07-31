@@ -39,7 +39,7 @@ export function ArticlePageShell({
       <SiteHeader />
 
       {/* Header band */}
-      <section className="relative pt-[120px] lg:pt-[140px] pb-14 lg:pb-20 bg-surface border-b border-border">
+      <section className="relative pt-[132px] lg:pt-[160px] pb-14 lg:pb-20 bg-surface border-b border-border">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           {crumbs.length > 0 && (
             <nav aria-label="Breadcrumb" className="reveal-up mb-6 text-xs text-muted-foreground flex flex-wrap items-center gap-1.5">

@@ -22,7 +22,7 @@ function NewsIndex() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
-      <section className="pt-[120px] lg:pt-[140px] pb-14 lg:pb-20 bg-surface border-b border-border">
+      <section className="pt-[132px] lg:pt-[160px] pb-14 lg:pb-20 bg-surface border-b border-border">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <span className="reveal-up inline-block text-xs uppercase tracking-[0.22em] text-emerald font-medium">Aktualno</span>
           <h1 className="reveal-up mt-3 text-4xl lg:text-5xl text-navy leading-tight" style={{ transitionDelay: "80ms" }}>Novosti i obavijesti</h1>
