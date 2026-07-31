@@ -13,7 +13,7 @@ import {
   Scale,
   Coins,
   Gauge,
-  Award,
+  Thermometer,
   CheckCircle2,
   Phone,
   Mail,
@@ -24,7 +24,6 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { useReveal } from "@/hooks/use-reveal";
 import heroBuilding from "@/assets/hero-building-new.jpg";
 import sectionBuildings from "@/assets/section-buildings.jpg";
-import appMockup from "@/assets/app-mockup.jpg";
 import newsFacade from "@/assets/news-facade.jpg";
 import newsElevator from "@/assets/news-elevator.jpg";
 import newsGraffiti from "@/assets/news-graffiti.jpg";
@@ -32,9 +31,10 @@ import newsLaw from "@/assets/news-law.jpg";
 import bonitetAAA from "@/assets/bonitet-aaa.png";
 import { withBase } from "@/lib/paths";
 
+
 const OFFER_URL = "/zahtjev";
 const CONTACT_URL = "/kontakt";
-const USER_ACCESS_URL = "/korisnicki-podaci";
+const OFFER_PAGE_URL = "/ponuda";
 const APP_URL = "https://hpc-spg.com/";
 
 export const Route = createFileRoute("/")({
@@ -69,18 +69,18 @@ const services = [
 const whyUs = [
   { title: "Dugogodišnje iskustvo", desc: "Godine iskustva u upravljanju zgradama na području Grada Zagreba i Zagrebačke županije." },
   { title: "Transparentno poslovanje", desc: "Jasno financijsko izvještavanje i uvid u stanje pričuve u svakom trenutku." },
-  { title: "Digitalne usluge", desc: "Web i mobilna aplikacija, e-uplatnice i e-financijski izvještaji za sve suvlasnike." },
+  { title: "Web i mobilna aplikacija", desc: "Uvid u financije zgrade, uplatnice i dokumente putem web i mobilne aplikacije." },
   { title: "Organizirano održavanje", desc: "Redovito održavanje zajedničkih dijelova zgrade i godišnji tehnički pregled objekta." },
   { title: "Podrška suvlasnicima", desc: "Brza komunikacija s predstavnikom suvlasnika i pravna podrška u svakoj fazi." },
   { title: "Bonitet AAA", desc: "Bonitetna izvrsnost — priznanje financijske stabilnosti i pouzdanosti društva." },
 ];
 
-const digital = [
-  { icon: Receipt, title: "E-uplatnice za pričuvu", desc: "Mjesečne uplatnice za pričuvu dostavljene izravno na vašu e-mail adresu." },
-  { icon: BarChart3, title: "Financijski izvještaji", desc: "Pristup mjesečnom financijskom izvještaju zgrade i stanju pričuve u svakom trenutku." },
-  { icon: FileText, title: "Dokumenti zgrade", desc: "Ugovori, zapisnici, godišnji programi i ostali dokumenti vaše zgrade na jednom mjestu." },
-  { icon: Wrench, title: "Prijava kvara", desc: "Brza prijava kvarova na zajedničkim dijelovima zgrade putem aplikacije." },
+const ponudaHighlights = [
+  { icon: Receipt, title: "E-uplatnice za pričuvu", desc: "Mjesečne uplatnice za pričuvu dostavljene izravno na vašu e-mail adresu.", href: "/e-uplatnice" },
+  { icon: BarChart3, title: "Financijski izvještaji", desc: "Uvid u mjesečni financijski izvještaj zgrade i stanje pričuve u svakom trenutku.", href: "/korisnicki-podaci" },
+  { icon: FileText, title: "Dokumenti zgrade", desc: "Ugovori, zapisnici, godišnji programi i ostali dokumenti vaše zgrade na jednom mjestu.", href: "/dokumenti-zgrade" },
 ];
+
 
 const process = [
   { n: "01", title: "Zahtjev za ponudu", desc: "Ispunite kratki obrazac s podacima o objektu.", href: "/zahtjev" },
@@ -98,12 +98,13 @@ const news = [
 
 const upravljanje = [
   { icon: BookOpen, title: "Osnovni pojmovi upravljanja", desc: "Pojmovnik i objašnjenja ključnih izraza vezanih uz upravljanje zgradom.", href: "/upravljanje/osnovni-pojmovi" },
-  { icon: Award, title: "Zašto smo bolji izbor", desc: "Razlozi zbog kojih suvlasnici biraju HPC-SPG kao svog upravitelja.", href: "/zasto-smo-bolji-izbor" },
+  { icon: Scale, title: "Regulativa upravljanja", desc: "Pregled propisa i zakonskog okvira upravljanja zgradama u RH.", href: "/upravljanje/regulativa" },
   { icon: Coins, title: "Zajmovi i krediti", desc: "Mogućnosti financiranja obnove i uređenja stambenih objekata.", href: "/upravljanje/zajmovi-i-krediti" },
   { icon: Gauge, title: "Minimalna visina pričuve", desc: "Informacije o zakonski propisanoj minimalnoj visini pričuve.", href: "/upravljanje/minimalna-visina-pricuve" },
-  { icon: Scale, title: "Regulativa upravljanja", desc: "Pregled propisa i zakonskog okvira upravljanja zgradama u RH.", href: "/upravljanje/regulativa" },
+  { icon: Thermometer, title: "Toplinski sustav — nove obveze", desc: "Obveze vezane uz uređaje za razdiobu troškova toplinske energije.", href: "/upravljanje/toplinski-sustav-nove-obveze" },
   { icon: FileText, title: "Vodič za suvlasnike", desc: "Priručnik o pravima i obvezama suvlasnika stambenih zgrada.", href: "/vodic-za-suvlasnike" },
 ];
+
 
 function HomePage() {
   useReveal();
@@ -199,8 +200,38 @@ function HomePage() {
               </article>
             ))}
           </div>
+
+          <div className="reveal-up mt-10">
+            <a
+              href={withBase(OFFER_PAGE_URL)}
+              className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft hover:-translate-y-0.5 transition-all duration-300"
+            >
+              Cjelovita ponuda poslova upravljanja <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+
+          <div className="stagger mt-14 grid sm:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
+            {ponudaHighlights.map((d) => (
+              <a
+                key={d.title}
+                href={withBase(d.href)}
+                className="stagger-item group bg-background p-7 lg:p-8 hover:bg-surface transition-colors card-lift"
+              >
+                <span className="inline-grid h-12 w-12 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors icon-hover">
+                  <d.icon className="h-6 w-6 text-navy group-hover:text-emerald transition-colors" strokeWidth={1.6} />
+                </span>
+                <h3 className="mt-5 text-lg text-navy font-sans font-semibold">{d.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-emerald">
+                  Otvori <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
+
+
 
       {/* WHY US */}
       <section id="zasto" className="py-24 lg:py-32 bg-surface">
@@ -261,59 +292,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* DIGITAL */}
-      <section id="digitalno" className="py-24 lg:py-32 bg-navy text-navy-foreground overflow-hidden">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            <div className="reveal-left lg:col-span-6 order-2 lg:order-1">
-              <span className="text-xs uppercase tracking-[0.22em] text-white/60">Digitalne usluge</span>
-              <h2 className="mt-4 text-4xl lg:text-5xl text-white">Vaša zgrada — u vašem džepu.</h2>
-              <p className="mt-6 text-white/80 leading-relaxed max-w-xl">
-                Web i mobilna aplikacija HPC-SPG omogućuje vam uvid u financije zgrade,
-                pristup važnijim dokumentima te izravnu komunikaciju s predstavnikom
-                suvlasnika i upraviteljem — bilo kada, s bilo kojeg uređaja.
-              </p>
 
-              <div className="stagger mt-10 space-y-px bg-white/10 rounded-xl overflow-hidden">
-                {digital.map((d) => (
-                  <div key={d.title} className="stagger-item bg-navy p-6 lg:p-7 flex gap-5">
-                    <span className="h-11 w-11 shrink-0 rounded-md bg-white/10 grid place-items-center">
-                      <d.icon className="h-5 w-5 text-white" strokeWidth={1.6} />
-                    </span>
-                    <div>
-                      <h3 className="text-lg text-white font-sans font-medium">{d.title}</h3>
-                      <p className="mt-1 text-sm text-white/75 leading-relaxed">{d.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
 
-              <div className="mt-9 flex flex-wrap gap-3">
-                <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-md bg-white text-navy px-5 py-3.5 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300">
-                  Prijava u aplikaciju <ArrowRight className="h-4 w-4" />
-                </a>
-                <a href={USER_ACCESS_URL} className="inline-flex items-center rounded-md border border-white/25 text-white px-5 py-3.5 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
-                  Zatraži pristupne podatke
-                </a>
-              </div>
-            </div>
-
-            <div className="phone-reveal lg:col-span-6 order-1 lg:order-2 relative">
-              <div className="absolute -inset-6 bg-emerald/10 blur-3xl rounded-full pointer-events-none" aria-hidden />
-              <div className="float-y relative rounded-3xl overflow-hidden shadow-2xl shadow-black/40 ring-1 ring-white/10 lg:scale-[1.06] origin-center">
-                <img
-                  src={appMockup}
-                  alt="HPC-SPG mobilna aplikacija — pričuva, e-uplatnice, dokumenti i prijava kvara"
-                  width={1280}
-                  height={1280}
-                  loading="lazy"
-                  className="w-full h-auto"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
       {/* UPRAVLJANJE — resources on managing a building */}

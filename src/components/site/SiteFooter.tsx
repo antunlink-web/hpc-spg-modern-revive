@@ -64,13 +64,15 @@ export function SiteFooter() {
         <div className="lg:col-span-2">
           <h4 className="text-xs uppercase tracking-[0.18em] text-white/55">Suvlasnici</h4>
           <ul className="mt-5 space-y-3 text-sm text-white/80">
-            <li><a href="https://hpc-spg.com/" target="_blank" rel="noreferrer" className="hover:text-white">Prijava u aplikaciju</a></li>
+            <li><a href="https://hpc-spg.com/" target="_blank" rel="noreferrer" className="hover:text-white">Prijava korisnika</a></li>
             <li><a href={withBase("/korisnicki-podaci")} className="hover:text-white">Pristupni podaci</a></li>
+            <li><a href={withBase("/e-uplatnice")} className="hover:text-white">E-uplatnice</a></li>
+            <li><a href={withBase("/dokumenti-zgrade")} className="hover:text-white">Dokumenti zgrade</a></li>
+            <li><a href={withBase("/vodic-za-suvlasnike")} className="hover:text-white">Vodič za suvlasnike</a></li>
             <li><a href={withBase("/anketa")} className="hover:text-white">Anketa za suvlasnike</a></li>
-            <li><a href={withBase("/upravljanje/osnovni-pojmovi")} className="hover:text-white">Osnovni pojmovi</a></li>
-            <li><a href={withBase("/upravljanje/regulativa")} className="hover:text-white">Regulativa</a></li>
             <li><a href={withBase("/novosti")} className="hover:text-white">Novosti</a></li>
           </ul>
+
         </div>
 
         <div className="lg:col-span-4">

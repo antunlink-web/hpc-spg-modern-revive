@@ -51,11 +51,11 @@ export const Route = createFileRoute("/usluge/upravljanje-zgradama")({
         <li>Zastupanje suvlasnika u sudskim postupcima naplate</li>
       </ul>
 
-      <h2>Digitalne usluge</h2>
+      <h2>Web i mobilna aplikacija</h2>
       <p>
         Web i mobilna aplikacija omogućava pregled uplatnica, financijskih izvještaja i dokumenata zgrade
-        te online prijavu kvara. Vidi <a href={withBase("/e-financijski-izvjestaji")}>e-financijski izvještaji</a> i{" "}
-        <a href={withBase("/dokumenti-zgrade")}>dokumenti zgrade</a>.
+        te online prijavu kvara. Vidi <a href={withBase("/dokumenti-zgrade")}>dokumenti zgrade</a> i{" "}
+        <a href={withBase("/e-uplatnice")}>e-uplatnice</a>.
       </p>
 
       <p>

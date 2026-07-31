@@ -1,75 +1,35 @@
 import { useState } from "react";
-import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import logoHorizontal from "@/assets/logo-horizontal.png";
-import logoEmblem from "@/assets/logo-emblem.png";
 import { withBase } from "@/lib/paths";
 
 type NavItem = {
   label: string;
   href: string;
-  children?: { label: string; href: string }[];
 };
 
-/** Mirrors the menu structure of hpc-spg.hr, mapped to internal demo routes. */
+/**
+ * Simplified top navigation — only the main homepage sections.
+ * Detailed pages are reached from the cards inside each homepage section.
+ */
 const nav: NavItem[] = [
+  { label: "Početna", href: "/" },
   { label: "O nama", href: "/o-nama" },
   { label: "Zašto smo bolji izbor?", href: "/zasto-smo-bolji-izbor" },
-  {
-    label: "Ponuda",
-    href: "/ponuda",
-    children: [
-      { label: "Upravljanje zgradama", href: "/usluge/upravljanje-zgradama" },
-      { label: "Projekti energetske obnove", href: "/usluge/energetska-obnova" },
-      { label: "Obnova zgrada od potresa", href: "/usluge/obnova-od-potresa" },
-      { label: "Upis zgrade u zemljišne knjige", href: "/usluge/upis-u-zemljisne-knjige" },
-      { label: "Financiranje uređenja", href: "/usluge/financiranje-uredenja" },
-      { label: "Zahtjev za izradu prijedloga upravljanja zgradom", href: "/zahtjev" },
-    ],
-  },
-  {
-    label: "Upravljanje",
-    href: "/upravljanje",
-    children: [
-      { label: "Osnovni pojmovi upravljanja sukladno Zakonu", href: "/upravljanje/osnovni-pojmovi" },
-      { label: "Zajmovi i krediti za obnovu i uređenje zgrada", href: "/upravljanje/zajmovi-i-krediti" },
-      { label: "Minimalna visina pričuve", href: "/upravljanje/minimalna-visina-pricuve" },
-      { label: "Regulativa", href: "/upravljanje/regulativa" },
-      { label: "Toplinski sustav – nove obveze", href: "/upravljanje/toplinski-sustav-nove-obveze" },
-    ],
-  },
-  {
-    label: "Digitalne usluge",
-    href: "/e-financijski-izvjestaji",
-    children: [
-      { label: "E-financijski izvještaji", href: "/e-financijski-izvjestaji" },
-      { label: "E-uplatnice", href: "/e-uplatnice" },
-      { label: "Zahtjev za korisničke podatke", href: "/korisnicki-podaci" },
-      { label: "Izrada dinamične web stranice", href: "/izrada-dinamicne-web-stranice" },
-      { label: "Zahtjev za izradu stranica", href: "/zahtjev-za-izradu-stranica" },
-      { label: "Dokumenti zgrade", href: "/dokumenti-zgrade" },
-    ],
-  },
-  { label: "Galerija", href: "/galerija" },
-  {
-    label: "Novosti",
-    href: "/novosti",
-    children: [{ label: "Arhiva", href: "/novosti/arhiva" }],
-  },
-  {
-    label: "Kontakt",
-    href: "/kontakt",
-    children: [
-      { label: "Hitne intervencije", href: "/hitne-intervencije" },
-      { label: "Korisni linkovi i kontakti", href: "/korisni-linkovi-i-kontakti" },
-      { label: "Vodič za suvlasnike", href: "/vodic-za-suvlasnike" },
-      { label: "Anketa za suvlasnike", href: "/anketa" },
-    ],
-  },
+  { label: "Ponuda", href: "/#usluge" },
+  { label: "Upravljanje", href: "/#upravljanje" },
+  { label: "Novosti", href: "/novosti" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
+
+/** Build an href that respects the active base, including homepage anchors. */
+function navHref(href: string): string {
+  if (href.startsWith("/#")) return `${withBase("/")}${href.slice(1)}`;
+  return withBase(href);
+}
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [expanded, setExpanded] = useState<string | null>(null);
 
   const linkBase =
     "text-[14px] font-medium tracking-tight transition-colors whitespace-nowrap";
@@ -77,47 +37,29 @@ export function SiteHeader() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm">
-      <div className="max-w-7xl mx-auto pl-6 pr-5 lg:pl-10 lg:pr-10 h-[80px] lg:h-[100px] flex items-center justify-between gap-6">
-        {/* Desktop: horizontal logo with wordmark */}
-        <a href={withBase("/")} className="hidden sm:flex items-center min-w-0" aria-label="HPC-SPG — Hrvatski poslovni centar">
+      <div className="max-w-7xl mx-auto pl-6 pr-5 lg:pl-10 lg:pr-10 h-[88px] lg:h-[104px] flex items-center justify-between gap-6">
+        {/* Same official logo on desktop and mobile */}
+        <a
+          href={withBase("/")}
+          className="flex items-center min-w-0"
+          aria-label="HPC-SPG — Hrvatski poslovni centar"
+        >
           <img
             src={logoHorizontal}
             alt="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
-            className="h-14 lg:h-16 w-auto shrink-0 transition-all"
+            className="h-14 sm:h-16 lg:h-[76px] w-auto shrink-0 transition-all"
           />
         </a>
-        {/* Mobile: emblem only */}
-        <a href={withBase("/")} className="sm:hidden flex items-center" aria-label="HPC-SPG">
-          <img src={logoEmblem} alt="HPC-SPG" className="h-12 w-auto transition-all" />
-        </a>
 
-        <nav className="hidden xl:flex items-center gap-5">
+        <nav className="hidden xl:flex items-center gap-6">
           {nav.map((n) => (
-            <div key={n.href} className="relative group">
-              <a
-                href={withBase(n.href)}
-                className={`${linkBase} ${linkColor} inline-flex items-center gap-1 py-3 nav-underline`}
-              >
-                {n.label}
-                {n.children && <ChevronDown className="h-3.5 w-3.5 opacity-60 transition-transform group-hover:rotate-180" />}
-              </a>
-              {n.children && (
-                <div className="absolute left-0 top-full pt-1 opacity-0 invisible translate-y-1 transition-all duration-200 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:visible">
-                  <ul className="min-w-[300px] rounded-lg border border-border bg-background shadow-card py-2">
-                    {n.children.map((c) => (
-                      <li key={c.href}>
-                        <a
-                          href={withBase(c.href)}
-                          className="block px-4 py-2.5 text-[14px] leading-snug text-foreground/85 hover:bg-surface hover:text-navy transition-colors"
-                        >
-                          {c.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </div>
+            <a
+              key={n.href}
+              href={navHref(n.href)}
+              className={`${linkBase} ${linkColor} inline-flex items-center py-3 nav-underline`}
+            >
+              {n.label}
+            </a>
           ))}
         </nav>
 
@@ -159,8 +101,8 @@ export function SiteHeader() {
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between px-5 h-[80px] border-b border-border shrink-0">
-            <img src={logoHorizontal} alt="HPC-SPG" className="h-11 w-auto" />
+          <div className="flex items-center justify-between px-5 h-[88px] border-b border-border shrink-0">
+            <img src={logoHorizontal} alt="HPC-SPG" className="h-14 w-auto" />
             <button
               onClick={() => setOpen(false)}
               aria-label="Zatvori izbornik"
@@ -171,45 +113,14 @@ export function SiteHeader() {
           </div>
           <nav className="flex-1 overflow-y-auto px-5 py-6 flex flex-col gap-1">
             {nav.map((n) => (
-              <div key={n.href}>
-                <div className="flex items-center">
-                  <a
-                    href={withBase(n.href)}
-                    onClick={() => setOpen(false)}
-                    className="flex-1 px-3 py-3.5 rounded-md text-base font-medium text-foreground hover:bg-muted"
-                  >
-                    {n.label}
-                  </a>
-                  {n.children && (
-                    <button
-                      type="button"
-                      aria-label={`Prikaži podizbornik: ${n.label}`}
-                      aria-expanded={expanded === n.href}
-                      onClick={() => setExpanded(expanded === n.href ? null : n.href)}
-                      className="h-10 w-10 grid place-items-center text-navy rounded-md hover:bg-muted"
-                    >
-                      <ChevronDown
-                        className={`h-5 w-5 transition-transform ${expanded === n.href ? "rotate-180" : ""}`}
-                      />
-                    </button>
-                  )}
-                </div>
-                {n.children && expanded === n.href && (
-                  <ul className="ml-3 mb-2 border-l border-border pl-3">
-                    {n.children.map((c) => (
-                      <li key={c.href}>
-                        <a
-                          href={withBase(c.href)}
-                          onClick={() => setOpen(false)}
-                          className="block px-3 py-2.5 text-sm leading-snug text-muted-foreground hover:text-navy"
-                        >
-                          {c.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              <a
+                key={n.href}
+                href={navHref(n.href)}
+                onClick={() => setOpen(false)}
+                className="px-3 py-3.5 rounded-md text-base font-medium text-foreground hover:bg-muted"
+              >
+                {n.label}
+              </a>
             ))}
           </nav>
           <div className="p-5 border-t border-border space-y-3 shrink-0">
@@ -219,7 +130,7 @@ export function SiteHeader() {
               rel="noreferrer"
               className="block w-full text-center rounded-md border border-border px-4 py-3 text-sm font-semibold text-navy"
             >
-              Prijava u aplikaciju
+              Prijava korisnika
             </a>
             <a
               href={withBase("/zahtjev")}

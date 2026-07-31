@@ -13,7 +13,7 @@ export const Route = createFileRoute("/dokumenti-zgrade")({
   }),
   component: () => (
     <ArticlePageShell
-      eyebrow="Digitalne usluge"
+      eyebrow="Korisničke usluge"
       title="Dokumenti zgrade"
       lead="Ugovori, zapisnici, godišnji programi i ostala dokumentacija vaše zgrade — u aplikaciji, kada god vam treba."
       crumbs={[{ label: "Dokumenti zgrade" }]}
