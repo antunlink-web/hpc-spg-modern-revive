@@ -149,11 +149,15 @@ export function SiteHeader() {
               <a
                 key={n.href}
                 href={navHref(n.href)}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  setOpen(false);
+                  onNavClick(e, n.href);
+                }}
                 className="px-3 py-3.5 rounded-md text-base font-medium text-foreground hover:bg-muted"
               >
                 {n.label}
               </a>
+
             ))}
           </nav>
           <div className="p-5 border-t border-border space-y-3 shrink-0">
