@@ -192,7 +192,7 @@ function HomePage() {
 
 
       {/* SERVICES */}
-      <section id="usluge" className="py-24 lg:py-32 bg-background">
+      <section id="ponuda" className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-14 lg:mb-20">
             <div className="lg:col-span-7">
@@ -255,7 +255,7 @@ function HomePage() {
 
 
       {/* WHY US */}
-      <section id="zasto" className="py-24 lg:py-32 bg-surface">
+      <section id="zasto-smo-bolji" className="py-24 lg:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="reveal-left lg:col-span-5">
@@ -372,7 +372,7 @@ function HomePage() {
       </section>
 
       {/* NEWS */}
-      <section id="vijesti" className="py-24 lg:py-32 bg-background">
+      <section id="novosti" className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="reveal-up flex flex-wrap items-end justify-between gap-6 mb-14">
             <div>
