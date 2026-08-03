@@ -243,8 +243,68 @@ function HomePage() {
       </section>
 
 
+      {/* WHY US */}
+      <section id="zasto-smo-bolji" className="py-24 lg:py-32 bg-background">
+        <div className="max-w-7xl mx-auto px-5 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+            <div className="reveal-left lg:col-span-5">
+              <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Zašto HPC-SPG</span>
+              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Kvaliteta ispred kvantitete.</h2>
+              <p className="mt-6 text-muted-foreground leading-relaxed">
+                Naš je cilj zgradama kojima upravljamo dati kvalitetnu podršku i uslugu —
+                s posvećenošću detalju, pravnom sigurnošću i odgovornim upravljanjem
+                pričuvom.
+              </p>
+              <ul className="mt-8 space-y-3 text-sm">
+                {[
+                  "Transparentno financijsko izvještavanje",
+                  "Stručan tim i pravna sigurnost",
+                  "Brza i jasna komunikacija sa suvlasnicima",
+                  "Organizirano godišnje planiranje i izvještavanje",
+                ].map((t) => (
+                  <li key={t} className="flex items-start gap-2.5 text-foreground/85">
+                    <CheckCircle2 className="h-4 w-4 mt-0.5 text-emerald" />
+                    {t}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8">
+                <a
+                  href={withBase("/zasto-smo-bolji-izbor")}
+                  className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  Zašto smo bolji izbor? <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+
+              {/* AAA Bonitet badge */}
+              <div className="reveal-fade mt-10 inline-flex items-center gap-4 rounded-xl border border-border bg-background p-4 pr-6 shadow-sm" style={{ transitionDelay: "200ms" }}>
+                <img src={bonitetAAA} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-24 w-auto" />
+                <div>
+                  <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Bonitetna izvrsnost</p>
+                  <p className="mt-1 text-sm font-semibold text-navy">Certifikat AAA — Platinum</p>
+                  <p className="mt-0.5 text-xs text-muted-foreground">Priznanje financijske stabilnosti i pouzdanosti društva.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="stagger lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden">
+              {whyUs.map((w) => (
+                <div key={w.title} className="stagger-item bg-background p-6 lg:p-8 card-lift">
+                  <CheckCircle2 className="h-6 w-6 text-emerald icon-hover" strokeWidth={1.75} />
+                  <h3 className="mt-5 text-lg text-navy font-sans font-semibold leading-snug">{w.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* SERVICES */}
-      <section id="ponuda" className="py-24 lg:py-32 bg-background">
+      <section id="ponuda" className="py-24 lg:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-14 lg:mb-20">
             <div className="lg:col-span-7">
@@ -300,67 +360,6 @@ function HomePage() {
                 </span>
               </a>
             ))}
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* WHY US */}
-      <section id="zasto-smo-bolji" className="py-24 lg:py-32 bg-surface">
-        <div className="max-w-7xl mx-auto px-5 lg:px-10">
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-            <div className="reveal-left lg:col-span-5">
-              <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Zašto HPC-SPG</span>
-              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Kvaliteta ispred kvantitete.</h2>
-              <p className="mt-6 text-muted-foreground leading-relaxed">
-                Naš je cilj zgradama kojima upravljamo dati kvalitetnu podršku i uslugu —
-                s posvećenošću detalju, pravnom sigurnošću i odgovornim upravljanjem
-                pričuvom.
-              </p>
-              <ul className="mt-8 space-y-3 text-sm">
-                {[
-                  "Transparentno financijsko izvještavanje",
-                  "Stručan tim i pravna sigurnost",
-                  "Brza i jasna komunikacija sa suvlasnicima",
-                  "Organizirano godišnje planiranje i izvještavanje",
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-2.5 text-foreground/85">
-                    <CheckCircle2 className="h-4 w-4 mt-0.5 text-emerald" />
-                    {t}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-8">
-                <a
-                  href={withBase("/zasto-smo-bolji-izbor")}
-                  className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft hover:-translate-y-0.5 transition-all duration-300"
-                >
-                  Zašto smo bolji izbor? <ArrowRight className="h-4 w-4" />
-                </a>
-              </div>
-
-              {/* AAA Bonitet badge */}
-              <div className="reveal-fade mt-10 inline-flex items-center gap-4 rounded-xl border border-border bg-background p-4 pr-6 shadow-sm" style={{ transitionDelay: "200ms" }}>
-                <img src={bonitetAAA} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-24 w-auto" />
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.18em] text-muted-foreground">Bonitetna izvrsnost</p>
-                  <p className="mt-1 text-sm font-semibold text-navy">Certifikat AAA — Platinum</p>
-                  <p className="mt-0.5 text-xs text-muted-foreground">Priznanje financijske stabilnosti i pouzdanosti društva.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="stagger lg:col-span-7 grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden">
-              {whyUs.map((w) => (
-                <div key={w.title} className="stagger-item bg-background p-6 lg:p-8 card-lift">
-                  <CheckCircle2 className="h-6 w-6 text-emerald icon-hover" strokeWidth={1.75} />
-                  <h3 className="mt-5 text-lg text-navy font-sans font-semibold leading-snug">{w.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{w.desc}</p>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>
