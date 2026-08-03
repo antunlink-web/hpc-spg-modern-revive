@@ -32,6 +32,8 @@ import newsGraffiti from "@/assets/news-graffiti.jpg";
 import newsLaw from "@/assets/news-law.jpg";
 import bonitetAAA from "@/assets/bonitet-aaa.png";
 import { withBase } from "@/lib/paths";
+import { scrollToHash } from "@/lib/scroll";
+
 
 
 const OFFER_URL = "/zahtjev";
