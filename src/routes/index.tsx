@@ -108,7 +108,24 @@ const upravljanje = [
 
 function HomePage() {
   useReveal();
+
+  // Scroll to a homepage section when arriving with a hash (from an internal
+  // page, a direct refresh, or browser back/forward).
+  useEffect(() => {
+    if (window.location.hash) scrollToHash(window.location.hash);
+    const onHashChange = () => {
+      if (window.location.hash) scrollToHash(window.location.hash);
+    };
+    window.addEventListener("hashchange", onHashChange);
+    window.addEventListener("popstate", onHashChange);
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener("popstate", onHashChange);
+    };
+  }, []);
+
   return (
+
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
