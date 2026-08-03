@@ -86,10 +86,12 @@ export function SiteHeader() {
             <a
               key={n.href}
               href={navHref(n.href)}
+              onClick={(e) => onNavClick(e, n.href)}
               className={`${linkBase} ${linkColor} inline-flex items-center py-3 nav-underline`}
             >
               {n.label}
             </a>
+
           ))}
         </nav>
 
