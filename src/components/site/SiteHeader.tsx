@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import logoOfficial from "@/assets/logo-official.jpg";
 import { withBase } from "@/lib/paths";
+import { scrollToSection } from "@/lib/scroll";
 
 type NavItem = {
   label: string;
@@ -10,16 +11,17 @@ type NavItem = {
 
 /**
  * Simplified top navigation — only the main homepage sections.
- * Detailed pages are reached from the cards inside each homepage section.
+ * Main items are homepage anchors; detailed pages open from the cards,
+ * buttons and links inside each homepage section.
  */
 const nav: NavItem[] = [
   { label: "Početna", href: "/" },
-  { label: "O nama", href: "/o-nama" },
-  { label: "Zašto smo bolji izbor?", href: "/zasto-smo-bolji-izbor" },
-  { label: "Ponuda", href: "/#usluge" },
+  { label: "O nama", href: "/#o-nama" },
+  { label: "Zašto smo bolji izbor?", href: "/#zasto-smo-bolji" },
+  { label: "Ponuda", href: "/#ponuda" },
   { label: "Upravljanje", href: "/#upravljanje" },
-  { label: "Novosti", href: "/novosti" },
-  { label: "Kontakt", href: "/kontakt" },
+  { label: "Novosti", href: "/#novosti" },
+  { label: "Kontakt", href: "/#kontakt" },
 ];
 
 /** Build an href that respects the active base, including homepage anchors. */
@@ -28,12 +30,39 @@ function navHref(href: string): string {
   return withBase(href);
 }
 
+/** Section id for anchor items, or null for normal page links. */
+function anchorId(href: string): string | null {
+  return href.startsWith("/#") ? href.slice(2) : null;
+}
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+
+  /**
+   * On the homepage: smooth-scroll in place and keep the hash in the URL.
+   * On an internal page: let the browser follow the link to `/#section`,
+   * where the homepage scrolls to the target on mount.
+   */
+  const onNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    const id = anchorId(href);
+    if (!id) return;
+    const onHome =
+      window.location.pathname.replace(/\/$/, "") ===
+      withBase("/").replace(/\/$/, "");
+    if (!onHome) return;
+    if (!document.getElementById(id)) return;
+    e.preventDefault();
+    window.history.pushState(null, "", `#${id}`);
+    scrollToSection(id);
+  };
 
   const linkBase =
     "text-[14px] font-medium tracking-tight transition-colors whitespace-nowrap";
   const linkColor = "text-foreground/85 hover:text-navy";
+
 
   return (
     <header className="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm">
@@ -57,10 +86,12 @@ export function SiteHeader() {
             <a
               key={n.href}
               href={navHref(n.href)}
+              onClick={(e) => onNavClick(e, n.href)}
               className={`${linkBase} ${linkColor} inline-flex items-center py-3 nav-underline`}
             >
               {n.label}
             </a>
+
           ))}
         </nav>
 
@@ -118,11 +149,15 @@ export function SiteHeader() {
               <a
                 key={n.href}
                 href={navHref(n.href)}
-                onClick={() => setOpen(false)}
+                onClick={(e) => {
+                  setOpen(false);
+                  onNavClick(e, n.href);
+                }}
                 className="px-3 py-3.5 rounded-md text-base font-medium text-foreground hover:bg-muted"
               >
                 {n.label}
               </a>
+
             ))}
           </nav>
           <div className="p-5 border-t border-border space-y-3 shrink-0">

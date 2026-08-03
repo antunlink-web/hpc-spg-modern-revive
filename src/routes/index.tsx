@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
+
 import {
   ArrowRight,
   Building2,
@@ -30,6 +32,8 @@ import newsGraffiti from "@/assets/news-graffiti.jpg";
 import newsLaw from "@/assets/news-law.jpg";
 import bonitetAAA from "@/assets/bonitet-aaa.png";
 import { withBase } from "@/lib/paths";
+import { scrollToHash } from "@/lib/scroll";
+
 
 
 const OFFER_URL = "/zahtjev";
@@ -108,7 +112,24 @@ const upravljanje = [
 
 function HomePage() {
   useReveal();
+
+  // Scroll to a homepage section when arriving with a hash (from an internal
+  // page, a direct refresh, or browser back/forward).
+  useEffect(() => {
+    if (window.location.hash) scrollToHash(window.location.hash);
+    const onHashChange = () => {
+      if (window.location.hash) scrollToHash(window.location.hash);
+    };
+    window.addEventListener("hashchange", onHashChange);
+    window.addEventListener("popstate", onHashChange);
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+      window.removeEventListener("popstate", onHashChange);
+    };
+  }, []);
+
   return (
+
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
 
@@ -169,9 +190,61 @@ function HomePage() {
         </div>
       </section>
 
+      {/* O NAMA */}
+      <section id="o-nama" className="py-24 lg:py-32 bg-surface">
+        <div className="max-w-7xl mx-auto px-5 lg:px-10">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            <div className="reveal-up lg:col-span-6">
+              <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">O nama</span>
+              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">
+                Hrvatski poslovni centar – SPG d.o.o.
+              </h2>
+              <p className="mt-6 text-muted-foreground leading-relaxed">
+                Registrirana i specijalizirana tvrtka za upravljanje i održavanje stambenih i
+                poslovnih objekata. Kao jedan od najvećih privatnih upravitelja u Zagrebu i okolici
+                upravljamo s više od 7.000 stambenih i poslovnih prostora te garaža.
+              </p>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Tvrtka ima stalno zaposlene djelatnike ekonomske, pravne i građevinske struke, a
+                radove i nadzor povjeravamo samo provjerenim suradnicima i kooperantima.
+              </p>
+              <div className="mt-8">
+                <a
+                  href={withBase("/o-nama")}
+                  className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft hover:-translate-y-0.5 transition-all duration-300"
+                >
+                  Više o nama <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="stagger lg:col-span-6 grid sm:grid-cols-2 gap-px bg-border rounded-xl overflow-hidden border border-border">
+              {[
+                { title: "Vodič za suvlasnike zgrada", desc: "Prva specijalizirana knjiga o upravljanju i kulturi stanovanja.", href: "/vodic-za-suvlasnike" },
+                { title: "Seminari i savjetovanja", desc: "Pet seminara o upravljanju i održavanju zgrada (1998. – 2005.).", href: "/seminari" },
+                { title: "Certifikat bonitetne izvrsnosti", desc: "Kontinuirani nositelj AAA certifikata bonitetne izvrsnosti.", href: "/certifikat-bonitetne-izvrsnosti" },
+                { title: "Korisni linkovi i kontakti", desc: "Pregled institucija i kontakata korisnih suvlasnicima.", href: "/korisni-linkovi-i-kontakti" },
+              ].map((c) => (
+                <a
+                  key={c.title}
+                  href={withBase(c.href)}
+                  className="stagger-item group bg-background p-6 lg:p-8 hover:bg-surface transition-colors card-lift"
+                >
+                  <h3 className="text-lg text-navy font-sans font-semibold leading-snug">{c.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{c.desc}</p>
+                  <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-emerald">
+                    Otvori <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* SERVICES */}
-      <section id="usluge" className="py-24 lg:py-32 bg-background">
+      <section id="ponuda" className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-14 lg:mb-20">
             <div className="lg:col-span-7">
@@ -234,7 +307,7 @@ function HomePage() {
 
 
       {/* WHY US */}
-      <section id="zasto" className="py-24 lg:py-32 bg-surface">
+      <section id="zasto-smo-bolji" className="py-24 lg:py-32 bg-surface">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="reveal-left lg:col-span-5">
@@ -351,7 +424,7 @@ function HomePage() {
       </section>
 
       {/* NEWS */}
-      <section id="vijesti" className="py-24 lg:py-32 bg-background">
+      <section id="novosti" className="py-24 lg:py-32 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="reveal-up flex flex-wrap items-end justify-between gap-6 mb-14">
             <div>
