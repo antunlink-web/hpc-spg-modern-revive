@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
-import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/upravljanje/regulativa")({
   head: () => ({
