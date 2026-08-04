@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
-import { withBase } from "@/lib/paths";
 
 export const Route = createFileRoute("/upravljanje/regulativa")({
   head: () => ({
@@ -18,51 +17,33 @@ export const Route = createFileRoute("/upravljanje/regulativa")({
       lead="Ključni zakoni i podzakonski akti koji uređuju odnose suvlasnika, upravitelja i predstavnika."
       crumbs={[{ label: "Upravljanje", href: "/upravljanje" }, { label: "Regulativa" }]}
     >
-      <h2>Zakon o upravljanju i održavanju zgrada (NN 152/2024)</h2>
-      <p>
-        Temeljni zakon koji uređuje upravljanje i održavanje zgrada u kojima postoje dva ili više
-        posebnih dijelova u različitom vlasništvu. Uređuje prava i obveze suvlasnika, poslove upravitelja,
-        međuvlasnički ugovor, ugovor o upravljanju, zajedničku pričuvu, godišnji program i izvještaj te
-        nadzor nad provedbom.
-      </p>
-
-      <h2>Zakon o vlasništvu i drugim stvarnim pravima</h2>
-      <p>
-        Uređuje pravo vlasništva i suvlasništva, uspostavu etažnog vlasništva, poslove redovite i
-        izvanredne uprave te temeljne odnose među suvlasnicima.
-      </p>
-
-      <h2>Uredba o održavanju zgrada</h2>
-      <p>
-        Podzakonski akt koji propisuje uvjete i način održavanja zajedničkih dijelova zgrade, obveze
-        redovitih pregleda i kontrola tehničkih sustava (dizala, plinske instalacije, elektroinstalacije,
-        gromobrani, protupožarna zaštita).
-      </p>
-
-      <h2>Uredba o visini zajedničke pričuve</h2>
-      <p>
-        Propisuje minimalnu visinu zajedničke pričuve po četvornom metru korisne površine posebnog dijela.
-        Više na stranici <a href={withBase("/upravljanje/minimalna-visina-pricuve")}>Minimalna visina pričuve</a>.
-      </p>
-
-      <h2>Zakon o gradnji i Zakon o prostornom uređenju</h2>
-      <p>
-        Uređuju sve poslove gradnje, dogradnje, nadogradnje i rekonstrukcije zgrada, uključujući
-        energetsku obnovu i obnovu nakon potresa.
-      </p>
-
-      <h2>Zakon o obnovi zgrada oštećenih potresom na području Grada Zagreba, Krapinsko-zagorske i Zagrebačke županije</h2>
-      <p>
-        Poseban zakon koji uređuje postupak, uvjete i način obnove zgrada oštećenih u potresima 2020.
-        godine. Vidi <a href={withBase("/usluge/obnova-od-potresa")}>Obnova od potresa</a>.
-      </p>
-
-      <h2>Zakon o zaštiti osobnih podataka i GDPR</h2>
-      <p>
-        Upravitelj obrađuje osobne podatke suvlasnika (ime, prezime, OIB, adresa, kontakt) isključivo u
-        svrhu obavljanja poslova upravljanja i sukladno GDPR-u. Vidi{" "}
-        <a href={withBase("/zastita-osobnih-podataka")}>Zaštita osobnih podataka</a>.
-      </p>
+      <h2>Zakoni i podzakonski akti</h2>
+      <ul className="space-y-3 text-foreground">
+        <li>Zakon o upravljanju i održavanju zgrada (NN 152/2024)</li>
+        <li>Zakon o vlasništvu i drugim stvarnim pravima (NN 81/2015 – pročišćeni tekst)</li>
+        <li>Pravilnik o kućnom redu u zgradama (NN 86/2025)</li>
+        <li>Pravilnik o sadržaju i načinu vođenja Registra zajednica suvlasnika (NN 86/2025)</li>
+        <li>Pravilnik o sadržaju i načinu vođenja Registra upravitelja zgrada (NN 86/2025)</li>
+        <li>Podatak o etalonskoj cijeni građenja (NN 106/2025)</li>
+        <li>Zakon o gradnji (NN 153/13, 20/17, 39/19, 125/19, 145/24)</li>
+        <li>Zakon o prostornom uređenju (NN 153/13, 65/17, 114/18, 39/19, 98/19, 67/23)</li>
+        <li>Zakon o energetskoj učinkovitosti (NN 127/14, 116/18, 25/20, 32/21, 41/21, 40/25)</li>
+        <li>Zakon o zaštiti od požara (NN 92/10, 114/22)</li>
+        <li>Zakon o zaštiti pučanstva od zaraznih bolesti (NN 79/07, 113/08, 43/09, 130/17, 114/18, 47/20, 134/20, 143/21)</li>
+        <li>Zakon o komunalnom gospodarstvu (NN 68/18, 110/18, 32/20, 145/24)</li>
+        <li>Zakon o tržištu plina (NN 18/18, 23/20)</li>
+        <li>Zakon o tržištu električne energije (NN 111/21, 83/23, 17/25)</li>
+        <li>Zakon o tržištu toplinske energije (NN 80/13, 14/14, 102/14, 95/15, 76/18, 86/19, 67/25)</li>
+        <li>Zakon o zapaljivim tekućinama i plinovima (NN 108/95, 56/10, 114/22)</li>
+        <li>Zakon o zaštiti i očuvanju kulturnih dobara (NN 145/24)</li>
+        <li>Pravilnik o održavanju građevina (NN 122/2014)</li>
+        <li>Pravilnik o sigurnosti dizala u uporabi (NN 5/2019)</li>
+        <li>Pravilnik o vatrogasnim aparatima (NN 101/11, 74/13)</li>
+        <li>Pravilnik o načinu provedbe obvezatne dezinfekcije, dezinsekcije i deratizacije (NN 35/07, 76/12)</li>
+        <li>Pravilnik o povezivanju zemljišne knjige i knjige položenih ugovora i upisu vlasništva posebnog dijela nekretnine (etažnog vlasništva) (NN 121/13)</li>
+        <li>Pravilnik o energetskim pregledima građevina i energetskom certificiranju zgrada (NN 88/17, 90/20, 01/21, 45/21)</li>
+        <li>Pravilnik o jednostavnim i drugim građevinama i radovima (NN 112/17, 34/18, 36/19, 98/19, 31/20, 74/22, 153/23)</li>
+      </ul>
 
       <p className="text-sm text-muted-foreground">
         Za trenutnu i cjelovitu inačicu propisa provjerite{" "}
