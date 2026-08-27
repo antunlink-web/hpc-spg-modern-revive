@@ -37,6 +37,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as UslugeIndexRouteImport } from './routes/usluge.index'
 import { Route as UpravljanjeIndexRouteImport } from './routes/upravljanje.index'
 import { Route as NovostiIndexRouteImport } from './routes/novosti.index'
+import { Route as AdministracijaIndexRouteImport } from './routes/administracija.index'
 import { Route as UslugeUpravljanjeZgradamaRouteImport } from './routes/usluge.upravljanje-zgradama'
 import { Route as UslugeUpisUZemljisneKnjigeRouteImport } from './routes/usluge.upis-u-zemljisne-knjige'
 import { Route as UslugeObnovaOdPotresaRouteImport } from './routes/usluge.obnova-od-potresa'
@@ -49,6 +50,7 @@ import { Route as UpravljanjeOsnovniPojmoviRouteImport } from './routes/upravlja
 import { Route as UpravljanjeMinimalnaVisinaPricuveRouteImport } from './routes/upravljanje.minimalna-visina-pricuve'
 import { Route as NovostiArhivaRouteImport } from './routes/novosti.arhiva'
 import { Route as NovostiSlugRouteImport } from './routes/novosti.$slug'
+import { Route as AdministracijaPrijavaRouteImport } from './routes/administracija.prijava'
 
 const ZastoSmoBoljiIzborRoute = ZastoSmoBoljiIzborRouteImport.update({
   id: '/zasto-smo-bolji-izbor',
@@ -192,6 +194,11 @@ const NovostiIndexRoute = NovostiIndexRouteImport.update({
   path: '/novosti/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdministracijaIndexRoute = AdministracijaIndexRouteImport.update({
+  id: '/administracija/',
+  path: '/administracija/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UslugeUpravljanjeZgradamaRoute =
   UslugeUpravljanjeZgradamaRouteImport.update({
     id: '/upravljanje-zgradama',
@@ -259,6 +266,11 @@ const NovostiSlugRoute = NovostiSlugRouteImport.update({
   path: '/novosti/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdministracijaPrijavaRoute = AdministracijaPrijavaRouteImport.update({
+  id: '/administracija/prijava',
+  path: '/administracija/prijava',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -286,6 +298,7 @@ export interface FileRoutesByFullPath {
   '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
+  '/administracija/prijava': typeof AdministracijaPrijavaRoute
   '/novosti/$slug': typeof NovostiSlugRoute
   '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
@@ -298,6 +311,7 @@ export interface FileRoutesByFullPath {
   '/usluge/obnova-od-potresa': typeof UslugeObnovaOdPotresaRoute
   '/usluge/upis-u-zemljisne-knjige': typeof UslugeUpisUZemljisneKnjigeRoute
   '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
+  '/administracija/': typeof AdministracijaIndexRoute
   '/novosti/': typeof NovostiIndexRoute
   '/upravljanje/': typeof UpravljanjeIndexRoute
   '/usluge/': typeof UslugeIndexRoute
@@ -326,6 +340,7 @@ export interface FileRoutesByTo {
   '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
+  '/administracija/prijava': typeof AdministracijaPrijavaRoute
   '/novosti/$slug': typeof NovostiSlugRoute
   '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
@@ -338,6 +353,7 @@ export interface FileRoutesByTo {
   '/usluge/obnova-od-potresa': typeof UslugeObnovaOdPotresaRoute
   '/usluge/upis-u-zemljisne-knjige': typeof UslugeUpisUZemljisneKnjigeRoute
   '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
+  '/administracija': typeof AdministracijaIndexRoute
   '/novosti': typeof NovostiIndexRoute
   '/upravljanje': typeof UpravljanjeIndexRoute
   '/usluge': typeof UslugeIndexRoute
@@ -369,6 +385,7 @@ export interface FileRoutesById {
   '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
+  '/administracija/prijava': typeof AdministracijaPrijavaRoute
   '/novosti/$slug': typeof NovostiSlugRoute
   '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
@@ -381,6 +398,7 @@ export interface FileRoutesById {
   '/usluge/obnova-od-potresa': typeof UslugeObnovaOdPotresaRoute
   '/usluge/upis-u-zemljisne-knjige': typeof UslugeUpisUZemljisneKnjigeRoute
   '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
+  '/administracija/': typeof AdministracijaIndexRoute
   '/novosti/': typeof NovostiIndexRoute
   '/upravljanje/': typeof UpravljanjeIndexRoute
   '/usluge/': typeof UslugeIndexRoute
@@ -413,6 +431,7 @@ export interface FileRouteTypes {
     | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
+    | '/administracija/prijava'
     | '/novosti/$slug'
     | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
@@ -425,6 +444,7 @@ export interface FileRouteTypes {
     | '/usluge/obnova-od-potresa'
     | '/usluge/upis-u-zemljisne-knjige'
     | '/usluge/upravljanje-zgradama'
+    | '/administracija/'
     | '/novosti/'
     | '/upravljanje/'
     | '/usluge/'
@@ -453,6 +473,7 @@ export interface FileRouteTypes {
     | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
+    | '/administracija/prijava'
     | '/novosti/$slug'
     | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
@@ -465,6 +486,7 @@ export interface FileRouteTypes {
     | '/usluge/obnova-od-potresa'
     | '/usluge/upis-u-zemljisne-knjige'
     | '/usluge/upravljanje-zgradama'
+    | '/administracija'
     | '/novosti'
     | '/upravljanje'
     | '/usluge'
@@ -495,6 +517,7 @@ export interface FileRouteTypes {
     | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
+    | '/administracija/prijava'
     | '/novosti/$slug'
     | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
@@ -507,6 +530,7 @@ export interface FileRouteTypes {
     | '/usluge/obnova-od-potresa'
     | '/usluge/upis-u-zemljisne-knjige'
     | '/usluge/upravljanje-zgradama'
+    | '/administracija/'
     | '/novosti/'
     | '/upravljanje/'
     | '/usluge/'
@@ -538,8 +562,10 @@ export interface RootRouteChildren {
   ZahtjevZaIzraduStranicaRoute: typeof ZahtjevZaIzraduStranicaRoute
   ZastitaOsobnihPodatakaRoute: typeof ZastitaOsobnihPodatakaRoute
   ZastoSmoBoljiIzborRoute: typeof ZastoSmoBoljiIzborRoute
+  AdministracijaPrijavaRoute: typeof AdministracijaPrijavaRoute
   NovostiSlugRoute: typeof NovostiSlugRoute
   NovostiArhivaRoute: typeof NovostiArhivaRoute
+  AdministracijaIndexRoute: typeof AdministracijaIndexRoute
   NovostiIndexRoute: typeof NovostiIndexRoute
 }
 
@@ -741,6 +767,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NovostiIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/administracija/': {
+      id: '/administracija/'
+      path: '/administracija'
+      fullPath: '/administracija/'
+      preLoaderRoute: typeof AdministracijaIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/usluge/upravljanje-zgradama': {
       id: '/usluge/upravljanje-zgradama'
       path: '/upravljanje-zgradama'
@@ -825,6 +858,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NovostiSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/administracija/prijava': {
+      id: '/administracija/prijava'
+      path: '/administracija/prijava'
+      fullPath: '/administracija/prijava'
+      preLoaderRoute: typeof AdministracijaPrijavaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -899,10 +939,22 @@ const rootRouteChildren: RootRouteChildren = {
   ZahtjevZaIzraduStranicaRoute: ZahtjevZaIzraduStranicaRoute,
   ZastitaOsobnihPodatakaRoute: ZastitaOsobnihPodatakaRoute,
   ZastoSmoBoljiIzborRoute: ZastoSmoBoljiIzborRoute,
+  AdministracijaPrijavaRoute: AdministracijaPrijavaRoute,
   NovostiSlugRoute: NovostiSlugRoute,
   NovostiArhivaRoute: NovostiArhivaRoute,
+  AdministracijaIndexRoute: AdministracijaIndexRoute,
   NovostiIndexRoute: NovostiIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
