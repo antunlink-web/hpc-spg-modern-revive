@@ -11,7 +11,7 @@ import { requireAdmin } from "@/lib/cms/auth-functions";
 import { listNewsAdmin } from "@/lib/cms/news-functions";
 
 export const Route = createFileRoute(
-  "/administracija/novosti",
+  "/administracija/novosti/",
 )({
   loader: async () => {
     const user = await requireAdmin();

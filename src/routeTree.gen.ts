@@ -53,9 +53,9 @@ import { Route as NovostiSlugRouteImport } from './routes/novosti.$slug'
 import { Route as AdministracijaStraniceRouteImport } from './routes/administracija.stranice'
 import { Route as AdministracijaPrijavaRouteImport } from './routes/administracija.prijava'
 import { Route as AdministracijaPostavkeRouteImport } from './routes/administracija.postavke'
-import { Route as AdministracijaNovostiRouteImport } from './routes/administracija.novosti'
 import { Route as AdministracijaKorisniciRouteImport } from './routes/administracija.korisnici'
 import { Route as AdministracijaDokumentiRouteImport } from './routes/administracija.dokumenti'
+import { Route as AdministracijaNovostiIndexRouteImport } from './routes/administracija.novosti.index'
 import { Route as AdministracijaNovostiNovaRouteImport } from './routes/administracija.novosti.nova'
 import { Route as AdministracijaNovostiIdRouteImport } from './routes/administracija.novosti.$id'
 
@@ -288,11 +288,6 @@ const AdministracijaPostavkeRoute = AdministracijaPostavkeRouteImport.update({
   path: '/administracija/postavke',
   getParentRoute: () => rootRouteImport,
 } as any)
-const AdministracijaNovostiRoute = AdministracijaNovostiRouteImport.update({
-  id: '/administracija/novosti',
-  path: '/administracija/novosti',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AdministracijaKorisniciRoute = AdministracijaKorisniciRouteImport.update({
   id: '/administracija/korisnici',
   path: '/administracija/korisnici',
@@ -303,16 +298,22 @@ const AdministracijaDokumentiRoute = AdministracijaDokumentiRouteImport.update({
   path: '/administracija/dokumenti',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdministracijaNovostiIndexRoute =
+  AdministracijaNovostiIndexRouteImport.update({
+    id: '/administracija/novosti/',
+    path: '/administracija/novosti/',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const AdministracijaNovostiNovaRoute =
   AdministracijaNovostiNovaRouteImport.update({
-    id: '/nova',
-    path: '/nova',
-    getParentRoute: () => AdministracijaNovostiRoute,
+    id: '/administracija/novosti/nova',
+    path: '/administracija/novosti/nova',
+    getParentRoute: () => rootRouteImport,
   } as any)
 const AdministracijaNovostiIdRoute = AdministracijaNovostiIdRouteImport.update({
-  id: '/$id',
-  path: '/$id',
-  getParentRoute: () => AdministracijaNovostiRoute,
+  id: '/administracija/novosti/$id',
+  path: '/administracija/novosti/$id',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -343,7 +344,6 @@ export interface FileRoutesByFullPath {
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/administracija/dokumenti': typeof AdministracijaDokumentiRoute
   '/administracija/korisnici': typeof AdministracijaKorisniciRoute
-  '/administracija/novosti': typeof AdministracijaNovostiRouteWithChildren
   '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
   '/administracija/stranice': typeof AdministracijaStraniceRoute
@@ -365,6 +365,7 @@ export interface FileRoutesByFullPath {
   '/usluge/': typeof UslugeIndexRoute
   '/administracija/novosti/$id': typeof AdministracijaNovostiIdRoute
   '/administracija/novosti/nova': typeof AdministracijaNovostiNovaRoute
+  '/administracija/novosti/': typeof AdministracijaNovostiIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -392,7 +393,6 @@ export interface FileRoutesByTo {
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/administracija/dokumenti': typeof AdministracijaDokumentiRoute
   '/administracija/korisnici': typeof AdministracijaKorisniciRoute
-  '/administracija/novosti': typeof AdministracijaNovostiRouteWithChildren
   '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
   '/administracija/stranice': typeof AdministracijaStraniceRoute
@@ -414,6 +414,7 @@ export interface FileRoutesByTo {
   '/usluge': typeof UslugeIndexRoute
   '/administracija/novosti/$id': typeof AdministracijaNovostiIdRoute
   '/administracija/novosti/nova': typeof AdministracijaNovostiNovaRoute
+  '/administracija/novosti': typeof AdministracijaNovostiIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -444,7 +445,6 @@ export interface FileRoutesById {
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/administracija/dokumenti': typeof AdministracijaDokumentiRoute
   '/administracija/korisnici': typeof AdministracijaKorisniciRoute
-  '/administracija/novosti': typeof AdministracijaNovostiRouteWithChildren
   '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
   '/administracija/stranice': typeof AdministracijaStraniceRoute
@@ -466,6 +466,7 @@ export interface FileRoutesById {
   '/usluge/': typeof UslugeIndexRoute
   '/administracija/novosti/$id': typeof AdministracijaNovostiIdRoute
   '/administracija/novosti/nova': typeof AdministracijaNovostiNovaRoute
+  '/administracija/novosti/': typeof AdministracijaNovostiIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -497,7 +498,6 @@ export interface FileRouteTypes {
     | '/zasto-smo-bolji-izbor'
     | '/administracija/dokumenti'
     | '/administracija/korisnici'
-    | '/administracija/novosti'
     | '/administracija/postavke'
     | '/administracija/prijava'
     | '/administracija/stranice'
@@ -519,6 +519,7 @@ export interface FileRouteTypes {
     | '/usluge/'
     | '/administracija/novosti/$id'
     | '/administracija/novosti/nova'
+    | '/administracija/novosti/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -546,7 +547,6 @@ export interface FileRouteTypes {
     | '/zasto-smo-bolji-izbor'
     | '/administracija/dokumenti'
     | '/administracija/korisnici'
-    | '/administracija/novosti'
     | '/administracija/postavke'
     | '/administracija/prijava'
     | '/administracija/stranice'
@@ -568,6 +568,7 @@ export interface FileRouteTypes {
     | '/usluge'
     | '/administracija/novosti/$id'
     | '/administracija/novosti/nova'
+    | '/administracija/novosti'
   id:
     | '__root__'
     | '/'
@@ -597,7 +598,6 @@ export interface FileRouteTypes {
     | '/zasto-smo-bolji-izbor'
     | '/administracija/dokumenti'
     | '/administracija/korisnici'
-    | '/administracija/novosti'
     | '/administracija/postavke'
     | '/administracija/prijava'
     | '/administracija/stranice'
@@ -619,6 +619,7 @@ export interface FileRouteTypes {
     | '/usluge/'
     | '/administracija/novosti/$id'
     | '/administracija/novosti/nova'
+    | '/administracija/novosti/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -649,7 +650,6 @@ export interface RootRouteChildren {
   ZastoSmoBoljiIzborRoute: typeof ZastoSmoBoljiIzborRoute
   AdministracijaDokumentiRoute: typeof AdministracijaDokumentiRoute
   AdministracijaKorisniciRoute: typeof AdministracijaKorisniciRoute
-  AdministracijaNovostiRoute: typeof AdministracijaNovostiRouteWithChildren
   AdministracijaPostavkeRoute: typeof AdministracijaPostavkeRoute
   AdministracijaPrijavaRoute: typeof AdministracijaPrijavaRoute
   AdministracijaStraniceRoute: typeof AdministracijaStraniceRoute
@@ -657,6 +657,9 @@ export interface RootRouteChildren {
   NovostiArhivaRoute: typeof NovostiArhivaRoute
   AdministracijaIndexRoute: typeof AdministracijaIndexRoute
   NovostiIndexRoute: typeof NovostiIndexRoute
+  AdministracijaNovostiIdRoute: typeof AdministracijaNovostiIdRoute
+  AdministracijaNovostiNovaRoute: typeof AdministracijaNovostiNovaRoute
+  AdministracijaNovostiIndexRoute: typeof AdministracijaNovostiIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -969,13 +972,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdministracijaPostavkeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/administracija/novosti': {
-      id: '/administracija/novosti'
-      path: '/administracija/novosti'
-      fullPath: '/administracija/novosti'
-      preLoaderRoute: typeof AdministracijaNovostiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/administracija/korisnici': {
       id: '/administracija/korisnici'
       path: '/administracija/korisnici'
@@ -990,19 +986,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdministracijaDokumentiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/administracija/novosti/': {
+      id: '/administracija/novosti/'
+      path: '/administracija/novosti'
+      fullPath: '/administracija/novosti/'
+      preLoaderRoute: typeof AdministracijaNovostiIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/administracija/novosti/nova': {
       id: '/administracija/novosti/nova'
-      path: '/nova'
+      path: '/administracija/novosti/nova'
       fullPath: '/administracija/novosti/nova'
       preLoaderRoute: typeof AdministracijaNovostiNovaRouteImport
-      parentRoute: typeof AdministracijaNovostiRoute
+      parentRoute: typeof rootRouteImport
     }
     '/administracija/novosti/$id': {
       id: '/administracija/novosti/$id'
-      path: '/$id'
+      path: '/administracija/novosti/$id'
       fullPath: '/administracija/novosti/$id'
       preLoaderRoute: typeof AdministracijaNovostiIdRouteImport
-      parentRoute: typeof AdministracijaNovostiRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -1052,21 +1055,6 @@ const UslugeRouteChildren: UslugeRouteChildren = {
 const UslugeRouteWithChildren =
   UslugeRoute._addFileChildren(UslugeRouteChildren)
 
-interface AdministracijaNovostiRouteChildren {
-  AdministracijaNovostiIdRoute: typeof AdministracijaNovostiIdRoute
-  AdministracijaNovostiNovaRoute: typeof AdministracijaNovostiNovaRoute
-}
-
-const AdministracijaNovostiRouteChildren: AdministracijaNovostiRouteChildren = {
-  AdministracijaNovostiIdRoute: AdministracijaNovostiIdRoute,
-  AdministracijaNovostiNovaRoute: AdministracijaNovostiNovaRoute,
-}
-
-const AdministracijaNovostiRouteWithChildren =
-  AdministracijaNovostiRoute._addFileChildren(
-    AdministracijaNovostiRouteChildren,
-  )
-
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnketaRoute: AnketaRoute,
@@ -1095,7 +1083,6 @@ const rootRouteChildren: RootRouteChildren = {
   ZastoSmoBoljiIzborRoute: ZastoSmoBoljiIzborRoute,
   AdministracijaDokumentiRoute: AdministracijaDokumentiRoute,
   AdministracijaKorisniciRoute: AdministracijaKorisniciRoute,
-  AdministracijaNovostiRoute: AdministracijaNovostiRouteWithChildren,
   AdministracijaPostavkeRoute: AdministracijaPostavkeRoute,
   AdministracijaPrijavaRoute: AdministracijaPrijavaRoute,
   AdministracijaStraniceRoute: AdministracijaStraniceRoute,
@@ -1103,6 +1090,9 @@ const rootRouteChildren: RootRouteChildren = {
   NovostiArhivaRoute: NovostiArhivaRoute,
   AdministracijaIndexRoute: AdministracijaIndexRoute,
   NovostiIndexRoute: NovostiIndexRoute,
+  AdministracijaNovostiIdRoute: AdministracijaNovostiIdRoute,
+  AdministracijaNovostiNovaRoute: AdministracijaNovostiNovaRoute,
+  AdministracijaNovostiIndexRoute: AdministracijaNovostiIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
