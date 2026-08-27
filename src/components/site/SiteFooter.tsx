@@ -68,7 +68,6 @@ export function SiteFooter() {
             <li><a href={withBase("/korisnicki-podaci")} className="hover:text-white">Pristupni podaci</a></li>
             <li><a href={withBase("/e-uplatnice")} className="hover:text-white">E-uplatnice</a></li>
             <li><a href={withBase("/dokumenti-zgrade")} className="hover:text-white">Dokumenti zgrade</a></li>
-            <li><a href={withBase("/vodic-za-suvlasnike")} className="hover:text-white">Vodič za suvlasnike</a></li>
             <li><a href={withBase("/anketa")} className="hover:text-white">Anketa za suvlasnike</a></li>
             <li><a href={withBase("/novosti")} className="hover:text-white">Novosti</a></li>
           </ul>
