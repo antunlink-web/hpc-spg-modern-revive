@@ -50,7 +50,12 @@ import { Route as UpravljanjeOsnovniPojmoviRouteImport } from './routes/upravlja
 import { Route as UpravljanjeMinimalnaVisinaPricuveRouteImport } from './routes/upravljanje.minimalna-visina-pricuve'
 import { Route as NovostiArhivaRouteImport } from './routes/novosti.arhiva'
 import { Route as NovostiSlugRouteImport } from './routes/novosti.$slug'
+import { Route as AdministracijaStraniceRouteImport } from './routes/administracija.stranice'
 import { Route as AdministracijaPrijavaRouteImport } from './routes/administracija.prijava'
+import { Route as AdministracijaPostavkeRouteImport } from './routes/administracija.postavke'
+import { Route as AdministracijaNovostiRouteImport } from './routes/administracija.novosti'
+import { Route as AdministracijaKorisniciRouteImport } from './routes/administracija.korisnici'
+import { Route as AdministracijaDokumentiRouteImport } from './routes/administracija.dokumenti'
 
 const ZastoSmoBoljiIzborRoute = ZastoSmoBoljiIzborRouteImport.update({
   id: '/zasto-smo-bolji-izbor',
@@ -266,9 +271,34 @@ const NovostiSlugRoute = NovostiSlugRouteImport.update({
   path: '/novosti/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdministracijaStraniceRoute = AdministracijaStraniceRouteImport.update({
+  id: '/administracija/stranice',
+  path: '/administracija/stranice',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdministracijaPrijavaRoute = AdministracijaPrijavaRouteImport.update({
   id: '/administracija/prijava',
   path: '/administracija/prijava',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdministracijaPostavkeRoute = AdministracijaPostavkeRouteImport.update({
+  id: '/administracija/postavke',
+  path: '/administracija/postavke',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdministracijaNovostiRoute = AdministracijaNovostiRouteImport.update({
+  id: '/administracija/novosti',
+  path: '/administracija/novosti',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdministracijaKorisniciRoute = AdministracijaKorisniciRouteImport.update({
+  id: '/administracija/korisnici',
+  path: '/administracija/korisnici',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdministracijaDokumentiRoute = AdministracijaDokumentiRouteImport.update({
+  id: '/administracija/dokumenti',
+  path: '/administracija/dokumenti',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -298,7 +328,12 @@ export interface FileRoutesByFullPath {
   '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
+  '/administracija/dokumenti': typeof AdministracijaDokumentiRoute
+  '/administracija/korisnici': typeof AdministracijaKorisniciRoute
+  '/administracija/novosti': typeof AdministracijaNovostiRoute
+  '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
+  '/administracija/stranice': typeof AdministracijaStraniceRoute
   '/novosti/$slug': typeof NovostiSlugRoute
   '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
@@ -340,7 +375,12 @@ export interface FileRoutesByTo {
   '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
+  '/administracija/dokumenti': typeof AdministracijaDokumentiRoute
+  '/administracija/korisnici': typeof AdministracijaKorisniciRoute
+  '/administracija/novosti': typeof AdministracijaNovostiRoute
+  '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
+  '/administracija/stranice': typeof AdministracijaStraniceRoute
   '/novosti/$slug': typeof NovostiSlugRoute
   '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
@@ -385,7 +425,12 @@ export interface FileRoutesById {
   '/zahtjev-za-izradu-stranica': typeof ZahtjevZaIzraduStranicaRoute
   '/zastita-osobnih-podataka': typeof ZastitaOsobnihPodatakaRoute
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
+  '/administracija/dokumenti': typeof AdministracijaDokumentiRoute
+  '/administracija/korisnici': typeof AdministracijaKorisniciRoute
+  '/administracija/novosti': typeof AdministracijaNovostiRoute
+  '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
+  '/administracija/stranice': typeof AdministracijaStraniceRoute
   '/novosti/$slug': typeof NovostiSlugRoute
   '/novosti/arhiva': typeof NovostiArhivaRoute
   '/upravljanje/minimalna-visina-pricuve': typeof UpravljanjeMinimalnaVisinaPricuveRoute
@@ -431,7 +476,12 @@ export interface FileRouteTypes {
     | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
+    | '/administracija/dokumenti'
+    | '/administracija/korisnici'
+    | '/administracija/novosti'
+    | '/administracija/postavke'
     | '/administracija/prijava'
+    | '/administracija/stranice'
     | '/novosti/$slug'
     | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
@@ -473,7 +523,12 @@ export interface FileRouteTypes {
     | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
+    | '/administracija/dokumenti'
+    | '/administracija/korisnici'
+    | '/administracija/novosti'
+    | '/administracija/postavke'
     | '/administracija/prijava'
+    | '/administracija/stranice'
     | '/novosti/$slug'
     | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
@@ -517,7 +572,12 @@ export interface FileRouteTypes {
     | '/zahtjev-za-izradu-stranica'
     | '/zastita-osobnih-podataka'
     | '/zasto-smo-bolji-izbor'
+    | '/administracija/dokumenti'
+    | '/administracija/korisnici'
+    | '/administracija/novosti'
+    | '/administracija/postavke'
     | '/administracija/prijava'
+    | '/administracija/stranice'
     | '/novosti/$slug'
     | '/novosti/arhiva'
     | '/upravljanje/minimalna-visina-pricuve'
@@ -562,7 +622,12 @@ export interface RootRouteChildren {
   ZahtjevZaIzraduStranicaRoute: typeof ZahtjevZaIzraduStranicaRoute
   ZastitaOsobnihPodatakaRoute: typeof ZastitaOsobnihPodatakaRoute
   ZastoSmoBoljiIzborRoute: typeof ZastoSmoBoljiIzborRoute
+  AdministracijaDokumentiRoute: typeof AdministracijaDokumentiRoute
+  AdministracijaKorisniciRoute: typeof AdministracijaKorisniciRoute
+  AdministracijaNovostiRoute: typeof AdministracijaNovostiRoute
+  AdministracijaPostavkeRoute: typeof AdministracijaPostavkeRoute
   AdministracijaPrijavaRoute: typeof AdministracijaPrijavaRoute
+  AdministracijaStraniceRoute: typeof AdministracijaStraniceRoute
   NovostiSlugRoute: typeof NovostiSlugRoute
   NovostiArhivaRoute: typeof NovostiArhivaRoute
   AdministracijaIndexRoute: typeof AdministracijaIndexRoute
@@ -858,11 +923,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NovostiSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/administracija/stranice': {
+      id: '/administracija/stranice'
+      path: '/administracija/stranice'
+      fullPath: '/administracija/stranice'
+      preLoaderRoute: typeof AdministracijaStraniceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/administracija/prijava': {
       id: '/administracija/prijava'
       path: '/administracija/prijava'
       fullPath: '/administracija/prijava'
       preLoaderRoute: typeof AdministracijaPrijavaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/administracija/postavke': {
+      id: '/administracija/postavke'
+      path: '/administracija/postavke'
+      fullPath: '/administracija/postavke'
+      preLoaderRoute: typeof AdministracijaPostavkeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/administracija/novosti': {
+      id: '/administracija/novosti'
+      path: '/administracija/novosti'
+      fullPath: '/administracija/novosti'
+      preLoaderRoute: typeof AdministracijaNovostiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/administracija/korisnici': {
+      id: '/administracija/korisnici'
+      path: '/administracija/korisnici'
+      fullPath: '/administracija/korisnici'
+      preLoaderRoute: typeof AdministracijaKorisniciRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/administracija/dokumenti': {
+      id: '/administracija/dokumenti'
+      path: '/administracija/dokumenti'
+      fullPath: '/administracija/dokumenti'
+      preLoaderRoute: typeof AdministracijaDokumentiRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -939,7 +1039,12 @@ const rootRouteChildren: RootRouteChildren = {
   ZahtjevZaIzraduStranicaRoute: ZahtjevZaIzraduStranicaRoute,
   ZastitaOsobnihPodatakaRoute: ZastitaOsobnihPodatakaRoute,
   ZastoSmoBoljiIzborRoute: ZastoSmoBoljiIzborRoute,
+  AdministracijaDokumentiRoute: AdministracijaDokumentiRoute,
+  AdministracijaKorisniciRoute: AdministracijaKorisniciRoute,
+  AdministracijaNovostiRoute: AdministracijaNovostiRoute,
+  AdministracijaPostavkeRoute: AdministracijaPostavkeRoute,
   AdministracijaPrijavaRoute: AdministracijaPrijavaRoute,
+  AdministracijaStraniceRoute: AdministracijaStraniceRoute,
   NovostiSlugRoute: NovostiSlugRoute,
   NovostiArhivaRoute: NovostiArhivaRoute,
   AdministracijaIndexRoute: AdministracijaIndexRoute,
