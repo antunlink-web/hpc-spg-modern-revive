@@ -23,8 +23,8 @@ export type CmsUser = {
 };
 
 export function hashPassword(password: string): string {
-  if (password.length < 12) {
-    throw new Error("Password must contain at least 12 characters.");
+  if (password.length < 10) {
+    throw new Error("Password must contain at least 10 characters.");
   }
 
   const salt = randomBytes(16);

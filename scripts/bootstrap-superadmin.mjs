@@ -13,9 +13,9 @@ if (!email) {
   throw new Error("CMS_BOOTSTRAP_EMAIL is required.");
 }
 
-if (!password || password.length < 12) {
+if (!password || password.length < 10) {
   throw new Error(
-    "CMS_BOOTSTRAP_PASSWORD must contain at least 12 characters.",
+    "CMS_BOOTSTRAP_PASSWORD must contain at least 10 characters.",
   );
 }
 
