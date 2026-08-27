@@ -92,21 +92,23 @@ export const requireAdmin = createServerFn({
 
 export const loginAdmin = createServerFn({
   method: "POST",
-})
-  .validator(
-    (data: { email: string; password: string }) => ({
-      email: String(data.email ?? "")
-        .trim()
-        .toLowerCase(),
-      password: String(data.password ?? ""),
-    }),
-  )
-  .handler(async ({ data }) => {
+}).handler(async ({ data }) => {
+    const input = (data ?? {}) as {
+      email?: unknown;
+      password?: unknown;
+    };
+
+    const email = String(input.email ?? "")
+      .trim()
+      .toLowerCase();
+
+    const password = String(input.password ?? "");
+
     if (
-      !data.email ||
-      !data.password ||
-      data.email.length > 254 ||
-      data.password.length > 1024
+      !email ||
+      !password ||
+      email.length > 254 ||
+      password.length > 1024
     ) {
       return {
         success: false as const,
@@ -126,7 +128,7 @@ export const loginAdmin = createServerFn({
       FROM users
       WHERE email = ?
       LIMIT 1
-    `).get(data.email) as
+    `).get(email) as
       | {
           id: string;
           email: string;
@@ -140,7 +142,7 @@ export const loginAdmin = createServerFn({
       !row ||
       row.is_active !== 1 ||
       !verifyPassword(
-        data.password,
+        password,
         row.password_hash,
       )
     ) {
