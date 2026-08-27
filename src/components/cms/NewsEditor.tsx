@@ -1,0 +1,477 @@
+import {
+  useRef,
+  useState,
+} from "react";
+import {
+  Bold,
+  Heading2,
+  Italic,
+  Link as LinkIcon,
+  List,
+  Save,
+  Trash2,
+} from "lucide-react";
+import {
+  useNavigate,
+} from "@tanstack/react-router";
+import {
+  useServerFn,
+} from "@tanstack/react-start";
+import {
+  deleteNewsAdmin,
+  saveNewsAdmin,
+} from "@/lib/cms/news-functions";
+
+type NewsEditorPost = {
+  id?: string;
+  title?: string;
+  slug?: string;
+  excerpt?: string;
+  content?: string;
+  publishedAt?: string;
+  status?: "draft" | "published" | "hidden";
+  category?: string;
+  seoTitle?: string;
+  metaDescription?: string;
+  isArchived?: boolean;
+  documents?: unknown[];
+  externalLinks?: unknown[];
+  gallery?: unknown[];
+};
+
+export function NewsEditor({
+  post,
+}: {
+  post?: NewsEditorPost | null;
+}) {
+  const navigate = useNavigate();
+  const saveNews = useServerFn(saveNewsAdmin);
+  const deleteNews = useServerFn(deleteNewsAdmin);
+
+  const editorRef =
+    useRef<HTMLDivElement>(null);
+
+  const [title, setTitle] = useState(
+    post?.title ?? "",
+  );
+  const [slug, setSlug] = useState(
+    post?.slug ?? "",
+  );
+  const [category, setCategory] = useState(
+    post?.category ?? "Novost",
+  );
+  const [publishedAt, setPublishedAt] =
+    useState(post?.publishedAt ?? "");
+  const [excerpt, setExcerpt] = useState(
+    post?.excerpt ?? "",
+  );
+  const [seoTitle, setSeoTitle] = useState(
+    post?.seoTitle ?? "",
+  );
+  const [
+    metaDescription,
+    setMetaDescription,
+  ] = useState(
+    post?.metaDescription ?? "",
+  );
+  const [status, setStatus] = useState<
+    "draft" | "published" | "hidden"
+  >(post?.status ?? "draft");
+
+  const [isArchived, setIsArchived] =
+    useState(Boolean(post?.isArchived));
+
+  const [saving, setSaving] =
+    useState(false);
+  const [message, setMessage] =
+    useState("");
+
+  function runCommand(
+    command: string,
+    value?: string,
+  ) {
+    editorRef.current?.focus();
+    document.execCommand(
+      command,
+      false,
+      value,
+    );
+  }
+
+  function insertLink() {
+    const href = window.prompt(
+      "Unesite poveznicu:",
+      "https://",
+    );
+
+    if (!href) return;
+
+    runCommand("createLink", href);
+  }
+
+  async function handleSave() {
+    setSaving(true);
+    setMessage("");
+
+    try {
+      const result = await saveNews({
+        data: {
+          id: post?.id,
+          title,
+          slug,
+          category,
+          publishedAt,
+          excerpt,
+          content:
+            editorRef.current?.innerHTML ??
+            "",
+          seoTitle,
+          metaDescription,
+          status,
+          isArchived,
+        },
+      });
+
+      setMessage("Objava je spremljena.");
+
+      if (!post?.id) {
+        await navigate({
+          to: "/administracija/novosti/$id",
+          params: {
+            id: result.id,
+          },
+          replace: true,
+        });
+      }
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Spremanje nije uspjelo.",
+      );
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function handleDelete() {
+    if (!post?.id) return;
+
+    const confirmed = window.confirm(
+      "Želite li trajno izbrisati ovu objavu?",
+    );
+
+    if (!confirmed) return;
+
+    setSaving(true);
+    setMessage("");
+
+    try {
+      await deleteNews({
+        data: {
+          id: post.id,
+        },
+      });
+
+      await navigate({
+        to: "/administracija/novosti",
+      });
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Brisanje nije uspjelo.",
+      );
+      setSaving(false);
+    }
+  }
+
+  const preservedExtras =
+    (post?.documents?.length ?? 0) +
+    (post?.externalLinks?.length ?? 0) +
+    (post?.gallery?.length ?? 0);
+
+  return (
+    <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
+      <div className="space-y-6">
+        <section className="rounded-xl border border-border bg-background p-5 lg:p-6">
+          <label className="block text-sm font-medium text-navy">
+            Naslov
+          </label>
+
+          <input
+            value={title}
+            onChange={(event) =>
+              setTitle(event.target.value)
+            }
+            className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-3 text-lg font-semibold text-navy outline-none transition focus:border-emerald"
+            placeholder="Naslov objave"
+          />
+
+          <div className="mt-5 grid gap-5 md:grid-cols-2">
+            <div>
+              <label className="block text-sm font-medium text-navy">
+                URL oznaka
+              </label>
+
+              <input
+                value={slug}
+                onChange={(event) =>
+                  setSlug(event.target.value)
+                }
+                className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-emerald"
+                placeholder="automatski-iz-naslova"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-medium text-navy">
+                Kategorija
+              </label>
+
+              <input
+                value={category}
+                onChange={(event) =>
+                  setCategory(
+                    event.target.value,
+                  )
+                }
+                className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-emerald"
+                placeholder="Obavijest"
+              />
+            </div>
+          </div>
+
+          <label className="mt-5 block text-sm font-medium text-navy">
+            Kratki opis
+          </label>
+
+          <textarea
+            value={excerpt}
+            onChange={(event) =>
+              setExcerpt(event.target.value)
+            }
+            rows={4}
+            className="mt-2 w-full resize-y rounded-lg border border-border bg-background px-4 py-3 text-sm leading-relaxed outline-none focus:border-emerald"
+            placeholder="Kratki opis za popis novosti..."
+          />
+        </section>
+
+        <section className="overflow-hidden rounded-xl border border-border bg-background">
+          <div className="flex flex-wrap items-center gap-1 border-b border-border bg-surface px-3 py-2">
+            <button
+              type="button"
+              onClick={() =>
+                runCommand("bold")
+              }
+              className="rounded-md p-2 text-navy hover:bg-background"
+              title="Podebljano"
+            >
+              <Bold className="h-4 w-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() =>
+                runCommand("italic")
+              }
+              className="rounded-md p-2 text-navy hover:bg-background"
+              title="Kurziv"
+            >
+              <Italic className="h-4 w-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() =>
+                runCommand(
+                  "formatBlock",
+                  "h2",
+                )
+              }
+              className="rounded-md p-2 text-navy hover:bg-background"
+              title="Naslov"
+            >
+              <Heading2 className="h-4 w-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={() =>
+                runCommand(
+                  "insertUnorderedList",
+                )
+              }
+              className="rounded-md p-2 text-navy hover:bg-background"
+              title="Popis"
+            >
+              <List className="h-4 w-4" />
+            </button>
+
+            <button
+              type="button"
+              onClick={insertLink}
+              className="rounded-md p-2 text-navy hover:bg-background"
+              title="Poveznica"
+            >
+              <LinkIcon className="h-4 w-4" />
+            </button>
+          </div>
+
+          <div
+            ref={editorRef}
+            contentEditable
+            suppressContentEditableWarning
+            dangerouslySetInnerHTML={{
+              __html: post?.content ?? "",
+            }}
+            className="prose prose-sm min-h-[420px] max-w-none px-6 py-5 text-foreground outline-none lg:prose-base focus:bg-surface/30"
+          />
+        </section>
+
+        <section className="rounded-xl border border-border bg-background p-5 lg:p-6">
+          <h2 className="text-base font-semibold text-navy">
+            SEO
+          </h2>
+
+          <label className="mt-5 block text-sm font-medium text-navy">
+            SEO naslov
+          </label>
+
+          <input
+            value={seoTitle}
+            onChange={(event) =>
+              setSeoTitle(event.target.value)
+            }
+            className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-emerald"
+          />
+
+          <label className="mt-5 block text-sm font-medium text-navy">
+            Meta opis
+          </label>
+
+          <textarea
+            value={metaDescription}
+            onChange={(event) =>
+              setMetaDescription(
+                event.target.value,
+              )
+            }
+            rows={3}
+            className="mt-2 w-full resize-y rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none focus:border-emerald"
+          />
+        </section>
+      </div>
+
+      <aside className="space-y-5">
+        <section className="rounded-xl border border-border bg-background p-5">
+          <h2 className="text-sm font-semibold text-navy">
+            Objavljivanje
+          </h2>
+
+          <label className="mt-5 block text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            Status
+          </label>
+
+          <select
+            value={status}
+            onChange={(event) =>
+              setStatus(
+                event.target.value as
+                  | "draft"
+                  | "published"
+                  | "hidden",
+              )
+            }
+            className="mt-2 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-emerald"
+          >
+            <option value="published">
+              Objavljeno
+            </option>
+            <option value="draft">
+              Skica
+            </option>
+            <option value="hidden">
+              Skriveno
+            </option>
+          </select>
+
+          <label className="mt-5 block text-xs font-medium uppercase tracking-wide text-muted-foreground">
+            Datum
+          </label>
+
+          <input
+            type="date"
+            value={publishedAt}
+            onChange={(event) =>
+              setPublishedAt(
+                event.target.value,
+              )
+            }
+            className="mt-2 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-emerald"
+          />
+
+          <label className="mt-5 flex cursor-pointer items-center gap-3 text-sm text-navy">
+            <input
+              type="checkbox"
+              checked={isArchived}
+              onChange={(event) =>
+                setIsArchived(
+                  event.target.checked,
+                )
+              }
+              className="h-4 w-4"
+            />
+
+            Arhivirana objava
+          </label>
+
+          <button
+            type="button"
+            onClick={handleSave}
+            disabled={saving}
+            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-navy px-4 py-3 text-sm font-semibold text-white transition hover:bg-navy/90 disabled:opacity-50"
+          >
+            <Save className="h-4 w-4" />
+            {saving
+              ? "Spremanje..."
+              : "Spremi objavu"}
+          </button>
+
+          {message && (
+            <p className="mt-3 text-sm text-muted-foreground">
+              {message}
+            </p>
+          )}
+
+          {post?.id && (
+            <button
+              type="button"
+              onClick={handleDelete}
+              disabled={saving}
+              className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-red-200 px-4 py-2.5 text-sm font-medium text-red-700 hover:bg-red-50 disabled:opacity-50"
+            >
+              <Trash2 className="h-4 w-4" />
+              Izbriši objavu
+            </button>
+          )}
+        </section>
+
+        {preservedExtras > 0 && (
+          <section className="rounded-xl border border-border bg-surface p-5">
+            <p className="text-sm font-semibold text-navy">
+              Dodatni sadržaj
+            </p>
+
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              Dokumenti, poveznice i galerije
+              postojeće objave sačuvani su u
+              bazi i neće se ukloniti
+              spremanjem ovog obrasca.
+            </p>
+          </section>
+        )}
+      </aside>
+    </div>
+  );
+}

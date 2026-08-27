@@ -102,6 +102,8 @@ export function getCmsDb() {
     ["meta_description", "TEXT"],
     ["documents_json", "TEXT NOT NULL DEFAULT '[]'"],
     ["external_links_json", "TEXT NOT NULL DEFAULT '[]'"],
+    ["gallery_json", "TEXT NOT NULL DEFAULT '[]'"],
+    ["legacy_slugs_json", "TEXT NOT NULL DEFAULT '[]'"],
     ["is_archived", "INTEGER NOT NULL DEFAULT 0"],
   ] as const;
 

@@ -56,6 +56,8 @@ import { Route as AdministracijaPostavkeRouteImport } from './routes/administrac
 import { Route as AdministracijaNovostiRouteImport } from './routes/administracija.novosti'
 import { Route as AdministracijaKorisniciRouteImport } from './routes/administracija.korisnici'
 import { Route as AdministracijaDokumentiRouteImport } from './routes/administracija.dokumenti'
+import { Route as AdministracijaNovostiNovaRouteImport } from './routes/administracija.novosti.nova'
+import { Route as AdministracijaNovostiIdRouteImport } from './routes/administracija.novosti.$id'
 
 const ZastoSmoBoljiIzborRoute = ZastoSmoBoljiIzborRouteImport.update({
   id: '/zasto-smo-bolji-izbor',
@@ -301,6 +303,17 @@ const AdministracijaDokumentiRoute = AdministracijaDokumentiRouteImport.update({
   path: '/administracija/dokumenti',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdministracijaNovostiNovaRoute =
+  AdministracijaNovostiNovaRouteImport.update({
+    id: '/nova',
+    path: '/nova',
+    getParentRoute: () => AdministracijaNovostiRoute,
+  } as any)
+const AdministracijaNovostiIdRoute = AdministracijaNovostiIdRouteImport.update({
+  id: '/$id',
+  path: '/$id',
+  getParentRoute: () => AdministracijaNovostiRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -330,7 +343,7 @@ export interface FileRoutesByFullPath {
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/administracija/dokumenti': typeof AdministracijaDokumentiRoute
   '/administracija/korisnici': typeof AdministracijaKorisniciRoute
-  '/administracija/novosti': typeof AdministracijaNovostiRoute
+  '/administracija/novosti': typeof AdministracijaNovostiRouteWithChildren
   '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
   '/administracija/stranice': typeof AdministracijaStraniceRoute
@@ -350,6 +363,8 @@ export interface FileRoutesByFullPath {
   '/novosti/': typeof NovostiIndexRoute
   '/upravljanje/': typeof UpravljanjeIndexRoute
   '/usluge/': typeof UslugeIndexRoute
+  '/administracija/novosti/$id': typeof AdministracijaNovostiIdRoute
+  '/administracija/novosti/nova': typeof AdministracijaNovostiNovaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -377,7 +392,7 @@ export interface FileRoutesByTo {
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/administracija/dokumenti': typeof AdministracijaDokumentiRoute
   '/administracija/korisnici': typeof AdministracijaKorisniciRoute
-  '/administracija/novosti': typeof AdministracijaNovostiRoute
+  '/administracija/novosti': typeof AdministracijaNovostiRouteWithChildren
   '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
   '/administracija/stranice': typeof AdministracijaStraniceRoute
@@ -397,6 +412,8 @@ export interface FileRoutesByTo {
   '/novosti': typeof NovostiIndexRoute
   '/upravljanje': typeof UpravljanjeIndexRoute
   '/usluge': typeof UslugeIndexRoute
+  '/administracija/novosti/$id': typeof AdministracijaNovostiIdRoute
+  '/administracija/novosti/nova': typeof AdministracijaNovostiNovaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -427,7 +444,7 @@ export interface FileRoutesById {
   '/zasto-smo-bolji-izbor': typeof ZastoSmoBoljiIzborRoute
   '/administracija/dokumenti': typeof AdministracijaDokumentiRoute
   '/administracija/korisnici': typeof AdministracijaKorisniciRoute
-  '/administracija/novosti': typeof AdministracijaNovostiRoute
+  '/administracija/novosti': typeof AdministracijaNovostiRouteWithChildren
   '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
   '/administracija/stranice': typeof AdministracijaStraniceRoute
@@ -447,6 +464,8 @@ export interface FileRoutesById {
   '/novosti/': typeof NovostiIndexRoute
   '/upravljanje/': typeof UpravljanjeIndexRoute
   '/usluge/': typeof UslugeIndexRoute
+  '/administracija/novosti/$id': typeof AdministracijaNovostiIdRoute
+  '/administracija/novosti/nova': typeof AdministracijaNovostiNovaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -498,6 +517,8 @@ export interface FileRouteTypes {
     | '/novosti/'
     | '/upravljanje/'
     | '/usluge/'
+    | '/administracija/novosti/$id'
+    | '/administracija/novosti/nova'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -545,6 +566,8 @@ export interface FileRouteTypes {
     | '/novosti'
     | '/upravljanje'
     | '/usluge'
+    | '/administracija/novosti/$id'
+    | '/administracija/novosti/nova'
   id:
     | '__root__'
     | '/'
@@ -594,6 +617,8 @@ export interface FileRouteTypes {
     | '/novosti/'
     | '/upravljanje/'
     | '/usluge/'
+    | '/administracija/novosti/$id'
+    | '/administracija/novosti/nova'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -624,7 +649,7 @@ export interface RootRouteChildren {
   ZastoSmoBoljiIzborRoute: typeof ZastoSmoBoljiIzborRoute
   AdministracijaDokumentiRoute: typeof AdministracijaDokumentiRoute
   AdministracijaKorisniciRoute: typeof AdministracijaKorisniciRoute
-  AdministracijaNovostiRoute: typeof AdministracijaNovostiRoute
+  AdministracijaNovostiRoute: typeof AdministracijaNovostiRouteWithChildren
   AdministracijaPostavkeRoute: typeof AdministracijaPostavkeRoute
   AdministracijaPrijavaRoute: typeof AdministracijaPrijavaRoute
   AdministracijaStraniceRoute: typeof AdministracijaStraniceRoute
@@ -965,6 +990,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdministracijaDokumentiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/administracija/novosti/nova': {
+      id: '/administracija/novosti/nova'
+      path: '/nova'
+      fullPath: '/administracija/novosti/nova'
+      preLoaderRoute: typeof AdministracijaNovostiNovaRouteImport
+      parentRoute: typeof AdministracijaNovostiRoute
+    }
+    '/administracija/novosti/$id': {
+      id: '/administracija/novosti/$id'
+      path: '/$id'
+      fullPath: '/administracija/novosti/$id'
+      preLoaderRoute: typeof AdministracijaNovostiIdRouteImport
+      parentRoute: typeof AdministracijaNovostiRoute
+    }
   }
 }
 
@@ -1013,6 +1052,21 @@ const UslugeRouteChildren: UslugeRouteChildren = {
 const UslugeRouteWithChildren =
   UslugeRoute._addFileChildren(UslugeRouteChildren)
 
+interface AdministracijaNovostiRouteChildren {
+  AdministracijaNovostiIdRoute: typeof AdministracijaNovostiIdRoute
+  AdministracijaNovostiNovaRoute: typeof AdministracijaNovostiNovaRoute
+}
+
+const AdministracijaNovostiRouteChildren: AdministracijaNovostiRouteChildren = {
+  AdministracijaNovostiIdRoute: AdministracijaNovostiIdRoute,
+  AdministracijaNovostiNovaRoute: AdministracijaNovostiNovaRoute,
+}
+
+const AdministracijaNovostiRouteWithChildren =
+  AdministracijaNovostiRoute._addFileChildren(
+    AdministracijaNovostiRouteChildren,
+  )
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AnketaRoute: AnketaRoute,
@@ -1041,7 +1095,7 @@ const rootRouteChildren: RootRouteChildren = {
   ZastoSmoBoljiIzborRoute: ZastoSmoBoljiIzborRoute,
   AdministracijaDokumentiRoute: AdministracijaDokumentiRoute,
   AdministracijaKorisniciRoute: AdministracijaKorisniciRoute,
-  AdministracijaNovostiRoute: AdministracijaNovostiRoute,
+  AdministracijaNovostiRoute: AdministracijaNovostiRouteWithChildren,
   AdministracijaPostavkeRoute: AdministracijaPostavkeRoute,
   AdministracijaPrijavaRoute: AdministracijaPrijavaRoute,
   AdministracijaStraniceRoute: AdministracijaStraniceRoute,
