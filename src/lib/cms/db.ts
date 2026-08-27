@@ -86,5 +86,37 @@ export function getCmsDb() {
       ON news(published_at);
   `);
 
+
+  const newsColumns = database
+    .prepare("PRAGMA table_info(news)")
+    .all() as Array<{ name: string }>;
+
+  const existingNewsColumns = new Set(
+    newsColumns.map((column) => column.name),
+  );
+
+  const requiredNewsColumns = [
+    ["category", "TEXT NOT NULL DEFAULT 'Novost'"],
+    ["display_date", "TEXT"],
+    ["seo_title", "TEXT"],
+    ["meta_description", "TEXT"],
+    ["documents_json", "TEXT NOT NULL DEFAULT '[]'"],
+    ["external_links_json", "TEXT NOT NULL DEFAULT '[]'"],
+    ["is_archived", "INTEGER NOT NULL DEFAULT 0"],
+  ] as const;
+
+  for (const [name, definition] of requiredNewsColumns) {
+    if (!existingNewsColumns.has(name)) {
+      database.exec(
+        `ALTER TABLE news ADD COLUMN ${name} ${definition}`,
+      );
+    }
+  }
+
+  database.exec(`
+    CREATE INDEX IF NOT EXISTS idx_news_archived
+      ON news(is_archived);
+  `);
+
   return database;
 }
