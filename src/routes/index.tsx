@@ -30,7 +30,7 @@ import newsFacade from "@/assets/news-facade.jpg";
 import newsElevator from "@/assets/news-elevator.jpg";
 import newsGraffiti from "@/assets/news-graffiti.jpg";
 import newsLaw from "@/assets/news-law.jpg";
-import bonitetAAA from "@/assets/bonitet-aaa.png";
+import bonitetAAA from "@/assets/bonitet-aaa-2026.png";
 import { withBase } from "@/lib/paths";
 import { scrollToHash } from "@/lib/scroll";
 

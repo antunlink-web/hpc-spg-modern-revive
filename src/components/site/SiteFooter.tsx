@@ -1,5 +1,5 @@
 import { MapPin, Mail, Globe, Clock, Phone, ShieldCheck, Building2 } from "lucide-react";
-import bonitetAAA from "@/assets/bonitet-aaa.png";
+import bonitetAAA from "@/assets/bonitet-aaa-2026.png";
 import { withBase } from "@/lib/paths";
 
 export function SiteFooter() {

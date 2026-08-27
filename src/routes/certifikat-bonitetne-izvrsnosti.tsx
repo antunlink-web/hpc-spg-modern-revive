@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
-import bonitetAAA from "@/assets/bonitet-aaa.png";
+import bonitetAAA from "@/assets/bonitet-aaa-2026.png";
 
 export const Route = createFileRoute("/certifikat-bonitetne-izvrsnosti")({
   head: () => ({
