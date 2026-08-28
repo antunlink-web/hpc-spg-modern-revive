@@ -311,6 +311,9 @@ export function NewsEditor({
     }
   }
 
+  const preservedExtras =
+    post?.gallery?.length ?? 0;
+
   function updateDocument(
     index: number,
     field: keyof NewsResource,
