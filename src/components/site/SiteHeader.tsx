@@ -16,12 +16,12 @@ type NavItem = {
  */
 const nav: NavItem[] = [
   { label: "Početna", href: "/" },
-  { label: "O nama", href: "/#o-nama" },
-  { label: "Zašto smo bolji izbor?", href: "/#zasto-smo-bolji" },
+  { label: "O nama", href: "/o-nama" },
+  { label: "Zašto smo bolji izbor?", href: "/zasto-smo-bolji-izbor" },
   { label: "Ponuda", href: "/#ponuda" },
   { label: "Upravljanje", href: "/#upravljanje" },
-  { label: "Novosti", href: "/#novosti" },
-  { label: "Kontakt", href: "/#kontakt" },
+  { label: "Novosti", href: "/novosti" },
+  { label: "Kontakt", href: "/kontakt" },
 ];
 
 /** Build an href that respects the active base, including homepage anchors. */
