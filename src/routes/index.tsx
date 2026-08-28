@@ -34,6 +34,8 @@ import bonitetAAA from "@/assets/bonitet-aaa-2026.png";
 import { withBase } from "@/lib/paths";
 import { scrollToHash } from "@/lib/scroll";
 import { getHomepageNews } from "@/lib/cms/news-functions";
+import { getPublicPage } from "@/lib/cms/page-functions";
+import { splitCmsLines } from "@/lib/cms/page-definitions";
 
 
 
@@ -45,6 +47,11 @@ const APP_URL = "https://hpc-spg.com/";
 export const Route = createFileRoute("/")({
   loader: async () => ({
     cmsNews: await getHomepageNews(),
+    cmsPage: await getPublicPage({
+      data: {
+        pageKey: "pocetna",
+      },
+    }),
   }),
 
   head: () => ({
@@ -118,7 +125,12 @@ const upravljanje = [
 function HomePage() {
   useReveal();
 
-  const { cmsNews } = Route.useLoaderData();
+  const {
+    cmsNews,
+    cmsPage,
+  } = Route.useLoaderData();
+
+  const pageContent = cmsPage.content;
 
   const homepageNews = cmsNews.map((post) => ({
     img:
@@ -170,15 +182,14 @@ function HomePage() {
           <div className="max-w-3xl">
             <span className="hero-anim hero-delay-1 inline-flex items-center gap-3 text-[11px] uppercase tracking-[0.26em] text-white/75">
               <span className="h-px w-10 bg-emerald-soft/80" />
-              Hrvatski poslovni centar — SPG d.o.o. · Zagreb
+              {pageContent.heroEyebrow}
             </span>
             <h1 className="mt-7 text-white text-[2.25rem] leading-[1.08] sm:text-5xl lg:text-[3.75rem] lg:leading-[1.05] font-semibold tracking-tight">
-              <span className="block hero-anim hero-delay-2">Profesionalno upravljanje</span>
-              <span className="block hero-anim hero-delay-3">stambenim i poslovnim zgradama.</span>
+              <span className="block hero-anim hero-delay-2">{pageContent.heroTitle1}</span>
+              <span className="block hero-anim hero-delay-3">{pageContent.heroTitle2}</span>
             </h1>
             <p className="hero-anim hero-delay-4 mt-6 text-base sm:text-lg text-white/85 max-w-2xl leading-relaxed">
-              Transparentno financijsko izvještavanje, stručno održavanje i digitalni
-              uvid za predstavnike i suvlasnike.
+              {pageContent.heroLead}
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <a href={OFFER_URL} className="hero-anim hero-delay-5 inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
@@ -216,16 +227,13 @@ function HomePage() {
             <div className="reveal-up lg:col-span-6">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">O nama</span>
               <h2 className="mt-4 text-4xl lg:text-5xl text-navy">
-                Hrvatski poslovni centar – SPG d.o.o.
+                {pageContent.aboutTitle}
               </h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
-                Registrirana i specijalizirana tvrtka za upravljanje i održavanje stambenih i
-                poslovnih objekata. Kao jedan od najvećih privatnih upravitelja u Zagrebu i okolici
-                upravljamo s više od 7.000 stambenih i poslovnih prostora te garaža.
+                {pageContent.aboutText1}
               </p>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Tvrtka ima stalno zaposlene djelatnike ekonomske, pravne i građevinske struke, a
-                radove i nadzor povjeravamo samo provjerenim suradnicima i kooperantima.
+                {pageContent.aboutText2}
               </p>
               <div className="mt-8">
                 <a
@@ -268,19 +276,12 @@ function HomePage() {
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="reveal-left lg:col-span-5">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Zašto HPC-SPG</span>
-              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Kvaliteta ispred kvantitete.</h2>
+              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">{pageContent.whyTitle}</h2>
               <p className="mt-6 text-muted-foreground leading-relaxed">
-                Naš je cilj zgradama kojima upravljamo dati kvalitetnu podršku i uslugu —
-                s posvećenošću detalju, pravnom sigurnošću i odgovornim upravljanjem
-                pričuvom.
+                {pageContent.whyText}
               </p>
               <ul className="mt-8 space-y-3 text-sm">
-                {[
-                  "Transparentno financijsko izvještavanje",
-                  "Stručan tim i pravna sigurnost",
-                  "Brza i jasna komunikacija sa suvlasnicima",
-                  "Organizirano godišnje planiranje i izvještavanje",
-                ].map((t) => (
+                {splitCmsLines(pageContent.whyBullets).map((t) => (
                   <li key={t} className="flex items-start gap-2.5 text-foreground/85">
                     <CheckCircle2 className="h-4 w-4 mt-0.5 text-emerald" />
                     {t}
@@ -328,12 +329,10 @@ function HomePage() {
           <div className="fade-up grid lg:grid-cols-12 gap-12 lg:gap-20 items-end mb-14 lg:mb-20">
             <div className="lg:col-span-7">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Naše usluge</span>
-              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Cjelovita podrška za vašu zgradu.</h2>
+              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">{pageContent.servicesTitle}</h2>
             </div>
             <p className="lg:col-span-5 text-muted-foreground leading-relaxed">
-              Pružamo cjelovit set usluga upravljanja, održavanja i obnove —
-              od svakodnevnih tehničkih poslova do velikih projekata energetske
-              obnove i obnove od potresa.
+              {pageContent.servicesText}
             </p>
           </div>
 
@@ -393,11 +392,10 @@ function HomePage() {
           <div className="grid lg:grid-cols-12 gap-12 items-end mb-14">
             <div className="reveal-up lg:col-span-7">
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Upravljanje</span>
-              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Sve o upravljanju zgradom.</h2>
+              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">{pageContent.managementTitle}</h2>
             </div>
             <p className="reveal-up lg:col-span-5 text-muted-foreground leading-relaxed" style={{ transitionDelay: "150ms" }}>
-              Vodiči, pojmovnik, regulativa i informacije o financiranju — sve
-              što suvlasnik treba znati o upravljanju vlastitom zgradom.
+              {pageContent.managementText}
             </p>
           </div>
 
@@ -423,7 +421,7 @@ function HomePage() {
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="reveal-up max-w-2xl">
             <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Kako surađujemo</span>
-            <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Jednostavan put do novog upravitelja.</h2>
+            <h2 className="mt-4 text-4xl lg:text-5xl text-navy">{pageContent.processTitle}</h2>
           </div>
 
           <div className="stagger mt-14 lg:mt-20 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 relative">
@@ -447,7 +445,7 @@ function HomePage() {
           <div className="reveal-up flex flex-wrap items-end justify-between gap-6 mb-14">
             <div>
               <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground">Aktualno</span>
-              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">Vijesti i javni pozivi.</h2>
+              <h2 className="mt-4 text-4xl lg:text-5xl text-navy">{pageContent.newsTitle}</h2>
             </div>
             <a href={withBase("/novosti")} className="text-sm font-medium text-navy inline-flex items-center gap-1.5 nav-underline">
               Sve novosti <ArrowRight className="h-4 w-4" />
@@ -481,10 +479,9 @@ function HomePage() {
         <div className="absolute inset-0 bg-navy/85" />
         <div className="relative max-w-5xl mx-auto px-5 lg:px-10 text-center">
           <span className="reveal-up inline-block text-xs uppercase tracking-[0.22em] text-white/70">Kontakt</span>
-          <h2 className="reveal-up mt-5 text-white text-4xl lg:text-6xl" style={{ transitionDelay: "120ms" }}>Spremni za upravitelja kojem se može vjerovati?</h2>
+          <h2 className="reveal-up mt-5 text-white text-4xl lg:text-6xl" style={{ transitionDelay: "120ms" }}>{pageContent.ctaTitle}</h2>
           <p className="reveal-up mt-6 text-white/80 max-w-2xl mx-auto leading-relaxed" style={{ transitionDelay: "240ms" }}>
-            Ispunite Zahtjev za izradu prijedloga za upravljanje zgradom — pripremamo
-            cjelovitu ponudu prilagođenu vašem objektu.
+            {pageContent.ctaText}
           </p>
           <div className="reveal-up mt-10 flex flex-wrap items-center justify-center gap-3" style={{ transitionDelay: "360ms" }}>
             <a href={OFFER_URL} className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">

@@ -20,6 +20,143 @@ export type CmsPageDefinition = {
 
 export const cmsPageDefinitions: CmsPageDefinition[] = [
   {
+    key: "pocetna",
+    label: "Početna",
+    publicPath: "/",
+    fields: [
+      {
+        key: "heroEyebrow",
+        label: "Hero - nadnaslov",
+        type: "text",
+      },
+      {
+        key: "heroTitle1",
+        label: "Hero - prvi red naslova",
+        type: "text",
+      },
+      {
+        key: "heroTitle2",
+        label: "Hero - drugi red naslova",
+        type: "text",
+      },
+      {
+        key: "heroLead",
+        label: "Hero - uvodni tekst",
+        type: "textarea",
+      },
+      {
+        key: "aboutTitle",
+        label: "O nama - naslov",
+        type: "text",
+      },
+      {
+        key: "aboutText1",
+        label: "O nama - prvi odlomak",
+        type: "textarea",
+      },
+      {
+        key: "aboutText2",
+        label: "O nama - drugi odlomak",
+        type: "textarea",
+      },
+      {
+        key: "whyTitle",
+        label: "Zašto HPC-SPG - naslov",
+        type: "text",
+      },
+      {
+        key: "whyText",
+        label: "Zašto HPC-SPG - uvodni tekst",
+        type: "textarea",
+      },
+      {
+        key: "whyBullets",
+        label: "Zašto HPC-SPG - glavne prednosti",
+        type: "lines",
+        description:
+          "Svaku stavku unesite u novi red.",
+      },
+      {
+        key: "servicesTitle",
+        label: "Naše usluge - naslov",
+        type: "text",
+      },
+      {
+        key: "servicesText",
+        label: "Naše usluge - uvodni tekst",
+        type: "textarea",
+      },
+      {
+        key: "managementTitle",
+        label: "Upravljanje - naslov",
+        type: "text",
+      },
+      {
+        key: "managementText",
+        label: "Upravljanje - uvodni tekst",
+        type: "textarea",
+      },
+      {
+        key: "processTitle",
+        label: "Kako surađujemo - naslov",
+        type: "text",
+      },
+      {
+        key: "newsTitle",
+        label: "Novosti - naslov",
+        type: "text",
+      },
+      {
+        key: "ctaTitle",
+        label: "Završni poziv - naslov",
+        type: "text",
+      },
+      {
+        key: "ctaText",
+        label: "Završni poziv - tekst",
+        type: "textarea",
+      },
+    ],
+    defaults: {
+      heroEyebrow:
+        "Hrvatski poslovni centar - SPG d.o.o. · Zagreb",
+      heroTitle1:
+        "Profesionalno upravljanje",
+      heroTitle2:
+        "stambenim i poslovnim zgradama.",
+      heroLead:
+        "Transparentno financijsko izvještavanje, stručno održavanje i digitalni uvid za predstavnike i suvlasnike.",
+      aboutTitle:
+        "Hrvatski poslovni centar – SPG d.o.o.",
+      aboutText1:
+        "Registrirana i specijalizirana tvrtka za upravljanje i održavanje stambenih i poslovnih objekata. Kao jedan od najvećih privatnih upravitelja u Zagrebu i okolici upravljamo s više od 7.000 stambenih i poslovnih prostora te garaža.",
+      aboutText2:
+        "Tvrtka ima stalno zaposlene djelatnike ekonomske, pravne i građevinske struke, a radove i nadzor povjeravamo samo provjerenim suradnicima i kooperantima.",
+      whyTitle:
+        "Kvaliteta ispred kvantitete.",
+      whyText:
+        "Naš je cilj zgradama kojima upravljamo dati kvalitetnu podršku i uslugu - s posvećenošću detalju, pravnom sigurnošću i odgovornim upravljanjem pričuvom.",
+      whyBullets:
+        "Transparentno financijsko izvještavanje\nStručan tim i pravna sigurnost\nBrza i jasna komunikacija sa suvlasnicima\nOrganizirano godišnje planiranje i izvještavanje",
+      servicesTitle:
+        "Cjelovita podrška za vašu zgradu.",
+      servicesText:
+        "Pružamo cjelovit set usluga upravljanja, održavanja i obnove - od svakodnevnih tehničkih poslova do velikih projekata energetske obnove i obnove od potresa.",
+      managementTitle:
+        "Sve o upravljanju zgradom.",
+      managementText:
+        "Vodiči, pojmovnik, regulativa i informacije o financiranju - sve što suvlasnik treba znati o upravljanju vlastitom zgradom.",
+      processTitle:
+        "Jednostavan put do novog upravitelja.",
+      newsTitle:
+        "Vijesti i javni pozivi.",
+      ctaTitle:
+        "Spremni za upravitelja kojem se može vjerovati?",
+      ctaText:
+        "Ispunite Zahtjev za izradu prijedloga za upravljanje zgradom - pripremamo cjelovitu ponudu prilagođenu vašem objektu.",
+    },
+  },
+  {
     key: "o-nama",
     label: "O nama",
     publicPath: "/o-nama",
