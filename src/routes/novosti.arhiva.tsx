@@ -32,6 +32,7 @@ export const Route = createFileRoute("/novosti/arhiva")({
 
 function ArchiveIndex() {
   useReveal();
+  const { posts } = Route.useLoaderData();
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SiteHeader />
