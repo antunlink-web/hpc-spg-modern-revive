@@ -10,6 +10,10 @@ import {
   List,
   Save,
   Trash2,
+  Plus,
+  FileText,
+  ExternalLink,
+  X,
 } from "lucide-react";
 import {
   useNavigate,
@@ -21,6 +25,11 @@ import {
   deleteNewsAdmin,
   saveNewsAdmin,
 } from "@/lib/cms/news-functions";
+
+type NewsResource = {
+  label: string;
+  href: string;
+};
 
 type NewsEditorPost = {
   id?: string;
@@ -35,8 +44,8 @@ type NewsEditorPost = {
   seoTitle?: string;
   metaDescription?: string;
   isArchived?: boolean;
-  documents?: unknown[];
-  externalLinks?: unknown[];
+  documents?: NewsResource[];
+  externalLinks?: NewsResource[];
   gallery?: unknown[];
 };
 
@@ -87,6 +96,40 @@ export function NewsEditor({
 
   const [isArchived, setIsArchived] =
     useState(Boolean(post?.isArchived));
+
+  const [documents, setDocuments] =
+    useState<NewsResource[]>(
+      Array.isArray(post?.documents)
+        ? post.documents.map((item) => ({
+            label:
+              typeof item?.label === "string"
+                ? item.label
+                : "",
+            href:
+              typeof item?.href === "string"
+                ? item.href
+                : "",
+          }))
+        : [],
+    );
+
+  const [
+    externalLinks,
+    setExternalLinks,
+  ] = useState<NewsResource[]>(
+    Array.isArray(post?.externalLinks)
+      ? post.externalLinks.map((item) => ({
+          label:
+            typeof item?.label === "string"
+              ? item.label
+              : "",
+          href:
+            typeof item?.href === "string"
+              ? item.href
+              : "",
+        }))
+      : [],
+  );
 
   const [saving, setSaving] =
     useState(false);
@@ -209,6 +252,8 @@ export function NewsEditor({
           metaDescription,
           status,
           isArchived,
+          documents,
+          externalLinks,
         },
       });
 
@@ -266,10 +311,39 @@ export function NewsEditor({
     }
   }
 
-  const preservedExtras =
-    (post?.documents?.length ?? 0) +
-    (post?.externalLinks?.length ?? 0) +
-    (post?.gallery?.length ?? 0);
+  function updateDocument(
+    index: number,
+    field: keyof NewsResource,
+    value: string,
+  ) {
+    setDocuments((items) =>
+      items.map((item, itemIndex) =>
+        itemIndex === index
+          ? {
+              ...item,
+              [field]: value,
+            }
+          : item,
+      ),
+    );
+  }
+
+  function updateExternalLink(
+    index: number,
+    field: keyof NewsResource,
+    value: string,
+  ) {
+    setExternalLinks((items) =>
+      items.map((item, itemIndex) =>
+        itemIndex === index
+          ? {
+              ...item,
+              [field]: value,
+            }
+          : item,
+      ),
+    );
+  }
 
   return (
     <div className="grid gap-6 xl:grid-cols-[minmax(0,1fr)_320px]">
@@ -407,6 +481,220 @@ export function NewsEditor({
             }}
             className="prose prose-sm min-h-[420px] max-w-none px-6 py-5 text-foreground outline-none lg:prose-base focus:bg-surface/30"
           />
+        </section>
+
+        <section className="rounded-xl border border-border bg-background p-5 lg:p-6">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="text-base font-semibold text-navy">
+                Dokumenti
+              </h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Dokumenti povezani s ovom objavom.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() =>
+                setDocuments((items) => [
+                  ...items,
+                  {
+                    label: "",
+                    href: "",
+                  },
+                ])
+              }
+              className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm font-medium text-navy transition hover:border-navy/30 hover:bg-surface"
+            >
+              <Plus className="h-4 w-4" />
+              Dodaj dokument
+            </button>
+          </div>
+
+          {documents.length === 0 ? (
+            <div className="mt-5 rounded-lg border border-dashed border-border bg-surface/40 px-4 py-5 text-sm text-muted-foreground">
+              Nema dodanih dokumenata.
+            </div>
+          ) : (
+            <div className="mt-5 space-y-4">
+              {documents.map(
+                (document, index) => (
+                  <div
+                    key={index}
+                    className="rounded-lg border border-border p-4"
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="inline-flex items-center gap-2 text-sm font-medium text-navy">
+                        <FileText className="h-4 w-4 text-emerald" />
+                        Dokument {index + 1}
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setDocuments(
+                            (items) =>
+                              items.filter(
+                                (_, itemIndex) =>
+                                  itemIndex !==
+                                  index,
+                              ),
+                          )
+                        }
+                        className="rounded-md p-1.5 text-muted-foreground transition hover:bg-red-50 hover:text-red-700"
+                        title="Ukloni dokument"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
+
+                    <label className="mt-4 block text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Naziv
+                    </label>
+
+                    <input
+                      value={document.label}
+                      onChange={(event) =>
+                        updateDocument(
+                          index,
+                          "label",
+                          event.target.value,
+                        )
+                      }
+                      className="mt-2 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-emerald"
+                      placeholder="Primjer: Odluka Ministarstva"
+                    />
+
+                    <label className="mt-4 block text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Poveznica
+                    </label>
+
+                    <input
+                      value={document.href}
+                      onChange={(event) =>
+                        updateDocument(
+                          index,
+                          "href",
+                          event.target.value,
+                        )
+                      }
+                      className="mt-2 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-emerald"
+                      placeholder="/dokumenti/dokument.pdf ili https://..."
+                    />
+                  </div>
+                ),
+              )}
+            </div>
+          )}
+        </section>
+
+        <section className="rounded-xl border border-border bg-background p-5 lg:p-6">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="text-base font-semibold text-navy">
+                Vanjske poveznice
+              </h2>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Dodatne poveznice povezane s objavom.
+              </p>
+            </div>
+
+            <button
+              type="button"
+              onClick={() =>
+                setExternalLinks(
+                  (items) => [
+                    ...items,
+                    {
+                      label: "",
+                      href: "",
+                    },
+                  ],
+                )
+              }
+              className="inline-flex items-center gap-2 rounded-lg border border-border px-3 py-2 text-sm font-medium text-navy transition hover:border-navy/30 hover:bg-surface"
+            >
+              <Plus className="h-4 w-4" />
+              Dodaj poveznicu
+            </button>
+          </div>
+
+          {externalLinks.length === 0 ? (
+            <div className="mt-5 rounded-lg border border-dashed border-border bg-surface/40 px-4 py-5 text-sm text-muted-foreground">
+              Nema dodanih vanjskih poveznica.
+            </div>
+          ) : (
+            <div className="mt-5 space-y-4">
+              {externalLinks.map(
+                (link, index) => (
+                  <div
+                    key={index}
+                    className="rounded-lg border border-border p-4"
+                  >
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="inline-flex items-center gap-2 text-sm font-medium text-navy">
+                        <ExternalLink className="h-4 w-4 text-emerald" />
+                        Poveznica {index + 1}
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() =>
+                          setExternalLinks(
+                            (items) =>
+                              items.filter(
+                                (_, itemIndex) =>
+                                  itemIndex !==
+                                  index,
+                              ),
+                          )
+                        }
+                        className="rounded-md p-1.5 text-muted-foreground transition hover:bg-red-50 hover:text-red-700"
+                        title="Ukloni poveznicu"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
+
+                    <label className="mt-4 block text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Naziv
+                    </label>
+
+                    <input
+                      value={link.label}
+                      onChange={(event) =>
+                        updateExternalLink(
+                          index,
+                          "label",
+                          event.target.value,
+                        )
+                      }
+                      className="mt-2 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-emerald"
+                      placeholder="Primjer: Više informacija"
+                    />
+
+                    <label className="mt-4 block text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      Adresa
+                    </label>
+
+                    <input
+                      value={link.href}
+                      onChange={(event) =>
+                        updateExternalLink(
+                          index,
+                          "href",
+                          event.target.value,
+                        )
+                      }
+                      className="mt-2 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-emerald"
+                      placeholder="https://..."
+                    />
+                  </div>
+                ),
+              )}
+            </div>
+          )}
         </section>
 
         <section className="rounded-xl border border-border bg-background p-5 lg:p-6">

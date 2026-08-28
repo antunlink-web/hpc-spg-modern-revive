@@ -6,6 +6,11 @@ import { sanitizeNewsHtml } from "./news-sanitize";
 
 type NewsStatus = "draft" | "published" | "hidden";
 
+type NewsResourceInput = {
+  label?: string;
+  href?: string;
+};
+
 type SaveNewsInput = {
   id?: string;
   title?: string;
@@ -19,6 +24,8 @@ type SaveNewsInput = {
   metaDescription?: string;
   status?: NewsStatus;
   isArchived?: boolean;
+  documents?: NewsResourceInput[];
+  externalLinks?: NewsResourceInput[];
 };
 
 function clean(value: unknown) {
@@ -50,6 +57,73 @@ function croatianDate(value: string) {
     month: "long",
     year: "numeric",
   }).format(date);
+}
+
+function normalizeResources(
+  value: unknown,
+  kind: "document" | "link",
+) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  const result: Array<{
+    label: string;
+    href: string;
+  }> = [];
+
+  for (const item of value) {
+    if (
+      !item ||
+      typeof item !== "object"
+    ) {
+      continue;
+    }
+
+    const label = clean(
+      (item as any).label,
+    );
+
+    const href = clean(
+      (item as any).href,
+    );
+
+    if (!label && !href) {
+      continue;
+    }
+
+    if (!label || !href) {
+      throw new Error(
+        kind === "document"
+          ? "Svaki dokument mora imati naziv i poveznicu."
+          : "Svaka poveznica mora imati naziv i adresu.",
+      );
+    }
+
+    const allowed =
+      href.startsWith("/") ||
+      href.startsWith("https://") ||
+      href.startsWith("http://");
+
+    if (!allowed) {
+      throw new Error(
+        kind === "document"
+          ? "Poveznica dokumenta nije valjana."
+          : "Vanjska poveznica nije valjana.",
+      );
+    }
+
+    result.push({
+      label: label.slice(0, 200),
+      href: href.slice(0, 2000),
+    });
+
+    if (result.length >= 50) {
+      break;
+    }
+  }
+
+  return result;
 }
 
 function safeJsonArray(value: unknown) {
@@ -321,6 +395,22 @@ export const saveNewsAdmin = createServerFn({
         ? rawCoverImage
         : "";
 
+    const documents = normalizeResources(
+      data?.documents,
+      "document",
+    );
+
+    const externalLinks = normalizeResources(
+      data?.externalLinks,
+      "link",
+    );
+
+    const documentsJson =
+      JSON.stringify(documents);
+
+    const externalLinksJson =
+      JSON.stringify(externalLinks);
+
     const seoTitle = clean(data?.seoTitle);
 
     const metaDescription = clean(
@@ -391,6 +481,8 @@ export const saveNewsAdmin = createServerFn({
           display_date = ?,
           seo_title = ?,
           meta_description = ?,
+          documents_json = ?,
+          external_links_json = ?,
           is_archived = ?
         WHERE id = ?
       `).run(
@@ -408,6 +500,8 @@ export const saveNewsAdmin = createServerFn({
           : "",
         seoTitle || null,
         metaDescription || null,
+        documentsJson,
+        externalLinksJson,
         isArchived,
         id,
       );
@@ -436,7 +530,7 @@ export const saveNewsAdmin = createServerFn({
         )
         VALUES (
           ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
-          ?, ?, ?, ?, '[]', '[]', '[]', '[]', ?
+          ?, ?, ?, ?, ?, ?, '[]', '[]', ?
         )
       `).run(
         id,
@@ -455,6 +549,8 @@ export const saveNewsAdmin = createServerFn({
           : "",
         seoTitle || null,
         metaDescription || null,
+        documentsJson,
+        externalLinksJson,
         isArchived,
       );
     }
