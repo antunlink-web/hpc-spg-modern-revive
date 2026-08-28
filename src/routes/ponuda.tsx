@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
 import { FileText } from "lucide-react";
 import { withBase } from "@/lib/paths";
+import { getPublicPage } from "@/lib/cms/page-functions";
+import { splitCmsLines } from "@/lib/cms/page-definitions";
 
 export const Route = createFileRoute("/ponuda")({
   head: () => ({
@@ -12,11 +14,22 @@ export const Route = createFileRoute("/ponuda")({
       { property: "og:description", content: "Sveobuhvatna rješenja za upravljanje i održavanje stambenih i poslovnih zgrada." },
     ],
   }),
-  component: () => (
+  loader: () =>
+    getPublicPage({
+      data: { pageKey: "ponuda" },
+    }),
+  component: OfferPage,
+});
+
+function OfferPage() {
+  const page = Route.useLoaderData();
+  const content = page.content;
+
+  return (
     <ArticlePageShell
       eyebrow="Ponuda"
-      title="Poslovi upravljanja i održavanja zgrada"
-      lead="Naknada upravitelju može biti ugovorena u fiksnom iznosu ili u postotku od pričuve — ovisno o željama suvlasnika i visini pričuve."
+      title={content.title}
+      lead={content.lead}
       crumbs={[{ label: "Ponuda" }]}
       aside={
         <div className="rounded-xl border border-border bg-background p-6">
@@ -31,12 +44,9 @@ export const Route = createFileRoute("/ponuda")({
       }
     >
       <ul>
-        <li>Bez skrivenih troškova i naknada</li>
-        <li>Transparentno vođenje sredstava zajedničke pričuve na računu posebne namjene, odvojenom od poslovanja tvrtke upravitelja i zaštićenom od ovrhe</li>
-        <li>Financijski izvještaji u svakom trenutku dostupni svim suvlasnicima — pošta, e-mail i web/mobilna aplikacija</li>
-        <li>Uplatnice s otisnutim 2D barkodom i mogućnošću slanja e-mailom</li>
-        <li>Učinkovit sustav kontrole i naplate dugovanja za pričuvu</li>
-        <li>Pravno, tehničko i financijsko praćenje svih aktivnosti upravljanja</li>
+        {splitCmsLines(content.highlights).map((item) => (
+          <li key={item}>{item}</li>
+        ))}
       </ul>
 
       <h2>1. Financijski poslovi</h2>
@@ -90,5 +100,5 @@ export const Route = createFileRoute("/ponuda")({
         <li>Pravni savjeti vezani za djelokrug rada upravitelja</li>
       </ul>
     </ArticlePageShell>
-  ),
-});
+  );
+}

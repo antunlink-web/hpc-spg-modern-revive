@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Building2, ShieldCheck, Zap, FileText, Banknote, Wrench } from "lucide-react";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { getPublicPage } from "@/lib/cms/page-functions";
 
 const services = [
   { icon: Building2, title: "Upravljanje zgradama", desc: "Cjelovito upravljanje stambenim i poslovnim objektima uz transparentno financijsko izvještavanje.", href: "/usluge/upravljanje-zgradama" },
@@ -20,11 +21,24 @@ export const Route = createFileRoute("/usluge/")({
       { property: "og:description", content: "Cjelovita ponuda usluga upravljanja za stambene i poslovne zgrade." },
     ],
   }),
-  component: () => (
+  loader: () =>
+    getPublicPage({
+      data: {
+        pageKey: "usluge",
+      },
+    }),
+  component: ServicesPage,
+});
+
+function ServicesPage() {
+  const page = Route.useLoaderData();
+  const content = page.content;
+
+  return (
     <ArticlePageShell
       eyebrow="Usluge"
-      title="Naše usluge"
-      lead="Cjelovita ponuda usluga za predstavnike i suvlasnike — od svakodnevnog upravljanja do obnove i financiranja većih zahvata."
+      title={content.title}
+      lead={content.lead}
       crumbs={[{ label: "Usluge" }]}
     >
       <div className="not-prose grid gap-4 sm:grid-cols-2">
@@ -44,5 +58,5 @@ export const Route = createFileRoute("/usluge/")({
         ))}
       </div>
     </ArticlePageShell>
-  ),
-});
+  );
+}

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { BookOpen, Coins, Gauge, Scale, Thermometer, ArrowRight } from "lucide-react";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { getPublicPage } from "@/lib/cms/page-functions";
 
 const cards = [
   { icon: BookOpen, title: "Osnovni pojmovi upravljanja", desc: "Pojmovnik i objašnjenja ključnih izraza sukladno Zakonu (NN 152/2024).", href: "/upravljanje/osnovni-pojmovi" },
@@ -19,11 +20,24 @@ export const Route = createFileRoute("/upravljanje/")({
       { property: "og:description", content: "Vodič i pravna osnova upravljanja i održavanja zgrada." },
     ],
   }),
-  component: () => (
+  loader: () =>
+    getPublicPage({
+      data: {
+        pageKey: "upravljanje",
+      },
+    }),
+  component: ManagementPage,
+});
+
+function ManagementPage() {
+  const page = Route.useLoaderData();
+  const content = page.content;
+
+  return (
     <ArticlePageShell
       eyebrow="Upravljanje"
-      title="Vodič i regulativa upravljanja zgradama"
-      lead="Osnovni pojmovi, zakonodavni okvir i praktični savjeti za suvlasnike i predstavnike suvlasnika."
+      title={content.title}
+      lead={content.lead}
       crumbs={[{ label: "Upravljanje" }]}
     >
       <div className="not-prose grid sm:grid-cols-2 gap-5">
@@ -37,5 +51,5 @@ export const Route = createFileRoute("/upravljanje/")({
         ))}
       </div>
     </ArticlePageShell>
-  ),
-});
+  );
+}

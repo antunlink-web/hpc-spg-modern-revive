@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
 import { withBase } from "@/lib/paths";
+import { getPublicPage } from "@/lib/cms/page-functions";
 
 export const Route = createFileRoute("/o-nama")({
   head: () => ({
@@ -11,26 +12,26 @@ export const Route = createFileRoute("/o-nama")({
       { property: "og:description", content: "Jedan od najvećih privatnih upravitelja u Zagrebu i okolici — više od 7.000 stambenih i poslovnih prostora pod upravom." },
     ],
   }),
-  component: () => (
+  loader: () =>
+    getPublicPage({
+      data: { pageKey: "o-nama" },
+    }),
+  component: ONamaPage,
+});
+
+function ONamaPage() {
+  const page = Route.useLoaderData();
+  const content = page.content;
+
+  return (
     <ArticlePageShell
       eyebrow="O nama"
-      title="Hrvatski poslovni centar – stambeno poslovno gospodarstvo d.o.o."
-      lead="Registrirana i specijalizirana tvrtka za upravljanje i održavanje stambenih i poslovnih objekata."
+      title={content.title}
+      lead={content.lead}
       crumbs={[{ label: "O nama" }]}
     >
-      <p>
-        <strong>HPC-SPG d.o.o.</strong> registrirana je i specijalizirana tvrtka za upravljanje i održavanje
-        nekretnina. Kao jedan od najvećih privatnih upravitelja u Zagrebu i okolici i jedna od prvih tvrtki
-        registriranih za djelatnost upravljanja nekretninama, od prvog dana primjene Zakona o vlasništvu
-        i drugim stvarnim pravima kroz višegodišnje iskustvo <strong>upravljamo s više od 7.000
-        stambenih i poslovnih prostora te garaža</strong> na lokacijama u Zagrebu, Sesvetama, Samoboru, Svetoj
-        Nedelji, Bregani, Zaprešiću, Dugom Selu, Ivanić Gradu, Malom Lošinju, Poreču i Murteru.
-      </p>
-      <p>
-        Tvrtka ima stalno zaposlene djelatnike — ekonomske, pravne i građevinske struke, kao i stručnjake
-        svih ostalih popratnih aktivnosti. Izvođenje radova i popravaka na zgradi te nadzor nad radovima
-        povjeravamo i ugovaramo samo s najkvalitetnijim suradnicima i kooperantima.
-      </p>
+      <p>{content.intro1}</p>
+      <p>{content.intro2}</p>
 
       <h2>Najvažnije aktivnosti koje su obilježile naš rad</h2>
 
@@ -70,5 +71,5 @@ export const Route = createFileRoute("/o-nama")({
         Certificiranjem smo se svrstali uz sam bok najboljim europskim poduzećima.
       </p>
     </ArticlePageShell>
-  ),
-});
+  );
+}
