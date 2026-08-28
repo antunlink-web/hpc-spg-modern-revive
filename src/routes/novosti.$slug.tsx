@@ -202,6 +202,17 @@ function NewsPost() {
         </>
       }
     >
+          {post.coverImage ? (
+            <figure className="mb-8 overflow-hidden rounded-xl border border-border bg-surface">
+              <img
+                src={post.coverImage}
+                alt={post.title}
+                className="w-full max-h-[620px] object-cover"
+                loading="eager"
+              />
+            </figure>
+          ) : null}
+
       <div
         dangerouslySetInnerHTML={{
           __html: rewriteHtmlBase(
