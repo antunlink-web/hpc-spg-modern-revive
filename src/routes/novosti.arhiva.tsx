@@ -3,9 +3,15 @@ import { ArrowRight, Calendar } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { useReveal } from "@/hooks/use-reveal";
-import { archiveNews } from "@/content/news";
+import { listPublicNews } from "@/lib/cms/news-functions";
 
 export const Route = createFileRoute("/novosti/arhiva")({
+  loader: async () => ({
+    posts: await listPublicNews({
+      data: { archived: true },
+    }),
+  }),
+
   head: () => ({
     meta: [
       { title: "Arhiva novosti — HPC-SPG" },
@@ -52,7 +58,7 @@ function ArchiveIndex() {
       <section className="py-16 lg:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-5 lg:px-10">
           <div className="stagger grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {archiveNews.map((n) => (
+            {posts.map((n) => (
               <Link
                 key={n.slug}
                 to="/novosti/$slug"

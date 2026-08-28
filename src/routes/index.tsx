@@ -33,6 +33,7 @@ import newsLaw from "@/assets/news-law.jpg";
 import bonitetAAA from "@/assets/bonitet-aaa-2026.png";
 import { withBase } from "@/lib/paths";
 import { scrollToHash } from "@/lib/scroll";
+import { getHomepageNews } from "@/lib/cms/news-functions";
 
 
 
@@ -42,6 +43,10 @@ const OFFER_PAGE_URL = "/ponuda";
 const APP_URL = "https://hpc-spg.com/";
 
 export const Route = createFileRoute("/")({
+  loader: async () => ({
+    cmsNews: await getHomepageNews(),
+  }),
+
   head: () => ({
     meta: [
       { title: "HPC-SPG — Hrvatski poslovni centar · Upravljanje zgradama u Zagrebu" },
@@ -93,12 +98,12 @@ const process = [
   { n: "04", title: "Kontinuirano upravljanje", desc: "Redovito izvještavanje, održavanje i digitalna komunikacija.", href: "/usluge/upravljanje-zgradama" },
 ];
 
-const news = [
-  { img: newsLaw, tag: "Zakon", date: "01.01.2025.", title: "Novi Zakon o upravljanju i održavanju zgrada", excerpt: "U primjeni je novi zakonski okvir koji uređuje prava i obveze suvlasnika te postupke upravljanja.", href: "/novosti/novi-zakon-o-upravljanju-i-odrzavanju-zgrada" },
-  { img: newsFacade, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje uređenja pročelja", excerpt: "Otvoren je javni poziv za podnošenje prijava za sufinanciranje uređenja pročelja višestambenih zgrada.", href: "/novosti/javni-poziv-za-podnosenje-prijava-za-sufinanciranje-uredenja-procelja-za-postoje" },
-  { img: newsElevator, tag: "Javni poziv", date: "2026.", title: "Sufinanciranje ugradnje dizala", excerpt: "Javni poziv za sufinanciranje ugradnje dizala u postojeće višestambene i stambeno-poslovne zgrade.", href: "/novosti/javni-poziv-ugradnja-dizala-u-postojece-visestambene-i-stambeno-poslovne-zgrade" },
-  { img: newsGraffiti, tag: "Sufinanciranje", date: "Aktualno", title: "Zaštita građevina od grafita", excerpt: "Poziv za podnošenje zahtjeva za sufinanciranje zaštite vanjskih dijelova građevina od grafita.", href: "/novosti/poziv-za-podnosenje-zahtjeva-za-financiranje-sufinanciranje-zastite-vanjskih-dij" },
-];
+const legacyNewsImages: Record<string, string> = {
+  "novi-zakon-o-upravljanju-i-odrzavanju-zgrada": newsLaw,
+  "javni-poziv-za-podnosenje-prijava-za-sufinanciranje-uredenja-procelja-za-postoje": newsFacade,
+  "javni-poziv-ugradnja-dizala-u-postojece-visestambene-i-stambeno-poslovne-zgrade": newsElevator,
+  "poziv-za-podnosenje-zahtjeva-za-financiranje-sufinanciranje-zastite-vanjskih-dij": newsGraffiti,
+};
 
 const upravljanje = [
   { icon: BookOpen, title: "Osnovni pojmovi upravljanja", desc: "Pojmovnik i objašnjenja ključnih izraza vezanih uz upravljanje zgradom.", href: "/upravljanje/osnovni-pojmovi" },
@@ -112,6 +117,20 @@ const upravljanje = [
 
 function HomePage() {
   useReveal();
+
+  const { cmsNews } = Route.useLoaderData();
+
+  const homepageNews = cmsNews.map((post) => ({
+    img:
+      post.coverImage ||
+      legacyNewsImages[post.slug] ||
+      sectionBuildings,
+    tag: post.category,
+    date: post.displayDate,
+    title: post.title,
+    excerpt: post.excerpt,
+    href: `/novosti/${post.slug}`,
+  }));
 
   // Scroll to a homepage section when arriving with a hash (from an internal
   // page, a direct refresh, or browser back/forward).
@@ -436,7 +455,7 @@ function HomePage() {
           </div>
 
           <div className="stagger grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
-            {news.map((n) => (
+            {homepageNews.map((n) => (
               <a key={n.title} href={n.href} className="stagger-item group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
                 <div className="aspect-[4/3] overflow-hidden">
                   <img src={n.img} alt={n.title} width={896} height={640} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
