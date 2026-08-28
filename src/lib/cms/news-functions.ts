@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { createServerFn } from "@tanstack/react-start";
 import { getCmsDb } from "./db";
 import { requireAdmin } from "./auth-functions";
+import { sanitizeNewsHtml } from "./news-sanitize";
 
 type NewsStatus = "draft" | "published" | "hidden";
 
@@ -201,6 +202,10 @@ export const getPublicNewsBySlug =
 
     const post = mapNewsRow(row);
 
+    post.bodyHtml = sanitizeNewsHtml(
+      post.bodyHtml,
+    );
+
     const related = db
       .prepare(`
         SELECT *
@@ -297,10 +302,11 @@ export const saveNewsAdmin = createServerFn({
 
     const excerpt = clean(data?.excerpt);
 
-    const content =
+    const content = sanitizeNewsHtml(
       typeof data?.content === "string"
-        ? data.content.trim()
-        : "";
+        ? data.content
+        : "",
+    );
 
     const seoTitle = clean(data?.seoTitle);
 
