@@ -97,6 +97,11 @@ export function NewsEditor({
   const [isArchived, setIsArchived] =
     useState(Boolean(post?.isArchived));
 
+  const [
+    uploadingDocument,
+    setUploadingDocument,
+  ] = useState<number | null>(null);
+
   const [documents, setDocuments] =
     useState<NewsResource[]>(
       Array.isArray(post?.documents)
@@ -313,6 +318,113 @@ export function NewsEditor({
 
   const preservedExtras =
     post?.gallery?.length ?? 0;
+
+  async function handleDocumentUpload(
+    index: number,
+    file: File,
+  ) {
+    if (
+      file.type !== "application/pdf" &&
+      !file.name
+        .toLowerCase()
+        .endsWith(".pdf")
+    ) {
+      setMessage(
+        "Dopuštene su samo PDF datoteke.",
+      );
+      return;
+    }
+
+    if (
+      file.size >
+      15 * 1024 * 1024
+    ) {
+      setMessage(
+        "PDF je prevelik. Najveća dopuštena veličina je 15 MB.",
+      );
+      return;
+    }
+
+    setUploadingDocument(index);
+    setMessage("");
+
+    try {
+      const formData =
+        new FormData();
+
+      formData.append(
+        "document",
+        file,
+      );
+
+      const response = await fetch(
+        "/api/cms/document-upload",
+        {
+          method: "POST",
+          body: formData,
+          credentials: "same-origin",
+        },
+      );
+
+      const result =
+        await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result?.error ||
+            "Prijenos PDF-a nije uspio.",
+        );
+      }
+
+      if (
+        typeof result?.url !==
+          "string" ||
+        !result.url
+      ) {
+        throw new Error(
+          "Poslužitelj nije vratio adresu dokumenta.",
+        );
+      }
+
+      setDocuments((items) =>
+        items.map(
+          (item, itemIndex) =>
+            itemIndex === index
+              ? {
+                  ...item,
+                  href: result.url,
+                  label:
+                    item.label ||
+                    String(
+                      result.originalName ||
+                        file.name,
+                    )
+                      .replace(
+                        /\.pdf$/i,
+                        "",
+                      )
+                      .replace(
+                        /[-_]+/g,
+                        " ",
+                      ),
+                }
+              : item,
+        ),
+      );
+
+      setMessage(
+        "PDF je učitan. Spremite objavu za potvrdu promjene.",
+      );
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Prijenos PDF-a nije uspio.",
+      );
+    } finally {
+      setUploadingDocument(null);
+    }
+  }
 
   function updateDocument(
     index: number,
@@ -568,6 +680,42 @@ export function NewsEditor({
                       className="mt-2 w-full rounded-lg border border-border bg-background px-3 py-2.5 text-sm outline-none focus:border-emerald"
                       placeholder="Primjer: Odluka Ministarstva"
                     />
+
+                    <label className="mt-4 block text-xs font-medium uppercase tracking-wide text-muted-foreground">
+                      PDF datoteka
+                    </label>
+
+                    <input
+                      type="file"
+                      accept="application/pdf,.pdf"
+                      disabled={
+                        uploadingDocument ===
+                        index
+                      }
+                      className="mt-2 block w-full text-xs text-muted-foreground file:mr-3 file:rounded-md file:border-0 file:bg-navy file:px-3 file:py-2 file:text-xs file:font-semibold file:text-white hover:file:bg-navy/90 disabled:cursor-not-allowed disabled:opacity-50"
+                      onChange={(event) => {
+                        const file =
+                          event.target
+                            .files?.[0];
+
+                        if (file) {
+                          void handleDocumentUpload(
+                            index,
+                            file,
+                          );
+                        }
+
+                        event.currentTarget.value =
+                          "";
+                      }}
+                    />
+
+                    {uploadingDocument ===
+                    index ? (
+                      <p className="mt-2 text-xs font-medium text-emerald">
+                        Učitavanje PDF-a...
+                      </p>
+                    ) : null}
 
                     <label className="mt-4 block text-xs font-medium uppercase tracking-wide text-muted-foreground">
                       Poveznica

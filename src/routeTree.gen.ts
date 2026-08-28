@@ -57,7 +57,9 @@ import { Route as AdministracijaKorisniciRouteImport } from './routes/administra
 import { Route as AdministracijaDokumentiRouteImport } from './routes/administracija.dokumenti'
 import { Route as AdministracijaNovostiIndexRouteImport } from './routes/administracija.novosti.index'
 import { Route as UploadsNewsSplatRouteImport } from './routes/uploads.news.$'
+import { Route as UploadsDocumentsSplatRouteImport } from './routes/uploads.documents.$'
 import { Route as ApiCmsNewsUploadRouteImport } from './routes/api.cms.news-upload'
+import { Route as ApiCmsDocumentUploadRouteImport } from './routes/api.cms.document-upload'
 import { Route as AdministracijaNovostiNovaRouteImport } from './routes/administracija.novosti.nova'
 import { Route as AdministracijaNovostiIdRouteImport } from './routes/administracija.novosti.$id'
 
@@ -311,9 +313,19 @@ const UploadsNewsSplatRoute = UploadsNewsSplatRouteImport.update({
   path: '/uploads/news/$',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UploadsDocumentsSplatRoute = UploadsDocumentsSplatRouteImport.update({
+  id: '/uploads/documents/$',
+  path: '/uploads/documents/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiCmsNewsUploadRoute = ApiCmsNewsUploadRouteImport.update({
   id: '/api/cms/news-upload',
   path: '/api/cms/news-upload',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiCmsDocumentUploadRoute = ApiCmsDocumentUploadRouteImport.update({
+  id: '/api/cms/document-upload',
+  path: '/api/cms/document-upload',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdministracijaNovostiNovaRoute =
@@ -377,7 +389,9 @@ export interface FileRoutesByFullPath {
   '/usluge/': typeof UslugeIndexRoute
   '/administracija/novosti/$id': typeof AdministracijaNovostiIdRoute
   '/administracija/novosti/nova': typeof AdministracijaNovostiNovaRoute
+  '/api/cms/document-upload': typeof ApiCmsDocumentUploadRoute
   '/api/cms/news-upload': typeof ApiCmsNewsUploadRoute
+  '/uploads/documents/$': typeof UploadsDocumentsSplatRoute
   '/uploads/news/$': typeof UploadsNewsSplatRoute
   '/administracija/novosti/': typeof AdministracijaNovostiIndexRoute
 }
@@ -428,7 +442,9 @@ export interface FileRoutesByTo {
   '/usluge': typeof UslugeIndexRoute
   '/administracija/novosti/$id': typeof AdministracijaNovostiIdRoute
   '/administracija/novosti/nova': typeof AdministracijaNovostiNovaRoute
+  '/api/cms/document-upload': typeof ApiCmsDocumentUploadRoute
   '/api/cms/news-upload': typeof ApiCmsNewsUploadRoute
+  '/uploads/documents/$': typeof UploadsDocumentsSplatRoute
   '/uploads/news/$': typeof UploadsNewsSplatRoute
   '/administracija/novosti': typeof AdministracijaNovostiIndexRoute
 }
@@ -482,7 +498,9 @@ export interface FileRoutesById {
   '/usluge/': typeof UslugeIndexRoute
   '/administracija/novosti/$id': typeof AdministracijaNovostiIdRoute
   '/administracija/novosti/nova': typeof AdministracijaNovostiNovaRoute
+  '/api/cms/document-upload': typeof ApiCmsDocumentUploadRoute
   '/api/cms/news-upload': typeof ApiCmsNewsUploadRoute
+  '/uploads/documents/$': typeof UploadsDocumentsSplatRoute
   '/uploads/news/$': typeof UploadsNewsSplatRoute
   '/administracija/novosti/': typeof AdministracijaNovostiIndexRoute
 }
@@ -537,7 +555,9 @@ export interface FileRouteTypes {
     | '/usluge/'
     | '/administracija/novosti/$id'
     | '/administracija/novosti/nova'
+    | '/api/cms/document-upload'
     | '/api/cms/news-upload'
+    | '/uploads/documents/$'
     | '/uploads/news/$'
     | '/administracija/novosti/'
   fileRoutesByTo: FileRoutesByTo
@@ -588,7 +608,9 @@ export interface FileRouteTypes {
     | '/usluge'
     | '/administracija/novosti/$id'
     | '/administracija/novosti/nova'
+    | '/api/cms/document-upload'
     | '/api/cms/news-upload'
+    | '/uploads/documents/$'
     | '/uploads/news/$'
     | '/administracija/novosti'
   id:
@@ -641,7 +663,9 @@ export interface FileRouteTypes {
     | '/usluge/'
     | '/administracija/novosti/$id'
     | '/administracija/novosti/nova'
+    | '/api/cms/document-upload'
     | '/api/cms/news-upload'
+    | '/uploads/documents/$'
     | '/uploads/news/$'
     | '/administracija/novosti/'
   fileRoutesById: FileRoutesById
@@ -683,7 +707,9 @@ export interface RootRouteChildren {
   NovostiIndexRoute: typeof NovostiIndexRoute
   AdministracijaNovostiIdRoute: typeof AdministracijaNovostiIdRoute
   AdministracijaNovostiNovaRoute: typeof AdministracijaNovostiNovaRoute
+  ApiCmsDocumentUploadRoute: typeof ApiCmsDocumentUploadRoute
   ApiCmsNewsUploadRoute: typeof ApiCmsNewsUploadRoute
+  UploadsDocumentsSplatRoute: typeof UploadsDocumentsSplatRoute
   UploadsNewsSplatRoute: typeof UploadsNewsSplatRoute
   AdministracijaNovostiIndexRoute: typeof AdministracijaNovostiIndexRoute
 }
@@ -1026,11 +1052,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UploadsNewsSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/uploads/documents/$': {
+      id: '/uploads/documents/$'
+      path: '/uploads/documents/$'
+      fullPath: '/uploads/documents/$'
+      preLoaderRoute: typeof UploadsDocumentsSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/cms/news-upload': {
       id: '/api/cms/news-upload'
       path: '/api/cms/news-upload'
       fullPath: '/api/cms/news-upload'
       preLoaderRoute: typeof ApiCmsNewsUploadRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/cms/document-upload': {
+      id: '/api/cms/document-upload'
+      path: '/api/cms/document-upload'
+      fullPath: '/api/cms/document-upload'
+      preLoaderRoute: typeof ApiCmsDocumentUploadRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/administracija/novosti/nova': {
@@ -1132,7 +1172,9 @@ const rootRouteChildren: RootRouteChildren = {
   NovostiIndexRoute: NovostiIndexRoute,
   AdministracijaNovostiIdRoute: AdministracijaNovostiIdRoute,
   AdministracijaNovostiNovaRoute: AdministracijaNovostiNovaRoute,
+  ApiCmsDocumentUploadRoute: ApiCmsDocumentUploadRoute,
   ApiCmsNewsUploadRoute: ApiCmsNewsUploadRoute,
+  UploadsDocumentsSplatRoute: UploadsDocumentsSplatRoute,
   UploadsNewsSplatRoute: UploadsNewsSplatRoute,
   AdministracijaNovostiIndexRoute: AdministracijaNovostiIndexRoute,
 }
