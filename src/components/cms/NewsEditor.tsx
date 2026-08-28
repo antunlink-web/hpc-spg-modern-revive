@@ -700,39 +700,7 @@ export function NewsEditor({
           )}
         </section>
 
-        <section className="rounded-xl border border-border bg-background p-5 lg:p-6">
-          <h2 className="text-base font-semibold text-navy">
-            SEO
-          </h2>
-
-          <label className="mt-5 block text-sm font-medium text-navy">
-            SEO naslov
-          </label>
-
-          <input
-            value={seoTitle}
-            onChange={(event) =>
-              setSeoTitle(event.target.value)
-            }
-            className="mt-2 w-full rounded-lg border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-emerald"
-          />
-
-          <label className="mt-5 block text-sm font-medium text-navy">
-            Meta opis
-          </label>
-
-          <textarea
-            value={metaDescription}
-            onChange={(event) =>
-              setMetaDescription(
-                event.target.value,
-              )
-            }
-            rows={3}
-            className="mt-2 w-full resize-y rounded-lg border border-border bg-background px-4 py-3 text-sm outline-none focus:border-emerald"
-          />
-        </section>
-      </div>
+              </div>
 
       <aside className="space-y-5">
         <section className="rounded-xl border border-border bg-background p-5">
