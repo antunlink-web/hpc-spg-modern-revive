@@ -14,6 +14,7 @@ type SaveNewsInput = {
   publishedAt?: string;
   excerpt?: string;
   content?: string;
+  coverImage?: string;
   seoTitle?: string;
   metaDescription?: string;
   status?: NewsStatus;
@@ -308,6 +309,18 @@ export const saveNewsAdmin = createServerFn({
         : "",
     );
 
+    const rawCoverImage = clean(
+      data?.coverImage,
+    );
+
+    const coverImage =
+      rawCoverImage === "" ||
+      rawCoverImage.startsWith("/") ||
+      rawCoverImage.startsWith("https://") ||
+      rawCoverImage.startsWith("http://")
+        ? rawCoverImage
+        : "";
+
     const seoTitle = clean(data?.seoTitle);
 
     const metaDescription = clean(
@@ -370,6 +383,7 @@ export const saveNewsAdmin = createServerFn({
           slug = ?,
           excerpt = ?,
           content = ?,
+          cover_image = ?,
           published_at = ?,
           status = ?,
           updated_at = ?,
@@ -384,6 +398,7 @@ export const saveNewsAdmin = createServerFn({
         slug,
         excerpt,
         content,
+        coverImage || null,
         publishedAt,
         status,
         now,
@@ -420,7 +435,7 @@ export const saveNewsAdmin = createServerFn({
           is_archived
         )
         VALUES (
-          ?, ?, ?, ?, ?, NULL, ?, ?, ?, ?,
+          ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,
           ?, ?, ?, ?, '[]', '[]', '[]', '[]', ?
         )
       `).run(
@@ -429,6 +444,7 @@ export const saveNewsAdmin = createServerFn({
         slug,
         excerpt,
         content,
+        coverImage || null,
         publishedAt,
         status,
         now,

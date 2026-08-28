@@ -28,6 +28,7 @@ type NewsEditorPost = {
   slug?: string;
   excerpt?: string;
   content?: string;
+  coverImage?: string;
   publishedAt?: string;
   status?: "draft" | "published" | "hidden";
   category?: string;
@@ -60,6 +61,12 @@ export function NewsEditor({
   const [category, setCategory] = useState(
     post?.category ?? "Novost",
   );
+  const [coverImage, setCoverImage] =
+    useState(post?.coverImage ?? "");
+
+  const [uploadingImage, setUploadingImage] =
+    useState(false);
+
   const [publishedAt, setPublishedAt] =
     useState(post?.publishedAt ?? "");
   const [excerpt, setExcerpt] = useState(
@@ -109,6 +116,78 @@ export function NewsEditor({
     runCommand("createLink", href);
   }
 
+  async function handleImageUpload(
+    file: File,
+  ) {
+    if (
+      ![
+        "image/jpeg",
+        "image/png",
+        "image/webp",
+      ].includes(file.type)
+    ) {
+      setMessage(
+        "Dopušteni formati slike su JPG, PNG i WebP.",
+      );
+      return;
+    }
+
+    if (file.size > 5 * 1024 * 1024) {
+      setMessage(
+        "Slika je prevelika. Najveća dopuštena veličina je 5 MB.",
+      );
+      return;
+    }
+
+    setUploadingImage(true);
+    setMessage("");
+
+    try {
+      const formData = new FormData();
+      formData.append("image", file);
+
+      const response = await fetch(
+        "/api/cms/news-upload",
+        {
+          method: "POST",
+          body: formData,
+          credentials: "same-origin",
+        },
+      );
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(
+          result?.error ||
+            "Prijenos slike nije uspio.",
+        );
+      }
+
+      if (
+        typeof result?.url !== "string" ||
+        !result.url
+      ) {
+        throw new Error(
+          "Poslužitelj nije vratio adresu slike.",
+        );
+      }
+
+      setCoverImage(result.url);
+      setMessage(
+        "Slika je učitana. Spremite objavu za potvrdu promjene.",
+      );
+    } catch (error) {
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "Prijenos slike nije uspio.",
+      );
+    } finally {
+      setUploadingImage(false);
+    }
+  }
+
   async function handleSave() {
     setSaving(true);
     setMessage("");
@@ -125,6 +204,7 @@ export function NewsEditor({
           content:
             editorRef.current?.innerHTML ??
             "",
+          coverImage,
           seoTitle,
           metaDescription,
           status,
@@ -364,6 +444,72 @@ export function NewsEditor({
       </div>
 
       <aside className="space-y-5">
+        <section className="rounded-xl border border-border bg-background p-5">
+          <h2 className="text-sm font-semibold text-navy">
+            Istaknuta slika
+          </h2>
+
+          <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+            Slika se prikazuje uz objavu i na naslovnici kada je objava među najnovijima.
+          </p>
+
+          {coverImage ? (
+            <div className="mt-4">
+              <div className="overflow-hidden rounded-lg border border-border bg-surface">
+                <img
+                  src={coverImage}
+                  alt=""
+                  className="aspect-[4/3] w-full object-cover"
+                />
+              </div>
+
+              <button
+                type="button"
+                onClick={() =>
+                  setCoverImage("")
+                }
+                disabled={uploadingImage}
+                className="mt-3 w-full rounded-lg border border-border px-3 py-2 text-sm font-medium text-navy transition hover:border-navy/30 hover:bg-surface disabled:cursor-not-allowed disabled:opacity-50"
+              >
+                Ukloni sliku
+              </button>
+            </div>
+          ) : null}
+
+          <label className="mt-4 block">
+            <span className="sr-only">
+              Odaberi istaknutu sliku
+            </span>
+
+            <input
+              type="file"
+              accept="image/jpeg,image/png,image/webp"
+              disabled={uploadingImage}
+              className="block w-full text-xs text-muted-foreground file:mr-3 file:rounded-md file:border-0 file:bg-navy file:px-3 file:py-2 file:text-xs file:font-semibold file:text-white hover:file:bg-navy/90 disabled:cursor-not-allowed disabled:opacity-50"
+              onChange={(event) => {
+                const file =
+                  event.target.files?.[0];
+
+                if (file) {
+                  void handleImageUpload(file);
+                }
+
+                event.currentTarget.value = "";
+              }}
+            />
+          </label>
+
+          <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
+            JPG, PNG ili WebP. Najviše 5 MB.
+          </p>
+
+          {uploadingImage ? (
+            <p className="mt-3 text-xs font-medium text-emerald">
+              Učitavanje slike...
+            </p>
+          ) : null}
+        </section>
+
         <section className="rounded-xl border border-border bg-background p-5">
           <h2 className="text-sm font-semibold text-navy">
             Objavljivanje
