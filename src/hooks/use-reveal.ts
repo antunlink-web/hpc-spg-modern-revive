@@ -1,35 +1,63 @@
 import { useEffect } from "react";
 
 /**
- * Adds `.is-visible` to any reveal-class element when it scrolls into view.
- * Uses a later trigger so sections animate clearly while scrolling, not on load.
- * Runs once per element. Safe for SSR.
+ * Reveals animated elements as they approach the viewport.
+ *
+ * Individual stagger items are observed instead of the whole stagger
+ * container. This prevents large grids from remaining invisible while
+ * waiting for a tall parent element to satisfy IntersectionObserver.
  */
 export function useReveal() {
   useEffect(() => {
     if (typeof window === "undefined") return;
-    const selector = ".fade-up, .reveal-up, .reveal-left, .reveal-right, .reveal-fade, .reveal-scale, .phone-reveal, .stagger";
-    const els = Array.from(document.querySelectorAll<HTMLElement>(selector));
-    if (els.length === 0) return;
 
-    if (!("IntersectionObserver" in window)) {
-      els.forEach((el) => el.classList.add("is-visible"));
+    const selector = [
+      ".fade-up",
+      ".reveal-up",
+      ".reveal-left",
+      ".reveal-right",
+      ".reveal-fade",
+      ".reveal-scale",
+      ".phone-reveal",
+      ".stagger-item",
+    ].join(", ");
+
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>(selector),
+    );
+
+    if (elements.length === 0) return;
+
+    if (
+      !("IntersectionObserver" in window) ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      elements.forEach((element) => {
+        element.classList.add("is-visible");
+      });
+
       return;
     }
 
-    const io = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            e.target.classList.add("is-visible");
-            io.unobserve(e.target);
-          }
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.08, rootMargin: "0px 0px -120px 0px" },
+      {
+        threshold: 0.01,
+        rootMargin: "0px 0px 80px 0px",
+      },
     );
 
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, []);
 }
