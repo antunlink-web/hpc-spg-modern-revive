@@ -9,8 +9,6 @@ import {
   Zap,
   FileText,
   Banknote,
-  Receipt,
-  BarChart3,
   BookOpen,
   Scale,
   Coins,
@@ -41,7 +39,6 @@ import { splitCmsLines } from "@/lib/cms/page-definitions";
 
 const OFFER_URL = "/zahtjev";
 const CONTACT_URL = "/kontakt";
-const OFFER_PAGE_URL = "/ponuda";
 const APP_URL = "https://hpc-spg.com/";
 
 export const Route = createFileRoute("/")({
@@ -91,11 +88,6 @@ const whyUs = [
   { title: "Bonitet AAA", desc: "Bonitetna izvrsnost — priznanje financijske stabilnosti i pouzdanosti društva." },
 ];
 
-const ponudaHighlights = [
-  { icon: Receipt, title: "E-uplatnice za pričuvu", desc: "Mjesečne uplatnice za pričuvu dostavljene izravno na vašu e-mail adresu.", href: "/e-uplatnice" },
-  { icon: BarChart3, title: "Financijski izvještaji", desc: "Uvid u mjesečni financijski izvještaj zgrade i stanje pričuve u svakom trenutku.", href: "/korisnicki-podaci" },
-  { icon: FileText, title: "Dokumenti zgrade", desc: "Ugovori, zapisnici, godišnji programi i ostali dokumenti vaše zgrade na jednom mjestu.", href: "/dokumenti-zgrade" },
-];
 
 
 const process = [
@@ -136,7 +128,7 @@ function HomePage() {
     img:
       post.coverImage ||
       legacyNewsImages[post.slug] ||
-      sectionBuildings,
+      null,
     tag: post.category,
     date: post.displayDate,
     title: post.title,
@@ -351,34 +343,6 @@ function HomePage() {
               </article>
             ))}
           </div>
-
-          <div className="reveal-up mt-10">
-            <a
-              href={withBase(OFFER_PAGE_URL)}
-              className="inline-flex items-center gap-2 rounded-md bg-navy text-navy-foreground px-5 py-3 text-sm font-semibold hover:bg-navy-soft hover:-translate-y-0.5 transition-all duration-300"
-            >
-              Cjelovita ponuda poslova upravljanja <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
-
-          <div className="stagger mt-14 grid sm:grid-cols-3 gap-px bg-border rounded-xl overflow-hidden border border-border">
-            {ponudaHighlights.map((d) => (
-              <a
-                key={d.title}
-                href={withBase(d.href)}
-                className="stagger-item group bg-background p-7 lg:p-8 hover:bg-surface transition-colors card-lift"
-              >
-                <span className="inline-grid h-12 w-12 place-items-center rounded-lg bg-navy/5 ring-1 ring-navy/10 group-hover:bg-emerald/10 group-hover:ring-emerald/20 transition-colors icon-hover">
-                  <d.icon className="h-6 w-6 text-navy group-hover:text-emerald transition-colors" strokeWidth={1.6} />
-                </span>
-                <h3 className="mt-5 text-lg text-navy font-sans font-semibold">{d.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{d.desc}</p>
-                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-emerald">
-                  Otvori <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-                </span>
-              </a>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -455,9 +419,11 @@ function HomePage() {
           <div className="stagger grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-7">
             {homepageNews.map((n) => (
               <a key={n.title} href={n.href} className="stagger-item group bg-background rounded-xl overflow-hidden border border-border card-lift hover:border-navy/20">
-                <div className="aspect-[4/3] overflow-hidden">
-                  <img src={n.img} alt={n.title} width={896} height={640} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                </div>
+                {n.img ? (
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img src={n.img} alt={n.title} width={896} height={640} loading="lazy" className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  </div>
+                ) : null}
                 <div className="p-5 lg:p-6">
                   <div className="flex items-center gap-2.5 text-[11px] uppercase tracking-wider text-muted-foreground">
                     <span className="text-navy font-medium">{n.tag}</span>
@@ -484,14 +450,11 @@ function HomePage() {
             {pageContent.ctaText}
           </p>
           <div className="reveal-up mt-10 flex flex-wrap items-center justify-center gap-3" style={{ transitionDelay: "360ms" }}>
-            <a href={OFFER_URL} className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
-              Zatražite ponudu <ArrowRight className="h-4 w-4" />
+            <a href={withBase("/e-uplatnice")} className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
+              Zahtjev za slanje e-uplatnica <ArrowRight className="h-4 w-4" />
             </a>
             <a href={CONTACT_URL} className="inline-flex items-center rounded-md bg-white text-navy px-6 py-4 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300">
               Kontaktirajte nas
-            </a>
-            <a href={APP_URL} target="_blank" rel="noreferrer" className="inline-flex items-center rounded-md border border-white/25 text-white px-6 py-4 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300">
-              Prijava korisnika
             </a>
           </div>
 

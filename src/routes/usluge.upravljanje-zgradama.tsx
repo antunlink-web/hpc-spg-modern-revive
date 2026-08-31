@@ -1,67 +1,127 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { FileText } from "lucide-react";
 import { withBase } from "@/lib/paths";
+import { getPublicPage } from "@/lib/cms/page-functions";
+import { splitCmsLines } from "@/lib/cms/page-definitions";
 
 export const Route = createFileRoute("/usluge/upravljanje-zgradama")({
   head: () => ({
     meta: [
-      { title: "Upravljanje zgradama — HPC-SPG" },
-      { name: "description", content: "Cjelovito upravljanje stambenim i poslovnim zgradama: financijski, tehnički, pravni poslovi te transparentno vođenje pričuve." },
-      { property: "og:title", content: "Upravljanje zgradama — HPC-SPG" },
-      { property: "og:description", content: "Više od 7.000 stambenih i poslovnih prostora pod upravom — cjelovita usluga upravljanja." },
+      { title: "Upravljanje zgradama | HPC-SPG" },
+      {
+        name: "description",
+        content: "Ponuda za upravljanje stambenim i poslovnim zgradama s pripadajućim dokumentima.",
+      },
+      { property: "og:title", content: "Upravljanje zgradama - HPC-SPG" },
     ],
   }),
-  component: () => (
-    <ArticlePageShell
-      eyebrow="Usluge"
-      title="Upravljanje zgradama"
-      lead="Cjelovita usluga upravljanja stambenim i poslovnim zgradama — jedno kontakt mjesto za sve obveze suvlasnika."
-      crumbs={[{ label: "Usluge" }, { label: "Upravljanje zgradama" }]}
-    >
-      <p>
-        HPC-SPG upravlja s više od 7.000 stambenih i poslovnih prostora te garaža na širem području
-        Zagreba, Zagrebačke županije i Jadrana. Naši djelatnici ekonomske, pravne i građevinske struke
-        vode sve poslove upravljanja — od preuzimanja zgrade do svakodnevnog održavanja i godišnjeg
-        izvještaja.
-      </p>
-
-      <h2>Financijski poslovi</h2>
-      <ul>
-        <li>Obračun i zaduženje suvlasnika za zajedničku pričuvu</li>
-        <li>Uplatnice pošto, e-mailom i kroz web/mobilnu aplikaciju — s 2D barkodom</li>
-        <li>Knjigovodstvo zgrade i plaćanje računa po nalogu predstavnika</li>
-        <li>Redovni financijski izvještaji i godišnja rekapitulacija</li>
-        <li>Kontrola i prinudna naplata dugovanja</li>
-      </ul>
-
-      <h2>Tehnički poslovi</h2>
-      <ul>
-        <li>Svaka zgrada ima svog referenta — voditelja zgrade</li>
-        <li>Redoviti i izvanredni pregledi stanja objekta</li>
-        <li>Godišnji i višegodišnji program upravljanja (GPU/VGPU)</li>
-        <li>Organizacija manjih, većih i hitnih radova</li>
-        <li><a href={withBase("/hitne-intervencije")}>24-satno dežurstvo za hitne intervencije</a></li>
-      </ul>
-
-      <h2>Pravni poslovi</h2>
-      <ul>
-        <li>Priprema Međuvlasničkog i Ugovora o upravljanju</li>
-        <li>Vođenje evidencije suvlasnika i usklađivanje sa zemljišnim knjigama</li>
-        <li>Pomoć u <a href={withBase("/usluge/upis-u-zemljisne-knjige")}>upisu zgrade i posebnih dijelova u zemljišne knjige</a></li>
-        <li>Zastupanje suvlasnika u sudskim postupcima naplate</li>
-      </ul>
-
-      <h2>Web i mobilna aplikacija</h2>
-      <p>
-        Web i mobilna aplikacija omogućava pregled uplatnica, financijskih izvještaja i dokumenata zgrade
-        te online prijavu kvara. Vidi <a href={withBase("/dokumenti-zgrade")}>dokumenti zgrade</a> i{" "}
-        <a href={withBase("/e-uplatnice")}>e-uplatnice</a>.
-      </p>
-
-      <p>
-        Za cjelovitu ponudu prilagođenu vašoj zgradi <a href={withBase("/zahtjev")}>zatražite prijedlog upravljanja</a> —
-        u pravilu odgovaramo u roku od nekoliko radnih dana.
-      </p>
-    </ArticlePageShell>
-  ),
+  loader: () =>
+    getPublicPage({
+      data: { pageKey: "ponuda" },
+    }),
+  component: ManagementOfferPage,
 });
+
+function ManagementOfferPage() {
+  const page = Route.useLoaderData();
+  const content = page.content;
+
+  return (
+    <ArticlePageShell
+      eyebrow="Ponuda"
+      title="Upravljanje zgradama"
+      lead={content.lead}
+      crumbs={[
+        { label: "Ponuda", href: "/#ponuda" },
+        { label: "Upravljanje zgradama" },
+      ]}
+      aside={
+        <div className="rounded-xl border border-border bg-background p-6">
+          <p className="text-xs uppercase tracking-[0.18em] text-muted-foreground">
+            Dokumenti
+          </p>
+          <ul className="mt-3 space-y-2 text-sm">
+            <li>
+              <a href={withBase("/documents/ponuda-za-upravljanje-zgradama.pdf")} target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2">
+                <FileText className="h-4 w-4" /> Ponuda za upravljanje zgradama
+              </a>
+            </li>
+            <li>
+              <a href={withBase("/documents/ponuda-novoizgradeni-objekti.pdf")} target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2">
+                <FileText className="h-4 w-4" /> Novoizgrađeni objekti pod garancijom
+              </a>
+            </li>
+            <li>
+              <a href={withBase("/documents/odluka-mvu-sklapanje-ugovora.pdf")} target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2">
+                <FileText className="h-4 w-4" /> Odluka MVU - Ps-1
+              </a>
+            </li>
+            <li>
+              <a href={withBase("/documents/popis-zajednickih-dijelova-i-uredaja.pdf")} target="_blank" rel="noreferrer" className="text-emerald hover:underline inline-flex items-center gap-2">
+                <FileText className="h-4 w-4" /> Popis zajedničkih dijelova zgrade
+              </a>
+            </li>
+          </ul>
+        </div>
+      }
+    >
+      <ul>
+        {splitCmsLines(content.highlights).map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+
+      <h2>1. Financijski poslovi</h2>
+      <ul>
+        <li>Obračun i zaduženje suvlasnika za plaćanje zajedničke pričuve</li>
+        <li>Distribucija uplatnica - dostavom i na e-mail te kroz web i mobilnu aplikaciju</li>
+        <li>Izrada i slanje faktura za pričuvu pravnim osobama</li>
+        <li>Transparentno i cjelovito knjigovodstveno vođenje zgrade - knjiženje uplata suvlasnika i plaćanje računa dobavljača isključivo po nalogu predstavnika suvlasnika</li>
+        <li>Prilagođena analitička financijska izvješća i rekapitulacije poslovanja zgrade</li>
+        <li>Plaćanje svih zajedničkih troškova zgrade iz zajedničke pričuve</li>
+        <li>Obračun svih vrsta ugovora - o djelu (JOPPD obrazac), o zakupu i drugih primitaka i izdataka zgrade</li>
+      </ul>
+
+      <h2>2. Zajmovi i platni promet</h2>
+      <ul>
+        <li>Zajmovi za sve poslove upravljanja i održavanja zgrade</li>
+        <li>Dugoročni krediti više poslovnih banaka - jedino osiguranje je redovno uplaćivanje pričuve</li>
+        <li>Krediti za obnovu nakon potresa s najpovoljnijim uvjetima na tržištu</li>
+        <li>Kratkoročne pozajmice bez upisa hipoteke ili zadužnica suvlasnika</li>
+        <li>Mogućnost oročavanja sredstava zajedničke pričuve</li>
+        <li>Plaćanje pričuve bez naknade putem trajnog naloga, mobilnog i internet bankarstva</li>
+        <li>Poseban žiro-račun za zajedničku pričuvu, zaštićen od ovrhe po računima upravitelja</li>
+      </ul>
+
+      <h2>3. Tehnički poslovi</h2>
+      <ul>
+        <li>Svaka zgrada ima svog referenta koji vodi brigu o zgradi</li>
+        <li>Stručna tehnička pomoć u održavanju, popravcima i poboljšanju nekretnine</li>
+        <li>Povremeni i godišnji pregledi stanja zgrade</li>
+        <li>Izrada popisa zajedničkih dijelova zgrade</li>
+        <li>Izrada godišnjeg i višegodišnjeg programa upravljanja (GPU/VGPU)</li>
+        <li>Organiziranje manjih i većih, hitnih i nužnih radova</li>
+        <li><a href={withBase("/hitne-intervencije")}>24-satno dežurstvo za hitne intervencije</a></li>
+        <li>Prikupljanje ponuda za poslove i izbor izvođača od strane suvlasnika</li>
+        <li><a href={withBase("/usluge/energetska-obnova")}>Energetska obnova zgrada</a> - energetski certifikat, projektna dokumentacija i prijava na natječaje</li>
+        <li>Preuzimanje novoizgrađenih zgrada na upravljanje izravno od investitora</li>
+        <li>Poseban program upravljanja i održavanja poslovnih zgrada i trgovačkih centara</li>
+        <li>Najpovoljnije osiguranje zajedničkih dijelova s najboljim pokrićem na tržištu</li>
+      </ul>
+
+      <h2>4. Pravni poslovi</h2>
+      <ul>
+        <li>Pomoć pri sklapanju Međuvlasničkog ugovora i Ugovora o upravljanju</li>
+        <li>Primopredaja zgrade od bivšeg upravitelja</li>
+        <li>Izrada svih odluka potrebnih za poslove upravljanja i održavanja</li>
+        <li>Vođenje evidencije suvlasnika usklađeno sa zemljišnim knjigama i Registrima</li>
+        <li>Pokretanje i vođenje <a href={withBase("/usluge/upis-u-zemljisne-knjige")}>upisa zgrade i posebnih dijelova u zemljišne knjige</a></li>
+        <li>Učinkovit sustav prinudne naplate dugovanja i zastupanje u sudskim postupcima</li>
+        <li>Sastavljanje svih vrsta ugovora - o djelu, o zakupu i drugih</li>
+        <li>Zastupanje suvlasnika u postupcima prema trećim osobama (investitor, izvođači)</li>
+        <li>Pravni savjeti vezani za djelokrug rada upravitelja</li>
+      </ul>
+    </ArticlePageShell>
+  );
+}
