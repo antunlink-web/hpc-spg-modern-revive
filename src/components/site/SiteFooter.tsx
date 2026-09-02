@@ -91,14 +91,18 @@ export function SiteFooter() {
             </a>
           </div>
 
-          <div className="mt-6 rounded-lg bg-white/95 p-5 flex items-center gap-5">
+          <a
+            href={withBase("/certifikat-bonitetne-izvrsnosti")}
+            className="mt-6 rounded-lg bg-white/95 p-5 flex items-center gap-5"
+            aria-label="Otvori certifikat bonitetne izvrsnosti"
+          >
             <img src={bonitetAAA} alt="Bonitet AAA — Platinum certifikat kreditne sposobnosti" className="h-28 w-auto" />
             <div className="text-navy">
               <div className="text-[11px] uppercase tracking-[0.18em] text-navy/60">Bonitetna izvrsnost</div>
               <div className="mt-1 text-sm font-semibold">Certifikat AAA — Platinum</div>
               <div className="mt-1 text-xs text-navy/70">Priznanje financijske stabilnosti i pouzdanosti društva.</div>
             </div>
-          </div>
+          </a>
 
           <div className="mt-4 grid grid-cols-2 gap-3">
             <div className="rounded-md border border-white/10 bg-white/5 p-4">
