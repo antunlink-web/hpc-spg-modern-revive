@@ -40,6 +40,7 @@ import { Route as NovostiIndexRouteImport } from './routes/novosti.index'
 import { Route as AdministracijaIndexRouteImport } from './routes/administracija.index'
 import { Route as UslugeUpravljanjeZgradamaRouteImport } from './routes/usluge.upravljanje-zgradama'
 import { Route as UslugeUpisUZemljisneKnjigeRouteImport } from './routes/usluge.upis-u-zemljisne-knjige'
+import { Route as UslugeObracunPricuveRouteImport } from './routes/usluge.obracun-pricuve'
 import { Route as UslugeObnovaOdPotresaRouteImport } from './routes/usluge.obnova-od-potresa'
 import { Route as UslugeFinanciranjeUredenjaRouteImport } from './routes/usluge.financiranje-uredenja'
 import { Route as UslugeEnergetskaObnovaRouteImport } from './routes/usluge.energetska-obnova'
@@ -222,6 +223,11 @@ const UslugeUpisUZemljisneKnjigeRoute =
     path: '/upis-u-zemljisne-knjige',
     getParentRoute: () => UslugeRoute,
   } as any)
+const UslugeObracunPricuveRoute = UslugeObracunPricuveRouteImport.update({
+  id: '/obracun-pricuve',
+  path: '/obracun-pricuve',
+  getParentRoute: () => UslugeRoute,
+} as any)
 const UslugeObnovaOdPotresaRoute = UslugeObnovaOdPotresaRouteImport.update({
   id: '/obnova-od-potresa',
   path: '/obnova-od-potresa',
@@ -381,6 +387,7 @@ export interface FileRoutesByFullPath {
   '/usluge/energetska-obnova': typeof UslugeEnergetskaObnovaRoute
   '/usluge/financiranje-uredenja': typeof UslugeFinanciranjeUredenjaRoute
   '/usluge/obnova-od-potresa': typeof UslugeObnovaOdPotresaRoute
+  '/usluge/obracun-pricuve': typeof UslugeObracunPricuveRoute
   '/usluge/upis-u-zemljisne-knjige': typeof UslugeUpisUZemljisneKnjigeRoute
   '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
   '/administracija/': typeof AdministracijaIndexRoute
@@ -434,6 +441,7 @@ export interface FileRoutesByTo {
   '/usluge/energetska-obnova': typeof UslugeEnergetskaObnovaRoute
   '/usluge/financiranje-uredenja': typeof UslugeFinanciranjeUredenjaRoute
   '/usluge/obnova-od-potresa': typeof UslugeObnovaOdPotresaRoute
+  '/usluge/obracun-pricuve': typeof UslugeObracunPricuveRoute
   '/usluge/upis-u-zemljisne-knjige': typeof UslugeUpisUZemljisneKnjigeRoute
   '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
   '/administracija': typeof AdministracijaIndexRoute
@@ -490,6 +498,7 @@ export interface FileRoutesById {
   '/usluge/energetska-obnova': typeof UslugeEnergetskaObnovaRoute
   '/usluge/financiranje-uredenja': typeof UslugeFinanciranjeUredenjaRoute
   '/usluge/obnova-od-potresa': typeof UslugeObnovaOdPotresaRoute
+  '/usluge/obracun-pricuve': typeof UslugeObracunPricuveRoute
   '/usluge/upis-u-zemljisne-knjige': typeof UslugeUpisUZemljisneKnjigeRoute
   '/usluge/upravljanje-zgradama': typeof UslugeUpravljanjeZgradamaRoute
   '/administracija/': typeof AdministracijaIndexRoute
@@ -547,6 +556,7 @@ export interface FileRouteTypes {
     | '/usluge/energetska-obnova'
     | '/usluge/financiranje-uredenja'
     | '/usluge/obnova-od-potresa'
+    | '/usluge/obracun-pricuve'
     | '/usluge/upis-u-zemljisne-knjige'
     | '/usluge/upravljanje-zgradama'
     | '/administracija/'
@@ -600,6 +610,7 @@ export interface FileRouteTypes {
     | '/usluge/energetska-obnova'
     | '/usluge/financiranje-uredenja'
     | '/usluge/obnova-od-potresa'
+    | '/usluge/obracun-pricuve'
     | '/usluge/upis-u-zemljisne-knjige'
     | '/usluge/upravljanje-zgradama'
     | '/administracija'
@@ -655,6 +666,7 @@ export interface FileRouteTypes {
     | '/usluge/energetska-obnova'
     | '/usluge/financiranje-uredenja'
     | '/usluge/obnova-od-potresa'
+    | '/usluge/obracun-pricuve'
     | '/usluge/upis-u-zemljisne-knjige'
     | '/usluge/upravljanje-zgradama'
     | '/administracija/'
@@ -933,6 +945,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UslugeUpisUZemljisneKnjigeRouteImport
       parentRoute: typeof UslugeRoute
     }
+    '/usluge/obracun-pricuve': {
+      id: '/usluge/obracun-pricuve'
+      path: '/obracun-pricuve'
+      fullPath: '/usluge/obracun-pricuve'
+      preLoaderRoute: typeof UslugeObracunPricuveRouteImport
+      parentRoute: typeof UslugeRoute
+    }
     '/usluge/obnova-od-potresa': {
       id: '/usluge/obnova-od-potresa'
       path: '/obnova-od-potresa'
@@ -1118,6 +1137,7 @@ interface UslugeRouteChildren {
   UslugeEnergetskaObnovaRoute: typeof UslugeEnergetskaObnovaRoute
   UslugeFinanciranjeUredenjaRoute: typeof UslugeFinanciranjeUredenjaRoute
   UslugeObnovaOdPotresaRoute: typeof UslugeObnovaOdPotresaRoute
+  UslugeObracunPricuveRoute: typeof UslugeObracunPricuveRoute
   UslugeUpisUZemljisneKnjigeRoute: typeof UslugeUpisUZemljisneKnjigeRoute
   UslugeUpravljanjeZgradamaRoute: typeof UslugeUpravljanjeZgradamaRoute
   UslugeIndexRoute: typeof UslugeIndexRoute
@@ -1127,6 +1147,7 @@ const UslugeRouteChildren: UslugeRouteChildren = {
   UslugeEnergetskaObnovaRoute: UslugeEnergetskaObnovaRoute,
   UslugeFinanciranjeUredenjaRoute: UslugeFinanciranjeUredenjaRoute,
   UslugeObnovaOdPotresaRoute: UslugeObnovaOdPotresaRoute,
+  UslugeObracunPricuveRoute: UslugeObracunPricuveRoute,
   UslugeUpisUZemljisneKnjigeRoute: UslugeUpisUZemljisneKnjigeRoute,
   UslugeUpravljanjeZgradamaRoute: UslugeUpravljanjeZgradamaRoute,
   UslugeIndexRoute: UslugeIndexRoute,

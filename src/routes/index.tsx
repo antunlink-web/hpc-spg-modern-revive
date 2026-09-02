@@ -72,7 +72,7 @@ export const Route = createFileRoute("/")({
 
 const services = [
   { icon: Building2, title: "Upravljanje zgradama", desc: "Cjelovito upravljanje stambenim i poslovnim objektima uz transparentno financijsko izvještavanje.", href: "/usluge/upravljanje-zgradama" },
-  { icon: Wrench, title: "Obračun pričuve i izrada godišnjih programa", desc: "Redovan obračun pričuve, izrada godišnjih programa održavanja i praćenje njihove provedbe.", href: "/usluge/upravljanje-zgradama" },
+  { icon: Wrench, title: "Obračun pričuve i izrada godišnjih programa", desc: "Redovan obračun pričuve, izrada godišnjih programa održavanja i praćenje njihove provedbe.", href: "/usluge/obracun-pricuve" },
   { icon: ShieldCheck, title: "Obnova od potresa", desc: "Stručna podrška u postupku obnove zgrada oštećenih u potresu.", href: "/usluge/obnova-od-potresa" },
   { icon: Zap, title: "Energetska obnova", desc: "Pomoć u pripremi i provedbi projekata energetske obnove zgrada.", href: "/usluge/energetska-obnova" },
   { icon: FileText, title: "Upis u zemljišne knjige", desc: "Vođenje postupka upisa zgrade i posebnih dijelova u zemljišne knjige.", href: "/usluge/upis-u-zemljisne-knjige" },

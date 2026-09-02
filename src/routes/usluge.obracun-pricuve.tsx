@@ -1,0 +1,85 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ArticlePageShell } from "@/components/site/ArticlePageShell";
+import { withBase } from "@/lib/paths";
+
+export const Route = createFileRoute("/usluge/obracun-pricuve")({
+  head: () => ({
+    meta: [
+      { title: "Obračun pričuve i godišnji programi | HPC-SPG" },
+      {
+        name: "description",
+        content:
+          "Obračun zajedničke pričuve, financijski poslovi, godišnji programi održavanja i podrška suvlasnicima.",
+      },
+      {
+        property: "og:title",
+        content: "Obračun pričuve i godišnji programi - HPC-SPG",
+      },
+    ],
+  }),
+  component: ReservePage,
+});
+
+function ReservePage() {
+  return (
+    <ArticlePageShell
+      eyebrow="Ponuda"
+      title="Obračun pričuve i izrada godišnjih programa"
+      lead="Cjelovita usluga upravljanja stambenim i poslovnim zgradama - jedno kontakt mjesto za sve obveze suvlasnika."
+      crumbs={[
+        { label: "Ponuda", href: "/#ponuda" },
+        { label: "Obračun pričuve" },
+      ]}
+    >
+      <p>
+        HPC-SPG upravlja s više od 7.000 stambenih i poslovnih prostora te garaža na širem području
+        Zagreba, Zagrebačke županije i Jadrana. Naši djelatnici ekonomske, pravne i građevinske struke
+        vode sve poslove upravljanja - od preuzimanja zgrade do svakodnevnog održavanja i godišnjeg
+        izvještaja.
+      </p>
+
+      <h2>Financijski poslovi</h2>
+      <ul>
+        <li>Obračun i zaduženje suvlasnika za zajedničku pričuvu</li>
+        <li>Uplatnice pošto, e-mailom i kroz web/mobilnu aplikaciju - s 2D barkodom</li>
+        <li>Knjigovodstvo zgrade i plaćanje računa po nalogu predstavnika</li>
+        <li>Redovni financijski izvještaji i godišnja rekapitulacija</li>
+        <li>Kontrola i prinudna naplata dugovanja</li>
+      </ul>
+
+      <h2>Tehnički poslovi</h2>
+      <ul>
+        <li>Svaka zgrada ima svog referenta - voditelja zgrade</li>
+        <li>Redoviti i izvanredni pregledi stanja objekta</li>
+        <li>Godišnji i višegodišnji program upravljanja (GPU/VGPU)</li>
+        <li>Organizacija manjih, većih i hitnih radova</li>
+        <li>
+          <a href={withBase("/hitne-intervencije")}>
+            24-satno dežurstvo za hitne intervencije
+          </a>
+        </li>
+      </ul>
+
+      <h2>Pravni poslovi</h2>
+      <ul>
+        <li>Priprema Međuvlasničkog i Ugovora o upravljanju</li>
+        <li>Vođenje evidencije suvlasnika i usklađivanje sa zemljišnim knjigama</li>
+        <li>
+          Pomoć u{" "}
+          <a href={withBase("/usluge/upis-u-zemljisne-knjige")}>
+            upisu zgrade i posebnih dijelova u zemljišne knjige
+          </a>
+        </li>
+        <li>Zastupanje suvlasnika u sudskim postupcima naplate</li>
+      </ul>
+
+      <h2>Web i mobilna aplikacija</h2>
+      <p>
+        Web i mobilna aplikacija omogućava pregled uplatnica, financijskih
+        izvještaja i dokumenata zgrade te online prijavu kvara. Vidi{" "}
+        <a href={withBase("/dokumenti-zgrade")}>dokumente zgrade</a> i{" "}
+        <a href={withBase("/e-uplatnice")}>e-uplatnice</a>.
+      </p>
+    </ArticlePageShell>
+  );
+}
