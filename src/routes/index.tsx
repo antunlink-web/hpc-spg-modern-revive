@@ -98,6 +98,8 @@ const process = [
 ];
 
 const legacyNewsImages: Record<string, string> = {
+  "upozorenje-gradske-plinare-korisnicima-plina-toplinski-val": sectionBuildings,
+  "obavijest-suvlasnicima-o-novim-zakonskim-obvezama-vezanim-uz-ugradnju-uredaja-za": newsLaw,
   "novi-zakon-o-upravljanju-i-odrzavanju-zgrada": newsLaw,
   "javni-poziv-za-podnosenje-prijava-za-sufinanciranje-uredenja-procelja-za-postoje": newsFacade,
   "javni-poziv-ugradnja-dizala-u-postojece-visestambene-i-stambeno-poslovne-zgrade": newsElevator,
