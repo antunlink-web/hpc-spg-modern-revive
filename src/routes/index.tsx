@@ -187,11 +187,11 @@ function HomePage() {
               <a href={OFFER_URL} className="hero-anim hero-delay-5 inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-3.5 text-sm font-semibold shadow-lg shadow-black/20 hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
                 Zatražite ponudu <ArrowRight className="h-4 w-4" />
               </a>
-              <a href={CONTACT_URL} className="hero-anim hero-delay-5 inline-flex items-center rounded-md bg-white text-navy px-6 py-3.5 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "780ms" }}>
-                Kontaktirajte nas
+              <a href={withBase("/korisnicki-podaci")} className="hero-anim hero-delay-5 inline-flex items-center rounded-md bg-white text-navy px-6 py-3.5 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "780ms" }}>
+                Zahtjev za pristupne podatke za web i mobilnu aplikaciju
               </a>
-              <a href={APP_URL} target="_blank" rel="noreferrer" className="hero-anim inline-flex items-center rounded-md border border-white/35 bg-white/5 backdrop-blur-sm text-white px-6 py-3.5 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "860ms" }}>
-                Prijava korisnika
+              <a href={withBase("/e-uplatnice")} className="hero-anim inline-flex items-center rounded-md border border-white/35 bg-white/5 backdrop-blur-sm text-white px-6 py-3.5 text-sm font-medium hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-300" style={{ animationDelay: "860ms" }}>
+                Zahtjev za dostavu uplatnica na e-mail
               </a>
             </div>
           </div>
@@ -450,8 +450,8 @@ function HomePage() {
             {pageContent.ctaText}
           </p>
           <div className="reveal-up mt-10 flex flex-wrap items-center justify-center gap-3" style={{ transitionDelay: "360ms" }}>
-            <a href={withBase("/e-uplatnice")} className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
-              Zahtjev za slanje e-uplatnica <ArrowRight className="h-4 w-4" />
+            <a href={OFFER_URL} className="inline-flex items-center gap-2 rounded-md bg-emerald text-white px-6 py-4 text-sm font-semibold hover:bg-emerald-soft hover:-translate-y-0.5 transition-all duration-300">
+              Zatražite ponudu <ArrowRight className="h-4 w-4" />
             </a>
             <a href={CONTACT_URL} className="inline-flex items-center rounded-md bg-white text-navy px-6 py-4 text-sm font-medium hover:bg-white/90 hover:-translate-y-0.5 transition-all duration-300">
               Kontaktirajte nas
