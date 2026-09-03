@@ -327,7 +327,7 @@ export const listNewsAdmin = createServerFn({
 });
 
 export const getNewsAdmin = createServerFn({
-  method: "GET",
+  method: "POST",
 }).handler(async ({ data }: any) => {
   await requireAdmin();
 
