@@ -16,9 +16,6 @@ import {
   X,
 } from "lucide-react";
 import {
-  useNavigate,
-} from "@tanstack/react-router";
-import {
   useServerFn,
 } from "@tanstack/react-start";
 import {
@@ -54,7 +51,6 @@ export function NewsEditor({
 }: {
   post?: NewsEditorPost | null;
 }) {
-  const navigate = useNavigate();
   const saveNews = useServerFn(saveNewsAdmin);
   const deleteNews = useServerFn(deleteNewsAdmin);
 
@@ -265,14 +261,13 @@ export function NewsEditor({
       setMessage("Objava je spremljena.");
 
       if (!post?.id) {
-        await navigate({
-          to: "/administracija/novosti/$id",
-          params: {
-            id: result.id,
-          },
-          replace: true,
-        });
+        window.location.replace(
+          `/administracija/novosti/${result.id}`,
+        );
+        return;
       }
+
+      window.location.reload();
     } catch (error) {
       setMessage(
         error instanceof Error
