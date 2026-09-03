@@ -1,4 +1,5 @@
 import {
+  useEffect,
   useRef,
   useState,
 } from "react";
@@ -140,6 +141,13 @@ export function NewsEditor({
     useState(false);
   const [message, setMessage] =
     useState("");
+
+  useEffect(() => {
+    if (editorRef.current) {
+      editorRef.current.innerHTML =
+        post?.content ?? "";
+    }
+  }, [post?.id]);
 
   function runCommand(
     command: string,
@@ -591,9 +599,6 @@ export function NewsEditor({
             ref={editorRef}
             contentEditable
             suppressContentEditableWarning
-            dangerouslySetInnerHTML={{
-              __html: post?.content ?? "",
-            }}
             className="prose prose-sm min-h-[420px] max-w-none px-6 py-5 text-foreground outline-none lg:prose-base focus:bg-surface/30"
           />
         </section>
