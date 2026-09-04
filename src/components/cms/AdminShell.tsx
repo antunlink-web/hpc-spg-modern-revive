@@ -144,7 +144,11 @@ export function AdminShell({
             <div className="hidden lg:block" />
 
             <div className="flex items-center gap-4">
-              <div className="hidden text-right sm:block">
+              <Link
+                to="/administracija/racun"
+                className="hidden rounded-lg px-2 py-1 text-right transition hover:bg-slate-50 sm:block"
+                title="Moj račun"
+              >
                 <div className="text-sm font-semibold text-slate-900">
                   {user.email}
                 </div>
@@ -153,7 +157,7 @@ export function AdminShell({
                     ? "Superadministrator"
                     : "Administrator"}
                 </div>
-              </div>
+              </Link>
 
               <button
                 type="button"

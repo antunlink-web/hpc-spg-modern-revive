@@ -52,6 +52,7 @@ import { Route as UpravljanjeMinimalnaVisinaPricuveRouteImport } from './routes/
 import { Route as NovostiArhivaRouteImport } from './routes/novosti.arhiva'
 import { Route as NovostiSlugRouteImport } from './routes/novosti.$slug'
 import { Route as AdministracijaStraniceRouteImport } from './routes/administracija.stranice'
+import { Route as AdministracijaRacunRouteImport } from './routes/administracija.racun'
 import { Route as AdministracijaPrijavaRouteImport } from './routes/administracija.prijava'
 import { Route as AdministracijaPostavkeRouteImport } from './routes/administracija.postavke'
 import { Route as AdministracijaKorisniciRouteImport } from './routes/administracija.korisnici'
@@ -288,6 +289,11 @@ const AdministracijaStraniceRoute = AdministracijaStraniceRouteImport.update({
   path: '/administracija/stranice',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdministracijaRacunRoute = AdministracijaRacunRouteImport.update({
+  id: '/administracija/racun',
+  path: '/administracija/racun',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AdministracijaPrijavaRoute = AdministracijaPrijavaRouteImport.update({
   id: '/administracija/prijava',
   path: '/administracija/prijava',
@@ -376,6 +382,7 @@ export interface FileRoutesByFullPath {
   '/administracija/korisnici': typeof AdministracijaKorisniciRoute
   '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
+  '/administracija/racun': typeof AdministracijaRacunRoute
   '/administracija/stranice': typeof AdministracijaStraniceRoute
   '/novosti/$slug': typeof NovostiSlugRoute
   '/novosti/arhiva': typeof NovostiArhivaRoute
@@ -430,6 +437,7 @@ export interface FileRoutesByTo {
   '/administracija/korisnici': typeof AdministracijaKorisniciRoute
   '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
+  '/administracija/racun': typeof AdministracijaRacunRoute
   '/administracija/stranice': typeof AdministracijaStraniceRoute
   '/novosti/$slug': typeof NovostiSlugRoute
   '/novosti/arhiva': typeof NovostiArhivaRoute
@@ -487,6 +495,7 @@ export interface FileRoutesById {
   '/administracija/korisnici': typeof AdministracijaKorisniciRoute
   '/administracija/postavke': typeof AdministracijaPostavkeRoute
   '/administracija/prijava': typeof AdministracijaPrijavaRoute
+  '/administracija/racun': typeof AdministracijaRacunRoute
   '/administracija/stranice': typeof AdministracijaStraniceRoute
   '/novosti/$slug': typeof NovostiSlugRoute
   '/novosti/arhiva': typeof NovostiArhivaRoute
@@ -545,6 +554,7 @@ export interface FileRouteTypes {
     | '/administracija/korisnici'
     | '/administracija/postavke'
     | '/administracija/prijava'
+    | '/administracija/racun'
     | '/administracija/stranice'
     | '/novosti/$slug'
     | '/novosti/arhiva'
@@ -599,6 +609,7 @@ export interface FileRouteTypes {
     | '/administracija/korisnici'
     | '/administracija/postavke'
     | '/administracija/prijava'
+    | '/administracija/racun'
     | '/administracija/stranice'
     | '/novosti/$slug'
     | '/novosti/arhiva'
@@ -655,6 +666,7 @@ export interface FileRouteTypes {
     | '/administracija/korisnici'
     | '/administracija/postavke'
     | '/administracija/prijava'
+    | '/administracija/racun'
     | '/administracija/stranice'
     | '/novosti/$slug'
     | '/novosti/arhiva'
@@ -712,6 +724,7 @@ export interface RootRouteChildren {
   AdministracijaKorisniciRoute: typeof AdministracijaKorisniciRoute
   AdministracijaPostavkeRoute: typeof AdministracijaPostavkeRoute
   AdministracijaPrijavaRoute: typeof AdministracijaPrijavaRoute
+  AdministracijaRacunRoute: typeof AdministracijaRacunRoute
   AdministracijaStraniceRoute: typeof AdministracijaStraniceRoute
   NovostiSlugRoute: typeof NovostiSlugRoute
   NovostiArhivaRoute: typeof NovostiArhivaRoute
@@ -1029,6 +1042,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdministracijaStraniceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/administracija/racun': {
+      id: '/administracija/racun'
+      path: '/administracija/racun'
+      fullPath: '/administracija/racun'
+      preLoaderRoute: typeof AdministracijaRacunRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/administracija/prijava': {
       id: '/administracija/prijava'
       path: '/administracija/prijava'
@@ -1186,6 +1206,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdministracijaKorisniciRoute: AdministracijaKorisniciRoute,
   AdministracijaPostavkeRoute: AdministracijaPostavkeRoute,
   AdministracijaPrijavaRoute: AdministracijaPrijavaRoute,
+  AdministracijaRacunRoute: AdministracijaRacunRoute,
   AdministracijaStraniceRoute: AdministracijaStraniceRoute,
   NovostiSlugRoute: NovostiSlugRoute,
   NovostiArhivaRoute: NovostiArhivaRoute,

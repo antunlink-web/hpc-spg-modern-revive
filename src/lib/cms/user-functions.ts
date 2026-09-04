@@ -1,10 +1,19 @@
-import { randomUUID } from "node:crypto";
+import { createHash, randomUUID } from "node:crypto";
 import { createServerFn } from "@tanstack/react-start";
 import { getCmsDb } from "./db";
-import { getUserBySessionToken, hashPassword, type CmsRole } from "./auth";
+import {
+  getUserBySessionToken,
+  hashPassword,
+  verifyPassword,
+  type CmsRole,
+} from "./auth";
 import { getRequestHeader } from "@tanstack/react-start/server";
 
 const COOKIE_NAME = "__Host-hpc_spg_admin";
+
+function hashSessionTokenForLookup(token: string): string {
+  return createHash("sha256").update(token).digest("hex");
+}
 
 function getSessionToken(): string | null {
   const cookieHeader = getRequestHeader("cookie");
@@ -278,4 +287,113 @@ export const changeUserPasswordAdmin = createServerFn({
   `).run(userId);
 
   return { success: true as const };
+});
+
+
+export const changeOwnPasswordAdmin = createServerFn({
+  method: "POST",
+}).handler(async ({ data }) => {
+  const token = getSessionToken();
+  const user = token ? getUserBySessionToken(token) : null;
+
+  if (!token || !user) {
+    return {
+      success: false as const,
+      error: "Vaša prijava više nije aktivna. Prijavite se ponovno.",
+    };
+  }
+
+  const input = (data ?? {}) as {
+    currentPassword?: unknown;
+    newPassword?: unknown;
+  };
+
+  const currentPassword = String(input.currentPassword ?? "");
+  const newPassword = String(input.newPassword ?? "");
+
+  if (!currentPassword) {
+    return {
+      success: false as const,
+      error: "Unesite trenutačnu lozinku.",
+    };
+  }
+
+  if (
+    currentPassword.length > 1024 ||
+    newPassword.length > 1024
+  ) {
+    return {
+      success: false as const,
+      error: "Lozinka je preduga.",
+    };
+  }
+
+  if (newPassword.length < 10) {
+    return {
+      success: false as const,
+      error: "Nova lozinka mora sadržavati najmanje 10 znakova.",
+    };
+  }
+
+  if (currentPassword === newPassword) {
+    return {
+      success: false as const,
+      error: "Nova lozinka mora se razlikovati od trenutačne.",
+    };
+  }
+
+  const db = getCmsDb();
+
+  const row = db.prepare(`
+    SELECT password_hash
+    FROM users
+    WHERE id = ?
+      AND is_active = 1
+    LIMIT 1
+  `).get(user.id) as
+    | {
+        password_hash: string;
+      }
+    | undefined;
+
+  if (
+    !row ||
+    !verifyPassword(
+      currentPassword,
+      row.password_hash,
+    )
+  ) {
+    return {
+      success: false as const,
+      error: "Trenutačna lozinka nije ispravna.",
+    };
+  }
+
+  db.prepare(`
+    UPDATE users
+    SET password_hash = ?,
+        updated_at = ?
+    WHERE id = ?
+  `).run(
+    hashPassword(newPassword),
+    new Date().toISOString(),
+    user.id,
+  );
+
+  /*
+   * Keep this browser session active and sign the account
+   * out everywhere else.
+   */
+  db.prepare(`
+    DELETE FROM sessions
+    WHERE user_id = ?
+      AND token_hash <> ?
+  `).run(
+    user.id,
+    hashSessionTokenForLookup(token),
+  );
+
+  return {
+    success: true as const,
+  };
 });
