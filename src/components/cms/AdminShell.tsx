@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import {
   FileText,
+  KeyRound,
   LayoutDashboard,
   LogOut,
   Newspaper,
@@ -51,6 +52,11 @@ const navItems = [
     label: "Postavke",
     to: "/administracija/postavke",
     icon: Settings,
+  },
+  {
+    label: "Moj račun",
+    to: "/administracija/racun",
+    icon: KeyRound,
   },
 ] as const;
 
