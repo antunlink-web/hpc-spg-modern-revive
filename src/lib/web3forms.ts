@@ -15,7 +15,7 @@ const KEY_MAP: Record<Web3FormType, string | undefined> = {
   user_access: USER_ACCESS_KEY,
   contact: CONTACT_KEY,
   survey: CONTACT_KEY,
-  e_uplatnice: USER_ACCESS_KEY,
+  e_uplatnice: OFFER_KEY,
   web_stranica: OFFER_KEY,
 };
 
